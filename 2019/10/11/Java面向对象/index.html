@@ -17,7 +17,7 @@
 <meta property="og:description" content="类和对象的创建：第二章：类和对象面向对象：面向对象就是把一个项目、一件事分成更小的项目，或者说分成一个个更小的部分，每一部分负责什么功能。面向过程：面向过程：面向过程就是把一个项目、一件事情按照一定的顺序，从头到尾一步一步的做下去，先做什么，后做什么，一直到结束。类的创建：1public class 类名&amp;#123;&amp;#125;  对象的创建：12类名 对象名 = new 类名();//new 出">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="d:%5CQQXZ%5CMobileFile%5Cmmexport1570784764858.jpg">
-<meta property="og:updated_time" content="2019-10-11T09:32:51.139Z">
+<meta property="og:updated_time" content="2019-10-11T10:13:42.652Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java面向对象">
 <meta name="twitter:description" content="类和对象的创建：第二章：类和对象面向对象：面向对象就是把一个项目、一件事分成更小的项目，或者说分成一个个更小的部分，每一部分负责什么功能。面向过程：面向过程：面向过程就是把一个项目、一件事情按照一定的顺序，从头到尾一步一步的做下去，先做什么，后做什么，一直到结束。类的创建：1public class 类名&amp;#123;&amp;#125;  对象的创建：12类名 对象名 = new 类名();//new 出">
@@ -208,13 +208,13 @@
 
 <h1 id="构造方法："><a href="#构造方法：" class="headerlink" title="构造方法："></a>构造方法：</h1><h6 id="构造方法名称和类名相同，没有返回值"><a href="#构造方法名称和类名相同，没有返回值" class="headerlink" title="构造方法名称和类名相同，没有返回值"></a>构造方法名称和类名相同，没有返回值</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class 类名&#123;</span><br><span class="line">    public 类名()&#123;&#125;//无参构造</span><br><span class="line">    public 类名(参数列表)&#123;&#125;//有参构造</span><br><span class="line">&#125;</span><br><span class="line">//构造方法的作用是给对象的属性进行初始化操作,构造方法不用调用，创建对象自动执行</span><br></pre></td></tr></table></figure>
 
-<h4 id="构造方法的重载"><a href="#构造方法的重载" class="headerlink" title="构造方法的重载;"></a>构造方法的重载;</h4><pre><code>######     当你没有创建构造方法时，系统会自动给出一个无参的构造方法。如果我们给出构造方法，系统将不再提供默认的构造方法。建议，我们在给出构造方法的时候，也给出一个无参的构造，因为，在我们创建对象的时候不一定会给出参数。</code></pre><h6 id="什么是重载："><a href="#什么是重载：" class="headerlink" title="什么是重载："></a>什么是重载：</h6><ul>
+<h4 id="构造方法的重载："><a href="#构造方法的重载：" class="headerlink" title="构造方法的重载："></a>构造方法的重载：</h4><h6 id="当你没有创建构造方法时，系统会自动给出一个无参的构造方法。如果我们给出构造方法，系统将不再提供默认的构造方法。建议，我们在给出构造方法的时候，也给出一个无参的构造，因为，在我们创建对象的时候不一定会给出参数。"><a href="#当你没有创建构造方法时，系统会自动给出一个无参的构造方法。如果我们给出构造方法，系统将不再提供默认的构造方法。建议，我们在给出构造方法的时候，也给出一个无参的构造，因为，在我们创建对象的时候不一定会给出参数。" class="headerlink" title="当你没有创建构造方法时，系统会自动给出一个无参的构造方法。如果我们给出构造方法，系统将不再提供默认的构造方法。建议，我们在给出构造方法的时候，也给出一个无参的构造，因为，在我们创建对象的时候不一定会给出参数。"></a>当你没有创建构造方法时，系统会自动给出一个无参的构造方法。如果我们给出构造方法，系统将不再提供默认的构造方法。建议，我们在给出构造方法的时候，也给出一个无参的构造，因为，在我们创建对象的时候不一定会给出参数。</h6><h6 id="什么是重载："><a href="#什么是重载：" class="headerlink" title="什么是重载："></a>什么是重载：</h6><ul>
 <li><input checked disabled type="checkbox"> <h6 id="必须在同一个类中"><a href="#必须在同一个类中" class="headerlink" title="必须在同一个类中"></a>必须在同一个类中</h6></li>
 <li><input checked disabled type="checkbox"> <h6 id="方法名相同"><a href="#方法名相同" class="headerlink" title="方法名相同"></a>方法名相同</h6></li>
 <li><input checked disabled type="checkbox"> <h6 id="参数列表（方法形参的个数或参数类型）不同"><a href="#参数列表（方法形参的个数或参数类型）不同" class="headerlink" title="参数列表（方法形参的个数或参数类型）不同"></a>参数列表（方法形参的个数或参数类型）不同</h6></li>
 <li><input checked disabled type="checkbox"> <h6 id="与方法返回值和方法修饰符没有任何关系"><a href="#与方法返回值和方法修饰符没有任何关系" class="headerlink" title="与方法返回值和方法修饰符没有任何关系"></a>与方法返回值和方法修饰符没有任何关系</h6></li>
 </ul>
-<h6 id="满足以上条件就是方法的重载，而构造方法的重载是指你有两个或两个以上的构造方法，方法名相同，参数列表不同。"><a href="#满足以上条件就是方法的重载，而构造方法的重载是指你有两个或两个以上的构造方法，方法名相同，参数列表不同。" class="headerlink" title="满足以上条件就是方法的重载，而构造方法的重载是指你有两个或两个以上的构造方法，方法名相同，参数列表不同。"></a>满足以上条件就是方法的重载，而构造方法的重载是指你有两个或两个以上的构造方法，方法名相同，参数列表不同。</h6><h2 id="static："><a href="#static：" class="headerlink" title="static："></a>static：</h2><h6 id="static可以用来修饰属性、方法和代码块。"><a href="#static可以用来修饰属性、方法和代码块。" class="headerlink" title="static可以用来修饰属性、方法和代码块。"></a>static可以用来修饰属性、方法和代码块。</h6><pre><code>######    static的特点：</code></pre><ol>
+<h6 id="满足以上条件就是方法的重载，而构造方法的重载是指你有两个或两个以上的构造方法，方法名相同，参数列表不同。"><a href="#满足以上条件就是方法的重载，而构造方法的重载是指你有两个或两个以上的构造方法，方法名相同，参数列表不同。" class="headerlink" title="满足以上条件就是方法的重载，而构造方法的重载是指你有两个或两个以上的构造方法，方法名相同，参数列表不同。"></a>满足以上条件就是方法的重载，而构造方法的重载是指你有两个或两个以上的构造方法，方法名相同，参数列表不同。</h6><h2 id="static："><a href="#static：" class="headerlink" title="static："></a>static：</h2><h6 id="static可以用来修饰属性、方法和代码块。"><a href="#static可以用来修饰属性、方法和代码块。" class="headerlink" title="static可以用来修饰属性、方法和代码块。"></a>static可以用来修饰属性、方法和代码块。</h6><h6 id="static的特点："><a href="#static的特点：" class="headerlink" title="static的特点："></a>static的特点：</h6><ol>
 <li><h6 id="它随着类的加载而加载，优先于对象存在"><a href="#它随着类的加载而加载，优先于对象存在" class="headerlink" title="它随着类的加载而加载，优先于对象存在"></a>它随着类的加载而加载，优先于对象存在</h6></li>
 <li><h6 id="被所有类的对象共享"><a href="#被所有类的对象共享" class="headerlink" title="被所有类的对象共享"></a>被所有类的对象共享</h6></li>
 <li><h6 id="可以直接通过类名-调用，不用在创建对象"><a href="#可以直接通过类名-调用，不用在创建对象" class="headerlink" title="可以直接通过类名.调用，不用在创建对象"></a>可以直接通过类名.调用，不用在创建对象</h6></li>
@@ -231,9 +231,7 @@
 <li><h6 id="调用set和get方法"><a href="#调用set和get方法" class="headerlink" title="调用set和get方法"></a>调用set和get方法</h6></li>
 </ol>
 <h4 id="修饰符访问权限："><a href="#修饰符访问权限：" class="headerlink" title="修饰符访问权限："></a>修饰符访问权限：</h4><p>​    <img src="D:%5CQQXZ%5CMobileFile%5Cmmexport1570784764858.jpg" alt></p>
-<h1 id="第四章：继承"><a href="#第四章：继承" class="headerlink" title="第四章：继承"></a>第四章：继承</h1><h4 id="继承的关键字以及概述："><a href="#继承的关键字以及概述：" class="headerlink" title="继承的关键字以及概述："></a>继承的关键字以及概述：</h4><pre><code>  ######     继承是用extends修饰的，在日常生活中，儿子与父亲直接的继承关系就和Java中子类extends父类之间的关系一致。
-
-#### 继承的使用：</code></pre><p>​    </p>
+<h1 id="第四章：继承"><a href="#第四章：继承" class="headerlink" title="第四章：继承"></a>第四章：继承</h1><h4 id="继承的关键字以及概述："><a href="#继承的关键字以及概述：" class="headerlink" title="继承的关键字以及概述："></a>继承的关键字以及概述：</h4><h6 id="继承是用extends修饰的，在日常生活中，儿子与父亲直接的继承关系就和Java中子类extends父类之间的关系一致。"><a href="#继承是用extends修饰的，在日常生活中，儿子与父亲直接的继承关系就和Java中子类extends父类之间的关系一致。" class="headerlink" title="继承是用extends修饰的，在日常生活中，儿子与父亲直接的继承关系就和Java中子类extends父类之间的关系一致。"></a>继承是用extends修饰的，在日常生活中，儿子与父亲直接的继承关系就和Java中子类extends父类之间的关系一致。</h6><h4 id="继承的使用："><a href="#继承的使用：" class="headerlink" title="继承的使用："></a>继承的使用：</h4><p>​    </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[修饰符] class 类名 extends 父类名&#123;</span><br><span class="line">    //属性定义</span><br><span class="line">    //方法定义</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h6 id="子类继承父类，就是继承父类中所有的非私有的属性和方法，Java只支持单继承（一个儿子一个爹，单传），但是支持多层继承（有父亲、爷爷、祖爷爷）。"><a href="#子类继承父类，就是继承父类中所有的非私有的属性和方法，Java只支持单继承（一个儿子一个爹，单传），但是支持多层继承（有父亲、爷爷、祖爷爷）。" class="headerlink" title="子类继承父类，就是继承父类中所有的非私有的属性和方法，Java只支持单继承（一个儿子一个爹，单传），但是支持多层继承（有父亲、爷爷、祖爷爷）。"></a>子类继承父类，就是继承父类中所有的非私有的属性和方法，Java只支持单继承（一个儿子一个爹，单传），但是支持多层继承（有父亲、爷爷、祖爷爷）。</h6><h4 id="继承的好处："><a href="#继承的好处：" class="headerlink" title="继承的好处："></a>继承的好处：</h4><ol>
@@ -241,7 +239,7 @@
 <li><h6 id="提高了代码的维护性"><a href="#提高了代码的维护性" class="headerlink" title="提高了代码的维护性"></a>提高了代码的维护性</h6></li>
 <li><h6 id="让类与类之间产生了关系，是多态的前提"><a href="#让类与类之间产生了关系，是多态的前提" class="headerlink" title="让类与类之间产生了关系，是多态的前提"></a>让类与类之间产生了关系，是多态的前提</h6></li>
 </ol>
-<h4 id="继承的弊端："><a href="#继承的弊端：" class="headerlink" title="继承的弊端："></a>继承的弊端：</h4><pre><code>######       类的耦合性增加了</code></pre><h4 id="继承的注意事项以及什么时候可以使用继承："><a href="#继承的注意事项以及什么时候可以使用继承：" class="headerlink" title="继承的注意事项以及什么时候可以使用继承："></a>继承的注意事项以及什么时候可以使用继承：</h4><ul>
+<h4 id="继承的弊端："><a href="#继承的弊端：" class="headerlink" title="继承的弊端："></a>继承的弊端：</h4><h6 id="类的耦合性增加了"><a href="#类的耦合性增加了" class="headerlink" title="类的耦合性增加了"></a>类的耦合性增加了</h6><h4 id="继承的注意事项以及什么时候可以使用继承："><a href="#继承的注意事项以及什么时候可以使用继承：" class="headerlink" title="继承的注意事项以及什么时候可以使用继承："></a>继承的注意事项以及什么时候可以使用继承：</h4><ul>
 <li><h6 id="子类只能继承父类非私有的属性和方法"><a href="#子类只能继承父类非私有的属性和方法" class="headerlink" title="子类只能继承父类非私有的属性和方法"></a>子类只能继承父类非私有的属性和方法</h6></li>
 <li><h6 id="子类不能继承父类的构造方法，可以通过super去访问"><a href="#子类不能继承父类的构造方法，可以通过super去访问" class="headerlink" title="子类不能继承父类的构造方法，可以通过super去访问"></a>子类不能继承父类的构造方法，可以通过super去访问</h6></li>
 <li><h6 id="不要为了部分功能去继承"><a href="#不要为了部分功能去继承" class="headerlink" title="不要为了部分功能去继承"></a>不要为了部分功能去继承</h6></li>
@@ -251,9 +249,7 @@
 <li><h6 id="this表示本类对象"><a href="#this表示本类对象" class="headerlink" title="this表示本类对象"></a>this表示本类对象</h6></li>
 <li><h6 id="super表示父类对象"><a href="#super表示父类对象" class="headerlink" title="super表示父类对象"></a>super表示父类对象</h6></li>
 </ul>
-<h4 id="继承中的构造方法："><a href="#继承中的构造方法：" class="headerlink" title="继承中的构造方法："></a>继承中的构造方法：</h4><pre><code>######       注意：当子类继承父类，子类创建对象时，会自动调用子类和父类的构造方法，需要在子类的构造方法中用super去访问父类的构造方法。</code></pre><h4 id="什么是重写："><a href="#什么是重写：" class="headerlink" title="什么是重写："></a>什么是重写：</h4><pre><code>#####       当子类需要父类的功能，而功能主体子类有自己特有内容时，可以重写父类中的方法，这样，即沿袭了父类的功能，又定义了子类特有的功能。
-
-#####      重写就是:方法名相同、参数列表相同，但是方法体不相同。</code></pre>
+<h4 id="继承中的构造方法："><a href="#继承中的构造方法：" class="headerlink" title="继承中的构造方法："></a>继承中的构造方法：</h4><h6 id="注意：当子类继承父类，子类创建对象时，会自动调用子类和父类的构造方法，需要在子类的构造方法中用super去访问父类的构造方法。"><a href="#注意：当子类继承父类，子类创建对象时，会自动调用子类和父类的构造方法，需要在子类的构造方法中用super去访问父类的构造方法。" class="headerlink" title="注意：当子类继承父类，子类创建对象时，会自动调用子类和父类的构造方法，需要在子类的构造方法中用super去访问父类的构造方法。"></a>注意：当子类继承父类，子类创建对象时，会自动调用子类和父类的构造方法，需要在子类的构造方法中用super去访问父类的构造方法。</h6><h4 id="什么是重写："><a href="#什么是重写：" class="headerlink" title="什么是重写："></a>什么是重写：</h4><h5 id="当子类需要父类的功能，而功能主体子类有自己特有内容时，可以重写父类中的方法，这样，即沿袭了父类的功能，又定义了子类特有的功能。"><a href="#当子类需要父类的功能，而功能主体子类有自己特有内容时，可以重写父类中的方法，这样，即沿袭了父类的功能，又定义了子类特有的功能。" class="headerlink" title="当子类需要父类的功能，而功能主体子类有自己特有内容时，可以重写父类中的方法，这样，即沿袭了父类的功能，又定义了子类特有的功能。"></a>当子类需要父类的功能，而功能主体子类有自己特有内容时，可以重写父类中的方法，这样，即沿袭了父类的功能，又定义了子类特有的功能。</h5><h5 id="重写就是-方法名相同、参数列表相同，但是方法体不相同。"><a href="#重写就是-方法名相同、参数列表相同，但是方法体不相同。" class="headerlink" title="重写就是:方法名相同、参数列表相同，但是方法体不相同。"></a>重写就是:方法名相同、参数列表相同，但是方法体不相同。</h5>
       
     </div>
     
