@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main">
+  
+    <article id="post-Java面向对象" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/11/Java面向对象/">Java面向对象</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/10/11/Java面向对象/" class="article-date">
+  <time datetime="2019-10-11T07:48:41.000Z" itemprop="datePublished">2019-10-11</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h2 id="类和对象的创建："><a href="#类和对象的创建：" class="headerlink" title="类和对象的创建："></a>类和对象的创建：</h2><h1 id="第二章：类和对象"><a href="#第二章：类和对象" class="headerlink" title="第二章：类和对象"></a>第二章：类和对象</h1><h4 id="面向对象："><a href="#面向对象：" class="headerlink" title="面向对象："></a>面向对象：</h4><h6 id="面向对象就是把一个项目、一件事分成更小的项目，或者说分成一个个更小的部分，每一部分负责什么功能。"><a href="#面向对象就是把一个项目、一件事分成更小的项目，或者说分成一个个更小的部分，每一部分负责什么功能。" class="headerlink" title="面向对象就是把一个项目、一件事分成更小的项目，或者说分成一个个更小的部分，每一部分负责什么功能。"></a>面向对象就是把一个项目、一件事分成更小的项目，或者说分成一个个更小的部分，每一部分负责什么功能。</h6><h1 id="面向过程："><a href="#面向过程：" class="headerlink" title="面向过程："></a>面向过程：</h1><h4 id="面向过程：-1"><a href="#面向过程：-1" class="headerlink" title="面向过程："></a>面向过程：</h4><h6 id="面向过程就是把一个项目、一件事情按照一定的顺序，从头到尾一步一步的做下去，先做什么，后做什么，一直到结束。"><a href="#面向过程就是把一个项目、一件事情按照一定的顺序，从头到尾一步一步的做下去，先做什么，后做什么，一直到结束。" class="headerlink" title="面向过程就是把一个项目、一件事情按照一定的顺序，从头到尾一步一步的做下去，先做什么，后做什么，一直到结束。"></a>面向过程就是把一个项目、一件事情按照一定的顺序，从头到尾一步一步的做下去，先做什么，后做什么，一直到结束。</h6><h1 id="类的创建："><a href="#类的创建：" class="headerlink" title="类的创建："></a>类的创建：</h1><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public class 类名&#123;&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="对象的创建："><a href="#对象的创建：" class="headerlink" title="对象的创建："></a>对象的创建：</h1><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">类名 对象名 = new 类名();</span><br><span class="line">//new 出来的为对象，对象.可调用类中非私有的属性和方法。</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="构造方法："><a href="#构造方法：" class="headerlink" title="构造方法："></a>构造方法：</h1><h6 id="构造方法名称和类名相同，没有返回值"><a href="#构造方法名称和类名相同，没有返回值" class="headerlink" title="构造方法名称和类名相同，没有返回值"></a>构造方法名称和类名相同，没有返回值</h6><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class 类名&#123;</span><br><span class="line">    public 类名()&#123;&#125;//无参构造</span><br><span class="line">    public 类名(参数列表)&#123;&#125;//有参构造</span><br><span class="line">&#125;</span><br><span class="line">//构造方法的作用是给对象的属性进行初始化操作,构造方法不用调用，创建对象自动执行</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="构造方法的重载"><a href="#构造方法的重载" class="headerlink" title="构造方法的重载;"></a>构造方法的重载;</h4><pre><code>######     当你没有创建构造方法时，系统会自动给出一个无参的构造方法。如果我们给出构造方法，系统将不再提供默认的构造方法。建议，我们在给出构造方法的时候，也给出一个无参的构造，因为，在我们创建对象的时候不一定会给出参数。</code></pre><h6 id="什么是重载："><a href="#什么是重载：" class="headerlink" title="什么是重载："></a>什么是重载：</h6><ul>
+<li><input checked disabled type="checkbox"> <h6 id="必须在同一个类中"><a href="#必须在同一个类中" class="headerlink" title="必须在同一个类中"></a>必须在同一个类中</h6></li>
+<li><input checked disabled type="checkbox"> <h6 id="方法名相同"><a href="#方法名相同" class="headerlink" title="方法名相同"></a>方法名相同</h6></li>
+<li><input checked disabled type="checkbox"> <h6 id="参数列表（方法形参的个数或参数类型）不同"><a href="#参数列表（方法形参的个数或参数类型）不同" class="headerlink" title="参数列表（方法形参的个数或参数类型）不同"></a>参数列表（方法形参的个数或参数类型）不同</h6></li>
+<li><input checked disabled type="checkbox"> <h6 id="与方法返回值和方法修饰符没有任何关系"><a href="#与方法返回值和方法修饰符没有任何关系" class="headerlink" title="与方法返回值和方法修饰符没有任何关系"></a>与方法返回值和方法修饰符没有任何关系</h6></li>
+</ul>
+<h6 id="满足以上条件就是方法的重载，而构造方法的重载是指你有两个或两个以上的构造方法，方法名相同，参数列表不同。"><a href="#满足以上条件就是方法的重载，而构造方法的重载是指你有两个或两个以上的构造方法，方法名相同，参数列表不同。" class="headerlink" title="满足以上条件就是方法的重载，而构造方法的重载是指你有两个或两个以上的构造方法，方法名相同，参数列表不同。"></a>满足以上条件就是方法的重载，而构造方法的重载是指你有两个或两个以上的构造方法，方法名相同，参数列表不同。</h6><h2 id="static："><a href="#static：" class="headerlink" title="static："></a>static：</h2><h6 id="static可以用来修饰属性、方法和代码块。"><a href="#static可以用来修饰属性、方法和代码块。" class="headerlink" title="static可以用来修饰属性、方法和代码块。"></a>static可以用来修饰属性、方法和代码块。</h6><pre><code>######    static的特点：</code></pre><ol>
+<li><h6 id="它随着类的加载而加载，优先于对象存在"><a href="#它随着类的加载而加载，优先于对象存在" class="headerlink" title="它随着类的加载而加载，优先于对象存在"></a>它随着类的加载而加载，优先于对象存在</h6></li>
+<li><h6 id="被所有类的对象共享"><a href="#被所有类的对象共享" class="headerlink" title="被所有类的对象共享"></a>被所有类的对象共享</h6></li>
+<li><h6 id="可以直接通过类名-调用，不用在创建对象"><a href="#可以直接通过类名-调用，不用在创建对象" class="headerlink" title="可以直接通过类名.调用，不用在创建对象"></a>可以直接通过类名.调用，不用在创建对象</h6></li>
+<li><h6 id="静态修饰的内容我们一般称为：与类相关的、类成员"><a href="#静态修饰的内容我们一般称为：与类相关的、类成员" class="headerlink" title="静态修饰的内容我们一般称为：与类相关的、类成员"></a>静态修饰的内容我们一般称为：与类相关的、类成员</h6></li>
+</ol>
+<h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><h6 id="静态方法中不能使用-this和super关键字，静态方法不能访问非静态成员，静态只能访问静态"><a href="#静态方法中不能使用-this和super关键字，静态方法不能访问非静态成员，静态只能访问静态" class="headerlink" title="静态方法中不能使用 this和super关键字，静态方法不能访问非静态成员，静态只能访问静态"></a>静态方法中不能使用 this和super关键字，静态方法不能访问非静态成员，静态只能访问静态</h6><h1 id="第三章：封装"><a href="#第三章：封装" class="headerlink" title="第三章：封装"></a>第三章：封装</h1><h4 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h4><h6 id="封装是指隐藏对象的属性和实现细节，仅对外提供公共访问方法。"><a href="#封装是指隐藏对象的属性和实现细节，仅对外提供公共访问方法。" class="headerlink" title="封装是指隐藏对象的属性和实现细节，仅对外提供公共访问方法。"></a>封装是指隐藏对象的属性和实现细节，仅对外提供公共访问方法。</h6><h4 id="封装的好处："><a href="#封装的好处：" class="headerlink" title="封装的好处："></a>封装的好处：</h4><ol>
+<li><h6 id="隐藏了实现细节"><a href="#隐藏了实现细节" class="headerlink" title="隐藏了实现细节"></a>隐藏了实现细节</h6></li>
+<li><h5 id="提供了安全性"><a href="#提供了安全性" class="headerlink" title="提供了安全性"></a>提供了安全性</h5></li>
+<li><h6 id="提高了代码的复用性"><a href="#提高了代码的复用性" class="headerlink" title="提高了代码的复用性"></a>提高了代码的复用性</h6></li>
+</ol>
+<h4 id="封装的步骤："><a href="#封装的步骤：" class="headerlink" title="封装的步骤："></a>封装的步骤：</h4><ol>
+<li><h6 id="将属性私有化"><a href="#将属性私有化" class="headerlink" title="将属性私有化"></a>将属性私有化</h6></li>
+<li><h6 id="提供set和get方法"><a href="#提供set和get方法" class="headerlink" title="提供set和get方法"></a>提供set和get方法</h6></li>
+<li><h6 id="调用set和get方法"><a href="#调用set和get方法" class="headerlink" title="调用set和get方法"></a>调用set和get方法</h6></li>
+</ol>
+<h4 id="修饰符访问权限："><a href="#修饰符访问权限：" class="headerlink" title="修饰符访问权限："></a>修饰符访问权限：</h4><p>​    <img src="D:%5CQQXZ%5CMobileFile%5Cmmexport1570784764858.jpg" alt></p>
+<h1 id="第四章：继承"><a href="#第四章：继承" class="headerlink" title="第四章：继承"></a>第四章：继承</h1><h4 id="继承的关键字以及概述："><a href="#继承的关键字以及概述：" class="headerlink" title="继承的关键字以及概述："></a>继承的关键字以及概述：</h4><pre><code>  ######     继承是用extends修饰的，在日常生活中，儿子与父亲直接的继承关系就和Java中子类extends父类之间的关系一致。
+
+#### 继承的使用：</code></pre><p>​    </p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[修饰符] class 类名 extends 父类名&#123;</span><br><span class="line">    //属性定义</span><br><span class="line">    //方法定义</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h6 id="子类继承父类，就是继承父类中所有的非私有的属性和方法，Java只支持单继承（一个儿子一个爹，单传），但是支持多层继承（有父亲、爷爷、祖爷爷）。"><a href="#子类继承父类，就是继承父类中所有的非私有的属性和方法，Java只支持单继承（一个儿子一个爹，单传），但是支持多层继承（有父亲、爷爷、祖爷爷）。" class="headerlink" title="子类继承父类，就是继承父类中所有的非私有的属性和方法，Java只支持单继承（一个儿子一个爹，单传），但是支持多层继承（有父亲、爷爷、祖爷爷）。"></a>子类继承父类，就是继承父类中所有的非私有的属性和方法，Java只支持单继承（一个儿子一个爹，单传），但是支持多层继承（有父亲、爷爷、祖爷爷）。</h6><h4 id="继承的好处："><a href="#继承的好处：" class="headerlink" title="继承的好处："></a>继承的好处：</h4><ol>
+<li><h6 id="提高了代码的复用性-1"><a href="#提高了代码的复用性-1" class="headerlink" title="提高了代码的复用性"></a>提高了代码的复用性</h6></li>
+<li><h6 id="提高了代码的维护性"><a href="#提高了代码的维护性" class="headerlink" title="提高了代码的维护性"></a>提高了代码的维护性</h6></li>
+<li><h6 id="让类与类之间产生了关系，是多态的前提"><a href="#让类与类之间产生了关系，是多态的前提" class="headerlink" title="让类与类之间产生了关系，是多态的前提"></a>让类与类之间产生了关系，是多态的前提</h6></li>
+</ol>
+<h4 id="继承的弊端："><a href="#继承的弊端：" class="headerlink" title="继承的弊端："></a>继承的弊端：</h4><pre><code>######       类的耦合性增加了</code></pre><h4 id="继承的注意事项以及什么时候可以使用继承："><a href="#继承的注意事项以及什么时候可以使用继承：" class="headerlink" title="继承的注意事项以及什么时候可以使用继承："></a>继承的注意事项以及什么时候可以使用继承：</h4><ul>
+<li><h6 id="子类只能继承父类非私有的属性和方法"><a href="#子类只能继承父类非私有的属性和方法" class="headerlink" title="子类只能继承父类非私有的属性和方法"></a>子类只能继承父类非私有的属性和方法</h6></li>
+<li><h6 id="子类不能继承父类的构造方法，可以通过super去访问"><a href="#子类不能继承父类的构造方法，可以通过super去访问" class="headerlink" title="子类不能继承父类的构造方法，可以通过super去访问"></a>子类不能继承父类的构造方法，可以通过super去访问</h6></li>
+<li><h6 id="不要为了部分功能去继承"><a href="#不要为了部分功能去继承" class="headerlink" title="不要为了部分功能去继承"></a>不要为了部分功能去继承</h6></li>
+<li><h6 id="继承其实体现的是一种“is-a”的关系，如果有两个类-a-b，只有他们符合：a是b的一种或b是a的一种时，可以使用继承"><a href="#继承其实体现的是一种“is-a”的关系，如果有两个类-a-b，只有他们符合：a是b的一种或b是a的一种时，可以使用继承" class="headerlink" title="继承其实体现的是一种“is a”的关系，如果有两个类 a b，只有他们符合：a是b的一种或b是a的一种时，可以使用继承"></a>继承其实体现的是一种“is a”的关系，如果有两个类 a b，只有他们符合：a是b的一种或b是a的一种时，可以使用继承</h6></li>
+</ul>
+<h4 id="this和super的区别："><a href="#this和super的区别：" class="headerlink" title="this和super的区别："></a>this和super的区别：</h4><ul>
+<li><h6 id="this表示本类对象"><a href="#this表示本类对象" class="headerlink" title="this表示本类对象"></a>this表示本类对象</h6></li>
+<li><h6 id="super表示父类对象"><a href="#super表示父类对象" class="headerlink" title="super表示父类对象"></a>super表示父类对象</h6></li>
+</ul>
+<h4 id="继承中的构造方法："><a href="#继承中的构造方法：" class="headerlink" title="继承中的构造方法："></a>继承中的构造方法：</h4><pre><code>######       注意：当子类继承父类，子类创建对象时，会自动调用子类和父类的构造方法，需要在子类的构造方法中用super去访问父类的构造方法。</code></pre><h4 id="什么是重写："><a href="#什么是重写：" class="headerlink" title="什么是重写："></a>什么是重写：</h4><pre><code>#####       当子类需要父类的功能，而功能主体子类有自己特有内容时，可以重写父类中的方法，这样，即沿袭了父类的功能，又定义了子类特有的功能。
+
+#####      重写就是:方法名相同、参数列表相同，但是方法体不相同。</code></pre>
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+
+
+
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpg" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        一路烟霞
+      
+    </h3>
+    <p class="avatar-slogan">
+      特别耐撕的小前端，资深的打酱油攻城狮。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/11/Java面向对象/">Java面向对象</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yiluyanxia.github.io/" title target='_blank'
+        >一路眼瞎</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 John Doe &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
