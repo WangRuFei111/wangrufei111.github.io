@@ -12,17 +12,14 @@
   <meta name="description" content="Activity的跳转：分为显示跳转和隐式跳转：显示跳转：1.12Intent intent = new Intent(当前文件名.this,目标文件名.class);startActivity(intent);//intent只是一个对象名  2.12Intent intent = new Intent();intent.setClass(本文件名.this,目标文件名.class);//int">
 <meta property="og:type" content="article">
 <meta property="og:title" content="总结：Activity的四种跳转方式">
-<meta property="og:url" content="http://yoursite.com/2019/10/15/总结：Activity的四种跳转方式/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Activity的跳转：分为显示跳转和隐式跳转：显示跳转：1.12Intent intent = new Intent(当前文件名.this,目标文件名.class);startActivity(intent);//intent只是一个对象名  2.12Intent intent = new Intent();intent.setClass(本文件名.this,目标文件名.class);//int">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="C:%5CUsers%5CWRF%5CDesktop%5CPZVAJ4%60@PA%5D2KV9IMSM__0E.png">
-<meta property="og:image" content="c:%5CUsers%5CWRF%5CDesktop%7D%7DZ3H$GZ%7DJAWB_YOH5Q3EQQ.png">
-<meta property="og:updated_time" content="2019-10-15T12:04:22.112Z">
+<meta property="og:updated_time" content="2019-10-16T08:51:22.587Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="总结：Activity的四种跳转方式">
 <meta name="twitter:description" content="Activity的跳转：分为显示跳转和隐式跳转：显示跳转：1.12Intent intent = new Intent(当前文件名.this,目标文件名.class);startActivity(intent);//intent只是一个对象名  2.12Intent intent = new Intent();intent.setClass(本文件名.this,目标文件名.class);//int">
-<meta name="twitter:image" content="C:%5CUsers%5CWRF%5CDesktop%5CPZVAJ4%60@PA%5D2KV9IMSM__0E.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -171,8 +168,8 @@
       <div class="body-wrap"><article id="post-总结：Activity的四种跳转方式" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/10/15/总结：Activity的四种跳转方式/" class="article-date">
-  	<time datetime="2019-10-15T11:44:25.000Z" itemprop="datePublished">2019-10-15</time>
+      <a href="/2019/10/14/总结：Activity的四种跳转方式/" class="article-date">
+  	<time datetime="2019-10-14T04:52:10.000Z" itemprop="datePublished">2019-10-14</time>
 </a>
     </div>
   
@@ -211,9 +208,7 @@
 
 <h6 id="隐式跳转："><a href="#隐式跳转：" class="headerlink" title="隐式跳转："></a>隐式跳转：</h6><h5 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = new Intent();</span><br><span class="line">intent.setActivity(&quot;字符串&quot;);</span><br><span class="line">//此处的字符串为Manifast中的&lt;intent-filer&gt;中的action中name自定义字符串</span><br><span class="line">startActivity(intent);</span><br><span class="line">//如果想要实现隐式跳转，Manifast中的&lt;intent-filer&gt;中的categor必须为DEFAULT</span><br></pre></td></tr></table></figure>
 
-<h6 id="隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。"><a href="#隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。" class="headerlink" title="隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。"></a>隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。</h6><h6 id="显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。"><a href="#显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。" class="headerlink" title="显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。"></a>显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。</h6><h6 id="一般情况下，第一种方法时最常用。"><a href="#一般情况下，第一种方法时最常用。" class="headerlink" title="一般情况下，第一种方法时最常用。"></a>一般情况下，第一种方法时最常用。</h6><p> <img src="C:%5CUsers%5CWRF%5CDesktop%5CPZVAJ4%60@PA%5D2KV9IMSM__0E.png" alt></p>
-<p><img src="C:%5CUsers%5CWRF%5CDesktop%7D%7DZ3H$GZ%7DJAWB_YOH5Q3EQQ.png" alt></p>
-
+<h6 id="隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。"><a href="#隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。" class="headerlink" title="隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。"></a>隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。</h6><h6 id="显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。"><a href="#显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。" class="headerlink" title="显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。"></a>显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。</h6><h6 id="一般情况下，第一种方法时最常用。"><a href="#一般情况下，第一种方法时最常用。" class="headerlink" title="一般情况下，第一种方法时最常用。"></a>一般情况下，第一种方法时最常用。</h6>
       
     </div>
     
@@ -222,9 +217,18 @@
     
 <nav id="article-nav">
   
+    <a href="/2019/10/14/备忘录：Android-studio-布-布局运行不显示的问题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          备忘录：Android studio 布局运行不显示的问题
+        
+      </div>
+    </a>
   
-    <a href="/2019/10/14/备忘录：Android-studio-布-布局运行不显示的问题/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">备忘录：Android studio 布局运行不显示的问题</div>
+  
+    <a href="/2019/10/11/Java面向对象/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java面向对象</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
   
@@ -234,7 +238,7 @@
 </article>
 
 
-<div class="ds-share share" data-thread-key="总结：Activity的四种跳转方式" data-title="总结：Activity的四种跳转方式" data-url="http://yoursite.com/2019/10/15/总结：Activity的四种跳转方式/"  data-images="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" data-content="总结：Activity的四种跳转方式">
+<div class="ds-share share" data-thread-key="总结：Activity的四种跳转方式" data-title="总结：Activity的四种跳转方式" data-url="http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/"  data-images="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" data-content="总结：Activity的四种跳转方式">
     <div class="ds-share-inline">
       <ul  class="ds-share-icons-16">
       	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
