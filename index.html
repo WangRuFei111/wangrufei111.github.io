@@ -236,64 +236,6 @@
 
 
   
-    <article id="post-备忘录：Android-studio-布局运行不显示的问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/10/14/备忘录：Android-studio-布局运行不显示的问题/" class="article-date">
-  	<time datetime="2019-10-14T04:52:10.000Z" itemprop="datePublished">2019-10-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/14/备忘录：Android-studio-布局运行不显示的问题/">
-        备忘录：Android studio 布局运行不显示的问题
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Android-程序运行后，界面不显示的问题解决办法"><a href="#Android-程序运行后，界面不显示的问题解决办法" class="headerlink" title="Android 程序运行后，界面不显示的问题解决办法"></a>Android 程序运行后，界面不显示的问题解决办法</h1><h5 id="今天写代码运行之后，发现在on-Create中写的布局不显示，但是系统并没有报错，项目也没有报错，程序能够正常运行，what？"><a href="#今天写代码运行之后，发现在on-Create中写的布局不显示，但是系统并没有报错，项目也没有报错，程序能够正常运行，what？" class="headerlink" title="今天写代码运行之后，发现在on Create中写的布局不显示，但是系统并没有报错，项目也没有报错，程序能够正常运行，what？"></a>今天写代码运行之后，发现在on Create中写的布局不显示，但是系统并没有报错，项目也没有报错，程序能够正常运行，what？</h5><h6 id="刚开始我以为是Java没有链接上布局，改了改，后来发现不是这个的问题，我上网查阅了一下资料，总结了一下，发个博客，避免下次在遇到这个问题无从下手。"><a href="#刚开始我以为是Java没有链接上布局，改了改，后来发现不是这个的问题，我上网查阅了一下资料，总结了一下，发个博客，避免下次在遇到这个问题无从下手。" class="headerlink" title="刚开始我以为是Java没有链接上布局，改了改，后来发现不是这个的问题，我上网查阅了一下资料，总结了一下，发个博客，避免下次在遇到这个问题无从下手。"></a>刚开始我以为是Java没有链接上布局，改了改，后来发现不是这个的问题，我上网查阅了一下资料，总结了一下，发个博客，避免下次在遇到这个问题无从下手。</h6><h6 id="仔细检查下是on-Create里面调用了两个参数，对比老师之前讲的，发现多了一个参数。上网查了一下，发现这个方法，就是不显示布局："><a href="#仔细检查下是on-Create里面调用了两个参数，对比老师之前讲的，发现多了一个参数。上网查了一下，发现这个方法，就是不显示布局：" class="headerlink" title="仔细检查下是on Create里面调用了两个参数，对比老师之前讲的，发现多了一个参数。上网查了一下，发现这个方法，就是不显示布局："></a>仔细检查下是on Create里面调用了两个参数，对比老师之前讲的，发现多了一个参数。上网查了一下，发现这个方法，就是不显示布局：</h6><h6 id="我把："><a href="#我把：" class="headerlink" title="我把："></a>我把：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState, persistentState);</span><br><span class="line">        setContentView(R.layout.activity_login);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="更换为："><a href="#更换为：" class="headerlink" title="更换为："></a>更换为：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">protected void onCreate(@Nullable Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_login);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="运行下，发现问题解决了。"><a href="#运行下，发现问题解决了。" class="headerlink" title="运行下，发现问题解决了。"></a>运行下，发现问题解决了。</h6>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
     <article id="post-总结：Activity的四种跳转方式" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -332,6 +274,64 @@
 <h6 id="隐式跳转："><a href="#隐式跳转：" class="headerlink" title="隐式跳转："></a>隐式跳转：</h6><h5 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = new Intent();</span><br><span class="line">intent.setActivity(&quot;字符串&quot;);</span><br><span class="line">//此处的字符串为Manifast中的&lt;intent-filer&gt;中的action中name自定义字符串</span><br><span class="line">startActivity(intent);</span><br><span class="line">//如果想要实现隐式跳转，Manifast中的&lt;intent-filer&gt;中的categor必须为DEFAULT</span><br></pre></td></tr></table></figure>
 
 <h6 id="隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。"><a href="#隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。" class="headerlink" title="隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。"></a>隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。</h6><h6 id="显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。"><a href="#显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。" class="headerlink" title="显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。"></a>显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。</h6><h6 id="一般情况下，第一种方法时最常用。"><a href="#一般情况下，第一种方法时最常用。" class="headerlink" title="一般情况下，第一种方法时最常用。"></a>一般情况下，第一种方法时最常用。</h6>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-备忘录：Android-studio-布局运行不显示的问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/10/14/备忘录：Android-studio-布局运行不显示的问题/" class="article-date">
+  	<time datetime="2019-10-14T04:52:10.000Z" itemprop="datePublished">2019-10-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/14/备忘录：Android-studio-布局运行不显示的问题/">
+        备忘录：Android studio 布局运行不显示的问题
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Android-程序运行后，界面不显示的问题解决办法"><a href="#Android-程序运行后，界面不显示的问题解决办法" class="headerlink" title="Android 程序运行后，界面不显示的问题解决办法"></a>Android 程序运行后，界面不显示的问题解决办法</h1><h5 id="今天写代码运行之后，发现在on-Create中写的布局不显示，但是系统并没有报错，项目也没有报错，程序能够正常运行，what？"><a href="#今天写代码运行之后，发现在on-Create中写的布局不显示，但是系统并没有报错，项目也没有报错，程序能够正常运行，what？" class="headerlink" title="今天写代码运行之后，发现在on Create中写的布局不显示，但是系统并没有报错，项目也没有报错，程序能够正常运行，what？"></a>今天写代码运行之后，发现在on Create中写的布局不显示，但是系统并没有报错，项目也没有报错，程序能够正常运行，what？</h5><h6 id="刚开始我以为是Java没有链接上布局，改了改，后来发现不是这个的问题，我上网查阅了一下资料，总结了一下，发个博客，避免下次在遇到这个问题无从下手。"><a href="#刚开始我以为是Java没有链接上布局，改了改，后来发现不是这个的问题，我上网查阅了一下资料，总结了一下，发个博客，避免下次在遇到这个问题无从下手。" class="headerlink" title="刚开始我以为是Java没有链接上布局，改了改，后来发现不是这个的问题，我上网查阅了一下资料，总结了一下，发个博客，避免下次在遇到这个问题无从下手。"></a>刚开始我以为是Java没有链接上布局，改了改，后来发现不是这个的问题，我上网查阅了一下资料，总结了一下，发个博客，避免下次在遇到这个问题无从下手。</h6><h6 id="仔细检查下是on-Create里面调用了两个参数，对比老师之前讲的，发现多了一个参数。上网查了一下，发现这个方法，就是不显示布局："><a href="#仔细检查下是on-Create里面调用了两个参数，对比老师之前讲的，发现多了一个参数。上网查了一下，发现这个方法，就是不显示布局：" class="headerlink" title="仔细检查下是on Create里面调用了两个参数，对比老师之前讲的，发现多了一个参数。上网查了一下，发现这个方法，就是不显示布局："></a>仔细检查下是on Create里面调用了两个参数，对比老师之前讲的，发现多了一个参数。上网查了一下，发现这个方法，就是不显示布局：</h6><h6 id="我把："><a href="#我把：" class="headerlink" title="我把："></a>我把：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState, persistentState);</span><br><span class="line">        setContentView(R.layout.activity_login);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="更换为："><a href="#更换为：" class="headerlink" title="更换为："></a>更换为：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">protected void onCreate(@Nullable Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_login);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="运行下，发现问题解决了。"><a href="#运行下，发现问题解决了。" class="headerlink" title="运行下，发现问题解决了。"></a>运行下，发现问题解决了。</h6>
       
     </div>
     
