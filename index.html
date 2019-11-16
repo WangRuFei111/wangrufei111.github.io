@@ -163,6 +163,62 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Android基础控件ScrollView滚动条的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/11/16/Android基础控件ScrollView滚动条的使用/" class="article-date">
+  	<time datetime="2019-11-16T02:30:32.000Z" itemprop="datePublished">2019-11-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/16/Android基础控件ScrollView滚动条的使用/">
+        Android基础控件ScrollView滚动条的使用
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Android基础控件ScrollView滚动条的使用"><a href="#Android基础控件ScrollView滚动条的使用" class="headerlink" title="Android基础控件ScrollView滚动条的使用"></a>Android基础控件ScrollView滚动条的使用</h2><h5 id="ScrollView是一个FrameLayout的容器，不过在他的基础上添加了滚动，允许显示的比实际多的内容！另外，只能够往里面放置一个子元素，可以是单一的组件，又或者一个布局包裹着的复杂的层次结构！或者我们应该叫它竖直滚动条，对应的另外一个水平方向上的滚动条：HorizontalScrollView。"><a href="#ScrollView是一个FrameLayout的容器，不过在他的基础上添加了滚动，允许显示的比实际多的内容！另外，只能够往里面放置一个子元素，可以是单一的组件，又或者一个布局包裹着的复杂的层次结构！或者我们应该叫它竖直滚动条，对应的另外一个水平方向上的滚动条：HorizontalScrollView。" class="headerlink" title="ScrollView是一个FrameLayout的容器，不过在他的基础上添加了滚动，允许显示的比实际多的内容！另外，只能够往里面放置一个子元素，可以是单一的组件，又或者一个布局包裹着的复杂的层次结构！或者我们应该叫它竖直滚动条，对应的另外一个水平方向上的滚动条：HorizontalScrollView。"></a>ScrollView是一个FrameLayout的容器，不过在他的基础上添加了滚动，允许显示的比实际多的内容！另外，只能够往里面放置<strong>一个子元素</strong>，可以是单一的组件，又或者一个布局包裹着的复杂的层次结构！或者我们应该叫它竖直滚动条，对应的另外一个水平方向上的滚动条：<strong>HorizontalScrollView。</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">android:scrollbarThumbVertical    //设置竖直滑块</span><br><span class="line">android:scrollbarThumbHorizontal    //设置水平滑块</span><br><span class="line">android:scrollbars  //设置滑块显示样式（水平、竖直、不显示）</span><br><span class="line">//Java代码中设置</span><br><span class="line">@Override  //重写滑动速度</span><br><span class="line">public void fling(int velocityY) &#123;</span><br><span class="line">    super.fling(velocityY / 2);    //速度变为原来的一半</span><br><span class="line">&#125;</span><br><span class="line">scrollView.fullScroll(ScrollView.FOCUS_DOWN); //滚动到底部</span><br><span class="line">scrollView.fullScroll(ScrollView.FOCUS_UP); //滚动到顶部</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-GridView使用详解" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
