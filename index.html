@@ -163,6 +163,77 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Android-软键盘弹出时把原来布局顶上去的解决方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/11/19/Android-软键盘弹出时把原来布局顶上去的解决方法/" class="article-date">
+  	<time datetime="2019-11-19T06:09:27.000Z" itemprop="datePublished">2019-11-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/19/Android-软键盘弹出时把原来布局顶上去的解决方法/">
+        Android 软键盘弹出时把原来布局顶上去的解决方法
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Android-软键盘弹出时把原来布局顶上去的解决方法"><a href="#Android-软键盘弹出时把原来布局顶上去的解决方法" class="headerlink" title="Android 软键盘弹出时把原来布局顶上去的解决方法"></a>Android 软键盘弹出时把原来布局顶上去的解决方法</h1><h6 id="这几天发现我做的商品主页有一个bug，就是当在顶部的搜索条中输入内容时，会弹出软键盘，但如果什么都不设置的话，软键盘弹出的同时，会把我底部的布局顶上去，界面显示的有点扭曲。"><a href="#这几天发现我做的商品主页有一个bug，就是当在顶部的搜索条中输入内容时，会弹出软键盘，但如果什么都不设置的话，软键盘弹出的同时，会把我底部的布局顶上去，界面显示的有点扭曲。" class="headerlink" title="这几天发现我做的商品主页有一个bug，就是当在顶部的搜索条中输入内容时，会弹出软键盘，但如果什么都不设置的话，软键盘弹出的同时，会把我底部的布局顶上去，界面显示的有点扭曲。"></a>这几天发现我做的商品主页有一个bug，就是当在顶部的搜索条中输入内容时，会弹出软键盘，但如果什么都不设置的话，软键盘弹出的同时，会把我底部的布局顶上去，界面显示的有点扭曲。</h6><h6 id="上网查阅了一下，找到了一个解决方法，亲测有效："><a href="#上网查阅了一下，找到了一个解决方法，亲测有效：" class="headerlink" title="上网查阅了一下，找到了一个解决方法，亲测有效："></a>上网查阅了一下，找到了一个解决方法，亲测有效：</h6><h4 id="在你的AndroidManifest-xml文件中添加："><a href="#在你的AndroidManifest-xml文件中添加：" class="headerlink" title="在你的AndroidManifest.xml文件中添加："></a>在你的AndroidManifest.xml文件中添加：</h4><h6 id="android-windowSoftInputMode-”adjustPan-stateHidden”"><a href="#android-windowSoftInputMode-”adjustPan-stateHidden”" class="headerlink" title="android:windowSoftInputMode=”adjustPan|stateHidden”"></a>android:windowSoftInputMode=”adjustPan|stateHidden”</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;activity android:name=&quot;.YouHuo.ButtonActivity&quot; android:windowSoftInputMode=&quot;adjustPan|stateHidden&quot;&gt;</span><br><span class="line">            &lt;intent-filter&gt;</span><br><span class="line">                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;</span><br><span class="line"></span><br><span class="line">                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;</span><br><span class="line">            &lt;/intent-filter&gt;</span><br><span class="line">        &lt;/activity&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="windowSoftInputMode：-属性解释："><a href="#windowSoftInputMode：-属性解释：" class="headerlink" title="windowSoftInputMode： 属性解释："></a>windowSoftInputMode： 属性解释：</h4><h6 id="活动的主窗口如何与包含屏幕上的软键盘窗口交互。这个属性的设置将会影响两件事情："><a href="#活动的主窗口如何与包含屏幕上的软键盘窗口交互。这个属性的设置将会影响两件事情：" class="headerlink" title="活动的主窗口如何与包含屏幕上的软键盘窗口交互。这个属性的设置将会影响两件事情："></a>活动的主窗口如何与包含屏幕上的软键盘窗口交互。这个属性的设置将会影响两件事情：</h6><ul>
+<li><h6 id="软键盘的状态——是否它是隐藏或显示——当活动（Activity）成为用户关注的焦点。"><a href="#软键盘的状态——是否它是隐藏或显示——当活动（Activity）成为用户关注的焦点。" class="headerlink" title="软键盘的状态——是否它是隐藏或显示——当活动（Activity）成为用户关注的焦点。"></a>软键盘的状态——是否它是隐藏或显示——当活动（Activity）成为用户关注的焦点。</h6></li>
+<li><h6 id="活动的主窗口调整——是否减少活动主窗口大小以便腾出空间放软键盘或是否当活动窗口的部分被软键盘覆盖时它的内容的当前焦点是可见的。"><a href="#活动的主窗口调整——是否减少活动主窗口大小以便腾出空间放软键盘或是否当活动窗口的部分被软键盘覆盖时它的内容的当前焦点是可见的。" class="headerlink" title="活动的主窗口调整——是否减少活动主窗口大小以便腾出空间放软键盘或是否当活动窗口的部分被软键盘覆盖时它的内容的当前焦点是可见的。"></a>活动的主窗口调整——是否减少活动主窗口大小以便腾出空间放软键盘或是否当活动窗口的部分被软键盘覆盖时它的内容的当前焦点是可见的。</h6></li>
+</ul>
+<h6 id="在这设置的值-除”stateUnspecified”和”adjustUnspecified”以外-将覆盖在主题中设置的值，它的设置必须是下面列表中的一个值，或一个”state…”值加一个”adjust…”值的组合。"><a href="#在这设置的值-除”stateUnspecified”和”adjustUnspecified”以外-将覆盖在主题中设置的值，它的设置必须是下面列表中的一个值，或一个”state…”值加一个”adjust…”值的组合。" class="headerlink" title="在这设置的值(除”stateUnspecified”和”adjustUnspecified”以外)将覆盖在主题中设置的值，它的设置必须是下面列表中的一个值，或一个”state…”值加一个”adjust…”值的组合。"></a>在这设置的值(除”stateUnspecified”和”adjustUnspecified”以外)将覆盖在主题中设置的值，它的设置必须是下面列表中的一个值，或一个”state…”值加一个”adjust…”值的组合。</h6><h6 id="各值的含义："><a href="#各值的含义：" class="headerlink" title="各值的含义："></a>各值的含义：</h6><ol>
+<li><h6 id="stateUnspecified：软键盘的状态并没有指定，系统将选择一个合适的状态或依赖于主题的设置"><a href="#stateUnspecified：软键盘的状态并没有指定，系统将选择一个合适的状态或依赖于主题的设置" class="headerlink" title="stateUnspecified：软键盘的状态并没有指定，系统将选择一个合适的状态或依赖于主题的设置"></a>stateUnspecified：软键盘的状态并没有指定，系统将选择一个合适的状态或依赖于主题的设置</h6></li>
+<li><h6 id="stateUnchanged：当这个activity出现时，软键盘将一直保持在上一个activity里的状态，无论是隐藏还是显示"><a href="#stateUnchanged：当这个activity出现时，软键盘将一直保持在上一个activity里的状态，无论是隐藏还是显示" class="headerlink" title="stateUnchanged：当这个activity出现时，软键盘将一直保持在上一个activity里的状态，无论是隐藏还是显示"></a>stateUnchanged：当这个activity出现时，软键盘将一直保持在上一个activity里的状态，无论是隐藏还是显示</h6></li>
+<li><h6 id="stateHidden：用户选择activity时，软键盘总是被隐藏"><a href="#stateHidden：用户选择activity时，软键盘总是被隐藏" class="headerlink" title="stateHidden：用户选择activity时，软键盘总是被隐藏"></a>stateHidden：用户选择activity时，软键盘总是被隐藏</h6></li>
+<li><h6 id="stateAlwaysHidden：当该Activity主窗口获取焦点时，软键盘也总是被隐藏的"><a href="#stateAlwaysHidden：当该Activity主窗口获取焦点时，软键盘也总是被隐藏的" class="headerlink" title="stateAlwaysHidden：当该Activity主窗口获取焦点时，软键盘也总是被隐藏的"></a>stateAlwaysHidden：当该Activity主窗口获取焦点时，软键盘也总是被隐藏的</h6></li>
+<li><h6 id="stateVisible：软键盘通常是可见的"><a href="#stateVisible：软键盘通常是可见的" class="headerlink" title="stateVisible：软键盘通常是可见的"></a>stateVisible：软键盘通常是可见的</h6></li>
+<li><h6 id="stateAlwaysVisible：用户选择activity时，软键盘总是显示的状态"><a href="#stateAlwaysVisible：用户选择activity时，软键盘总是显示的状态" class="headerlink" title="stateAlwaysVisible：用户选择activity时，软键盘总是显示的状态"></a>stateAlwaysVisible：用户选择activity时，软键盘总是显示的状态</h6></li>
+<li><h6 id="adjustUnspecified：默认设置，通常由系统自行决定是隐藏还是显示"><a href="#adjustUnspecified：默认设置，通常由系统自行决定是隐藏还是显示" class="headerlink" title="adjustUnspecified：默认设置，通常由系统自行决定是隐藏还是显示"></a>adjustUnspecified：默认设置，通常由系统自行决定是隐藏还是显示</h6></li>
+<li><h6 id="adjustResize：该Activity总是调整屏幕的大小以便留出软键盘的空间"><a href="#adjustResize：该Activity总是调整屏幕的大小以便留出软键盘的空间" class="headerlink" title="adjustResize：该Activity总是调整屏幕的大小以便留出软键盘的空间"></a>adjustResize：该Activity总是调整屏幕的大小以便留出软键盘的空间</h6></li>
+<li><h6 id="adjustPan：当前窗口的内容将自动移动以便当前焦点从不被键盘覆盖和用户能总是看到输入内容的部分"><a href="#adjustPan：当前窗口的内容将自动移动以便当前焦点从不被键盘覆盖和用户能总是看到输入内容的部分" class="headerlink" title="adjustPan：当前窗口的内容将自动移动以便当前焦点从不被键盘覆盖和用户能总是看到输入内容的部分"></a>adjustPan：当前窗口的内容将自动移动以便当前焦点从不被键盘覆盖和用户能总是看到输入内容的部分</h6></li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-笔记：RecycleView-二" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -715,170 +786,10 @@
 
 
   
-    <article id="post-Java面向对象" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2019/10/11/Java面向对象/" class="article-date">
-  	<time datetime="2019-10-11T07:48:41.000Z" itemprop="datePublished">2019-10-11</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/11/Java面向对象/">
-        Java面向对象
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="类和对象的创建："><a href="#类和对象的创建：" class="headerlink" title="类和对象的创建："></a>类和对象的创建：</h2><h1 id="第二章：类和对象"><a href="#第二章：类和对象" class="headerlink" title="第二章：类和对象"></a>第二章：类和对象</h1><h4 id="面向对象："><a href="#面向对象：" class="headerlink" title="面向对象："></a>面向对象：</h4><h6 id="面向对象就是把一个项目、一件事分成更小的项目，或者说分成一个个更小的部分，每一部分负责什么功能。"><a href="#面向对象就是把一个项目、一件事分成更小的项目，或者说分成一个个更小的部分，每一部分负责什么功能。" class="headerlink" title="面向对象就是把一个项目、一件事分成更小的项目，或者说分成一个个更小的部分，每一部分负责什么功能。"></a>面向对象就是把一个项目、一件事分成更小的项目，或者说分成一个个更小的部分，每一部分负责什么功能。</h6><h1 id="面向过程："><a href="#面向过程：" class="headerlink" title="面向过程："></a>面向过程：</h1><h4 id="面向过程：-1"><a href="#面向过程：-1" class="headerlink" title="面向过程："></a>面向过程：</h4><h6 id="面向过程就是把一个项目、一件事情按照一定的顺序，从头到尾一步一步的做下去，先做什么，后做什么，一直到结束。"><a href="#面向过程就是把一个项目、一件事情按照一定的顺序，从头到尾一步一步的做下去，先做什么，后做什么，一直到结束。" class="headerlink" title="面向过程就是把一个项目、一件事情按照一定的顺序，从头到尾一步一步的做下去，先做什么，后做什么，一直到结束。"></a>面向过程就是把一个项目、一件事情按照一定的顺序，从头到尾一步一步的做下去，先做什么，后做什么，一直到结束。</h6><h1 id="类的创建："><a href="#类的创建：" class="headerlink" title="类的创建："></a>类的创建：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public class 类名&#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="对象的创建："><a href="#对象的创建：" class="headerlink" title="对象的创建："></a>对象的创建：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">类名 对象名 = new 类名();</span><br><span class="line">//new 出来的为对象，对象.可调用类中非私有的属性和方法。</span><br></pre></td></tr></table></figure>
-
-<h1 id="构造方法："><a href="#构造方法：" class="headerlink" title="构造方法："></a>构造方法：</h1><h6 id="构造方法名称和类名相同，没有返回值"><a href="#构造方法名称和类名相同，没有返回值" class="headerlink" title="构造方法名称和类名相同，没有返回值"></a>构造方法名称和类名相同，没有返回值</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class 类名&#123;</span><br><span class="line">    public 类名()&#123;&#125;//无参构造</span><br><span class="line">    public 类名(参数列表)&#123;&#125;//有参构造</span><br><span class="line">&#125;</span><br><span class="line">//构造方法的作用是给对象的属性进行初始化操作,构造方法不用调用，创建对象自动执行</span><br></pre></td></tr></table></figure>
-
-<h4 id="构造方法的重载："><a href="#构造方法的重载：" class="headerlink" title="构造方法的重载："></a>构造方法的重载：</h4><h6 id="当你没有创建构造方法时，系统会自动给出一个无参的构造方法。如果我们给出构造方法，系统将不再提供默认的构造方法。建议，我们在给出构造方法的时候，也给出一个无参的构造，因为，在我们创建对象的时候不一定会给出参数。"><a href="#当你没有创建构造方法时，系统会自动给出一个无参的构造方法。如果我们给出构造方法，系统将不再提供默认的构造方法。建议，我们在给出构造方法的时候，也给出一个无参的构造，因为，在我们创建对象的时候不一定会给出参数。" class="headerlink" title="当你没有创建构造方法时，系统会自动给出一个无参的构造方法。如果我们给出构造方法，系统将不再提供默认的构造方法。建议，我们在给出构造方法的时候，也给出一个无参的构造，因为，在我们创建对象的时候不一定会给出参数。"></a>当你没有创建构造方法时，系统会自动给出一个无参的构造方法。如果我们给出构造方法，系统将不再提供默认的构造方法。建议，我们在给出构造方法的时候，也给出一个无参的构造，因为，在我们创建对象的时候不一定会给出参数。</h6><h6 id="什么是重载："><a href="#什么是重载：" class="headerlink" title="什么是重载："></a>什么是重载：</h6><ul>
-<li><input checked disabled type="checkbox"> <h6 id="必须在同一个类中"><a href="#必须在同一个类中" class="headerlink" title="必须在同一个类中"></a>必须在同一个类中</h6></li>
-<li><input checked disabled type="checkbox"> <h6 id="方法名相同"><a href="#方法名相同" class="headerlink" title="方法名相同"></a>方法名相同</h6></li>
-<li><input checked disabled type="checkbox"> <h6 id="参数列表（方法形参的个数或参数类型）不同"><a href="#参数列表（方法形参的个数或参数类型）不同" class="headerlink" title="参数列表（方法形参的个数或参数类型）不同"></a>参数列表（方法形参的个数或参数类型）不同</h6></li>
-<li><input checked disabled type="checkbox"> <h6 id="与方法返回值和方法修饰符没有任何关系"><a href="#与方法返回值和方法修饰符没有任何关系" class="headerlink" title="与方法返回值和方法修饰符没有任何关系"></a>与方法返回值和方法修饰符没有任何关系</h6></li>
-</ul>
-<h6 id="满足以上条件就是方法的重载，而构造方法的重载是指你有两个或两个以上的构造方法，方法名相同，参数列表不同。"><a href="#满足以上条件就是方法的重载，而构造方法的重载是指你有两个或两个以上的构造方法，方法名相同，参数列表不同。" class="headerlink" title="满足以上条件就是方法的重载，而构造方法的重载是指你有两个或两个以上的构造方法，方法名相同，参数列表不同。"></a>满足以上条件就是方法的重载，而构造方法的重载是指你有两个或两个以上的构造方法，方法名相同，参数列表不同。</h6><h2 id="static："><a href="#static：" class="headerlink" title="static："></a>static：</h2><h6 id="static可以用来修饰属性、方法和代码块。"><a href="#static可以用来修饰属性、方法和代码块。" class="headerlink" title="static可以用来修饰属性、方法和代码块。"></a>static可以用来修饰属性、方法和代码块。</h6><h6 id="static的特点："><a href="#static的特点：" class="headerlink" title="static的特点："></a>static的特点：</h6><ol>
-<li><h6 id="它随着类的加载而加载，优先于对象存在"><a href="#它随着类的加载而加载，优先于对象存在" class="headerlink" title="它随着类的加载而加载，优先于对象存在"></a>它随着类的加载而加载，优先于对象存在</h6></li>
-<li><h6 id="被所有类的对象共享"><a href="#被所有类的对象共享" class="headerlink" title="被所有类的对象共享"></a>被所有类的对象共享</h6></li>
-<li><h6 id="可以直接通过类名-调用，不用在创建对象"><a href="#可以直接通过类名-调用，不用在创建对象" class="headerlink" title="可以直接通过类名.调用，不用在创建对象"></a>可以直接通过类名.调用，不用在创建对象</h6></li>
-<li><h6 id="静态修饰的内容我们一般称为：与类相关的、类成员"><a href="#静态修饰的内容我们一般称为：与类相关的、类成员" class="headerlink" title="静态修饰的内容我们一般称为：与类相关的、类成员"></a>静态修饰的内容我们一般称为：与类相关的、类成员</h6></li>
-</ol>
-<h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><h6 id="静态方法中不能使用-this和super关键字，静态方法不能访问非静态成员，静态只能访问静态"><a href="#静态方法中不能使用-this和super关键字，静态方法不能访问非静态成员，静态只能访问静态" class="headerlink" title="静态方法中不能使用 this和super关键字，静态方法不能访问非静态成员，静态只能访问静态"></a>静态方法中不能使用 this和super关键字，静态方法不能访问非静态成员，静态只能访问静态</h6><h1 id="第三章：封装"><a href="#第三章：封装" class="headerlink" title="第三章：封装"></a>第三章：封装</h1><h4 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h4><h6 id="封装是指隐藏对象的属性和实现细节，仅对外提供公共访问方法。"><a href="#封装是指隐藏对象的属性和实现细节，仅对外提供公共访问方法。" class="headerlink" title="封装是指隐藏对象的属性和实现细节，仅对外提供公共访问方法。"></a>封装是指隐藏对象的属性和实现细节，仅对外提供公共访问方法。</h6><h4 id="封装的好处："><a href="#封装的好处：" class="headerlink" title="封装的好处："></a>封装的好处：</h4><ol>
-<li><h6 id="隐藏了实现细节"><a href="#隐藏了实现细节" class="headerlink" title="隐藏了实现细节"></a>隐藏了实现细节</h6></li>
-<li><h5 id="提供了安全性"><a href="#提供了安全性" class="headerlink" title="提供了安全性"></a>提供了安全性</h5></li>
-<li><h6 id="提高了代码的复用性"><a href="#提高了代码的复用性" class="headerlink" title="提高了代码的复用性"></a>提高了代码的复用性</h6></li>
-</ol>
-<h4 id="封装的步骤："><a href="#封装的步骤：" class="headerlink" title="封装的步骤："></a>封装的步骤：</h4><ol>
-<li><h6 id="将属性私有化"><a href="#将属性私有化" class="headerlink" title="将属性私有化"></a>将属性私有化</h6></li>
-<li><h6 id="提供set和get方法"><a href="#提供set和get方法" class="headerlink" title="提供set和get方法"></a>提供set和get方法</h6></li>
-<li><h6 id="调用set和get方法"><a href="#调用set和get方法" class="headerlink" title="调用set和get方法"></a>调用set和get方法</h6></li>
-</ol>
-<h4 id="修饰符访问权限："><a href="#修饰符访问权限：" class="headerlink" title="修饰符访问权限："></a>修饰符访问权限：</h4><p>​    <img src="/2019/10/11/Java面向对象/D:%5CQQXZ%5CMobileFile%5Cmmexport1570784764858.jpg" alt></p>
-<h1 id="第四章：继承"><a href="#第四章：继承" class="headerlink" title="第四章：继承"></a>第四章：继承</h1><h4 id="继承的关键字以及概述："><a href="#继承的关键字以及概述：" class="headerlink" title="继承的关键字以及概述："></a>继承的关键字以及概述：</h4><h6 id="继承是用extends修饰的，在日常生活中，儿子与父亲直接的继承关系就和Java中子类extends父类之间的关系一致。"><a href="#继承是用extends修饰的，在日常生活中，儿子与父亲直接的继承关系就和Java中子类extends父类之间的关系一致。" class="headerlink" title="继承是用extends修饰的，在日常生活中，儿子与父亲直接的继承关系就和Java中子类extends父类之间的关系一致。"></a>继承是用extends修饰的，在日常生活中，儿子与父亲直接的继承关系就和Java中子类extends父类之间的关系一致。</h6><h4 id="继承的使用："><a href="#继承的使用：" class="headerlink" title="继承的使用："></a>继承的使用：</h4><p>​    </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[修饰符] class 类名 extends 父类名&#123;</span><br><span class="line">    //属性定义</span><br><span class="line">    //方法定义</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="子类继承父类，就是继承父类中所有的非私有的属性和方法，Java只支持单继承（一个儿子一个爹，单传），但是支持多层继承（有父亲、爷爷、祖爷爷）。"><a href="#子类继承父类，就是继承父类中所有的非私有的属性和方法，Java只支持单继承（一个儿子一个爹，单传），但是支持多层继承（有父亲、爷爷、祖爷爷）。" class="headerlink" title="子类继承父类，就是继承父类中所有的非私有的属性和方法，Java只支持单继承（一个儿子一个爹，单传），但是支持多层继承（有父亲、爷爷、祖爷爷）。"></a>子类继承父类，就是继承父类中所有的非私有的属性和方法，Java只支持单继承（一个儿子一个爹，单传），但是支持多层继承（有父亲、爷爷、祖爷爷）。</h6><h4 id="继承的好处："><a href="#继承的好处：" class="headerlink" title="继承的好处："></a>继承的好处：</h4><ol>
-<li><h6 id="提高了代码的复用性-1"><a href="#提高了代码的复用性-1" class="headerlink" title="提高了代码的复用性"></a>提高了代码的复用性</h6></li>
-<li><h6 id="提高了代码的维护性"><a href="#提高了代码的维护性" class="headerlink" title="提高了代码的维护性"></a>提高了代码的维护性</h6></li>
-<li><h6 id="让类与类之间产生了关系，是多态的前提"><a href="#让类与类之间产生了关系，是多态的前提" class="headerlink" title="让类与类之间产生了关系，是多态的前提"></a>让类与类之间产生了关系，是多态的前提</h6></li>
-</ol>
-<h4 id="继承的弊端："><a href="#继承的弊端：" class="headerlink" title="继承的弊端："></a>继承的弊端：</h4><h6 id="类的耦合性增加了"><a href="#类的耦合性增加了" class="headerlink" title="类的耦合性增加了"></a>类的耦合性增加了</h6><h4 id="继承的注意事项以及什么时候可以使用继承："><a href="#继承的注意事项以及什么时候可以使用继承：" class="headerlink" title="继承的注意事项以及什么时候可以使用继承："></a>继承的注意事项以及什么时候可以使用继承：</h4><ul>
-<li><h6 id="子类只能继承父类非私有的属性和方法"><a href="#子类只能继承父类非私有的属性和方法" class="headerlink" title="子类只能继承父类非私有的属性和方法"></a>子类只能继承父类非私有的属性和方法</h6></li>
-<li><h6 id="子类不能继承父类的构造方法，可以通过super去访问"><a href="#子类不能继承父类的构造方法，可以通过super去访问" class="headerlink" title="子类不能继承父类的构造方法，可以通过super去访问"></a>子类不能继承父类的构造方法，可以通过super去访问</h6></li>
-<li><h6 id="不要为了部分功能去继承"><a href="#不要为了部分功能去继承" class="headerlink" title="不要为了部分功能去继承"></a>不要为了部分功能去继承</h6></li>
-<li><h6 id="继承其实体现的是一种“is-a”的关系，如果有两个类-a-b，只有他们符合：a是b的一种或b是a的一种时，可以使用继承"><a href="#继承其实体现的是一种“is-a”的关系，如果有两个类-a-b，只有他们符合：a是b的一种或b是a的一种时，可以使用继承" class="headerlink" title="继承其实体现的是一种“is a”的关系，如果有两个类 a b，只有他们符合：a是b的一种或b是a的一种时，可以使用继承"></a>继承其实体现的是一种“is a”的关系，如果有两个类 a b，只有他们符合：a是b的一种或b是a的一种时，可以使用继承</h6></li>
-</ul>
-<h4 id="this和super的区别："><a href="#this和super的区别：" class="headerlink" title="this和super的区别："></a>this和super的区别：</h4><ul>
-<li><h6 id="this表示本类对象"><a href="#this表示本类对象" class="headerlink" title="this表示本类对象"></a>this表示本类对象</h6></li>
-<li><h6 id="super表示父类对象"><a href="#super表示父类对象" class="headerlink" title="super表示父类对象"></a>super表示父类对象</h6></li>
-</ul>
-<h4 id="继承中的构造方法："><a href="#继承中的构造方法：" class="headerlink" title="继承中的构造方法："></a>继承中的构造方法：</h4><h6 id="注意：当子类继承父类，子类创建对象时，会自动调用子类和父类的构造方法，需要在子类的构造方法中用super去访问父类的构造方法。"><a href="#注意：当子类继承父类，子类创建对象时，会自动调用子类和父类的构造方法，需要在子类的构造方法中用super去访问父类的构造方法。" class="headerlink" title="注意：当子类继承父类，子类创建对象时，会自动调用子类和父类的构造方法，需要在子类的构造方法中用super去访问父类的构造方法。"></a>注意：当子类继承父类，子类创建对象时，会自动调用子类和父类的构造方法，需要在子类的构造方法中用super去访问父类的构造方法。</h6><h4 id="什么是重写："><a href="#什么是重写：" class="headerlink" title="什么是重写："></a>什么是重写：</h4><h5 id="当子类需要父类的功能，而功能主体子类有自己特有内容时，可以重写父类中的方法，这样，即沿袭了父类的功能，又定义了子类特有的功能。"><a href="#当子类需要父类的功能，而功能主体子类有自己特有内容时，可以重写父类中的方法，这样，即沿袭了父类的功能，又定义了子类特有的功能。" class="headerlink" title="当子类需要父类的功能，而功能主体子类有自己特有内容时，可以重写父类中的方法，这样，即沿袭了父类的功能，又定义了子类特有的功能。"></a>当子类需要父类的功能，而功能主体子类有自己特有内容时，可以重写父类中的方法，这样，即沿袭了父类的功能，又定义了子类特有的功能。</h5><h5 id="重写就是-方法名相同、参数列表相同，但是方法体不相同。"><a href="#重写就是-方法名相同、参数列表相同，但是方法体不相同。" class="headerlink" title="重写就是:方法名相同、参数列表相同，但是方法体不相同。"></a>重写就是:方法名相同、参数列表相同，但是方法体不相同。</h5><h1 id="第五章-多态"><a href="#第五章-多态" class="headerlink" title="第五章:多态"></a>第五章:多态</h1><h4 id="多态的概述："><a href="#多态的概述：" class="headerlink" title="多态的概述："></a>多态的概述：</h4><h6 id="多态是指事物存在的多种形态，指允许不同类对同一对象消息做出相应。"><a href="#多态是指事物存在的多种形态，指允许不同类对同一对象消息做出相应。" class="headerlink" title="多态是指事物存在的多种形态，指允许不同类对同一对象消息做出相应。"></a>多态是指事物存在的多种形态，指允许不同类对同一对象消息做出相应。</h6><h4 id="多态存在的三个必要条件："><a href="#多态存在的三个必要条件：" class="headerlink" title="多态存在的三个必要条件："></a>多态存在的三个必要条件：</h4><ol>
-<li><h6 id="要有继承"><a href="#要有继承" class="headerlink" title="要有继承"></a>要有继承</h6></li>
-<li><h6 id="要有重写"><a href="#要有重写" class="headerlink" title="要有重写"></a>要有重写</h6></li>
-<li><h6 id="父类引用指向子类对象"><a href="#父类引用指向子类对象" class="headerlink" title="父类引用指向子类对象"></a>父类引用指向子类对象</h6></li>
-</ol>
-<h4 id="多态的使用"><a href="#多态的使用" class="headerlink" title="多态的使用:"></a>多态的使用:</h4><h5 id="向上转型："><a href="#向上转型：" class="headerlink" title="向上转型："></a>向上转型：</h5><h6 id="父类型-对象名-new-子类型"><a href="#父类型-对象名-new-子类型" class="headerlink" title="父类型 对象名 = new 子类型();"></a>父类型 对象名 = new 子类型();</h6><h5 id="向下转型："><a href="#向下转型：" class="headerlink" title="向下转型："></a>向下转型：</h5><h6 id="子类型-对象名-子类型-父类型的引用变量；"><a href="#子类型-对象名-子类型-父类型的引用变量；" class="headerlink" title="子类型 对象名 = (子类型)父类型的引用变量；"></a>子类型 对象名 = (子类型)父类型的引用变量；</h6><h6 id="注意：要实现向下转型必须要有向上转型的前提！"><a href="#注意：要实现向下转型必须要有向上转型的前提！" class="headerlink" title="注意：要实现向下转型必须要有向上转型的前提！"></a>注意：要实现向下转型必须要有向上转型的前提！</h6><h4 id="多态中成员访问的特点："><a href="#多态中成员访问的特点：" class="headerlink" title="多态中成员访问的特点："></a>多态中成员访问的特点：</h4><ul>
-<li><h6 id="成员变量："><a href="#成员变量：" class="headerlink" title="成员变量："></a>成员变量：</h6></li>
-<li><h6 id="编译看左边，运行看右边"><a href="#编译看左边，运行看右边" class="headerlink" title="编译看左边，运行看右边"></a>编译看左边，运行看右边</h6></li>
-<li><h6 id="成员方法："><a href="#成员方法：" class="headerlink" title="成员方法："></a>成员方法：</h6></li>
-<li><h6 id="编译看左边，运行看右边-1"><a href="#编译看左边，运行看右边-1" class="headerlink" title="编译看左边，运行看右边"></a>编译看左边，运行看右边</h6></li>
-<li><h6 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h6></li>
-<li><h6 id="编译看左边，运行看左边"><a href="#编译看左边，运行看左边" class="headerlink" title="编译看左边，运行看左边"></a>编译看左边，运行看左边</h6><h6 id="注意：静态和类有关，算不上重写，访问还是看左边"><a href="#注意：静态和类有关，算不上重写，访问还是看左边" class="headerlink" title="注意：静态和类有关，算不上重写，访问还是看左边"></a>注意：静态和类有关，算不上重写，访问还是看左边</h6></li>
-</ul>
-<h6 id="注意：编译看左边父类有没有这个方法，运行是看右边子类有没有重写，如果父类没有这个方法，而子类有并且调用了这个方法，会报错！！！如果想调用子类特有的属性和方法，需要向下转型。"><a href="#注意：编译看左边父类有没有这个方法，运行是看右边子类有没有重写，如果父类没有这个方法，而子类有并且调用了这个方法，会报错！！！如果想调用子类特有的属性和方法，需要向下转型。" class="headerlink" title="注意：编译看左边父类有没有这个方法，运行是看右边子类有没有重写，如果父类没有这个方法，而子类有并且调用了这个方法，会报错！！！如果想调用子类特有的属性和方法，需要向下转型。"></a>注意：编译看左边父类有没有这个方法，运行是看右边子类有没有重写，如果父类没有这个方法，而子类有并且调用了这个方法，会报错！！！如果想调用子类特有的属性和方法，需要向下转型。</h6><h1 id="第六章：抽象"><a href="#第六章：抽象" class="headerlink" title="第六章：抽象"></a>第六章：抽象</h1><h4 id="抽象的概述："><a href="#抽象的概述：" class="headerlink" title="抽象的概述："></a>抽象的概述：</h4><h6 id="如果一个类没有足够的信息去描述一个具体的对象，那我们可以称之为抽象类，简单来说，不能被描述出来的就是抽象的"><a href="#如果一个类没有足够的信息去描述一个具体的对象，那我们可以称之为抽象类，简单来说，不能被描述出来的就是抽象的" class="headerlink" title="如果一个类没有足够的信息去描述一个具体的对象，那我们可以称之为抽象类，简单来说，不能被描述出来的就是抽象的"></a>如果一个类没有足够的信息去描述一个具体的对象，那我们可以称之为抽象类，简单来说，不能被描述出来的就是抽象的</h6><h4 id="抽象类的特点："><a href="#抽象类的特点：" class="headerlink" title="抽象类的特点："></a>抽象类的特点：</h4><h6 id="抽象类和抽象方法必须使用abstract关键字修饰："><a href="#抽象类和抽象方法必须使用abstract关键字修饰：" class="headerlink" title="抽象类和抽象方法必须使用abstract关键字修饰："></a>抽象类和抽象方法必须使用abstract关键字修饰：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abstract class 类名&#123;</span><br><span class="line">    public abstract void 方法名();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="注意：抽象类中不一定有抽象方法，但是抽象方法一定有抽象类。"><a href="#注意：抽象类中不一定有抽象方法，但是抽象方法一定有抽象类。" class="headerlink" title="注意：抽象类中不一定有抽象方法，但是抽象方法一定有抽象类。"></a>注意：抽象类中不一定有抽象方法，但是抽象方法一定有抽象类。</h6><h5 id="抽象类不能实例化，也就是不能创建对象。那么，按照多态的方式，由具体的子类实例化，其实这也是多态的一种，抽象类多态。"><a href="#抽象类不能实例化，也就是不能创建对象。那么，按照多态的方式，由具体的子类实例化，其实这也是多态的一种，抽象类多态。" class="headerlink" title="抽象类不能实例化，也就是不能创建对象。那么，按照多态的方式，由具体的子类实例化，其实这也是多态的一种，抽象类多态。"></a>抽象类不能实例化，也就是不能创建对象。那么，按照多态的方式，由具体的子类实例化，其实这也是多态的一种，抽象类多态。</h5><h5 id="抽象类在开发中的作用：相当于制定了一种规则，所有的子类都要遵守这个规则。如果你想要继承我的抽象类，那么我的抽象方法强制你重写。"><a href="#抽象类在开发中的作用：相当于制定了一种规则，所有的子类都要遵守这个规则。如果你想要继承我的抽象类，那么我的抽象方法强制你重写。" class="headerlink" title="抽象类在开发中的作用：相当于制定了一种规则，所有的子类都要遵守这个规则。如果你想要继承我的抽象类，那么我的抽象方法强制你重写。"></a>抽象类在开发中的作用：相当于制定了一种规则，所有的子类都要遵守这个规则。如果你想要继承我的抽象类，那么我的抽象方法强制你重写。</h5><h4 id="注意：abstract不能与-private、static、final、native并列修饰同一个方法。"><a href="#注意：abstract不能与-private、static、final、native并列修饰同一个方法。" class="headerlink" title="注意：abstract不能与 private、static、final、native并列修饰同一个方法。"></a>注意：abstract不能与 private、static、final、native并列修饰同一个方法。</h4><h4 id="使用抽象方法时，需要注意："><a href="#使用抽象方法时，需要注意：" class="headerlink" title="使用抽象方法时，需要注意："></a>使用抽象方法时，需要注意：</h4><ol>
-<li><h6 id="包含抽象方法的不一定是抽象类"><a href="#包含抽象方法的不一定是抽象类" class="headerlink" title="包含抽象方法的不一定是抽象类"></a>包含抽象方法的不一定是抽象类</h6></li>
-<li><h6 id="抽象类中不一定都是抽象方法"><a href="#抽象类中不一定都是抽象方法" class="headerlink" title="抽象类中不一定都是抽象方法"></a>抽象类中不一定都是抽象方法</h6></li>
-<li><h6 id="构造方法不能声明为抽象方法"><a href="#构造方法不能声明为抽象方法" class="headerlink" title="构造方法不能声明为抽象方法"></a>构造方法不能声明为抽象方法</h6></li>
-</ol>
-<h4 id="final修饰符："><a href="#final修饰符：" class="headerlink" title="final修饰符："></a>final修饰符：</h4><ul>
-<li><h6 id="final：最终的"><a href="#final：最终的" class="headerlink" title="final：最终的"></a>final：最终的</h6></li>
-<li><h6 id="final修饰类：不可以被继承-丁克家族"><a href="#final修饰类：不可以被继承-丁克家族" class="headerlink" title="final修饰类：不可以被继承(丁克家族)"></a>final修饰类：不可以被继承(丁克家族)</h6></li>
-<li><h6 id="final修饰方法：不可以被重写"><a href="#final修饰方法：不可以被重写" class="headerlink" title="final修饰方法：不可以被重写"></a>final修饰方法：不可以被重写</h6></li>
-<li><h6 id="final修饰变量：又称之为常量（不可改变其值）"><a href="#final修饰变量：又称之为常量（不可改变其值）" class="headerlink" title="final修饰变量：又称之为常量（不可改变其值）"></a>final修饰变量：又称之为常量（不可改变其值）</h6></li>
-</ul>
-<h1 id="第七章：接口"><a href="#第七章：接口" class="headerlink" title="第七章：接口"></a>第七章：接口</h1><h4 id="什么是接口："><a href="#什么是接口：" class="headerlink" title="什么是接口："></a>什么是接口：</h4><h6 id="在生活中，接口就是一套规范，满足这个规范的设备，就可以将它们组装到一起，也可以是实现具体复杂事物担有规律的功能。而在软件中，接口同样是一种规范和标准，它们可以约束类的行为。"><a href="#在生活中，接口就是一套规范，满足这个规范的设备，就可以将它们组装到一起，也可以是实现具体复杂事物担有规律的功能。而在软件中，接口同样是一种规范和标准，它们可以约束类的行为。" class="headerlink" title="在生活中，接口就是一套规范，满足这个规范的设备，就可以将它们组装到一起，也可以是实现具体复杂事物担有规律的功能。而在软件中，接口同样是一种规范和标准，它们可以约束类的行为。"></a>在生活中，接口就是一套规范，满足这个规范的设备，就可以将它们组装到一起，也可以是实现具体复杂事物担有规律的功能。而在软件中，接口同样是一种规范和标准，它们可以约束类的行为。</h6><h4 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">修饰符 interface 接口名 &#123;</span><br><span class="line">    public void 方法名();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="当一个类继承一另一个类时，也可以用implements实现一个接口，但是extends要在前面。"><a href="#当一个类继承一另一个类时，也可以用implements实现一个接口，但是extends要在前面。" class="headerlink" title="当一个类继承一另一个类时，也可以用implements实现一个接口，但是extends要在前面。"></a>当一个类继承一另一个类时，也可以用implements实现一个接口，但是extends要在前面。</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class 类名 extends 父类名 implements接口1，接口2......&#123;</span><br><span class="line">    public void 方法名();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="接口的注意事项："><a href="#接口的注意事项：" class="headerlink" title="接口的注意事项："></a>接口的注意事项：</h4><ol>
-<li><h6 id="接口中所有的方法都是抽象方法。"><a href="#接口中所有的方法都是抽象方法。" class="headerlink" title="接口中所有的方法都是抽象方法。"></a>接口中所有的方法都是抽象方法。</h6></li>
-<li><h6 id="和抽象类一样，接口不能实例化"><a href="#和抽象类一样，接口不能实例化" class="headerlink" title="和抽象类一样，接口不能实例化"></a>和抽象类一样，接口不能实例化</h6></li>
-<li><h6 id="接口中不能有构造方法"><a href="#接口中不能有构造方法" class="headerlink" title="接口中不能有构造方法"></a>接口中不能有构造方法</h6></li>
-<li><h6 id="接口之间可以通过extends实现继承关系，一个接口可以继承多个接口，但接口不能继承类"><a href="#接口之间可以通过extends实现继承关系，一个接口可以继承多个接口，但接口不能继承类" class="headerlink" title="接口之间可以通过extends实现继承关系，一个接口可以继承多个接口，但接口不能继承类"></a>接口之间可以通过extends实现继承关系，一个接口可以继承多个接口，但接口不能继承类</h6></li>
-<li><h6 id="接口的实现类必须实现接口的全部方法，否则必须定义为抽象类"><a href="#接口的实现类必须实现接口的全部方法，否则必须定义为抽象类" class="headerlink" title="接口的实现类必须实现接口的全部方法，否则必须定义为抽象类"></a>接口的实现类必须实现接口的全部方法，否则必须定义为抽象类</h6></li>
-</ol>
-<h1 id="第八章：集合"><a href="#第八章：集合" class="headerlink" title="第八章：集合"></a>第八章：集合</h1><h4 id="集合和数组的区别："><a href="#集合和数组的区别：" class="headerlink" title="集合和数组的区别："></a>集合和数组的区别：</h4><ol>
-<li><h6 id="数组既可以存储基本数据类型，又可以存储引用数据类型"><a href="#数组既可以存储基本数据类型，又可以存储引用数据类型" class="headerlink" title="数组既可以存储基本数据类型，又可以存储引用数据类型"></a>数组既可以存储基本数据类型，又可以存储引用数据类型</h6></li>
-<li><h6 id="集合只能存储引用数据类型"><a href="#集合只能存储引用数据类型" class="headerlink" title="集合只能存储引用数据类型"></a>集合只能存储引用数据类型</h6></li>
-<li><h6 id="数组长度是固定的，不能自动增长"><a href="#数组长度是固定的，不能自动增长" class="headerlink" title="数组长度是固定的，不能自动增长"></a>数组长度是固定的，不能自动增长</h6></li>
-<li><h6 id="集合的长度是可变的，可根据元素的增长而增长"><a href="#集合的长度是可变的，可根据元素的增长而增长" class="headerlink" title="集合的长度是可变的，可根据元素的增长而增长"></a>集合的长度是可变的，可根据元素的增长而增长</h6></li>
-</ol>
-<h4 id="集合体系："><a href="#集合体系：" class="headerlink" title="集合体系："></a>集合体系：</h4><p><img src="/2019/10/11/Java面向对象/D:%5CQQXZ%5CMobileFile%5Cmmexport1570863214962.jpg" alt></p>
-<h5 id="collection接口存储一组不唯一（允许重复），无序的对象"><a href="#collection接口存储一组不唯一（允许重复），无序的对象" class="headerlink" title="collection接口存储一组不唯一（允许重复），无序的对象"></a>collection接口存储一组不唯一（允许重复），无序的对象</h5><h5 id="set接口继承collection接口，存储唯一（不允许重复）、无需的对象"><a href="#set接口继承collection接口，存储唯一（不允许重复）、无需的对象" class="headerlink" title="set接口继承collection接口，存储唯一（不允许重复）、无需的对象"></a>set接口继承collection接口，存储唯一（不允许重复）、无需的对象</h5><h5 id="list接口继承collection接口，存储一组不唯一（不允许重复）、有序（以元素插入次序来放置元素，不会出现排序）的对象。"><a href="#list接口继承collection接口，存储一组不唯一（不允许重复）、有序（以元素插入次序来放置元素，不会出现排序）的对象。" class="headerlink" title="list接口继承collection接口，存储一组不唯一（不允许重复）、有序（以元素插入次序来放置元素，不会出现排序）的对象。"></a>list接口继承collection接口，存储一组不唯一（不允许重复）、有序（以元素插入次序来放置元素，不会出现排序）的对象。</h5><h6 id="map接口存储一组成对的键-值对象，提供key到value的映射。map中的key不要求有序，不允许重复。value童谣不要求有序，但允许重复。"><a href="#map接口存储一组成对的键-值对象，提供key到value的映射。map中的key不要求有序，不允许重复。value童谣不要求有序，但允许重复。" class="headerlink" title="map接口存储一组成对的键-值对象，提供key到value的映射。map中的key不要求有序，不允许重复。value童谣不要求有序，但允许重复。"></a>map接口存储一组成对的键-值对象，提供key到value的映射。map中的key不要求有序，不允许重复。value童谣不要求有序，但允许重复。</h6><h4 id="迭代器："><a href="#迭代器：" class="headerlink" title="迭代器："></a>迭代器：</h4><h6 id="Iterator-iterator"><a href="#Iterator-iterator" class="headerlink" title="Iterator iterator()"></a>Iterator iterator()</h6><h6 id="hasNext-里面有元素返回true，没有返回false"><a href="#hasNext-里面有元素返回true，没有返回false" class="headerlink" title="hasNext: 里面有元素返回true，没有返回false"></a>hasNext: 里面有元素返回true，没有返回false</h6><h6 id="nest：拿到里面的元素，一次一个，一次往下"><a href="#nest：拿到里面的元素，一次一个，一次往下" class="headerlink" title="nest：拿到里面的元素，一次一个，一次往下"></a>nest：拿到里面的元素，一次一个，一次往下</h6><h5 id="注：map没有迭代器，只有list和set才有"><a href="#注：map没有迭代器，只有list和set才有" class="headerlink" title="注：map没有迭代器，只有list和set才有"></a>注：map没有迭代器，只有list和set才有</h5><h1 id="第九章：文件操作"><a href="#第九章：文件操作" class="headerlink" title="第九章：文件操作"></a>第九章：文件操作</h1><h4 id="文件描述："><a href="#文件描述：" class="headerlink" title="文件描述："></a>文件描述：</h4><h6 id="电脑中有多种不同功能的文件："><a href="#电脑中有多种不同功能的文件：" class="headerlink" title="电脑中有多种不同功能的文件："></a>电脑中有多种不同功能的文件：</h6><ol>
-<li><h6 id="文本文件"><a href="#文本文件" class="headerlink" title="文本文件"></a>文本文件</h6></li>
-<li><h6 id="二进制文件"><a href="#二进制文件" class="headerlink" title="二进制文件"></a>二进制文件</h6></li>
-<li><h6 id="其它文件"><a href="#其它文件" class="headerlink" title="其它文件"></a>其它文件</h6></li>
-</ol>
-<h4 id="语法：-1"><a href="#语法：-1" class="headerlink" title="语法："></a>语法：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">File file = new File(&quot;文件路径&quot;);//创建文件对象</span><br><span class="line">file.isFile();//判断是否文件</span><br><span class="line">file.isDirectory();//判断是否文件夹</span><br><span class="line">file.exits();//判断文件是否存在</span><br></pre></td></tr></table></figure>
-
-<h1 id="第十章：多线程"><a href="#第十章：多线程" class="headerlink" title="第十章：多线程"></a>第十章：多线程</h1><h5 id="线程可以理解成是在程序中独立运行的子任务。"><a href="#线程可以理解成是在程序中独立运行的子任务。" class="headerlink" title="线程可以理解成是在程序中独立运行的子任务。"></a>线程可以理解成是在程序中独立运行的子任务。</h5><h4 id="线程的创建-1："><a href="#线程的创建-1：" class="headerlink" title="线程的创建 1："></a>线程的创建 1：</h4><ol>
-<li><h6 id="定义一个类实现Runnable接口"><a href="#定义一个类实现Runnable接口" class="headerlink" title="定义一个类实现Runnable接口"></a>定义一个类实现Runnable接口</h6></li>
-<li><h6 id="实现接口中唯一的run-方法，该方法时线程开启时要执行的"><a href="#实现接口中唯一的run-方法，该方法时线程开启时要执行的" class="headerlink" title="实现接口中唯一的run()方法，该方法时线程开启时要执行的"></a>实现接口中唯一的run()方法，该方法时线程开启时要执行的</h6></li>
-<li><h6 id="声明一个线程实体，将Runnable对象做为实体对象"><a href="#声明一个线程实体，将Runnable对象做为实体对象" class="headerlink" title="声明一个线程实体，将Runnable对象做为实体对象"></a>声明一个线程实体，将Runnable对象做为实体对象</h6></li>
-<li><h6 id="调用实体对象的-start-方法"><a href="#调用实体对象的-start-方法" class="headerlink" title="调用实体对象的.start()方法"></a>调用实体对象的.start()方法</h6></li>
-</ol>
-<h4 id="线程的创建-2："><a href="#线程的创建-2：" class="headerlink" title="线程的创建 2："></a>线程的创建 2：</h4><ol>
-<li><h6 id="创建一个类，继承Thread类"><a href="#创建一个类，继承Thread类" class="headerlink" title="创建一个类，继承Thread类"></a>创建一个类，继承Thread类</h6></li>
-<li><h6 id="实现类的run-方法"><a href="#实现类的run-方法" class="headerlink" title="实现类的run()方法"></a>实现类的run()方法</h6></li>
-<li><h6 id="生成类的对象"><a href="#生成类的对象" class="headerlink" title="生成类的对象"></a>生成类的对象</h6></li>
-<li><h6 id="调用对象的-start-方法"><a href="#调用对象的-start-方法" class="headerlink" title="调用对象的.start()方法"></a>调用对象的.start()方法</h6></li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">

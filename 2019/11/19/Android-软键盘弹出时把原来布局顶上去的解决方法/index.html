@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Android 软键盘弹出时把原来布局顶上去的解决方法 | Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Android 软键盘弹出时把原来布局顶上去的解决方法这几天发现我做的商品主页有一个bug，就是当在顶部的搜索条中输入内容时，会弹出软键盘，但如果什么都不设置的话，软键盘弹出的同时，会把我底部的布局顶上去，界面显示的有点扭曲。上网查阅了一下，找到了一个解决方法，亲测有效：在你的AndroidManifest.xml文件中添加：android:windowSoftInputMode=”adjustP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 软键盘弹出时把原来布局顶上去的解决方法">
+<meta property="og:url" content="http://yoursite.com/2019/11/19/Android-软键盘弹出时把原来布局顶上去的解决方法/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Android 软键盘弹出时把原来布局顶上去的解决方法这几天发现我做的商品主页有一个bug，就是当在顶部的搜索条中输入内容时，会弹出软键盘，但如果什么都不设置的话，软键盘弹出的同时，会把我底部的布局顶上去，界面显示的有点扭曲。上网查阅了一下，找到了一个解决方法，亲测有效：在你的AndroidManifest.xml文件中添加：android:windowSoftInputMode=”adjustP">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-19T06:20:51.982Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 软键盘弹出时把原来布局顶上去的解决方法">
+<meta name="twitter:description" content="Android 软键盘弹出时把原来布局顶上去的解决方法这几天发现我做的商品主页有一个bug，就是当在顶部的搜索条中输入内容时，会弹出软键盘，但如果什么都不设置的话，软键盘弹出的同时，会把我底部的布局顶上去，界面显示的有点扭曲。上网查阅了一下，找到了一个解决方法，亲测有效：在你的AndroidManifest.xml文件中添加：android:windowSoftInputMode=”adjustP">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head></html>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">John Doe</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/smackgg/hexo-theme-smackdown">smackdown</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">John Doe</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">John Doe</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Android-软键盘弹出时把原来布局顶上去的解决方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/11/19/Android-软键盘弹出时把原来布局顶上去的解决方法/" class="article-date">
+  	<time datetime="2019-11-19T06:09:27.000Z" itemprop="datePublished">2019-11-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android 软键盘弹出时把原来布局顶上去的解决方法
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Android-软键盘弹出时把原来布局顶上去的解决方法"><a href="#Android-软键盘弹出时把原来布局顶上去的解决方法" class="headerlink" title="Android 软键盘弹出时把原来布局顶上去的解决方法"></a>Android 软键盘弹出时把原来布局顶上去的解决方法</h1><h6 id="这几天发现我做的商品主页有一个bug，就是当在顶部的搜索条中输入内容时，会弹出软键盘，但如果什么都不设置的话，软键盘弹出的同时，会把我底部的布局顶上去，界面显示的有点扭曲。"><a href="#这几天发现我做的商品主页有一个bug，就是当在顶部的搜索条中输入内容时，会弹出软键盘，但如果什么都不设置的话，软键盘弹出的同时，会把我底部的布局顶上去，界面显示的有点扭曲。" class="headerlink" title="这几天发现我做的商品主页有一个bug，就是当在顶部的搜索条中输入内容时，会弹出软键盘，但如果什么都不设置的话，软键盘弹出的同时，会把我底部的布局顶上去，界面显示的有点扭曲。"></a>这几天发现我做的商品主页有一个bug，就是当在顶部的搜索条中输入内容时，会弹出软键盘，但如果什么都不设置的话，软键盘弹出的同时，会把我底部的布局顶上去，界面显示的有点扭曲。</h6><h6 id="上网查阅了一下，找到了一个解决方法，亲测有效："><a href="#上网查阅了一下，找到了一个解决方法，亲测有效：" class="headerlink" title="上网查阅了一下，找到了一个解决方法，亲测有效："></a>上网查阅了一下，找到了一个解决方法，亲测有效：</h6><h4 id="在你的AndroidManifest-xml文件中添加："><a href="#在你的AndroidManifest-xml文件中添加：" class="headerlink" title="在你的AndroidManifest.xml文件中添加："></a>在你的AndroidManifest.xml文件中添加：</h4><h6 id="android-windowSoftInputMode-”adjustPan-stateHidden”"><a href="#android-windowSoftInputMode-”adjustPan-stateHidden”" class="headerlink" title="android:windowSoftInputMode=”adjustPan|stateHidden”"></a>android:windowSoftInputMode=”adjustPan|stateHidden”</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;activity android:name=&quot;.YouHuo.ButtonActivity&quot; android:windowSoftInputMode=&quot;adjustPan|stateHidden&quot;&gt;</span><br><span class="line">            &lt;intent-filter&gt;</span><br><span class="line">                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;</span><br><span class="line"></span><br><span class="line">                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;</span><br><span class="line">            &lt;/intent-filter&gt;</span><br><span class="line">        &lt;/activity&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="windowSoftInputMode：-属性解释："><a href="#windowSoftInputMode：-属性解释：" class="headerlink" title="windowSoftInputMode： 属性解释："></a>windowSoftInputMode： 属性解释：</h4><h6 id="活动的主窗口如何与包含屏幕上的软键盘窗口交互。这个属性的设置将会影响两件事情："><a href="#活动的主窗口如何与包含屏幕上的软键盘窗口交互。这个属性的设置将会影响两件事情：" class="headerlink" title="活动的主窗口如何与包含屏幕上的软键盘窗口交互。这个属性的设置将会影响两件事情："></a>活动的主窗口如何与包含屏幕上的软键盘窗口交互。这个属性的设置将会影响两件事情：</h6><ul>
+<li><h6 id="软键盘的状态——是否它是隐藏或显示——当活动（Activity）成为用户关注的焦点。"><a href="#软键盘的状态——是否它是隐藏或显示——当活动（Activity）成为用户关注的焦点。" class="headerlink" title="软键盘的状态——是否它是隐藏或显示——当活动（Activity）成为用户关注的焦点。"></a>软键盘的状态——是否它是隐藏或显示——当活动（Activity）成为用户关注的焦点。</h6></li>
+<li><h6 id="活动的主窗口调整——是否减少活动主窗口大小以便腾出空间放软键盘或是否当活动窗口的部分被软键盘覆盖时它的内容的当前焦点是可见的。"><a href="#活动的主窗口调整——是否减少活动主窗口大小以便腾出空间放软键盘或是否当活动窗口的部分被软键盘覆盖时它的内容的当前焦点是可见的。" class="headerlink" title="活动的主窗口调整——是否减少活动主窗口大小以便腾出空间放软键盘或是否当活动窗口的部分被软键盘覆盖时它的内容的当前焦点是可见的。"></a>活动的主窗口调整——是否减少活动主窗口大小以便腾出空间放软键盘或是否当活动窗口的部分被软键盘覆盖时它的内容的当前焦点是可见的。</h6></li>
+</ul>
+<h6 id="在这设置的值-除”stateUnspecified”和”adjustUnspecified”以外-将覆盖在主题中设置的值，它的设置必须是下面列表中的一个值，或一个”state…”值加一个”adjust…”值的组合。"><a href="#在这设置的值-除”stateUnspecified”和”adjustUnspecified”以外-将覆盖在主题中设置的值，它的设置必须是下面列表中的一个值，或一个”state…”值加一个”adjust…”值的组合。" class="headerlink" title="在这设置的值(除”stateUnspecified”和”adjustUnspecified”以外)将覆盖在主题中设置的值，它的设置必须是下面列表中的一个值，或一个”state…”值加一个”adjust…”值的组合。"></a>在这设置的值(除”stateUnspecified”和”adjustUnspecified”以外)将覆盖在主题中设置的值，它的设置必须是下面列表中的一个值，或一个”state…”值加一个”adjust…”值的组合。</h6><h6 id="各值的含义："><a href="#各值的含义：" class="headerlink" title="各值的含义："></a>各值的含义：</h6><ol>
+<li><h6 id="stateUnspecified：软键盘的状态并没有指定，系统将选择一个合适的状态或依赖于主题的设置"><a href="#stateUnspecified：软键盘的状态并没有指定，系统将选择一个合适的状态或依赖于主题的设置" class="headerlink" title="stateUnspecified：软键盘的状态并没有指定，系统将选择一个合适的状态或依赖于主题的设置"></a>stateUnspecified：软键盘的状态并没有指定，系统将选择一个合适的状态或依赖于主题的设置</h6></li>
+<li><h6 id="stateUnchanged：当这个activity出现时，软键盘将一直保持在上一个activity里的状态，无论是隐藏还是显示"><a href="#stateUnchanged：当这个activity出现时，软键盘将一直保持在上一个activity里的状态，无论是隐藏还是显示" class="headerlink" title="stateUnchanged：当这个activity出现时，软键盘将一直保持在上一个activity里的状态，无论是隐藏还是显示"></a>stateUnchanged：当这个activity出现时，软键盘将一直保持在上一个activity里的状态，无论是隐藏还是显示</h6></li>
+<li><h6 id="stateHidden：用户选择activity时，软键盘总是被隐藏"><a href="#stateHidden：用户选择activity时，软键盘总是被隐藏" class="headerlink" title="stateHidden：用户选择activity时，软键盘总是被隐藏"></a>stateHidden：用户选择activity时，软键盘总是被隐藏</h6></li>
+<li><h6 id="stateAlwaysHidden：当该Activity主窗口获取焦点时，软键盘也总是被隐藏的"><a href="#stateAlwaysHidden：当该Activity主窗口获取焦点时，软键盘也总是被隐藏的" class="headerlink" title="stateAlwaysHidden：当该Activity主窗口获取焦点时，软键盘也总是被隐藏的"></a>stateAlwaysHidden：当该Activity主窗口获取焦点时，软键盘也总是被隐藏的</h6></li>
+<li><h6 id="stateVisible：软键盘通常是可见的"><a href="#stateVisible：软键盘通常是可见的" class="headerlink" title="stateVisible：软键盘通常是可见的"></a>stateVisible：软键盘通常是可见的</h6></li>
+<li><h6 id="stateAlwaysVisible：用户选择activity时，软键盘总是显示的状态"><a href="#stateAlwaysVisible：用户选择activity时，软键盘总是显示的状态" class="headerlink" title="stateAlwaysVisible：用户选择activity时，软键盘总是显示的状态"></a>stateAlwaysVisible：用户选择activity时，软键盘总是显示的状态</h6></li>
+<li><h6 id="adjustUnspecified：默认设置，通常由系统自行决定是隐藏还是显示"><a href="#adjustUnspecified：默认设置，通常由系统自行决定是隐藏还是显示" class="headerlink" title="adjustUnspecified：默认设置，通常由系统自行决定是隐藏还是显示"></a>adjustUnspecified：默认设置，通常由系统自行决定是隐藏还是显示</h6></li>
+<li><h6 id="adjustResize：该Activity总是调整屏幕的大小以便留出软键盘的空间"><a href="#adjustResize：该Activity总是调整屏幕的大小以便留出软键盘的空间" class="headerlink" title="adjustResize：该Activity总是调整屏幕的大小以便留出软键盘的空间"></a>adjustResize：该Activity总是调整屏幕的大小以便留出软键盘的空间</h6></li>
+<li><h6 id="adjustPan：当前窗口的内容将自动移动以便当前焦点从不被键盘覆盖和用户能总是看到输入内容的部分"><a href="#adjustPan：当前窗口的内容将自动移动以便当前焦点从不被键盘覆盖和用户能总是看到输入内容的部分" class="headerlink" title="adjustPan：当前窗口的内容将自动移动以便当前焦点从不被键盘覆盖和用户能总是看到输入内容的部分"></a>adjustPan：当前窗口的内容将自动移动以便当前焦点从不被键盘覆盖和用户能总是看到输入内容的部分</h6></li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/17/笔记：RecycleView-二/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">笔记：RecycleView(二)</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="ds-share share" data-thread-key="Android-软键盘弹出时把原来布局顶上去的解决方法" data-title="Android 软键盘弹出时把原来布局顶上去的解决方法" data-url="http://yoursite.com/2019/11/19/Android-软键盘弹出时把原来布局顶上去的解决方法/"  data-images="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" data-content="Android 软键盘弹出时把原来布局顶上去的解决方法">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2019 John Doe
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
