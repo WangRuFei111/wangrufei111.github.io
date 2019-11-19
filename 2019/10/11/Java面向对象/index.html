@@ -4,11 +4,10 @@
   <meta charset="utf-8">
   
   <title>Java面向对象 | Hexo</title>
-
-  <!-- keywords -->
-  
-
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="MinHow,MinHow's Blog">
+  
   <meta name="description" content="类和对象的创建：第二章：类和对象面向对象：面向对象就是把一个项目、一件事分成更小的项目，或者说分成一个个更小的部分，每一部分负责什么功能。面向过程：面向过程：面向过程就是把一个项目、一件事情按照一定的顺序，从头到尾一步一步的做下去，先做什么，后做什么，一直到结束。类的创建：1public class 类名&amp;#123;&amp;#125;  对象的创建：12类名 对象名 = new 类名();//new 出">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java面向对象">
@@ -24,186 +23,125 @@
 <meta name="twitter:description" content="类和对象的创建：第二章：类和对象面向对象：面向对象就是把一个项目、一件事分成更小的项目，或者说分成一个个更小的部分，每一部分负责什么功能。面向过程：面向过程：面向过程就是把一个项目、一件事情按照一定的顺序，从头到尾一步一步的做下去，先做什么，后做什么，一直到结束。类的创建：1public class 类名&amp;#123;&amp;#125;  对象的创建：12类名 对象名 = new 类名();//new 出">
 <meta name="twitter:image" content="http://yoursite.com/2019/10/11/Java面向对象/D:%5CQQXZ%5CMobileFile%5Cmmexport1570784764858.jpg">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
+    <link rel="icon" href="/favicon.ico">
   
-    <link rel="icon" href="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg">
-  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
   
   
 
-  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
-  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-
-  
-</head></html>
+</head>
+</html>
 <body>
   <div id="container">
-    <div id="particles-js"></div>
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" class="js-avatar">
-			
-		</a>
-
-		<hgroup>
-		  <h1 class="header-author"><a href="/">John Doe</a></h1>
-		</hgroup>
-
-		
-
-		
-			<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						
-						<div class="icon-wrap icon-link hide" data-idx="2">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
-						
-					</div>
-					
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>菜单</li>
-						<li>标签</li>
-						
-						<li>友情链接</li>
-						
-						
-					</ul>
-				</div>
-			</div>
-		
-
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/">主页</a></li>
-				        
-							<li><a href="/archives">所有文章</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-						</div>
-					</nav>
-				</section>
-				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						
-					</div>
-				</section>
-				
-				
-				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/smackgg/hexo-theme-smackdown">smackdown</a>
-			        
-			        </div>
-				</section>
-				
-
-				
-			</div>
-		</div>
-	</header>				
-</div>
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">MinHow&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        MinHow&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 WEB 开发的技术博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
     </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">John Doe</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-				<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" class="js-avatar">
-			</div>
-			<hgroup>
-			  <h1 class="header-author">John Doe</h1>
-			</hgroup>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">主页</a></li>
-		        
-					<li><a href="/archives">所有文章</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-				</div>
-			</nav>
-		</header>				
-	</div>
-</nav>
-      <div class="body-wrap"><article id="post-Java面向对象" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/10/11/Java面向对象/" class="article-date">
-  	<time datetime="2019-10-11T07:48:41.000Z" itemprop="datePublished">2019-10-11</time>
-</a>
-    </div>
-  
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-Java面向对象" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
+    <h1 class="post-title" itemprop="name">
       Java面向对象
-      
     </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-10-11
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
   
 
+          
       </header>
-      
-      <div class="article-info article-info-post">
-        
-        
-
-        
-        <div class="clearfix"></div>
-      </div>
-      
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry post-content" itemprop="articleBody">
       
-        <h2 id="类和对象的创建："><a href="#类和对象的创建：" class="headerlink" title="类和对象的创建："></a>类和对象的创建：</h2><h1 id="第二章：类和对象"><a href="#第二章：类和对象" class="headerlink" title="第二章：类和对象"></a>第二章：类和对象</h1><h4 id="面向对象："><a href="#面向对象：" class="headerlink" title="面向对象："></a>面向对象：</h4><h6 id="面向对象就是把一个项目、一件事分成更小的项目，或者说分成一个个更小的部分，每一部分负责什么功能。"><a href="#面向对象就是把一个项目、一件事分成更小的项目，或者说分成一个个更小的部分，每一部分负责什么功能。" class="headerlink" title="面向对象就是把一个项目、一件事分成更小的项目，或者说分成一个个更小的部分，每一部分负责什么功能。"></a>面向对象就是把一个项目、一件事分成更小的项目，或者说分成一个个更小的部分，每一部分负责什么功能。</h6><h1 id="面向过程："><a href="#面向过程：" class="headerlink" title="面向过程："></a>面向过程：</h1><h4 id="面向过程：-1"><a href="#面向过程：-1" class="headerlink" title="面向过程："></a>面向过程：</h4><h6 id="面向过程就是把一个项目、一件事情按照一定的顺序，从头到尾一步一步的做下去，先做什么，后做什么，一直到结束。"><a href="#面向过程就是把一个项目、一件事情按照一定的顺序，从头到尾一步一步的做下去，先做什么，后做什么，一直到结束。" class="headerlink" title="面向过程就是把一个项目、一件事情按照一定的顺序，从头到尾一步一步的做下去，先做什么，后做什么，一直到结束。"></a>面向过程就是把一个项目、一件事情按照一定的顺序，从头到尾一步一步的做下去，先做什么，后做什么，一直到结束。</h6><h1 id="类的创建："><a href="#类的创建：" class="headerlink" title="类的创建："></a>类的创建：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public class 类名&#123;&#125;</span><br></pre></td></tr></table></figure>
+            
+            <h2 id="类和对象的创建："><a href="#类和对象的创建：" class="headerlink" title="类和对象的创建："></a>类和对象的创建：</h2><h1 id="第二章：类和对象"><a href="#第二章：类和对象" class="headerlink" title="第二章：类和对象"></a>第二章：类和对象</h1><h4 id="面向对象："><a href="#面向对象：" class="headerlink" title="面向对象："></a>面向对象：</h4><h6 id="面向对象就是把一个项目、一件事分成更小的项目，或者说分成一个个更小的部分，每一部分负责什么功能。"><a href="#面向对象就是把一个项目、一件事分成更小的项目，或者说分成一个个更小的部分，每一部分负责什么功能。" class="headerlink" title="面向对象就是把一个项目、一件事分成更小的项目，或者说分成一个个更小的部分，每一部分负责什么功能。"></a>面向对象就是把一个项目、一件事分成更小的项目，或者说分成一个个更小的部分，每一部分负责什么功能。</h6><h1 id="面向过程："><a href="#面向过程：" class="headerlink" title="面向过程："></a>面向过程：</h1><h4 id="面向过程：-1"><a href="#面向过程：-1" class="headerlink" title="面向过程："></a>面向过程：</h4><h6 id="面向过程就是把一个项目、一件事情按照一定的顺序，从头到尾一步一步的做下去，先做什么，后做什么，一直到结束。"><a href="#面向过程就是把一个项目、一件事情按照一定的顺序，从头到尾一步一步的做下去，先做什么，后做什么，一直到结束。" class="headerlink" title="面向过程就是把一个项目、一件事情按照一定的顺序，从头到尾一步一步的做下去，先做什么，后做什么，一直到结束。"></a>面向过程就是把一个项目、一件事情按照一定的顺序，从头到尾一步一步的做下去，先做什么，后做什么，一直到结束。</h6><h1 id="类的创建："><a href="#类的创建：" class="headerlink" title="类的创建："></a>类的创建：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public class 类名&#123;&#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="对象的创建："><a href="#对象的创建：" class="headerlink" title="对象的创建："></a>对象的创建：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">类名 对象名 = new 类名();</span><br><span class="line">//new 出来的为对象，对象.可调用类中非私有的属性和方法。</span><br></pre></td></tr></table></figure>
 
@@ -314,103 +252,280 @@
 <li><h6 id="调用对象的-start-方法"><a href="#调用对象的-start-方法" class="headerlink" title="调用对象的.start()方法"></a>调用对象的.start()方法</h6></li>
 </ol>
 
-      
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年10月12日 15:48</p>
+        <p>原始链接： <a class="post-url" href="/2019/10/11/Java面向对象/" title="Java面向对象">http://yoursite.com/2019/10/11/Java面向对象/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="John Doe">
+                John Doe
+            </a>
+        </footer>
     </div>
-    
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/10/11/Java面向对象/&title=《Java面向对象》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/10/11/Java面向对象/&title=《Java面向对象》 — Hexo&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/11/Java面向对象/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java面向对象》 — Hexo&url=http://yoursite.com/2019/10/11/Java面向对象/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/10/11/Java面向对象/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/10/11/Java面向对象/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
   </div>
-  
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类和对象的创建："><span class="post-toc-text">类和对象的创建：</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第二章：类和对象"><span class="post-toc-text">第二章：类和对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#面向对象："><span class="post-toc-text">面向对象：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#面向对象就是把一个项目、一件事分成更小的项目，或者说分成一个个更小的部分，每一部分负责什么功能。"><span class="post-toc-text">面向对象就是把一个项目、一件事分成更小的项目，或者说分成一个个更小的部分，每一部分负责什么功能。</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#面向过程："><span class="post-toc-text">面向过程：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#面向过程：-1"><span class="post-toc-text">面向过程：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#面向过程就是把一个项目、一件事情按照一定的顺序，从头到尾一步一步的做下去，先做什么，后做什么，一直到结束。"><span class="post-toc-text">面向过程就是把一个项目、一件事情按照一定的顺序，从头到尾一步一步的做下去，先做什么，后做什么，一直到结束。</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#类的创建："><span class="post-toc-text">类的创建：</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#对象的创建："><span class="post-toc-text">对象的创建：</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#构造方法："><span class="post-toc-text">构造方法：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#构造方法名称和类名相同，没有返回值"><span class="post-toc-text">构造方法名称和类名相同，没有返回值</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#构造方法的重载："><span class="post-toc-text">构造方法的重载：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#当你没有创建构造方法时，系统会自动给出一个无参的构造方法。如果我们给出构造方法，系统将不再提供默认的构造方法。建议，我们在给出构造方法的时候，也给出一个无参的构造，因为，在我们创建对象的时候不一定会给出参数。"><span class="post-toc-text">当你没有创建构造方法时，系统会自动给出一个无参的构造方法。如果我们给出构造方法，系统将不再提供默认的构造方法。建议，我们在给出构造方法的时候，也给出一个无参的构造，因为，在我们创建对象的时候不一定会给出参数。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#什么是重载："><span class="post-toc-text">什么是重载：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#必须在同一个类中"><span class="post-toc-text">必须在同一个类中</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#方法名相同"><span class="post-toc-text">方法名相同</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#参数列表（方法形参的个数或参数类型）不同"><span class="post-toc-text">参数列表（方法形参的个数或参数类型）不同</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#与方法返回值和方法修饰符没有任何关系"><span class="post-toc-text">与方法返回值和方法修饰符没有任何关系</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#满足以上条件就是方法的重载，而构造方法的重载是指你有两个或两个以上的构造方法，方法名相同，参数列表不同。"><span class="post-toc-text">满足以上条件就是方法的重载，而构造方法的重载是指你有两个或两个以上的构造方法，方法名相同，参数列表不同。</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#static："><span class="post-toc-text">static：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#static可以用来修饰属性、方法和代码块。"><span class="post-toc-text">static可以用来修饰属性、方法和代码块。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#static的特点："><span class="post-toc-text">static的特点：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#它随着类的加载而加载，优先于对象存在"><span class="post-toc-text">它随着类的加载而加载，优先于对象存在</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#被所有类的对象共享"><span class="post-toc-text">被所有类的对象共享</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#可以直接通过类名-调用，不用在创建对象"><span class="post-toc-text">可以直接通过类名.调用，不用在创建对象</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#静态修饰的内容我们一般称为：与类相关的、类成员"><span class="post-toc-text">静态修饰的内容我们一般称为：与类相关的、类成员</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#注意："><span class="post-toc-text">注意：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#静态方法中不能使用-this和super关键字，静态方法不能访问非静态成员，静态只能访问静态"><span class="post-toc-text">静态方法中不能使用 this和super关键字，静态方法不能访问非静态成员，静态只能访问静态</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第三章：封装"><span class="post-toc-text">第三章：封装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#概念："><span class="post-toc-text">概念：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#封装是指隐藏对象的属性和实现细节，仅对外提供公共访问方法。"><span class="post-toc-text">封装是指隐藏对象的属性和实现细节，仅对外提供公共访问方法。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#封装的好处："><span class="post-toc-text">封装的好处：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#隐藏了实现细节"><span class="post-toc-text">隐藏了实现细节</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#提供了安全性"><span class="post-toc-text">提供了安全性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#提高了代码的复用性"><span class="post-toc-text">提高了代码的复用性</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#封装的步骤："><span class="post-toc-text">封装的步骤：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#将属性私有化"><span class="post-toc-text">将属性私有化</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#提供set和get方法"><span class="post-toc-text">提供set和get方法</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#调用set和get方法"><span class="post-toc-text">调用set和get方法</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#修饰符访问权限："><span class="post-toc-text">修饰符访问权限：</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第四章：继承"><span class="post-toc-text">第四章：继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#继承的关键字以及概述："><span class="post-toc-text">继承的关键字以及概述：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#继承是用extends修饰的，在日常生活中，儿子与父亲直接的继承关系就和Java中子类extends父类之间的关系一致。"><span class="post-toc-text">继承是用extends修饰的，在日常生活中，儿子与父亲直接的继承关系就和Java中子类extends父类之间的关系一致。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#继承的使用："><span class="post-toc-text">继承的使用：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#子类继承父类，就是继承父类中所有的非私有的属性和方法，Java只支持单继承（一个儿子一个爹，单传），但是支持多层继承（有父亲、爷爷、祖爷爷）。"><span class="post-toc-text">子类继承父类，就是继承父类中所有的非私有的属性和方法，Java只支持单继承（一个儿子一个爹，单传），但是支持多层继承（有父亲、爷爷、祖爷爷）。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#继承的好处："><span class="post-toc-text">继承的好处：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#提高了代码的复用性-1"><span class="post-toc-text">提高了代码的复用性</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#提高了代码的维护性"><span class="post-toc-text">提高了代码的维护性</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#让类与类之间产生了关系，是多态的前提"><span class="post-toc-text">让类与类之间产生了关系，是多态的前提</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#继承的弊端："><span class="post-toc-text">继承的弊端：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#类的耦合性增加了"><span class="post-toc-text">类的耦合性增加了</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#继承的注意事项以及什么时候可以使用继承："><span class="post-toc-text">继承的注意事项以及什么时候可以使用继承：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#子类只能继承父类非私有的属性和方法"><span class="post-toc-text">子类只能继承父类非私有的属性和方法</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#子类不能继承父类的构造方法，可以通过super去访问"><span class="post-toc-text">子类不能继承父类的构造方法，可以通过super去访问</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#不要为了部分功能去继承"><span class="post-toc-text">不要为了部分功能去继承</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#继承其实体现的是一种“is-a”的关系，如果有两个类-a-b，只有他们符合：a是b的一种或b是a的一种时，可以使用继承"><span class="post-toc-text">继承其实体现的是一种“is a”的关系，如果有两个类 a b，只有他们符合：a是b的一种或b是a的一种时，可以使用继承</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#this和super的区别："><span class="post-toc-text">this和super的区别：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#this表示本类对象"><span class="post-toc-text">this表示本类对象</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#super表示父类对象"><span class="post-toc-text">super表示父类对象</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#继承中的构造方法："><span class="post-toc-text">继承中的构造方法：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#注意：当子类继承父类，子类创建对象时，会自动调用子类和父类的构造方法，需要在子类的构造方法中用super去访问父类的构造方法。"><span class="post-toc-text">注意：当子类继承父类，子类创建对象时，会自动调用子类和父类的构造方法，需要在子类的构造方法中用super去访问父类的构造方法。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么是重写："><span class="post-toc-text">什么是重写：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#当子类需要父类的功能，而功能主体子类有自己特有内容时，可以重写父类中的方法，这样，即沿袭了父类的功能，又定义了子类特有的功能。"><span class="post-toc-text">当子类需要父类的功能，而功能主体子类有自己特有内容时，可以重写父类中的方法，这样，即沿袭了父类的功能，又定义了子类特有的功能。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#重写就是-方法名相同、参数列表相同，但是方法体不相同。"><span class="post-toc-text">重写就是:方法名相同、参数列表相同，但是方法体不相同。</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第五章-多态"><span class="post-toc-text">第五章:多态</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多态的概述："><span class="post-toc-text">多态的概述：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#多态是指事物存在的多种形态，指允许不同类对同一对象消息做出相应。"><span class="post-toc-text">多态是指事物存在的多种形态，指允许不同类对同一对象消息做出相应。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多态存在的三个必要条件："><span class="post-toc-text">多态存在的三个必要条件：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#要有继承"><span class="post-toc-text">要有继承</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#要有重写"><span class="post-toc-text">要有重写</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#父类引用指向子类对象"><span class="post-toc-text">父类引用指向子类对象</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多态的使用"><span class="post-toc-text">多态的使用:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#向上转型："><span class="post-toc-text">向上转型：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#父类型-对象名-new-子类型"><span class="post-toc-text">父类型 对象名 = new 子类型();</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#向下转型："><span class="post-toc-text">向下转型：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#子类型-对象名-子类型-父类型的引用变量；"><span class="post-toc-text">子类型 对象名 = (子类型)父类型的引用变量；</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#注意：要实现向下转型必须要有向上转型的前提！"><span class="post-toc-text">注意：要实现向下转型必须要有向上转型的前提！</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多态中成员访问的特点："><span class="post-toc-text">多态中成员访问的特点：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#成员变量："><span class="post-toc-text">成员变量：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#编译看左边，运行看右边"><span class="post-toc-text">编译看左边，运行看右边</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#成员方法："><span class="post-toc-text">成员方法：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#编译看左边，运行看右边-1"><span class="post-toc-text">编译看左边，运行看右边</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#静态方法"><span class="post-toc-text">静态方法</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#编译看左边，运行看左边"><span class="post-toc-text">编译看左边，运行看左边</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#注意：静态和类有关，算不上重写，访问还是看左边"><span class="post-toc-text">注意：静态和类有关，算不上重写，访问还是看左边</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#注意：编译看左边父类有没有这个方法，运行是看右边子类有没有重写，如果父类没有这个方法，而子类有并且调用了这个方法，会报错！！！如果想调用子类特有的属性和方法，需要向下转型。"><span class="post-toc-text">注意：编译看左边父类有没有这个方法，运行是看右边子类有没有重写，如果父类没有这个方法，而子类有并且调用了这个方法，会报错！！！如果想调用子类特有的属性和方法，需要向下转型。</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第六章：抽象"><span class="post-toc-text">第六章：抽象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#抽象的概述："><span class="post-toc-text">抽象的概述：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#如果一个类没有足够的信息去描述一个具体的对象，那我们可以称之为抽象类，简单来说，不能被描述出来的就是抽象的"><span class="post-toc-text">如果一个类没有足够的信息去描述一个具体的对象，那我们可以称之为抽象类，简单来说，不能被描述出来的就是抽象的</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#抽象类的特点："><span class="post-toc-text">抽象类的特点：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#抽象类和抽象方法必须使用abstract关键字修饰："><span class="post-toc-text">抽象类和抽象方法必须使用abstract关键字修饰：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#注意：抽象类中不一定有抽象方法，但是抽象方法一定有抽象类。"><span class="post-toc-text">注意：抽象类中不一定有抽象方法，但是抽象方法一定有抽象类。</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#抽象类不能实例化，也就是不能创建对象。那么，按照多态的方式，由具体的子类实例化，其实这也是多态的一种，抽象类多态。"><span class="post-toc-text">抽象类不能实例化，也就是不能创建对象。那么，按照多态的方式，由具体的子类实例化，其实这也是多态的一种，抽象类多态。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#抽象类在开发中的作用：相当于制定了一种规则，所有的子类都要遵守这个规则。如果你想要继承我的抽象类，那么我的抽象方法强制你重写。"><span class="post-toc-text">抽象类在开发中的作用：相当于制定了一种规则，所有的子类都要遵守这个规则。如果你想要继承我的抽象类，那么我的抽象方法强制你重写。</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#注意：abstract不能与-private、static、final、native并列修饰同一个方法。"><span class="post-toc-text">注意：abstract不能与 private、static、final、native并列修饰同一个方法。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用抽象方法时，需要注意："><span class="post-toc-text">使用抽象方法时，需要注意：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#包含抽象方法的不一定是抽象类"><span class="post-toc-text">包含抽象方法的不一定是抽象类</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#抽象类中不一定都是抽象方法"><span class="post-toc-text">抽象类中不一定都是抽象方法</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#构造方法不能声明为抽象方法"><span class="post-toc-text">构造方法不能声明为抽象方法</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#final修饰符："><span class="post-toc-text">final修饰符：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#final：最终的"><span class="post-toc-text">final：最终的</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#final修饰类：不可以被继承-丁克家族"><span class="post-toc-text">final修饰类：不可以被继承(丁克家族)</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#final修饰方法：不可以被重写"><span class="post-toc-text">final修饰方法：不可以被重写</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#final修饰变量：又称之为常量（不可改变其值）"><span class="post-toc-text">final修饰变量：又称之为常量（不可改变其值）</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第七章：接口"><span class="post-toc-text">第七章：接口</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么是接口："><span class="post-toc-text">什么是接口：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#在生活中，接口就是一套规范，满足这个规范的设备，就可以将它们组装到一起，也可以是实现具体复杂事物担有规律的功能。而在软件中，接口同样是一种规范和标准，它们可以约束类的行为。"><span class="post-toc-text">在生活中，接口就是一套规范，满足这个规范的设备，就可以将它们组装到一起，也可以是实现具体复杂事物担有规律的功能。而在软件中，接口同样是一种规范和标准，它们可以约束类的行为。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#语法："><span class="post-toc-text">语法：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#当一个类继承一另一个类时，也可以用implements实现一个接口，但是extends要在前面。"><span class="post-toc-text">当一个类继承一另一个类时，也可以用implements实现一个接口，但是extends要在前面。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#接口的注意事项："><span class="post-toc-text">接口的注意事项：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#接口中所有的方法都是抽象方法。"><span class="post-toc-text">接口中所有的方法都是抽象方法。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#和抽象类一样，接口不能实例化"><span class="post-toc-text">和抽象类一样，接口不能实例化</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#接口中不能有构造方法"><span class="post-toc-text">接口中不能有构造方法</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#接口之间可以通过extends实现继承关系，一个接口可以继承多个接口，但接口不能继承类"><span class="post-toc-text">接口之间可以通过extends实现继承关系，一个接口可以继承多个接口，但接口不能继承类</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#接口的实现类必须实现接口的全部方法，否则必须定义为抽象类"><span class="post-toc-text">接口的实现类必须实现接口的全部方法，否则必须定义为抽象类</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第八章：集合"><span class="post-toc-text">第八章：集合</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#集合和数组的区别："><span class="post-toc-text">集合和数组的区别：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#数组既可以存储基本数据类型，又可以存储引用数据类型"><span class="post-toc-text">数组既可以存储基本数据类型，又可以存储引用数据类型</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#集合只能存储引用数据类型"><span class="post-toc-text">集合只能存储引用数据类型</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#数组长度是固定的，不能自动增长"><span class="post-toc-text">数组长度是固定的，不能自动增长</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#集合的长度是可变的，可根据元素的增长而增长"><span class="post-toc-text">集合的长度是可变的，可根据元素的增长而增长</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#集合体系："><span class="post-toc-text">集合体系：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#collection接口存储一组不唯一（允许重复），无序的对象"><span class="post-toc-text">collection接口存储一组不唯一（允许重复），无序的对象</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#set接口继承collection接口，存储唯一（不允许重复）、无需的对象"><span class="post-toc-text">set接口继承collection接口，存储唯一（不允许重复）、无需的对象</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#list接口继承collection接口，存储一组不唯一（不允许重复）、有序（以元素插入次序来放置元素，不会出现排序）的对象。"><span class="post-toc-text">list接口继承collection接口，存储一组不唯一（不允许重复）、有序（以元素插入次序来放置元素，不会出现排序）的对象。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#map接口存储一组成对的键-值对象，提供key到value的映射。map中的key不要求有序，不允许重复。value童谣不要求有序，但允许重复。"><span class="post-toc-text">map接口存储一组成对的键-值对象，提供key到value的映射。map中的key不要求有序，不允许重复。value童谣不要求有序，但允许重复。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#迭代器："><span class="post-toc-text">迭代器：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Iterator-iterator"><span class="post-toc-text">Iterator iterator()</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#hasNext-里面有元素返回true，没有返回false"><span class="post-toc-text">hasNext: 里面有元素返回true，没有返回false</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#nest：拿到里面的元素，一次一个，一次往下"><span class="post-toc-text">nest：拿到里面的元素，一次一个，一次往下</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#注：map没有迭代器，只有list和set才有"><span class="post-toc-text">注：map没有迭代器，只有list和set才有</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第九章：文件操作"><span class="post-toc-text">第九章：文件操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件描述："><span class="post-toc-text">文件描述：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#电脑中有多种不同功能的文件："><span class="post-toc-text">电脑中有多种不同功能的文件：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#文本文件"><span class="post-toc-text">文本文件</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#二进制文件"><span class="post-toc-text">二进制文件</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#其它文件"><span class="post-toc-text">其它文件</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#语法：-1"><span class="post-toc-text">语法：</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第十章：多线程"><span class="post-toc-text">第十章：多线程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#线程可以理解成是在程序中独立运行的子任务。"><span class="post-toc-text">线程可以理解成是在程序中独立运行的子任务。</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#线程的创建-1："><span class="post-toc-text">线程的创建 1：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#定义一个类实现Runnable接口"><span class="post-toc-text">定义一个类实现Runnable接口</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#实现接口中唯一的run-方法，该方法时线程开启时要执行的"><span class="post-toc-text">实现接口中唯一的run()方法，该方法时线程开启时要执行的</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#声明一个线程实体，将Runnable对象做为实体对象"><span class="post-toc-text">声明一个线程实体，将Runnable对象做为实体对象</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#调用实体对象的-start-方法"><span class="post-toc-text">调用实体对象的.start()方法</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#线程的创建-2："><span class="post-toc-text">线程的创建 2：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#创建一个类，继承Thread类"><span class="post-toc-text">创建一个类，继承Thread类</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#实现类的run-方法"><span class="post-toc-text">实现类的run()方法</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#生成类的对象"><span class="post-toc-text">生成类的对象</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#调用对象的-start-方法"><span class="post-toc-text">调用对象的.start()方法</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
     
+
 <nav id="article-nav">
   
-    <a href="/2019/10/14/总结：Activity的四种跳转方式/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">&lt;</strong>
-      <div class="article-nav-title">
+    <a href="/2019/10/14/备忘录：Android-studio-布局运行不显示的问题/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          总结：Activity的四种跳转方式
+          备忘录：Android studio 布局运行不显示的问题
         
-      </div>
+      </span>
     </a>
   
   
 </nav>
 
-  
-</article>
 
 
-<div class="ds-share share" data-thread-key="Java面向对象" data-title="Java面向对象" data-url="http://yoursite.com/2019/10/11/Java面向对象/"  data-images="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" data-content="Java面向对象">
-    <div class="ds-share-inline">
-      <ul  class="ds-share-icons-16">
-      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-      </ul>
-      <div class="ds-share-icons-more">
+    
+</section>
+        
       </div>
-    </div>
- </div>
- 
-
-
-
-
-
-</div>
       <footer id="footer">
   <div class="outer">
-    <div id="footer-info">
-      <div class="footer-left">
-        &copy; 2019 John Doe
-      </div>
-        <div class="footer-right">
-          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
-        </div>
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 John Doe<br>
+      </p>
     </div>
   </div>
 </footer>
-    </div>
-    
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: true,
-		animate: true,
-		isHome: false,
-		isPost: true,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
-	}
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
 </script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
 <script src="/js/main.js"></script>
 
 
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
 
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
 
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
 
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
 
   </div>
 </body>
