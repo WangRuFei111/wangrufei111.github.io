@@ -3,22 +3,22 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>总结：Activity的四种跳转方式 | Hexo</title>
+  <title>RecycleView的单击事件 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="王氏小仙女">
   
-  <meta name="description" content="Activity的跳转：分为显示跳转和隐式跳转：显示跳转：1.12Intent intent = new Intent(当前文件名.this,目标文件名.class);startActivity(intent);//intent只是一个对象名  2.12Intent intent = new Intent();intent.setClass(本文件名.this,目标文件名.class);//int">
+  <meta name="description" content="RecycleView的单击事件：1、先写一个OnItemClickListener的接口：123public interface OnItemClickListener &amp;#123;    void onItemClick(int position);&amp;#125;  2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法1234567891011121314151617">
 <meta property="og:type" content="article">
-<meta property="og:title" content="总结：Activity的四种跳转方式">
-<meta property="og:url" content="http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/index.html">
+<meta property="og:title" content="RecycleView的单击事件">
+<meta property="og:url" content="http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Activity的跳转：分为显示跳转和隐式跳转：显示跳转：1.12Intent intent = new Intent(当前文件名.this,目标文件名.class);startActivity(intent);//intent只是一个对象名  2.12Intent intent = new Intent();intent.setClass(本文件名.this,目标文件名.class);//int">
+<meta property="og:description" content="RecycleView的单击事件：1、先写一个OnItemClickListener的接口：123public interface OnItemClickListener &amp;#123;    void onItemClick(int position);&amp;#125;  2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法1234567891011121314151617">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-16T08:51:22.587Z">
+<meta property="og:updated_time" content="2019-11-29T11:22:21.774Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="总结：Activity的四种跳转方式">
-<meta name="twitter:description" content="Activity的跳转：分为显示跳转和隐式跳转：显示跳转：1.12Intent intent = new Intent(当前文件名.this,目标文件名.class);startActivity(intent);//intent只是一个对象名  2.12Intent intent = new Intent();intent.setClass(本文件名.this,目标文件名.class);//int">
+<meta name="twitter:title" content="RecycleView的单击事件">
+<meta name="twitter:description" content="RecycleView的单击事件：1、先写一个OnItemClickListener的接口：123public interface OnItemClickListener &amp;#123;    void onItemClick(int position);&amp;#125;  2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法1234567891011121314151617">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -109,20 +109,20 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-总结：Activity的四种跳转方式" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-RecycleView：点击item字体变大" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      总结：Activity的四种跳转方式
+      RecycleView的单击事件
     </h1>
     <div class="post-title-bar">
       <ul>
           
         <li>
-          <i class="fa fa-calendar"></i>  2019-10-14
+          <i class="fa fa-calendar"></i>  2019-11-29
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -138,19 +138,17 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h1 id="Activity的跳转："><a href="#Activity的跳转：" class="headerlink" title="Activity的跳转："></a>Activity的跳转：</h1><h4 id="分为显示跳转和隐式跳转："><a href="#分为显示跳转和隐式跳转：" class="headerlink" title="分为显示跳转和隐式跳转："></a>分为显示跳转和隐式跳转：</h4><h6 id="显示跳转："><a href="#显示跳转：" class="headerlink" title="显示跳转："></a>显示跳转：</h6><h5 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = new Intent(当前文件名.this,目标文件名.class);</span><br><span class="line">startActivity(intent);//intent只是一个对象名</span><br></pre></td></tr></table></figure>
+            <h1 id="RecycleView的单击事件："><a href="#RecycleView的单击事件：" class="headerlink" title="RecycleView的单击事件："></a>RecycleView的单击事件：</h1><h4 id="1、先写一个OnItemClickListener的接口："><a href="#1、先写一个OnItemClickListener的接口：" class="headerlink" title="1、先写一个OnItemClickListener的接口："></a>1、先写一个OnItemClickListener的接口：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface OnItemClickListener &#123;</span><br><span class="line">    void onItemClick(int position);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h5 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = new Intent();</span><br><span class="line">intent.setClass(本文件名.this,目标文件名.class);//intent只是一个对象名</span><br></pre></td></tr></table></figure>
+<h4 id="2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法"><a href="#2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法" class="headerlink" title="2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法"></a>2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//声明一个OnItemClickListener的变量</span><br><span class="line">private OnItemClickListener onItemClickListener;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//写一个setOnItemClickListener的方法</span><br><span class="line"> public void setOnItemClickListener(OnItemClickListener onItemClickListeners)&#123;</span><br><span class="line">        this.onItemClickListener = onItemClickListeners;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //在onBindViewHolder中判断onItemClickListener不等于空</span><br><span class="line">      public void onBindViewHolder(final ViewHolder holder, final int position)&#123;</span><br><span class="line">        Fruit fruit = (Fruit) mFruitList.get(position);</span><br><span class="line">        holder.fruitName.setText(fruit.getName());</span><br><span class="line">        if (onItemClickListener != null)&#123;</span><br><span class="line">            holder.itemView.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">                @Override</span><br><span class="line">                public void onClick(View v) &#123;</span><br><span class="line">                    onItemClickListener.onItemClick(position);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<h5 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = new Intent();</span><br><span class="line">Intent.setClassName(本文件名.this,&quot;目标文件完整路径&quot;);</span><br><span class="line">startActivity(intent);</span><br></pre></td></tr></table></figure>
+<h4 id="实现代码："><a href="#实现代码：" class="headerlink" title="实现代码："></a>实现代码：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//RecyclerView的单击事件</span><br><span class="line">        adapter.setOnItemClickListener(new OnItemClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onItemClick(int position) &#123;</span><br><span class="line">                Intent intent = new Intent(HemoPageActivity.this, BtuActivity.class);</span><br><span class="line">                startActivity(intent);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
 
-<h6 id="隐式跳转："><a href="#隐式跳转：" class="headerlink" title="隐式跳转："></a>隐式跳转：</h6><h5 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = new Intent();</span><br><span class="line">intent.setActivity(&quot;字符串&quot;);</span><br><span class="line">//此处的字符串为Manifast中的&lt;intent-filer&gt;中的action中name自定义字符串</span><br><span class="line">startActivity(intent);</span><br><span class="line">//如果想要实现隐式跳转，Manifast中的&lt;intent-filer&gt;中的categor必须为DEFAULT</span><br></pre></td></tr></table></figure>
 
-<h6 id="隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。"><a href="#隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。" class="headerlink" title="隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。"></a>隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。</h6><h6 id="显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。"><a href="#显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。" class="headerlink" title="显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。"></a>显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。</h6><h6 id="一般情况下，第一种方法时最常用。"><a href="#一般情况下，第一种方法时最常用。" class="headerlink" title="一般情况下，第一种方法时最常用。"></a>一般情况下，第一种方法时最常用。</h6>
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年10月16日 16:51</p>
-        <p>原始链接： <a class="post-url" href="/2019/10/14/总结：Activity的四种跳转方式/" title="总结：Activity的四种跳转方式">http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/</a></p>
+        <p>最后更新： 2019年11月29日 19:22</p>
+        <p>原始链接： <a class="post-url" href="/2019/11/29/RecycleView：点击item字体变大/" title="RecycleView的单击事件">http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/</a></p>
         <footer>
             <a href="http://yoursite.com">
                 <img src="/images/logo.png" alt="王氏小仙女">
@@ -207,7 +205,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/&title=《总结：Activity的四种跳转方式》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/&title=《RecycleView的单击事件》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -217,22 +215,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/&title=《总结：Activity的四种跳转方式》 — Hexo&source=" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/&title=《RecycleView的单击事件》 — Hexo&source=" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《总结：Activity的四种跳转方式》 — Hexo&url=http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/&via=http://yoursite.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RecycleView的单击事件》 — Hexo&url=http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/&via=http://yoursite.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -242,7 +240,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -260,26 +258,16 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Activity的跳转："><span class="post-toc-text">Activity的跳转：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#分为显示跳转和隐式跳转："><span class="post-toc-text">分为显示跳转和隐式跳转：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#显示跳转："><span class="post-toc-text">显示跳转：</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1"><span class="post-toc-text">1.</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2"><span class="post-toc-text">2.</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3"><span class="post-toc-text">3.</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#隐式跳转："><span class="post-toc-text">隐式跳转：</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4"><span class="post-toc-text">4.</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。"><span class="post-toc-text">隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。"><span class="post-toc-text">显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#一般情况下，第一种方法时最常用。"><span class="post-toc-text">一般情况下，第一种方法时最常用。</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#RecycleView的单击事件："><span class="post-toc-text">RecycleView的单击事件：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、先写一个OnItemClickListener的接口："><span class="post-toc-text">1、先写一个OnItemClickListener的接口：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法"><span class="post-toc-text">2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实现代码："><span class="post-toc-text">实现代码：</span></a></li></ol></li></ol></li></ol></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2019/10/30/笔记：RecyclerView/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          笔记：RecyclerView
-        
-      </span>
-    </a>
   
-  
-    <a href="/2019/10/14/备忘录：Android-studio-布局运行不显示的问题/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">备忘录：Android studio 布局运行不显示的问题</span>
+    <a href="/2019/11/24/Android-轮播图的实现（ViewPager）/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Android 轮播图的实现（ViewPager）</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
