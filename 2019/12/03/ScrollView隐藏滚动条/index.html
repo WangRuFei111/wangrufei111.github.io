@@ -3,22 +3,22 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>RecycleView的单击事件 | Hexo</title>
+  <title>ScrollView隐藏滚动条 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="王氏小仙女">
   
-  <meta name="description" content="RecycleView的单击事件：1、先写一个OnItemClickListener的接口：123public interface OnItemClickListener &amp;#123;    void onItemClick(int position);&amp;#125;  2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法1234567891011121314151617">
+  <meta name="description" content="ScrollView隐藏滚动条在写代码的时候发现ScrollView滚动最左侧会有一个灰色的滚动条，丑的要了老命，去网上查阅了一下让滚动条不显示的方式的方法，如下：要实现ScrollView滚动条的隐藏，有两种方法：一种是在XML的ScrollView布局中加入属性：android:scrollbars=”none”另一种则是在Java代码中获取并声明ScrollView后写属性：scroll.s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RecycleView的单击事件">
-<meta property="og:url" content="http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/index.html">
+<meta property="og:title" content="ScrollView隐藏滚动条">
+<meta property="og:url" content="http://yoursite.com/2019/12/03/ScrollView隐藏滚动条/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="RecycleView的单击事件：1、先写一个OnItemClickListener的接口：123public interface OnItemClickListener &amp;#123;    void onItemClick(int position);&amp;#125;  2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法1234567891011121314151617">
+<meta property="og:description" content="ScrollView隐藏滚动条在写代码的时候发现ScrollView滚动最左侧会有一个灰色的滚动条，丑的要了老命，去网上查阅了一下让滚动条不显示的方式的方法，如下：要实现ScrollView滚动条的隐藏，有两种方法：一种是在XML的ScrollView布局中加入属性：android:scrollbars=”none”另一种则是在Java代码中获取并声明ScrollView后写属性：scroll.s">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-29T11:22:21.774Z">
+<meta property="og:updated_time" content="2019-12-03T11:58:28.481Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RecycleView的单击事件">
-<meta name="twitter:description" content="RecycleView的单击事件：1、先写一个OnItemClickListener的接口：123public interface OnItemClickListener &amp;#123;    void onItemClick(int position);&amp;#125;  2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法1234567891011121314151617">
+<meta name="twitter:title" content="ScrollView隐藏滚动条">
+<meta name="twitter:description" content="ScrollView隐藏滚动条在写代码的时候发现ScrollView滚动最左侧会有一个灰色的滚动条，丑的要了老命，去网上查阅了一下让滚动条不显示的方式的方法，如下：要实现ScrollView滚动条的隐藏，有两种方法：一种是在XML的ScrollView布局中加入属性：android:scrollbars=”none”另一种则是在Java代码中获取并声明ScrollView后写属性：scroll.s">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -109,20 +109,20 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-RecycleView：点击item字体变大" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-ScrollView隐藏滚动条" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      RecycleView的单击事件
+      ScrollView隐藏滚动条
     </h1>
     <div class="post-title-bar">
       <ul>
           
         <li>
-          <i class="fa fa-calendar"></i>  2019-11-29
+          <i class="fa fa-calendar"></i>  2019-12-03
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -138,17 +138,11 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h1 id="RecycleView的单击事件："><a href="#RecycleView的单击事件：" class="headerlink" title="RecycleView的单击事件："></a>RecycleView的单击事件：</h1><h4 id="1、先写一个OnItemClickListener的接口："><a href="#1、先写一个OnItemClickListener的接口：" class="headerlink" title="1、先写一个OnItemClickListener的接口："></a>1、先写一个OnItemClickListener的接口：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface OnItemClickListener &#123;</span><br><span class="line">    void onItemClick(int position);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法"><a href="#2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法" class="headerlink" title="2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法"></a>2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//声明一个OnItemClickListener的变量</span><br><span class="line">private OnItemClickListener onItemClickListener;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//写一个setOnItemClickListener的方法</span><br><span class="line"> public void setOnItemClickListener(OnItemClickListener onItemClickListeners)&#123;</span><br><span class="line">        this.onItemClickListener = onItemClickListeners;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //在onBindViewHolder中判断onItemClickListener不等于空</span><br><span class="line">      public void onBindViewHolder(final ViewHolder holder, final int position)&#123;</span><br><span class="line">        Fruit fruit = (Fruit) mFruitList.get(position);</span><br><span class="line">        holder.fruitName.setText(fruit.getName());</span><br><span class="line">        if (onItemClickListener != null)&#123;</span><br><span class="line">            holder.itemView.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">                @Override</span><br><span class="line">                public void onClick(View v) &#123;</span><br><span class="line">                    onItemClickListener.onItemClick(position);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="实现代码："><a href="#实现代码：" class="headerlink" title="实现代码："></a>实现代码：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//RecyclerView的单击事件</span><br><span class="line">        adapter.setOnItemClickListener(new OnItemClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onItemClick(int position) &#123;</span><br><span class="line">                Intent intent = new Intent(HemoPageActivity.this, BtuActivity.class);</span><br><span class="line">                startActivity(intent);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
-
-
+            <h1 id="ScrollView隐藏滚动条"><a href="#ScrollView隐藏滚动条" class="headerlink" title="ScrollView隐藏滚动条"></a>ScrollView隐藏滚动条</h1><h4 id="在写代码的时候发现ScrollView滚动最左侧会有一个灰色的滚动条，丑的要了老命，去网上查阅了一下让滚动条不显示的方式的方法，如下："><a href="#在写代码的时候发现ScrollView滚动最左侧会有一个灰色的滚动条，丑的要了老命，去网上查阅了一下让滚动条不显示的方式的方法，如下：" class="headerlink" title="在写代码的时候发现ScrollView滚动最左侧会有一个灰色的滚动条，丑的要了老命，去网上查阅了一下让滚动条不显示的方式的方法，如下："></a>在写代码的时候发现ScrollView滚动最左侧会有一个灰色的滚动条，丑的要了老命，去网上查阅了一下让滚动条不显示的方式的方法，如下：</h4><h5 id="要实现ScrollView滚动条的隐藏，有两种方法："><a href="#要实现ScrollView滚动条的隐藏，有两种方法：" class="headerlink" title="要实现ScrollView滚动条的隐藏，有两种方法："></a>要实现ScrollView滚动条的隐藏，有两种方法：</h5><h6 id="一种是在XML的ScrollView布局中加入属性："><a href="#一种是在XML的ScrollView布局中加入属性：" class="headerlink" title="一种是在XML的ScrollView布局中加入属性："></a>一种是在XML的ScrollView布局中加入属性：</h6><h6 id="android-scrollbars-”none”"><a href="#android-scrollbars-”none”" class="headerlink" title="android:scrollbars=”none”"></a>android:scrollbars=”none”</h6><h6 id="另一种则是在Java代码中获取并声明ScrollView后写属性："><a href="#另一种则是在Java代码中获取并声明ScrollView后写属性：" class="headerlink" title="另一种则是在Java代码中获取并声明ScrollView后写属性："></a>另一种则是在Java代码中获取并声明ScrollView后写属性：</h6><h6 id="scroll-setVerticalScrollBarEnabled-false"><a href="#scroll-setVerticalScrollBarEnabled-false" class="headerlink" title="scroll.setVerticalScrollBarEnabled(false);"></a>scroll.setVerticalScrollBarEnabled(false);</h6>
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年11月29日 19:22</p>
-        <p>原始链接： <a class="post-url" href="/2019/11/29/RecycleView：点击item字体变大/" title="RecycleView的单击事件">http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/</a></p>
+        <p>最后更新： 2019年12月03日 19:58</p>
+        <p>原始链接： <a class="post-url" href="/2019/12/03/ScrollView隐藏滚动条/" title="ScrollView隐藏滚动条">http://yoursite.com/2019/12/03/ScrollView隐藏滚动条/</a></p>
         <footer>
             <a href="http://yoursite.com">
                 <img src="/images/logo.png" alt="王氏小仙女">
@@ -205,7 +199,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/&title=《RecycleView的单击事件》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/12/03/ScrollView隐藏滚动条/&title=《ScrollView隐藏滚动条》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -215,22 +209,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/&title=《RecycleView的单击事件》 — Hexo&source=" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/03/ScrollView隐藏滚动条/&title=《ScrollView隐藏滚动条》 — Hexo&source=" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/03/ScrollView隐藏滚动条/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RecycleView的单击事件》 — Hexo&url=http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/&via=http://yoursite.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ScrollView隐藏滚动条》 — Hexo&url=http://yoursite.com/2019/12/03/ScrollView隐藏滚动条/&via=http://yoursite.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/12/03/ScrollView隐藏滚动条/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -240,7 +234,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/12/03/ScrollView隐藏滚动条/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -258,26 +252,16 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#RecycleView的单击事件："><span class="post-toc-text">RecycleView的单击事件：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、先写一个OnItemClickListener的接口："><span class="post-toc-text">1、先写一个OnItemClickListener的接口：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法"><span class="post-toc-text">2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实现代码："><span class="post-toc-text">实现代码：</span></a></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ScrollView隐藏滚动条"><span class="post-toc-text">ScrollView隐藏滚动条</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#在写代码的时候发现ScrollView滚动最左侧会有一个灰色的滚动条，丑的要了老命，去网上查阅了一下让滚动条不显示的方式的方法，如下："><span class="post-toc-text">在写代码的时候发现ScrollView滚动最左侧会有一个灰色的滚动条，丑的要了老命，去网上查阅了一下让滚动条不显示的方式的方法，如下：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#要实现ScrollView滚动条的隐藏，有两种方法："><span class="post-toc-text">要实现ScrollView滚动条的隐藏，有两种方法：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#一种是在XML的ScrollView布局中加入属性："><span class="post-toc-text">一种是在XML的ScrollView布局中加入属性：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#android-scrollbars-”none”"><span class="post-toc-text">android:scrollbars=”none”</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#另一种则是在Java代码中获取并声明ScrollView后写属性："><span class="post-toc-text">另一种则是在Java代码中获取并声明ScrollView后写属性：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#scroll-setVerticalScrollBarEnabled-false"><span class="post-toc-text">scroll.setVerticalScrollBarEnabled(false);</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2019/12/03/ScrollView隐藏滚动条/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          ScrollView隐藏滚动条
-        
-      </span>
-    </a>
   
-  
-    <a href="/2019/11/24/Android-轮播图的实现（ViewPager）/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">Android 轮播图的实现（ViewPager）</span>
+    <a href="/2019/11/29/RecycleView：点击item字体变大/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">RecycleView的单击事件</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
