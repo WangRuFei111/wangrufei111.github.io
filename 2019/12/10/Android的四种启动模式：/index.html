@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Android的四种启动模式： | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="王氏小仙女">
+  
+  <meta name="description" content="Android的四种启动模式：Activity作为四大组件之一，也可以说是四大组件中最重要的一个组件，它负责App的视图，还负责用户交互，而且有时候还经常其他组件绑定使用，可以说非常的重要。说起Android中的启动模式，其实是个很基础的内容，谁都知道是4中启动模式，没错分别是以下四种：1，standard2，singleTop3，singleTask4，singleInstanc任务栈：是一个用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android的四种启动模式：">
+<meta property="og:url" content="http://yoursite.com/2019/12/10/Android的四种启动模式：/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Android的四种启动模式：Activity作为四大组件之一，也可以说是四大组件中最重要的一个组件，它负责App的视图，还负责用户交互，而且有时候还经常其他组件绑定使用，可以说非常的重要。说起Android中的启动模式，其实是个很基础的内容，谁都知道是4中启动模式，没错分别是以下四种：1，standard2，singleTop3，singleTask4，singleInstanc任务栈：是一个用">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-12-10T05:46:16.252Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android的四种启动模式：">
+<meta name="twitter:description" content="Android的四种启动模式：Activity作为四大组件之一，也可以说是四大组件中最重要的一个组件，它负责App的视图，还负责用户交互，而且有时候还经常其他组件绑定使用，可以说非常的重要。说起Android中的启动模式，其实是个很基础的内容，谁都知道是4中启动模式，没错分别是以下四种：1，standard2，singleTop3，singleTask4，singleInstanc任务栈：是一个用">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">王氏小仙女</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        王氏小仙女
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 Android 开发的小仙女
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-Android的四种启动模式：" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Android的四种启动模式：
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-12-10
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h1 id="Android的四种启动模式："><a href="#Android的四种启动模式：" class="headerlink" title="Android的四种启动模式："></a>Android的四种启动模式：</h1><h4 id="Activity作为四大组件之一，也可以说是四大组件中最重要的一个组件，它负责App的视图，还负责用户交互，而且有时候还经常其他组件绑定使用，可以说非常的重要。"><a href="#Activity作为四大组件之一，也可以说是四大组件中最重要的一个组件，它负责App的视图，还负责用户交互，而且有时候还经常其他组件绑定使用，可以说非常的重要。" class="headerlink" title="Activity作为四大组件之一，也可以说是四大组件中最重要的一个组件，它负责App的视图，还负责用户交互，而且有时候还经常其他组件绑定使用，可以说非常的重要。"></a><strong>Activity作为四大组件之一，也可以说是四大组件中最重要的一个组件，它负责App的视图，还负责用户交互，而且有时候还经常其他组件绑定使用，可以说非常的重要。</strong></h4><h6 id="说起Android中的启动模式，其实是个很基础的内容，谁都知道是4中启动模式，没错分别是以下四种："><a href="#说起Android中的启动模式，其实是个很基础的内容，谁都知道是4中启动模式，没错分别是以下四种：" class="headerlink" title="说起Android中的启动模式，其实是个很基础的内容，谁都知道是4中启动模式，没错分别是以下四种："></a>说起Android中的启动模式，其实是个很基础的内容，谁都知道是4中启动模式，没错分别是以下四种：</h6><h6 id="1，standard"><a href="#1，standard" class="headerlink" title="1，standard"></a>1，standard</h6><h6 id="2，singleTop"><a href="#2，singleTop" class="headerlink" title="2，singleTop"></a>2，singleTop</h6><h6 id="3，singleTask"><a href="#3，singleTask" class="headerlink" title="3，singleTask"></a>3，singleTask</h6><h6 id="4，singleInstanc"><a href="#4，singleInstanc" class="headerlink" title="4，singleInstanc"></a>4，singleInstanc</h6><h4 id="任务栈："><a href="#任务栈：" class="headerlink" title="任务栈："></a>任务栈：</h4><h6 id="是一个用来放置Activity实例的容器，他是以栈的方式进行存放，也就是先进先出的原则，主要的基本操作有两个：入栈和出栈。在任务栈中存放的实例是不支持重新排列顺序的，只能根据它出栈和入栈来改变Activity的顺序。"><a href="#是一个用来放置Activity实例的容器，他是以栈的方式进行存放，也就是先进先出的原则，主要的基本操作有两个：入栈和出栈。在任务栈中存放的实例是不支持重新排列顺序的，只能根据它出栈和入栈来改变Activity的顺序。" class="headerlink" title="是一个用来放置Activity实例的容器，他是以栈的方式进行存放，也就是先进先出的原则，主要的基本操作有两个：入栈和出栈。在任务栈中存放的实例是不支持重新排列顺序的，只能根据它出栈和入栈来改变Activity的顺序。"></a>是一个用来放置Activity实例的容器，他是以栈的方式进行存放，也就是先进先出的原则，主要的基本操作有两个：入栈和出栈。在任务栈中存放的实例是不支持重新排列顺序的，只能根据它出栈和入栈来改变Activity的顺序。</h6><h4 id="1-标准模式："><a href="#1-标准模式：" class="headerlink" title="1.标准模式："></a>1.标准模式：</h4><h6 id="默认启动模式，每次都会创建新的实例，一个任务栈中可以有多个实例，而一个实例页可以存在与多个任务栈中，谁启动了这个Activity，那么这个Activity就会运行在启动它的那个任务栈中"><a href="#默认启动模式，每次都会创建新的实例，一个任务栈中可以有多个实例，而一个实例页可以存在与多个任务栈中，谁启动了这个Activity，那么这个Activity就会运行在启动它的那个任务栈中" class="headerlink" title="默认启动模式，每次都会创建新的实例，一个任务栈中可以有多个实例，而一个实例页可以存在与多个任务栈中，谁启动了这个Activity，那么这个Activity就会运行在启动它的那个任务栈中"></a>默认启动模式，每次都会创建新的实例，一个任务栈中可以有多个实例，而一个实例页可以存在与多个任务栈中，谁启动了这个Activity，那么这个Activity就会运行在启动它的那个任务栈中</h6><h4 id="2-栈顶复用模式："><a href="#2-栈顶复用模式：" class="headerlink" title="2.栈顶复用模式："></a>2.栈顶复用模式：</h4><h6 id="顾名思义，如果要创建的这个Acticity的实例在栈顶的位置，那么将不再创建实例，而是将这个实例直接拿过来用，这里需要注意，如果一个Activity的启动模式栈顶复用模式，那么当它再次被启动的时候，将不再调用Activity的onCarert和onStret方法，而是调用onNewIntent，如果它不再栈顶，创建新的实例"><a href="#顾名思义，如果要创建的这个Acticity的实例在栈顶的位置，那么将不再创建实例，而是将这个实例直接拿过来用，这里需要注意，如果一个Activity的启动模式栈顶复用模式，那么当它再次被启动的时候，将不再调用Activity的onCarert和onStret方法，而是调用onNewIntent，如果它不再栈顶，创建新的实例" class="headerlink" title="顾名思义，如果要创建的这个Acticity的实例在栈顶的位置，那么将不再创建实例，而是将这个实例直接拿过来用，这里需要注意，如果一个Activity的启动模式栈顶复用模式，那么当它再次被启动的时候，将不再调用Activity的onCarert和onStret方法，而是调用onNewIntent，如果它不再栈顶，创建新的实例"></a>顾名思义，如果要创建的这个Acticity的实例在栈顶的位置，那么将不再创建实例，而是将这个实例直接拿过来用，这里需要注意，如果一个Activity的启动模式栈顶复用模式，那么当它再次被启动的时候，将不再调用Activity的onCarert和onStret方法，而是调用onNewIntent，如果它不再栈顶，创建新的实例</h6><h4 id="3-栈内复用模式："><a href="#3-栈内复用模式：" class="headerlink" title="3.栈内复用模式："></a>3.栈内复用模式：</h4><h6 id="单实例模式，一个任务栈中的同一个Activity只会有一个实例，只要栈内存在这个Activity的实例，再次启动这个Activity时，将不再创建实例而是直接调用这个实例，在这个实例上的实例将被出栈：A-gt-B-gt-C-gt-D-调用A，这个栈中只会剩余一个A的实例"><a href="#单实例模式，一个任务栈中的同一个Activity只会有一个实例，只要栈内存在这个Activity的实例，再次启动这个Activity时，将不再创建实例而是直接调用这个实例，在这个实例上的实例将被出栈：A-gt-B-gt-C-gt-D-调用A，这个栈中只会剩余一个A的实例" class="headerlink" title="单实例模式，一个任务栈中的同一个Activity只会有一个实例，只要栈内存在这个Activity的实例，再次启动这个Activity时，将不再创建实例而是直接调用这个实例，在这个实例上的实例将被出栈：A-&gt;B-&gt;C-&gt;D,调用A，这个栈中只会剩余一个A的实例"></a>单实例模式，一个任务栈中的同一个Activity只会有一个实例，只要栈内存在这个Activity的实例，再次启动这个Activity时，将不再创建实例而是直接调用这个实例，在这个实例上的实例将被出栈：A-&gt;B-&gt;C-&gt;D,调用A，这个栈中只会剩余一个A的实例</h6><h4 id="4-单例模式："><a href="#4-单例模式：" class="headerlink" title="4.单例模式："></a>4.单例模式：</h4><h6 id="它会运行在自己单独，独立的任务栈中，并且任务栈中的只有它一个实例"><a href="#它会运行在自己单独，独立的任务栈中，并且任务栈中的只有它一个实例" class="headerlink" title="它会运行在自己单独，独立的任务栈中，并且任务栈中的只有它一个实例"></a>它会运行在自己单独，独立的任务栈中，并且任务栈中的只有它一个实例</h6>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年12月10日 13:46</p>
+        <p>原始链接： <a class="post-url" href="/2019/12/10/Android的四种启动模式：/" title="Android的四种启动模式：">http://yoursite.com/2019/12/10/Android的四种启动模式：/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="王氏小仙女">
+                王氏小仙女
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/12/10/Android的四种启动模式：/&title=《Android的四种启动模式：》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/10/Android的四种启动模式：/&title=《Android的四种启动模式：》 — Hexo&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/10/Android的四种启动模式：/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android的四种启动模式：》 — Hexo&url=http://yoursite.com/2019/12/10/Android的四种启动模式：/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/12/10/Android的四种启动模式：/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/12/10/Android的四种启动模式：/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android的四种启动模式："><span class="post-toc-text">Android的四种启动模式：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Activity作为四大组件之一，也可以说是四大组件中最重要的一个组件，它负责App的视图，还负责用户交互，而且有时候还经常其他组件绑定使用，可以说非常的重要。"><span class="post-toc-text">Activity作为四大组件之一，也可以说是四大组件中最重要的一个组件，它负责App的视图，还负责用户交互，而且有时候还经常其他组件绑定使用，可以说非常的重要。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#说起Android中的启动模式，其实是个很基础的内容，谁都知道是4中启动模式，没错分别是以下四种："><span class="post-toc-text">说起Android中的启动模式，其实是个很基础的内容，谁都知道是4中启动模式，没错分别是以下四种：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#1，standard"><span class="post-toc-text">1，standard</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#2，singleTop"><span class="post-toc-text">2，singleTop</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#3，singleTask"><span class="post-toc-text">3，singleTask</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#4，singleInstanc"><span class="post-toc-text">4，singleInstanc</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#任务栈："><span class="post-toc-text">任务栈：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#是一个用来放置Activity实例的容器，他是以栈的方式进行存放，也就是先进先出的原则，主要的基本操作有两个：入栈和出栈。在任务栈中存放的实例是不支持重新排列顺序的，只能根据它出栈和入栈来改变Activity的顺序。"><span class="post-toc-text">是一个用来放置Activity实例的容器，他是以栈的方式进行存放，也就是先进先出的原则，主要的基本操作有两个：入栈和出栈。在任务栈中存放的实例是不支持重新排列顺序的，只能根据它出栈和入栈来改变Activity的顺序。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-标准模式："><span class="post-toc-text">1.标准模式：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#默认启动模式，每次都会创建新的实例，一个任务栈中可以有多个实例，而一个实例页可以存在与多个任务栈中，谁启动了这个Activity，那么这个Activity就会运行在启动它的那个任务栈中"><span class="post-toc-text">默认启动模式，每次都会创建新的实例，一个任务栈中可以有多个实例，而一个实例页可以存在与多个任务栈中，谁启动了这个Activity，那么这个Activity就会运行在启动它的那个任务栈中</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-栈顶复用模式："><span class="post-toc-text">2.栈顶复用模式：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#顾名思义，如果要创建的这个Acticity的实例在栈顶的位置，那么将不再创建实例，而是将这个实例直接拿过来用，这里需要注意，如果一个Activity的启动模式栈顶复用模式，那么当它再次被启动的时候，将不再调用Activity的onCarert和onStret方法，而是调用onNewIntent，如果它不再栈顶，创建新的实例"><span class="post-toc-text">顾名思义，如果要创建的这个Acticity的实例在栈顶的位置，那么将不再创建实例，而是将这个实例直接拿过来用，这里需要注意，如果一个Activity的启动模式栈顶复用模式，那么当它再次被启动的时候，将不再调用Activity的onCarert和onStret方法，而是调用onNewIntent，如果它不再栈顶，创建新的实例</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-栈内复用模式："><span class="post-toc-text">3.栈内复用模式：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#单实例模式，一个任务栈中的同一个Activity只会有一个实例，只要栈内存在这个Activity的实例，再次启动这个Activity时，将不再创建实例而是直接调用这个实例，在这个实例上的实例将被出栈：A-gt-B-gt-C-gt-D-调用A，这个栈中只会剩余一个A的实例"><span class="post-toc-text">单实例模式，一个任务栈中的同一个Activity只会有一个实例，只要栈内存在这个Activity的实例，再次启动这个Activity时，将不再创建实例而是直接调用这个实例，在这个实例上的实例将被出栈：A-&gt;B-&gt;C-&gt;D,调用A，这个栈中只会剩余一个A的实例</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-单例模式："><span class="post-toc-text">4.单例模式：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#它会运行在自己单独，独立的任务栈中，并且任务栈中的只有它一个实例"><span class="post-toc-text">它会运行在自己单独，独立的任务栈中，并且任务栈中的只有它一个实例</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/03/ScrollView隐藏滚动条/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">ScrollView隐藏滚动条</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 王氏小仙女<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
