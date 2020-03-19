@@ -3,22 +3,22 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>RecycleView的单击事件 | Hexo</title>
+  <title>随时随地退出程序 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="王氏小仙女">
   
-  <meta name="description" content="RecycleView的单击事件：1、先写一个OnItemClickListener的接口：123public interface OnItemClickListener &amp;#123;    void onItemClick(int position);&amp;#125;  2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法1234567891011121314151617">
+  <meta name="description" content="随时随地推出程序其实解决思路很简单，只需要一个专门的集合类对所有的活动进行管理就行了。12345678910111213141516171819202122232425//随时能退出程序的管理类public class ActivityCollector &amp;#123;    public static List&amp;lt;Activity&amp;gt; activites = new ArrayList&amp;l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RecycleView的单击事件">
-<meta property="og:url" content="http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/index.html">
+<meta property="og:title" content="随时随地退出程序">
+<meta property="og:url" content="http://yoursite.com/2020/03/19/随时随地退出程序/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="RecycleView的单击事件：1、先写一个OnItemClickListener的接口：123public interface OnItemClickListener &amp;#123;    void onItemClick(int position);&amp;#125;  2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法1234567891011121314151617">
+<meta property="og:description" content="随时随地推出程序其实解决思路很简单，只需要一个专门的集合类对所有的活动进行管理就行了。12345678910111213141516171819202122232425//随时能退出程序的管理类public class ActivityCollector &amp;#123;    public static List&amp;lt;Activity&amp;gt; activites = new ArrayList&amp;l">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-29T11:22:21.774Z">
+<meta property="og:updated_time" content="2020-03-19T10:32:59.237Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RecycleView的单击事件">
-<meta name="twitter:description" content="RecycleView的单击事件：1、先写一个OnItemClickListener的接口：123public interface OnItemClickListener &amp;#123;    void onItemClick(int position);&amp;#125;  2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法1234567891011121314151617">
+<meta name="twitter:title" content="随时随地退出程序">
+<meta name="twitter:description" content="随时随地推出程序其实解决思路很简单，只需要一个专门的集合类对所有的活动进行管理就行了。12345678910111213141516171819202122232425//随时能退出程序的管理类public class ActivityCollector &amp;#123;    public static List&amp;lt;Activity&amp;gt; activites = new ArrayList&amp;l">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -109,20 +109,20 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-RecycleView：点击item字体变大" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-随时随地退出程序" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      RecycleView的单击事件
+      随时随地退出程序
     </h1>
     <div class="post-title-bar">
       <ul>
           
         <li>
-          <i class="fa fa-calendar"></i>  2019-11-29
+          <i class="fa fa-calendar"></i>  2020-03-19
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -138,17 +138,20 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h1 id="RecycleView的单击事件："><a href="#RecycleView的单击事件：" class="headerlink" title="RecycleView的单击事件："></a>RecycleView的单击事件：</h1><h4 id="1、先写一个OnItemClickListener的接口："><a href="#1、先写一个OnItemClickListener的接口：" class="headerlink" title="1、先写一个OnItemClickListener的接口："></a>1、先写一个OnItemClickListener的接口：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface OnItemClickListener &#123;</span><br><span class="line">    void onItemClick(int position);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h1 id="随时随地推出程序"><a href="#随时随地推出程序" class="headerlink" title="随时随地推出程序"></a>随时随地推出程序</h1><h4 id="其实解决思路很简单，只需要一个专门的集合类对所有的活动进行管理就行了。"><a href="#其实解决思路很简单，只需要一个专门的集合类对所有的活动进行管理就行了。" class="headerlink" title="其实解决思路很简单，只需要一个专门的集合类对所有的活动进行管理就行了。"></a>其实解决思路很简单，只需要一个专门的集合类对所有的活动进行管理就行了。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//随时能退出程序的管理类</span><br><span class="line">public class ActivityCollector &#123;</span><br><span class="line">    public static List&lt;Activity&gt; activites = new ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">//    添加activity</span><br><span class="line">    public static void addActivity(Activity activity)&#123;</span><br><span class="line">        activites.add(activity);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //移除activity</span><br><span class="line">    public static void removeActivity(Activity activity)&#123;</span><br><span class="line">        activites.remove(activity);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //全部关闭</span><br><span class="line">    public static void finishAll()&#123;</span><br><span class="line">        for (Activity activity:activites)&#123;</span><br><span class="line">            if (!activity.isFinishing())&#123;</span><br><span class="line">                activity.finish();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        activites.clear();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法"><a href="#2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法" class="headerlink" title="2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法"></a>2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//声明一个OnItemClickListener的变量</span><br><span class="line">private OnItemClickListener onItemClickListener;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//写一个setOnItemClickListener的方法</span><br><span class="line"> public void setOnItemClickListener(OnItemClickListener onItemClickListeners)&#123;</span><br><span class="line">        this.onItemClickListener = onItemClickListeners;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //在onBindViewHolder中判断onItemClickListener不等于空</span><br><span class="line">      public void onBindViewHolder(final ViewHolder holder, final int position)&#123;</span><br><span class="line">        Fruit fruit = (Fruit) mFruitList.get(position);</span><br><span class="line">        holder.fruitName.setText(fruit.getName());</span><br><span class="line">        if (onItemClickListener != null)&#123;</span><br><span class="line">            holder.itemView.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">                @Override</span><br><span class="line">                public void onClick(View v) &#123;</span><br><span class="line">                    onItemClickListener.onItemClick(position);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="在活动管理中我们通过一个List来暂存活动，然后提供了一个addActivity-方法用于向List中添加活动，提供一个removeActivity-用于从List中移除活动，最后提供了一个finishAll-方法将List中国存储的活动全部销毁掉。"><a href="#在活动管理中我们通过一个List来暂存活动，然后提供了一个addActivity-方法用于向List中添加活动，提供一个removeActivity-用于从List中移除活动，最后提供了一个finishAll-方法将List中国存储的活动全部销毁掉。" class="headerlink" title="在活动管理中我们通过一个List来暂存活动，然后提供了一个addActivity()方法用于向List中添加活动，提供一个removeActivity()用于从List中移除活动，最后提供了一个finishAll()方法将List中国存储的活动全部销毁掉。"></a>在活动管理中我们通过一个List来暂存活动，然后提供了一个addActivity()方法用于向List中添加活动，提供一个removeActivity()用于从List中移除活动，最后提供了一个finishAll()方法将List中国存储的活动全部销毁掉。</h4><h6 id="在你的Activity中添加以下代码："><a href="#在你的Activity中添加以下代码：" class="headerlink" title="在你的Activity中添加以下代码："></a>在你的Activity中添加以下代码：</h6><p> //在onCreate中添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ActivityCollector.addActivity(this);</span><br><span class="line">//重写onDestroy方法</span><br></pre></td></tr></table></figure>
 
-<h4 id="实现代码："><a href="#实现代码：" class="headerlink" title="实现代码："></a>实现代码：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//RecyclerView的单击事件</span><br><span class="line">        adapter.setOnItemClickListener(new OnItemClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onItemClick(int position) &#123;</span><br><span class="line">                Intent intent = new Intent(HemoPageActivity.this, BtuActivity.class);</span><br><span class="line">                startActivity(intent);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">    protected void onDestroy() &#123;</span><br><span class="line">        super.onDestroy();</span><br><span class="line">        ActivityCollector.removeActivity(this);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="在你想退出程序的Activity中添加："><a href="#在你想退出程序的Activity中添加：" class="headerlink" title="在你想退出程序的Activity中添加："></a>在你想退出程序的Activity中添加：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ActivityCollector.finishAll();</span><br></pre></td></tr></table></figure>
 
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年11月29日 19:22</p>
-        <p>原始链接： <a class="post-url" href="/2019/11/29/RecycleView：点击item字体变大/" title="RecycleView的单击事件">http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/</a></p>
+        <p>最后更新： 2020年03月19日 18:32</p>
+        <p>原始链接： <a class="post-url" href="/2020/03/19/随时随地退出程序/" title="随时随地退出程序">http://yoursite.com/2020/03/19/随时随地退出程序/</a></p>
         <footer>
             <a href="http://yoursite.com">
                 <img src="/images/logo.png" alt="王氏小仙女">
@@ -205,7 +208,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/&title=《RecycleView的单击事件》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/03/19/随时随地退出程序/&title=《随时随地退出程序》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -215,22 +218,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/&title=《RecycleView的单击事件》 — Hexo&source=" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/03/19/随时随地退出程序/&title=《随时随地退出程序》 — Hexo&source=" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/03/19/随时随地退出程序/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RecycleView的单击事件》 — Hexo&url=http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/&via=http://yoursite.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《随时随地退出程序》 — Hexo&url=http://yoursite.com/2020/03/19/随时随地退出程序/&via=http://yoursite.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/03/19/随时随地退出程序/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -240,7 +243,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/11/29/RecycleView：点击item字体变大/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/03/19/随时随地退出程序/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -258,26 +261,16 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#RecycleView的单击事件："><span class="post-toc-text">RecycleView的单击事件：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、先写一个OnItemClickListener的接口："><span class="post-toc-text">1、先写一个OnItemClickListener的接口：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法"><span class="post-toc-text">2、在RecycleView的适配器中进行适配，给每个item添加一个点击的方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实现代码："><span class="post-toc-text">实现代码：</span></a></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#随时随地推出程序"><span class="post-toc-text">随时随地推出程序</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#其实解决思路很简单，只需要一个专门的集合类对所有的活动进行管理就行了。"><span class="post-toc-text">其实解决思路很简单，只需要一个专门的集合类对所有的活动进行管理就行了。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#在活动管理中我们通过一个List来暂存活动，然后提供了一个addActivity-方法用于向List中添加活动，提供一个removeActivity-用于从List中移除活动，最后提供了一个finishAll-方法将List中国存储的活动全部销毁掉。"><span class="post-toc-text">在活动管理中我们通过一个List来暂存活动，然后提供了一个addActivity()方法用于向List中添加活动，提供一个removeActivity()用于从List中移除活动，最后提供了一个finishAll()方法将List中国存储的活动全部销毁掉。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#在你的Activity中添加以下代码："><span class="post-toc-text">在你的Activity中添加以下代码：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#在你想退出程序的Activity中添加："><span class="post-toc-text">在你想退出程序的Activity中添加：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2019/12/03/ScrollView隐藏滚动条/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          ScrollView隐藏滚动条
-        
-      </span>
-    </a>
   
-  
-    <a href="/2019/11/24/Android-轮播图的实现（ViewPager）/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">Android 轮播图的实现（ViewPager）</span>
+    <a href="/2019/12/26/使用Viewpager-Fragment时Fragment会重复创建的解决方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">使用Viewpager+Fragment时Fragment会重复创建的解决方法</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
