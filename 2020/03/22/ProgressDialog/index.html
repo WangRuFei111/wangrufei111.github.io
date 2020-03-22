@@ -3,22 +3,22 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>总结：Activity的四种跳转方式 | Hexo</title>
+  <title>ProgressDialog | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="王氏小仙女">
   
-  <meta name="description" content="Activity的跳转：分为显示跳转和隐式跳转：显示跳转：1.12Intent intent = new Intent(当前文件名.this,目标文件名.class);startActivity(intent);//intent只是一个对象名  2.12Intent intent = new Intent();intent.setClass(本文件名.this,目标文件名.class);//int">
+  <meta name="description" content="ProgressDialog和AlertDialog有点类似，都可以在界面上弹出了一个对话框，都能够屏蔽掉其他控件的交互能力。不同的是，ProgressDialog会在对话框中显示一个进度条，一般用于表示当前操作比较耗时，让用户耐心等待，它的用法和AlertDialog也比较相似。不过，ProgressDialog在API 26中已经被弃用了，这里做了解使用。12345ProgressDialog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="总结：Activity的四种跳转方式">
-<meta property="og:url" content="http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/index.html">
+<meta property="og:title" content="ProgressDialog">
+<meta property="og:url" content="http://yoursite.com/2020/03/22/ProgressDialog/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Activity的跳转：分为显示跳转和隐式跳转：显示跳转：1.12Intent intent = new Intent(当前文件名.this,目标文件名.class);startActivity(intent);//intent只是一个对象名  2.12Intent intent = new Intent();intent.setClass(本文件名.this,目标文件名.class);//int">
+<meta property="og:description" content="ProgressDialog和AlertDialog有点类似，都可以在界面上弹出了一个对话框，都能够屏蔽掉其他控件的交互能力。不同的是，ProgressDialog会在对话框中显示一个进度条，一般用于表示当前操作比较耗时，让用户耐心等待，它的用法和AlertDialog也比较相似。不过，ProgressDialog在API 26中已经被弃用了，这里做了解使用。12345ProgressDialog">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-16T08:51:22.587Z">
+<meta property="og:updated_time" content="2020-03-22T04:04:17.321Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="总结：Activity的四种跳转方式">
-<meta name="twitter:description" content="Activity的跳转：分为显示跳转和隐式跳转：显示跳转：1.12Intent intent = new Intent(当前文件名.this,目标文件名.class);startActivity(intent);//intent只是一个对象名  2.12Intent intent = new Intent();intent.setClass(本文件名.this,目标文件名.class);//int">
+<meta name="twitter:title" content="ProgressDialog">
+<meta name="twitter:description" content="ProgressDialog和AlertDialog有点类似，都可以在界面上弹出了一个对话框，都能够屏蔽掉其他控件的交互能力。不同的是，ProgressDialog会在对话框中显示一个进度条，一般用于表示当前操作比较耗时，让用户耐心等待，它的用法和AlertDialog也比较相似。不过，ProgressDialog在API 26中已经被弃用了，这里做了解使用。12345ProgressDialog">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -109,20 +109,20 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-总结：Activity的四种跳转方式" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-ProgressDialog" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      总结：Activity的四种跳转方式
+      ProgressDialog
     </h1>
     <div class="post-title-bar">
       <ul>
           
         <li>
-          <i class="fa fa-calendar"></i>  2019-10-14
+          <i class="fa fa-calendar"></i>  2020-03-22
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -138,19 +138,15 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h1 id="Activity的跳转："><a href="#Activity的跳转：" class="headerlink" title="Activity的跳转："></a>Activity的跳转：</h1><h4 id="分为显示跳转和隐式跳转："><a href="#分为显示跳转和隐式跳转：" class="headerlink" title="分为显示跳转和隐式跳转："></a>分为显示跳转和隐式跳转：</h4><h6 id="显示跳转："><a href="#显示跳转：" class="headerlink" title="显示跳转："></a>显示跳转：</h6><h5 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = new Intent(当前文件名.this,目标文件名.class);</span><br><span class="line">startActivity(intent);//intent只是一个对象名</span><br></pre></td></tr></table></figure>
+            <h4 id="ProgressDialog和AlertDialog有点类似，都可以在界面上弹出了一个对话框，都能够屏蔽掉其他控件的交互能力。不同的是，ProgressDialog会在对话框中显示一个进度条，一般用于表示当前操作比较耗时，让用户耐心等待，它的用法和AlertDialog也比较相似。不过，ProgressDialog在API-26中已经被弃用了，这里做了解使用。"><a href="#ProgressDialog和AlertDialog有点类似，都可以在界面上弹出了一个对话框，都能够屏蔽掉其他控件的交互能力。不同的是，ProgressDialog会在对话框中显示一个进度条，一般用于表示当前操作比较耗时，让用户耐心等待，它的用法和AlertDialog也比较相似。不过，ProgressDialog在API-26中已经被弃用了，这里做了解使用。" class="headerlink" title="ProgressDialog和AlertDialog有点类似，都可以在界面上弹出了一个对话框，都能够屏蔽掉其他控件的交互能力。不同的是，ProgressDialog会在对话框中显示一个进度条，一般用于表示当前操作比较耗时，让用户耐心等待，它的用法和AlertDialog也比较相似。不过，ProgressDialog在API 26中已经被弃用了，这里做了解使用。"></a>ProgressDialog和AlertDialog有点类似，都可以在界面上弹出了一个对话框，都能够屏蔽掉其他控件的交互能力。不同的是，ProgressDialog会在对话框中显示一个进度条，一般用于表示当前操作比较耗时，让用户耐心等待，它的用法和AlertDialog也比较相似。不过，ProgressDialog在API 26中已经被弃用了，这里做了解使用。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ProgressDialog pd = new ProgressDialog(Main2Activity.this);</span><br><span class="line">pd.setTitle(&quot;这是加载框&quot;);</span><br><span class="line">pd.setMessage(&quot;这是加载...&quot;);</span><br><span class="line">pd.setCancelable(false);</span><br><span class="line">pd.show();</span><br></pre></td></tr></table></figure>
 
-<h5 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = new Intent();</span><br><span class="line">intent.setClass(本文件名.this,目标文件名.class);//intent只是一个对象名</span><br></pre></td></tr></table></figure>
+<h6 id="ProgressDialog继承自AlertDialog，而AlertDialog继承自Dialog。ProgressDialog的使用方法有两种，一种是直接New-ProgressDialog，一种是调用ProgressDialog的静态方法show。"><a href="#ProgressDialog继承自AlertDialog，而AlertDialog继承自Dialog。ProgressDialog的使用方法有两种，一种是直接New-ProgressDialog，一种是调用ProgressDialog的静态方法show。" class="headerlink" title="ProgressDialog继承自AlertDialog，而AlertDialog继承自Dialog。ProgressDialog的使用方法有两种，一种是直接New ProgressDialog，一种是调用ProgressDialog的静态方法show。"></a><code>ProgressDialog</code>继承自<code>AlertDialog</code>，而<code>AlertDialog</code>继承自<code>Dialog</code>。<code>ProgressDialog</code>的使用方法有两种，一种是直接<code>New ProgressDialog</code>，一种是调用<code>ProgressDialog</code>的静态方法show。</h6><h4 id="其他常用方法："><a href="#其他常用方法：" class="headerlink" title="其他常用方法："></a>其他常用方法：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//设置进度条风格，STYLE_HORIZONTAL为水平的，默认为STYLE_SPINNER，</span><br><span class="line">setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);</span><br><span class="line">//设置标题图标：</span><br><span class="line">setIcon(R.drawable.ic_launcher);</span><br><span class="line">//设置ProgressDialog 的进度条是否不明确；这个属性对于ProgressDailog默认的转轮模式没有实际意义， 默认下设置为true，它仅仅对带有ProgressBar的Dialog有作用。修改这个属性为false后可以实时更新进度条的进度。</span><br><span class="line">setIndeterminate(boolean flag):</span><br><span class="line">//当前Dialog强制取消之后将会被执行，通常用来清理未完成的任务。</span><br><span class="line">setOnCancelListener()</span><br><span class="line">//设置ProgressDialog 的一个Button（需要监听Button事件）；</span><br><span class="line">setButton()</span><br><span class="line">//设置最大进度条的值</span><br><span class="line">setMax(int)、getMax()</span><br><span class="line">//更新进度条，当然一般都需要Handler的结合来更新进度条</span><br><span class="line">setProgress(int)、getProgress</span><br><span class="line">//增加进度条</span><br><span class="line">incrementProgressBy(int);</span><br></pre></td></tr></table></figure>
 
-<h5 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = new Intent();</span><br><span class="line">Intent.setClassName(本文件名.this,&quot;目标文件完整路径&quot;);</span><br><span class="line">startActivity(intent);</span><br></pre></td></tr></table></figure>
 
-<h6 id="隐式跳转："><a href="#隐式跳转：" class="headerlink" title="隐式跳转："></a>隐式跳转：</h6><h5 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = new Intent();</span><br><span class="line">intent.setActivity(&quot;字符串&quot;);</span><br><span class="line">//此处的字符串为Manifast中的&lt;intent-filer&gt;中的action中name自定义字符串</span><br><span class="line">startActivity(intent);</span><br><span class="line">//如果想要实现隐式跳转，Manifast中的&lt;intent-filer&gt;中的categor必须为DEFAULT</span><br></pre></td></tr></table></figure>
-
-<h6 id="隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。"><a href="#隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。" class="headerlink" title="隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。"></a>隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。</h6><h6 id="显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。"><a href="#显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。" class="headerlink" title="显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。"></a>显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。</h6><h6 id="一般情况下，第一种方法时最常用。"><a href="#一般情况下，第一种方法时最常用。" class="headerlink" title="一般情况下，第一种方法时最常用。"></a>一般情况下，第一种方法时最常用。</h6>
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年10月16日 16:51</p>
-        <p>原始链接： <a class="post-url" href="/2019/10/14/总结：Activity的四种跳转方式/" title="总结：Activity的四种跳转方式">http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/</a></p>
+        <p>最后更新： 2020年03月22日 12:04</p>
+        <p>原始链接： <a class="post-url" href="/2020/03/22/ProgressDialog/" title="ProgressDialog">http://yoursite.com/2020/03/22/ProgressDialog/</a></p>
         <footer>
             <a href="http://yoursite.com">
                 <img src="/images/logo.png" alt="王氏小仙女">
@@ -207,7 +203,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/&title=《总结：Activity的四种跳转方式》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/03/22/ProgressDialog/&title=《ProgressDialog》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -217,22 +213,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/&title=《总结：Activity的四种跳转方式》 — Hexo&source=" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/03/22/ProgressDialog/&title=《ProgressDialog》 — Hexo&source=" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/03/22/ProgressDialog/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《总结：Activity的四种跳转方式》 — Hexo&url=http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/&via=http://yoursite.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ProgressDialog》 — Hexo&url=http://yoursite.com/2020/03/22/ProgressDialog/&via=http://yoursite.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/03/22/ProgressDialog/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -242,7 +238,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/03/22/ProgressDialog/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -260,26 +256,26 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Activity的跳转："><span class="post-toc-text">Activity的跳转：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#分为显示跳转和隐式跳转："><span class="post-toc-text">分为显示跳转和隐式跳转：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#显示跳转："><span class="post-toc-text">显示跳转：</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1"><span class="post-toc-text">1.</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2"><span class="post-toc-text">2.</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3"><span class="post-toc-text">3.</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#隐式跳转："><span class="post-toc-text">隐式跳转：</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4"><span class="post-toc-text">4.</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。"><span class="post-toc-text">隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。"><span class="post-toc-text">显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#一般情况下，第一种方法时最常用。"><span class="post-toc-text">一般情况下，第一种方法时最常用。</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ProgressDialog和AlertDialog有点类似，都可以在界面上弹出了一个对话框，都能够屏蔽掉其他控件的交互能力。不同的是，ProgressDialog会在对话框中显示一个进度条，一般用于表示当前操作比较耗时，让用户耐心等待，它的用法和AlertDialog也比较相似。不过，ProgressDialog在API-26中已经被弃用了，这里做了解使用。"><span class="post-toc-text">ProgressDialog和AlertDialog有点类似，都可以在界面上弹出了一个对话框，都能够屏蔽掉其他控件的交互能力。不同的是，ProgressDialog会在对话框中显示一个进度条，一般用于表示当前操作比较耗时，让用户耐心等待，它的用法和AlertDialog也比较相似。不过，ProgressDialog在API 26中已经被弃用了，这里做了解使用。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#ProgressDialog继承自AlertDialog，而AlertDialog继承自Dialog。ProgressDialog的使用方法有两种，一种是直接New-ProgressDialog，一种是调用ProgressDialog的静态方法show。"><span class="post-toc-text">ProgressDialog继承自AlertDialog，而AlertDialog继承自Dialog。ProgressDialog的使用方法有两种，一种是直接New ProgressDialog，一种是调用ProgressDialog的静态方法show。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#其他常用方法："><span class="post-toc-text">其他常用方法：</span></a></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2019/10/14/备忘录：Android-studio-布局运行不显示的问题/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/03/22/引入布局/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          备忘录：Android studio 布局运行不显示的问题
+          引入布局
         
       </span>
     </a>
   
   
-    <a href="/2019/10/11/Java面向对象/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">Java面向对象</span>
+    <a href="/2020/03/21/简单使用AlertDialog/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">简单使用AlertDialog</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
