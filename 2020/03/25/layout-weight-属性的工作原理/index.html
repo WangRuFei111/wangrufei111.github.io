@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>layout_weight 属性的工作原理 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="王氏小仙女">
+  
+  <meta name="description" content="layout_weight 属性的工作原理废话不多说，直接从代码开始讲起：1234567891011121314151617181920&amp;lt;LinearLayout xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot;    android:layout_width=&amp;quot;match_parent&amp;quo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="layout_weight 属性的工作原理">
+<meta property="og:url" content="http://yoursite.com/2020/03/25/layout-weight-属性的工作原理/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="layout_weight 属性的工作原理废话不多说，直接从代码开始讲起：1234567891011121314151617181920&amp;lt;LinearLayout xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot;    android:layout_width=&amp;quot;match_parent&amp;quo">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-03-25T14:16:16.533Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="layout_weight 属性的工作原理">
+<meta name="twitter:description" content="layout_weight 属性的工作原理废话不多说，直接从代码开始讲起：1234567891011121314151617181920&amp;lt;LinearLayout xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot;    android:layout_width=&amp;quot;match_parent&amp;quo">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">王氏小仙女</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        王氏小仙女
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 Android 开发的小仙女
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-layout-weight-属性的工作原理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      layout_weight 属性的工作原理
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-03-25
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="layout-weight-属性的工作原理"><a href="#layout-weight-属性的工作原理" class="headerlink" title="layout_weight 属性的工作原理"></a>layout_weight 属性的工作原理</h2><h4 id="废话不多说，直接从代码开始讲起："><a href="#废话不多说，直接从代码开始讲起：" class="headerlink" title="废话不多说，直接从代码开始讲起："></a>废话不多说，直接从代码开始讲起：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:orientation=&quot;vertical&quot;&gt;</span><br><span class="line">    &lt;Button </span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:text=&quot;button1&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">    &lt;Button </span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:text=&quot;button2&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">    &lt;Button </span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:text=&quot;button3&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+
+<h6 id="我们可以发现这三个button并没有将整个屏幕占据，而是根据内容适配大小。但是当我们在button2里面添加一个属性-android-layout-weight-”1”-，发现这次屏幕被三个button占据了，而且第一个和第三个button还是保持与内容适配大小，而第二个button而占据了剩余屏幕空间。"><a href="#我们可以发现这三个button并没有将整个屏幕占据，而是根据内容适配大小。但是当我们在button2里面添加一个属性-android-layout-weight-”1”-，发现这次屏幕被三个button占据了，而且第一个和第三个button还是保持与内容适配大小，而第二个button而占据了剩余屏幕空间。" class="headerlink" title="我们可以发现这三个button并没有将整个屏幕占据，而是根据内容适配大小。但是当我们在button2里面添加一个属性  android:layout_weight=”1” ，发现这次屏幕被三个button占据了，而且第一个和第三个button还是保持与内容适配大小，而第二个button而占据了剩余屏幕空间。"></a>我们可以发现这三个button并没有将整个屏幕占据，而是根据内容适配大小。但是当我们在button2里面添加一个属性  android:layout_weight=”1” ，发现这次屏幕被三个button占据了，而且第一个和第三个button还是保持与内容适配大小，而第二个button而占据了剩余屏幕空间。</h6><h6 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h6><ol>
+<li><h6 id="我们只有在button2使用了layout-weight属性，并赋值为1；但是button1和button2并没有使用这个属性，根据API可以知道，他们的layout-weight属性等于0。"><a href="#我们只有在button2使用了layout-weight属性，并赋值为1；但是button1和button2并没有使用这个属性，根据API可以知道，他们的layout-weight属性等于0。" class="headerlink" title="我们只有在button2使用了layout_weight属性，并赋值为1；但是button1和button2并没有使用这个属性，根据API可以知道，他们的layout_weight属性等于0。"></a>我们只有在button2使用了layout_weight属性，并赋值为1；但是button1和button2并没有使用这个属性，根据API可以知道，他们的layout_weight属性等于0。</h6></li>
+<li><h6 id="Android系统先按照你设置的3个Button高度Layout-height-wrap-content-给你分配好他们3个的高度，然后会把剩下来的屏幕空间全部赋给Button2-因为只有他的权重值是1，这也是为什么Button2占了那么大的一块空间。"><a href="#Android系统先按照你设置的3个Button高度Layout-height-wrap-content-给你分配好他们3个的高度，然后会把剩下来的屏幕空间全部赋给Button2-因为只有他的权重值是1，这也是为什么Button2占了那么大的一块空间。" class="headerlink" title="Android系统先按照你设置的3个Button高度Layout_height=wrap_content,给你分配好他们3个的高度，然后会把剩下来的屏幕空间全部赋给Button2,因为只有他的权重值是1，这也是为什么Button2占了那么大的一块空间。"></a>Android系统先按照你设置的3个Button高度Layout_height=wrap_content,给你分配好他们3个的高度，然后会把剩下来的屏幕空间全部赋给Button2,因为只有他的权重值是1，这也是为什么Button2占了那么大的一块空间。</h6></li>
+</ol>
+<h4 id="在看下面的代码："><a href="#在看下面的代码：" class="headerlink" title="在看下面的代码："></a>在看下面的代码：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:orientation=&quot;horizontal&quot;&gt;</span><br><span class="line">    &lt;TextView </span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_weight=&quot;1&quot;</span><br><span class="line">        android:text=&quot;1&quot;</span><br><span class="line">        android:background=&quot;#ff0000&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">    &lt;TextView </span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_weight=&quot;2&quot;</span><br><span class="line">        android:text=&quot;2&quot;</span><br><span class="line">        android:background=&quot;#00ff00&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">    &lt;TextView </span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_weight=&quot;3&quot;</span><br><span class="line">        android:text=&quot;3&quot;</span><br><span class="line">        android:background=&quot;#0000ff&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+
+<h6 id="系统先给3个TextView分配他们的宽度值wrap-content（宽度足以包含他们的内容1-2-3即可），然后会把剩下来的屏幕空间按照1-2-3的比列分配给3个textview，如果我们将上面三个TextView的layout-width都设置为match-parent，分别给三个TextView设置他们的Layout-weight为1、2、2的话，我们大概可以分辨出，他们所占的宽的比例为3-1-1。这样就出现一个另外一个效果：weight权重越大，控件所占的空间越小。"><a href="#系统先给3个TextView分配他们的宽度值wrap-content（宽度足以包含他们的内容1-2-3即可），然后会把剩下来的屏幕空间按照1-2-3的比列分配给3个textview，如果我们将上面三个TextView的layout-width都设置为match-parent，分别给三个TextView设置他们的Layout-weight为1、2、2的话，我们大概可以分辨出，他们所占的宽的比例为3-1-1。这样就出现一个另外一个效果：weight权重越大，控件所占的空间越小。" class="headerlink" title="系统先给3个TextView分配他们的宽度值wrap_content（宽度足以包含他们的内容1,2,3即可），然后会把剩下来的屏幕空间按照1:2:3的比列分配给3个textview，如果我们将上面三个TextView的layout_width都设置为match_parent，分别给三个TextView设置他们的Layout_weight为1、2、2的话，我们大概可以分辨出，他们所占的宽的比例为3:1:1。这样就出现一个另外一个效果：weight权重越大，控件所占的空间越小。"></a>系统先给3个TextView分配他们的宽度值wrap_content（宽度足以包含他们的内容1,2,3即可），然后会把剩下来的屏幕空间按照1:2:3的比列分配给3个textview，如果我们将上面三个TextView的layout_width都设置为match_parent，分别给三个TextView设置他们的Layout_weight为1、2、2的话，我们大概可以分辨出，他们所占的宽的比例为3:1:1。这样就出现一个另外一个效果：weight权重越大，控件所占的空间越小。</h6><h4 id="所以网上就有人这么总结："><a href="#所以网上就有人这么总结：" class="headerlink" title="所以网上就有人这么总结："></a>所以网上就有人这么总结：</h4><ul>
+<li><h6 id="在layout-width设置为match-parent的时候，layout-weight所代表的是你的控件要优先尽可能的大-但这个大是有限度的，即match-parent。"><a href="#在layout-width设置为match-parent的时候，layout-weight所代表的是你的控件要优先尽可能的大-但这个大是有限度的，即match-parent。" class="headerlink" title="在layout_width设置为match_parent的时候，layout_weight所代表的是你的控件要优先尽可能的大,但这个大是有限度的，即match_parent。"></a>在layout_width设置为match_parent的时候，layout_weight所代表的是你的控件要优先尽可能的大,但这个大是有限度的，即match_parent。</h6></li>
+<li><h6 id="在layout-width设置为wrap-content的时候，layout-weight所代表的是你的控件要优先尽可能的小-但这个大是有限度的，即wrap-content。"><a href="#在layout-width设置为wrap-content的时候，layout-weight所代表的是你的控件要优先尽可能的小-但这个大是有限度的，即wrap-content。" class="headerlink" title="在layout_width设置为wrap_content的时候，layout_weight所代表的是你的控件要优先尽可能的小,但这个大是有限度的，即wrap_content。"></a>在layout_width设置为wrap_content的时候，layout_weight所代表的是你的控件要优先尽可能的小,但这个大是有限度的，即wrap_content。</h6></li>
+</ul>
+<h6 id="如果我们将Layout-weight为1、2、3呢？第三个TextView直接消失了。"><a href="#如果我们将Layout-weight为1、2、3呢？第三个TextView直接消失了。" class="headerlink" title="如果我们将Layout_weight为1、2、3呢？第三个TextView直接消失了。"></a>如果我们将Layout_weight为1、2、3呢？第三个TextView直接消失了。</h6><ol>
+<li><h6 id="系统先给3个TextView分配他们所要的宽度match-parent，也就指定了每一个TextView都是填满他的父控件，这里就是整个屏幕的宽度。"><a href="#系统先给3个TextView分配他们所要的宽度match-parent，也就指定了每一个TextView都是填满他的父控件，这里就是整个屏幕的宽度。" class="headerlink" title="系统先给3个TextView分配他们所要的宽度match_parent，也就指定了每一个TextView都是填满他的父控件，这里就是整个屏幕的宽度。"></a>系统先给3个TextView分配他们所要的宽度match_parent，也就指定了每一个TextView都是填满他的父控件，这里就是整个屏幕的宽度。</h6></li>
+<li><h6 id="由于如果包含layout-width这个属性，LinearLayout将会进行第二次measure，此时将会根据权重分配剩余的空间，在这里剩余空间-1个parent-width-3个parent-width-2个parent-width-parent-width指的是屏幕宽度-。"><a href="#由于如果包含layout-width这个属性，LinearLayout将会进行第二次measure，此时将会根据权重分配剩余的空间，在这里剩余空间-1个parent-width-3个parent-width-2个parent-width-parent-width指的是屏幕宽度-。" class="headerlink" title="由于如果包含layout_width这个属性，LinearLayout将会进行第二次measure，此时将会根据权重分配剩余的空间，在这里剩余空间=1个parent_width-3个parent_width=-2个parent_width (parent_width指的是屏幕宽度 )。"></a>由于如果包含layout_width这个属性，LinearLayout将会进行第二次measure，此时将会根据权重分配剩余的空间，在这里剩余空间=1个parent_width-3个parent_width=-2个parent_width (parent_width指的是屏幕宽度 )。</h6></li>
+<li><h6 id="第一个TextView的实际所占宽度-parent-width（match-parent的宽度）-1-6-他所占剩余空间的权重比列）-剩余空间大小（-2-parent-width）-2-3parent-width；同理第二个TextView的实际所占宽度-parent-width-2-6-2parent-width-1-3parent-width-第三个TextView的实际所占宽度-parent-width-3-6-2parent-width-0parent-width；"><a href="#第一个TextView的实际所占宽度-parent-width（match-parent的宽度）-1-6-他所占剩余空间的权重比列）-剩余空间大小（-2-parent-width）-2-3parent-width；同理第二个TextView的实际所占宽度-parent-width-2-6-2parent-width-1-3parent-width-第三个TextView的实际所占宽度-parent-width-3-6-2parent-width-0parent-width；" class="headerlink" title="第一个TextView的实际所占宽度=parent_width（match_parent的宽度） + 1/6(他所占剩余空间的权重比列） * 剩余空间大小（-2 parent_width）=2/3parent_width；同理第二个TextView的实际所占宽度=parent_width + 2/6(-2parent_width)=1/3parent_width;第三个TextView的实际所占宽度=parent_width + 3/6(-2parent_width)=0parent_width；"></a>第一个TextView的实际所占宽度=parent_width（match_parent的宽度） + 1/6(他所占剩余空间的权重比列） * 剩余空间大小（-2 parent_width）=2/3parent_width；同理第二个TextView的实际所占宽度=parent_width + 2/6<em>(-2parent_width)=1/3parent_width;第三个TextView的实际所占宽度=parent_width + 3/6</em>(-2parent_width)=0parent_width；</h6></li>
+</ol>
+<h6 id="所以三个TextView的显示比例应该为2-1-0，第三个TextView就消失了，因为根据计算，都没有空间可以分配给他了。"><a href="#所以三个TextView的显示比例应该为2-1-0，第三个TextView就消失了，因为根据计算，都没有空间可以分配给他了。" class="headerlink" title="所以三个TextView的显示比例应该为2:1:0，第三个TextView就消失了，因为根据计算，都没有空间可以分配给他了。"></a>所以三个TextView的显示比例应该为2:1:0，第三个TextView就消失了，因为根据计算，都没有空间可以分配给他了。</h6>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年03月25日 22:16</p>
+        <p>原始链接： <a class="post-url" href="/2020/03/25/layout-weight-属性的工作原理/" title="layout_weight 属性的工作原理">http://yoursite.com/2020/03/25/layout-weight-属性的工作原理/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="王氏小仙女">
+                王氏小仙女
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/03/25/layout-weight-属性的工作原理/&title=《layout_weight 属性的工作原理》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/03/25/layout-weight-属性的工作原理/&title=《layout_weight 属性的工作原理》 — Hexo&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/03/25/layout-weight-属性的工作原理/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《layout_weight 属性的工作原理》 — Hexo&url=http://yoursite.com/2020/03/25/layout-weight-属性的工作原理/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/03/25/layout-weight-属性的工作原理/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/03/25/layout-weight-属性的工作原理/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#layout-weight-属性的工作原理"><span class="post-toc-text">layout_weight 属性的工作原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#废话不多说，直接从代码开始讲起："><span class="post-toc-text">废话不多说，直接从代码开始讲起：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#我们可以发现这三个button并没有将整个屏幕占据，而是根据内容适配大小。但是当我们在button2里面添加一个属性-android-layout-weight-”1”-，发现这次屏幕被三个button占据了，而且第一个和第三个button还是保持与内容适配大小，而第二个button而占据了剩余屏幕空间。"><span class="post-toc-text">我们可以发现这三个button并没有将整个屏幕占据，而是根据内容适配大小。但是当我们在button2里面添加一个属性  android:layout_weight=”1” ，发现这次屏幕被三个button占据了，而且第一个和第三个button还是保持与内容适配大小，而第二个button而占据了剩余屏幕空间。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#分析："><span class="post-toc-text">分析：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#我们只有在button2使用了layout-weight属性，并赋值为1；但是button1和button2并没有使用这个属性，根据API可以知道，他们的layout-weight属性等于0。"><span class="post-toc-text">我们只有在button2使用了layout_weight属性，并赋值为1；但是button1和button2并没有使用这个属性，根据API可以知道，他们的layout_weight属性等于0。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Android系统先按照你设置的3个Button高度Layout-height-wrap-content-给你分配好他们3个的高度，然后会把剩下来的屏幕空间全部赋给Button2-因为只有他的权重值是1，这也是为什么Button2占了那么大的一块空间。"><span class="post-toc-text">Android系统先按照你设置的3个Button高度Layout_height=wrap_content,给你分配好他们3个的高度，然后会把剩下来的屏幕空间全部赋给Button2,因为只有他的权重值是1，这也是为什么Button2占了那么大的一块空间。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#在看下面的代码："><span class="post-toc-text">在看下面的代码：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#系统先给3个TextView分配他们的宽度值wrap-content（宽度足以包含他们的内容1-2-3即可），然后会把剩下来的屏幕空间按照1-2-3的比列分配给3个textview，如果我们将上面三个TextView的layout-width都设置为match-parent，分别给三个TextView设置他们的Layout-weight为1、2、2的话，我们大概可以分辨出，他们所占的宽的比例为3-1-1。这样就出现一个另外一个效果：weight权重越大，控件所占的空间越小。"><span class="post-toc-text">系统先给3个TextView分配他们的宽度值wrap_content（宽度足以包含他们的内容1,2,3即可），然后会把剩下来的屏幕空间按照1:2:3的比列分配给3个textview，如果我们将上面三个TextView的layout_width都设置为match_parent，分别给三个TextView设置他们的Layout_weight为1、2、2的话，我们大概可以分辨出，他们所占的宽的比例为3:1:1。这样就出现一个另外一个效果：weight权重越大，控件所占的空间越小。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#所以网上就有人这么总结："><span class="post-toc-text">所以网上就有人这么总结：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#在layout-width设置为match-parent的时候，layout-weight所代表的是你的控件要优先尽可能的大-但这个大是有限度的，即match-parent。"><span class="post-toc-text">在layout_width设置为match_parent的时候，layout_weight所代表的是你的控件要优先尽可能的大,但这个大是有限度的，即match_parent。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#在layout-width设置为wrap-content的时候，layout-weight所代表的是你的控件要优先尽可能的小-但这个大是有限度的，即wrap-content。"><span class="post-toc-text">在layout_width设置为wrap_content的时候，layout_weight所代表的是你的控件要优先尽可能的小,但这个大是有限度的，即wrap_content。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#如果我们将Layout-weight为1、2、3呢？第三个TextView直接消失了。"><span class="post-toc-text">如果我们将Layout_weight为1、2、3呢？第三个TextView直接消失了。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#系统先给3个TextView分配他们所要的宽度match-parent，也就指定了每一个TextView都是填满他的父控件，这里就是整个屏幕的宽度。"><span class="post-toc-text">系统先给3个TextView分配他们所要的宽度match_parent，也就指定了每一个TextView都是填满他的父控件，这里就是整个屏幕的宽度。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#由于如果包含layout-width这个属性，LinearLayout将会进行第二次measure，此时将会根据权重分配剩余的空间，在这里剩余空间-1个parent-width-3个parent-width-2个parent-width-parent-width指的是屏幕宽度-。"><span class="post-toc-text">由于如果包含layout_width这个属性，LinearLayout将会进行第二次measure，此时将会根据权重分配剩余的空间，在这里剩余空间=1个parent_width-3个parent_width=-2个parent_width (parent_width指的是屏幕宽度 )。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#第一个TextView的实际所占宽度-parent-width（match-parent的宽度）-1-6-他所占剩余空间的权重比列）-剩余空间大小（-2-parent-width）-2-3parent-width；同理第二个TextView的实际所占宽度-parent-width-2-6-2parent-width-1-3parent-width-第三个TextView的实际所占宽度-parent-width-3-6-2parent-width-0parent-width；"><span class="post-toc-text">第一个TextView的实际所占宽度=parent_width（match_parent的宽度） + 1/6(他所占剩余空间的权重比列） * 剩余空间大小（-2 parent_width）=2/3parent_width；同理第二个TextView的实际所占宽度=parent_width + 2/6(-2parent_width)=1/3parent_width;第三个TextView的实际所占宽度=parent_width + 3/6(-2parent_width)=0parent_width；</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#所以三个TextView的显示比例应该为2-1-0，第三个TextView就消失了，因为根据计算，都没有空间可以分配给他了。"><span class="post-toc-text">所以三个TextView的显示比例应该为2:1:0，第三个TextView就消失了，因为根据计算，都没有空间可以分配给他了。</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/24/Activity右边滑出，右边滑入的动画切换/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Activity右边滑出，右边滑入的动画切换</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 王氏小仙女<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
