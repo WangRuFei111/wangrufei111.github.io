@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>活动（activity）和碎片（fragment） | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="王氏小仙女">
+  
+  <meta name="description" content="活动（activity）和碎片（fragment）Fragment（碎片）是必须嵌入在 Activity（活动） 中使用的。Fragment的生命周期随着Activity的生命周期的变化而变化活动（activity）：活动（activity）是吸引用户的地方，它是一种可以包含用户界面的组件，主要用于和用户进行交互，一个应用程序中可以包含零个或多个活动，但不包含任何活动的应用程序很少见，谁也不想让自">
+<meta property="og:type" content="article">
+<meta property="og:title" content="活动（activity）和碎片（fragment）">
+<meta property="og:url" content="http://yoursite.com/2020/03/26/活动（activity）和碎片（fragment）/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="活动（activity）和碎片（fragment）Fragment（碎片）是必须嵌入在 Activity（活动） 中使用的。Fragment的生命周期随着Activity的生命周期的变化而变化活动（activity）：活动（activity）是吸引用户的地方，它是一种可以包含用户界面的组件，主要用于和用户进行交互，一个应用程序中可以包含零个或多个活动，但不包含任何活动的应用程序很少见，谁也不想让自">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-03-26T15:16:22.117Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="活动（activity）和碎片（fragment）">
+<meta name="twitter:description" content="活动（activity）和碎片（fragment）Fragment（碎片）是必须嵌入在 Activity（活动） 中使用的。Fragment的生命周期随着Activity的生命周期的变化而变化活动（activity）：活动（activity）是吸引用户的地方，它是一种可以包含用户界面的组件，主要用于和用户进行交互，一个应用程序中可以包含零个或多个活动，但不包含任何活动的应用程序很少见，谁也不想让自">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">王氏小仙女</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        王氏小仙女
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 Android 开发的小仙女
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-活动（activity）和碎片（fragment）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      活动（activity）和碎片（fragment）
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-03-26
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="活动（activity）和碎片（fragment）"><a href="#活动（activity）和碎片（fragment）" class="headerlink" title="活动（activity）和碎片（fragment）"></a>活动（activity）和碎片（fragment）</h2><h6 id="Fragment（碎片）是必须嵌入在-Activity（活动）-中使用的。Fragment的生命周期随着Activity的生命周期的变化而变化"><a href="#Fragment（碎片）是必须嵌入在-Activity（活动）-中使用的。Fragment的生命周期随着Activity的生命周期的变化而变化" class="headerlink" title="Fragment（碎片）是必须嵌入在 Activity（活动） 中使用的。Fragment的生命周期随着Activity的生命周期的变化而变化"></a>Fragment（碎片）是必须嵌入在 Activity（活动） 中使用的。Fragment的生命周期随着Activity的生命周期的变化而变化</h6><h3 id="活动（activity）："><a href="#活动（activity）：" class="headerlink" title="活动（activity）："></a>活动（activity）：</h3><h6 id="活动（activity）是吸引用户的地方，它是一种可以包含用户界面的组件，主要用于和用户进行交互，一个应用程序中可以包含零个或多个活动，但不包含任何活动的应用程序很少见，谁也不想让自己的应用永远无法被用户看到吧？"><a href="#活动（activity）是吸引用户的地方，它是一种可以包含用户界面的组件，主要用于和用户进行交互，一个应用程序中可以包含零个或多个活动，但不包含任何活动的应用程序很少见，谁也不想让自己的应用永远无法被用户看到吧？" class="headerlink" title="活动（activity）是吸引用户的地方，它是一种可以包含用户界面的组件，主要用于和用户进行交互，一个应用程序中可以包含零个或多个活动，但不包含任何活动的应用程序很少见，谁也不想让自己的应用永远无法被用户看到吧？"></a>活动（activity）是吸引用户的地方，它是一种可以包含用户界面的组件，主要用于和用户进行交互，一个应用程序中可以包含零个或多个活动，但不包含任何活动的应用程序很少见，谁也不想让自己的应用永远无法被用户看到吧？</h6><h4 id="活动的生命周期："><a href="#活动的生命周期：" class="headerlink" title="活动的生命周期："></a>活动的生命周期：</h4><h6 id="掌握活动的声明周期对任何Android开发者来说都非常重要，当你深入理解活动的生命周期之后，就可以写出更加连贯的程序，并在如何管理应用资源方面发挥得游刃有余。"><a href="#掌握活动的声明周期对任何Android开发者来说都非常重要，当你深入理解活动的生命周期之后，就可以写出更加连贯的程序，并在如何管理应用资源方面发挥得游刃有余。" class="headerlink" title="掌握活动的声明周期对任何Android开发者来说都非常重要，当你深入理解活动的生命周期之后，就可以写出更加连贯的程序，并在如何管理应用资源方面发挥得游刃有余。"></a>掌握活动的声明周期对任何Android开发者来说都非常重要，当你深入理解活动的生命周期之后，就可以写出更加连贯的程序，并在如何管理应用资源方面发挥得游刃有余。</h6><h5 id="任务栈："><a href="#任务栈：" class="headerlink" title="任务栈："></a>任务栈：</h5><h6 id="如果想要了解声明周期，就要知道什么是任务栈。其实Android是使用任务（Task）来管理活动得，一个任务就是一组存放在栈李得活动，这个栈也被称作返回栈（Back-Stack）。任务栈是一个用来放置Activity实例的容器，他是以栈的方式进行存放，也就是后进先出的原则，主要的基本操作有两个：入栈和出栈。在任务栈中存放的实例是不支持重新排列顺序的，只能根据它出栈和入栈来改变Activity的顺序。"><a href="#如果想要了解声明周期，就要知道什么是任务栈。其实Android是使用任务（Task）来管理活动得，一个任务就是一组存放在栈李得活动，这个栈也被称作返回栈（Back-Stack）。任务栈是一个用来放置Activity实例的容器，他是以栈的方式进行存放，也就是后进先出的原则，主要的基本操作有两个：入栈和出栈。在任务栈中存放的实例是不支持重新排列顺序的，只能根据它出栈和入栈来改变Activity的顺序。" class="headerlink" title="如果想要了解声明周期，就要知道什么是任务栈。其实Android是使用任务（Task）来管理活动得，一个任务就是一组存放在栈李得活动，这个栈也被称作返回栈（Back Stack）。任务栈是一个用来放置Activity实例的容器，他是以栈的方式进行存放，也就是后进先出的原则，主要的基本操作有两个：入栈和出栈。在任务栈中存放的实例是不支持重新排列顺序的，只能根据它出栈和入栈来改变Activity的顺序。"></a>如果想要了解声明周期，就要知道什么是任务栈。其实Android是使用任务（Task）来管理活动得，一个任务就是一组存放在栈李得活动，这个栈也被称作返回栈（Back Stack）。任务栈是一个用来放置Activity实例的容器，他是以栈的方式进行存放，也就是后进先出的原则，主要的基本操作有两个：入栈和出栈。在任务栈中存放的实例是不支持重新排列顺序的，只能根据它出栈和入栈来改变Activity的顺序。</h6><h4 id="活动的生存期："><a href="#活动的生存期：" class="headerlink" title="活动的生存期："></a>活动的生存期：</h4><p><strong>1. onCreate()</strong>:</p>
+<h6 id="这个方法我们已经看到过很多次了，每个活动中我们都重写了这个方法，它会在活动第一次被创建的时候调用。你应该在这个方法中完成活动的初始化操作，比如说加载布局、绑定事件等。"><a href="#这个方法我们已经看到过很多次了，每个活动中我们都重写了这个方法，它会在活动第一次被创建的时候调用。你应该在这个方法中完成活动的初始化操作，比如说加载布局、绑定事件等。" class="headerlink" title="这个方法我们已经看到过很多次了，每个活动中我们都重写了这个方法，它会在活动第一次被创建的时候调用。你应该在这个方法中完成活动的初始化操作，比如说加载布局、绑定事件等。"></a>这个方法我们已经看到过很多次了，每个活动中我们都重写了这个方法，它会在活动第一次被创建的时候调用。你应该在这个方法中完成活动的初始化操作，比如说加载布局、绑定事件等。</h6><p><strong>2. onStart()</strong></p>
+<h6 id="这个方法在活动由不可见变为可见的时候调用。"><a href="#这个方法在活动由不可见变为可见的时候调用。" class="headerlink" title="这个方法在活动由不可见变为可见的时候调用。"></a>这个方法在活动由不可见变为可见的时候调用。</h6><p><strong>3. onResume()</strong></p>
+<h6 id="在活动准备好和用户交互的时候调用，次活动处于栈顶的状态，并处于运行状态。"><a href="#在活动准备好和用户交互的时候调用，次活动处于栈顶的状态，并处于运行状态。" class="headerlink" title="在活动准备好和用户交互的时候调用，次活动处于栈顶的状态，并处于运行状态。"></a>在活动准备好和用户交互的时候调用，次活动处于栈顶的状态，并处于运行状态。</h6><p><strong>4. onPause()</strong></p>
+<h6 id="这个方法在系统准备去启动或者恢复另一个活动的时候调用。我们通常会在这个方法中将一些消耗CPU-的资源释放掉，以及保存一些关键数据，但这个方法的执行速度一定要快，不然会影响到新的栈顶活动的使用。"><a href="#这个方法在系统准备去启动或者恢复另一个活动的时候调用。我们通常会在这个方法中将一些消耗CPU-的资源释放掉，以及保存一些关键数据，但这个方法的执行速度一定要快，不然会影响到新的栈顶活动的使用。" class="headerlink" title="这个方法在系统准备去启动或者恢复另一个活动的时候调用。我们通常会在这个方法中将一些消耗CPU 的资源释放掉，以及保存一些关键数据，但这个方法的执行速度一定要快，不然会影响到新的栈顶活动的使用。"></a>这个方法在系统准备去启动或者恢复另一个活动的时候调用。我们通常会在这个方法中将一些消耗CPU 的资源释放掉，以及保存一些关键数据，但这个方法的执行速度一定要快，不然会影响到新的栈顶活动的使用。</h6><p><strong>5. onStop()</strong></p>
+<h6 id="这个方法在活动完全不可见的时候调用。它和onPause-方法的主要区别在于，如果启动的新活动是一个对话框式的活动，那么onPause-方法会得到执行，而onStop-方法并不会执行。"><a href="#这个方法在活动完全不可见的时候调用。它和onPause-方法的主要区别在于，如果启动的新活动是一个对话框式的活动，那么onPause-方法会得到执行，而onStop-方法并不会执行。" class="headerlink" title="这个方法在活动完全不可见的时候调用。它和onPause()方法的主要区别在于，如果启动的新活动是一个对话框式的活动，那么onPause()方法会得到执行，而onStop()方法并不会执行。"></a>这个方法在活动完全不可见的时候调用。它和onPause()方法的主要区别在于，如果启动的新活动是一个对话框式的活动，那么onPause()方法会得到执行，而onStop()方法并不会执行。</h6><p><strong>6. onDestroy()</strong></p>
+<h6 id="这个方法在活动被销毁之前调用，之后活动的状态将变为销毁状态。"><a href="#这个方法在活动被销毁之前调用，之后活动的状态将变为销毁状态。" class="headerlink" title="这个方法在活动被销毁之前调用，之后活动的状态将变为销毁状态。"></a>这个方法在活动被销毁之前调用，之后活动的状态将变为销毁状态。</h6><p><strong>7. onRestart()</strong></p>
+<h6 id="这个方法由停止状态变成运行前调用，也就是活动被重新启动了。"><a href="#这个方法由停止状态变成运行前调用，也就是活动被重新启动了。" class="headerlink" title="这个方法由停止状态变成运行前调用，也就是活动被重新启动了。"></a>这个方法由停止状态变成运行前调用，也就是活动被重新启动了。</h6><h6 id="完整生存期：-活动在onCreate-方法和onDestroy-方法之间所经历的，就是完整生存期。一般情况下，一个活动会在onCreate-方法中完成各种初始化操作，而在onDestroy-方法中完成释放内存的操作。"><a href="#完整生存期：-活动在onCreate-方法和onDestroy-方法之间所经历的，就是完整生存期。一般情况下，一个活动会在onCreate-方法中完成各种初始化操作，而在onDestroy-方法中完成释放内存的操作。" class="headerlink" title="完整生存期： 活动在onCreate()方法和onDestroy()方法之间所经历的，就是完整生存期。一般情况下，一个活动会在onCreate()方法中完成各种初始化操作，而在onDestroy()方法中完成释放内存的操作。"></a><strong>完整生存期：</strong> 活动在onCreate()方法和onDestroy()方法之间所经历的，就是完整生存期。一般情况下，一个活动会在onCreate()方法中完成各种初始化操作，而在onDestroy()方法中完成释放内存的操作。</h6><h6 id="可见生存期：活动在onStart-方法和onStop-方法之间所经历的，就是可见生存期。在可见生存期内，活动对于用户总是可见的，即便有可能无法和用户进行交互。我们可以通过这两个方法，合理地管理那些对用户可见的资源。比如在onStart-方法中对资源进行加载，而在onStop-方法中对资源进行释放，从而保证处于停止状态的活动不会占用过多内存。"><a href="#可见生存期：活动在onStart-方法和onStop-方法之间所经历的，就是可见生存期。在可见生存期内，活动对于用户总是可见的，即便有可能无法和用户进行交互。我们可以通过这两个方法，合理地管理那些对用户可见的资源。比如在onStart-方法中对资源进行加载，而在onStop-方法中对资源进行释放，从而保证处于停止状态的活动不会占用过多内存。" class="headerlink" title="可见生存期：活动在onStart()方法和onStop()方法之间所经历的，就是可见生存期。在可见生存期内，活动对于用户总是可见的，即便有可能无法和用户进行交互。我们可以通过这两个方法，合理地管理那些对用户可见的资源。比如在onStart()方法中对资源进行加载，而在onStop()方法中对资源进行释放，从而保证处于停止状态的活动不会占用过多内存。"></a>可见生存期：活动在onStart()方法和onStop()方法之间所经历的，就是可见生存期。在可见生存期内，活动对于用户总是可见的，即便有可能无法和用户进行交互。我们可以通过这两个方法，合理地管理那些对用户可见的资源。比如在onStart()方法中对资源进行加载，而在onStop()方法中对资源进行释放，从而保证处于停止状态的活动不会占用过多内存。</h6><h6 id="前台生存期：活动在onResume-方法和onPause-方法之间所经历的，就是前台生存期。在前台生存期内，活动总是处于运行状态的，此时的活动是可以和用户进行相互的，我们平时看到和接触最多的也这个状态下的活动。"><a href="#前台生存期：活动在onResume-方法和onPause-方法之间所经历的，就是前台生存期。在前台生存期内，活动总是处于运行状态的，此时的活动是可以和用户进行相互的，我们平时看到和接触最多的也这个状态下的活动。" class="headerlink" title="前台生存期：活动在onResume()方法和onPause()方法之间所经历的，就是前台生存期。在前台生存期内，活动总是处于运行状态的，此时的活动是可以和用户进行相互的，我们平时看到和接触最多的也这个状态下的活动。"></a><strong>前台生存期：</strong>活动在onResume()方法和onPause()方法之间所经历的，就是前台生存期。在前台生存期内，活动总是处于运行状态的，此时的活动是可以和用户进行相互的，我们平时看到和接触最多的也这个状态下的活动。</h6><h3 id="碎片（Fragment）"><a href="#碎片（Fragment）" class="headerlink" title="碎片（Fragment）:"></a>碎片（Fragment）:</h3><h6 id="Android自从3-0开始引入Fragment-碎片-它可以让界面在平板上更好的显示。Fragment是一种可以镶嵌在Activity当中的UI片段。它可以让程序更加合理充分的利用大屏幕的空间。因此在平板上应用非常的普遍。"><a href="#Android自从3-0开始引入Fragment-碎片-它可以让界面在平板上更好的显示。Fragment是一种可以镶嵌在Activity当中的UI片段。它可以让程序更加合理充分的利用大屏幕的空间。因此在平板上应用非常的普遍。" class="headerlink" title="Android自从3.0开始引入Fragment(碎片),它可以让界面在平板上更好的显示。Fragment是一种可以镶嵌在Activity当中的UI片段。它可以让程序更加合理充分的利用大屏幕的空间。因此在平板上应用非常的普遍。"></a>Android自从3.0开始引入Fragment(碎片),它可以让界面在平板上更好的显示。Fragment是一种可以镶嵌在Activity当中的UI片段。它可以让程序更加合理充分的利用大屏幕的空间。因此在平板上应用非常的普遍。</h6><h5 id="碎片的生命周期："><a href="#碎片的生命周期：" class="headerlink" title="碎片的生命周期："></a>碎片的生命周期：</h5><h6 id="和活动一样，碎片也有自己的生命周期，并且它和活动的生命周期实在是太像了，我相信你很快救恩学会。"><a href="#和活动一样，碎片也有自己的生命周期，并且它和活动的生命周期实在是太像了，我相信你很快救恩学会。" class="headerlink" title="和活动一样，碎片也有自己的生命周期，并且它和活动的生命周期实在是太像了，我相信你很快救恩学会。"></a>和活动一样，碎片也有自己的生命周期，并且它和活动的生命周期实在是太像了，我相信你很快救恩学会。</h6><p><strong>1. 运行状态</strong></p>
+<h6 id="当一个碎片是可见的，并且它所关联的活动正处于运行状态时，该碎片也处于运行状态。"><a href="#当一个碎片是可见的，并且它所关联的活动正处于运行状态时，该碎片也处于运行状态。" class="headerlink" title="当一个碎片是可见的，并且它所关联的活动正处于运行状态时，该碎片也处于运行状态。"></a>当一个碎片是可见的，并且它所关联的活动正处于运行状态时，该碎片也处于运行状态。</h6><p><strong>2. 暂停状态</strong></p>
+<h6 id="当一个活动进入暂停状态时（由于另一个未占满屏幕的活动被添加到了栈顶），与它相关联的可见碎片就会进入到暂停状态。"><a href="#当一个活动进入暂停状态时（由于另一个未占满屏幕的活动被添加到了栈顶），与它相关联的可见碎片就会进入到暂停状态。" class="headerlink" title="当一个活动进入暂停状态时（由于另一个未占满屏幕的活动被添加到了栈顶），与它相关联的可见碎片就会进入到暂停状态。"></a>当一个活动进入暂停状态时（由于另一个未占满屏幕的活动被添加到了栈顶），与它相关联的可见碎片就会进入到暂停状态。</h6><p><strong>3. 停止状态</strong></p>
+<h6 id="当一个活动进入停止状态时，与它相关联的碎片就会进入到停止状态。或者通过调用FragmentTransaction-的remove-、replace-方法将碎片从活动中移除，但有在事务提交之前调用addToBackStack-方法，这时的碎片也会进入到停止状态。总的来说，进入停止状态的碎片对用户来说是完全不可见的，有可能会被系统回收。"><a href="#当一个活动进入停止状态时，与它相关联的碎片就会进入到停止状态。或者通过调用FragmentTransaction-的remove-、replace-方法将碎片从活动中移除，但有在事务提交之前调用addToBackStack-方法，这时的碎片也会进入到停止状态。总的来说，进入停止状态的碎片对用户来说是完全不可见的，有可能会被系统回收。" class="headerlink" title="当一个活动进入停止状态时，与它相关联的碎片就会进入到停止状态。或者通过调用FragmentTransaction 的remove()、replace()方法将碎片从活动中移除，但有在事务提交之前调用addToBackStack()方法，这时的碎片也会进入到停止状态。总的来说，进入停止状态的碎片对用户来说是完全不可见的，有可能会被系统回收。"></a>当一个活动进入停止状态时，与它相关联的碎片就会进入到停止状态。或者通过调用FragmentTransaction 的remove()、replace()方法将碎片从活动中移除，但有在事务提交之前调用addToBackStack()方法，这时的碎片也会进入到停止状态。总的来说，进入停止状态的碎片对用户来说是完全不可见的，有可能会被系统回收。</h6><p><strong>4. 销毁状态</strong></p>
+<h6 id="碎片总是依附于活动而存在的，因此当活动被销毁时，与它相关联的碎片就会进入到销毁状态。或者通过调用FragmentTransaction-的remove-、replace-方法将碎片从活动中移除，但在事务提交之前并没有调用addToBackStack-方法，这时的碎片也会进入到销毁状态。"><a href="#碎片总是依附于活动而存在的，因此当活动被销毁时，与它相关联的碎片就会进入到销毁状态。或者通过调用FragmentTransaction-的remove-、replace-方法将碎片从活动中移除，但在事务提交之前并没有调用addToBackStack-方法，这时的碎片也会进入到销毁状态。" class="headerlink" title="碎片总是依附于活动而存在的，因此当活动被销毁时，与它相关联的碎片就会进入到销毁状态。或者通过调用FragmentTransaction 的remove()、replace()方法将碎片从活动中移除，但在事务提交之前并没有调用addToBackStack()方法，这时的碎片也会进入到销毁状态。"></a>碎片总是依附于活动而存在的，因此当活动被销毁时，与它相关联的碎片就会进入到销毁状态。或者通过调用FragmentTransaction 的remove()、replace()方法将碎片从活动中移除，但在事务提交之前并没有调用addToBackStack()方法，这时的碎片也会进入到销毁状态。</h6><p><strong>1.onAttach()</strong></p>
+<h6 id="当碎片和活动建立关联的时候调用。"><a href="#当碎片和活动建立关联的时候调用。" class="headerlink" title="当碎片和活动建立关联的时候调用。"></a>当碎片和活动建立关联的时候调用。</h6><p><strong>2.onCreateView()</strong></p>
+<h6 id="为碎片创建视图（加载布局）时调用。"><a href="#为碎片创建视图（加载布局）时调用。" class="headerlink" title="为碎片创建视图（加载布局）时调用。"></a>为碎片创建视图（加载布局）时调用。</h6><p><strong>3.onActivityCreated()</strong></p>
+<h6 id="确保与碎片相关联的活动一定已经创建完毕的时候调用。"><a href="#确保与碎片相关联的活动一定已经创建完毕的时候调用。" class="headerlink" title="确保与碎片相关联的活动一定已经创建完毕的时候调用。"></a>确保与碎片相关联的活动一定已经创建完毕的时候调用。</h6><p><strong>4.onDestroyView()</strong></p>
+<h6 id="当与碎片关联的视图被移除的时候调用。"><a href="#当与碎片关联的视图被移除的时候调用。" class="headerlink" title="当与碎片关联的视图被移除的时候调用。"></a>当与碎片关联的视图被移除的时候调用。</h6><p><strong>5.onDetach()</strong></p>
+<h6 id="当碎片和活动解除关联的时候调用。"><a href="#当碎片和活动解除关联的时候调用。" class="headerlink" title="当碎片和活动解除关联的时候调用。"></a>当碎片和活动解除关联的时候调用。</h6><h6 id="总结均来自于《第一行代码》！"><a href="#总结均来自于《第一行代码》！" class="headerlink" title="总结均来自于《第一行代码》！"></a>总结均来自于《第一行代码》！</h6>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年03月26日 23:16</p>
+        <p>原始链接： <a class="post-url" href="/2020/03/26/活动（activity）和碎片（fragment）/" title="活动（activity）和碎片（fragment）">http://yoursite.com/2020/03/26/活动（activity）和碎片（fragment）/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="王氏小仙女">
+                王氏小仙女
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/03/26/活动（activity）和碎片（fragment）/&title=《活动（activity）和碎片（fragment）》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/03/26/活动（activity）和碎片（fragment）/&title=《活动（activity）和碎片（fragment）》 — Hexo&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/03/26/活动（activity）和碎片（fragment）/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《活动（activity）和碎片（fragment）》 — Hexo&url=http://yoursite.com/2020/03/26/活动（activity）和碎片（fragment）/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/03/26/活动（activity）和碎片（fragment）/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/03/26/活动（activity）和碎片（fragment）/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#活动（activity）和碎片（fragment）"><span class="post-toc-text">活动（activity）和碎片（fragment）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Fragment（碎片）是必须嵌入在-Activity（活动）-中使用的。Fragment的生命周期随着Activity的生命周期的变化而变化"><span class="post-toc-text">Fragment（碎片）是必须嵌入在 Activity（活动） 中使用的。Fragment的生命周期随着Activity的生命周期的变化而变化</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#活动（activity）："><span class="post-toc-text">活动（activity）：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#活动（activity）是吸引用户的地方，它是一种可以包含用户界面的组件，主要用于和用户进行交互，一个应用程序中可以包含零个或多个活动，但不包含任何活动的应用程序很少见，谁也不想让自己的应用永远无法被用户看到吧？"><span class="post-toc-text">活动（activity）是吸引用户的地方，它是一种可以包含用户界面的组件，主要用于和用户进行交互，一个应用程序中可以包含零个或多个活动，但不包含任何活动的应用程序很少见，谁也不想让自己的应用永远无法被用户看到吧？</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#活动的生命周期："><span class="post-toc-text">活动的生命周期：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#掌握活动的声明周期对任何Android开发者来说都非常重要，当你深入理解活动的生命周期之后，就可以写出更加连贯的程序，并在如何管理应用资源方面发挥得游刃有余。"><span class="post-toc-text">掌握活动的声明周期对任何Android开发者来说都非常重要，当你深入理解活动的生命周期之后，就可以写出更加连贯的程序，并在如何管理应用资源方面发挥得游刃有余。</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#任务栈："><span class="post-toc-text">任务栈：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#如果想要了解声明周期，就要知道什么是任务栈。其实Android是使用任务（Task）来管理活动得，一个任务就是一组存放在栈李得活动，这个栈也被称作返回栈（Back-Stack）。任务栈是一个用来放置Activity实例的容器，他是以栈的方式进行存放，也就是后进先出的原则，主要的基本操作有两个：入栈和出栈。在任务栈中存放的实例是不支持重新排列顺序的，只能根据它出栈和入栈来改变Activity的顺序。"><span class="post-toc-text">如果想要了解声明周期，就要知道什么是任务栈。其实Android是使用任务（Task）来管理活动得，一个任务就是一组存放在栈李得活动，这个栈也被称作返回栈（Back Stack）。任务栈是一个用来放置Activity实例的容器，他是以栈的方式进行存放，也就是后进先出的原则，主要的基本操作有两个：入栈和出栈。在任务栈中存放的实例是不支持重新排列顺序的，只能根据它出栈和入栈来改变Activity的顺序。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#活动的生存期："><span class="post-toc-text">活动的生存期：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#这个方法我们已经看到过很多次了，每个活动中我们都重写了这个方法，它会在活动第一次被创建的时候调用。你应该在这个方法中完成活动的初始化操作，比如说加载布局、绑定事件等。"><span class="post-toc-text">这个方法我们已经看到过很多次了，每个活动中我们都重写了这个方法，它会在活动第一次被创建的时候调用。你应该在这个方法中完成活动的初始化操作，比如说加载布局、绑定事件等。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#这个方法在活动由不可见变为可见的时候调用。"><span class="post-toc-text">这个方法在活动由不可见变为可见的时候调用。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#在活动准备好和用户交互的时候调用，次活动处于栈顶的状态，并处于运行状态。"><span class="post-toc-text">在活动准备好和用户交互的时候调用，次活动处于栈顶的状态，并处于运行状态。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#这个方法在系统准备去启动或者恢复另一个活动的时候调用。我们通常会在这个方法中将一些消耗CPU-的资源释放掉，以及保存一些关键数据，但这个方法的执行速度一定要快，不然会影响到新的栈顶活动的使用。"><span class="post-toc-text">这个方法在系统准备去启动或者恢复另一个活动的时候调用。我们通常会在这个方法中将一些消耗CPU 的资源释放掉，以及保存一些关键数据，但这个方法的执行速度一定要快，不然会影响到新的栈顶活动的使用。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#这个方法在活动完全不可见的时候调用。它和onPause-方法的主要区别在于，如果启动的新活动是一个对话框式的活动，那么onPause-方法会得到执行，而onStop-方法并不会执行。"><span class="post-toc-text">这个方法在活动完全不可见的时候调用。它和onPause()方法的主要区别在于，如果启动的新活动是一个对话框式的活动，那么onPause()方法会得到执行，而onStop()方法并不会执行。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#这个方法在活动被销毁之前调用，之后活动的状态将变为销毁状态。"><span class="post-toc-text">这个方法在活动被销毁之前调用，之后活动的状态将变为销毁状态。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#这个方法由停止状态变成运行前调用，也就是活动被重新启动了。"><span class="post-toc-text">这个方法由停止状态变成运行前调用，也就是活动被重新启动了。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#完整生存期：-活动在onCreate-方法和onDestroy-方法之间所经历的，就是完整生存期。一般情况下，一个活动会在onCreate-方法中完成各种初始化操作，而在onDestroy-方法中完成释放内存的操作。"><span class="post-toc-text">完整生存期： 活动在onCreate()方法和onDestroy()方法之间所经历的，就是完整生存期。一般情况下，一个活动会在onCreate()方法中完成各种初始化操作，而在onDestroy()方法中完成释放内存的操作。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#可见生存期：活动在onStart-方法和onStop-方法之间所经历的，就是可见生存期。在可见生存期内，活动对于用户总是可见的，即便有可能无法和用户进行交互。我们可以通过这两个方法，合理地管理那些对用户可见的资源。比如在onStart-方法中对资源进行加载，而在onStop-方法中对资源进行释放，从而保证处于停止状态的活动不会占用过多内存。"><span class="post-toc-text">可见生存期：活动在onStart()方法和onStop()方法之间所经历的，就是可见生存期。在可见生存期内，活动对于用户总是可见的，即便有可能无法和用户进行交互。我们可以通过这两个方法，合理地管理那些对用户可见的资源。比如在onStart()方法中对资源进行加载，而在onStop()方法中对资源进行释放，从而保证处于停止状态的活动不会占用过多内存。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#前台生存期：活动在onResume-方法和onPause-方法之间所经历的，就是前台生存期。在前台生存期内，活动总是处于运行状态的，此时的活动是可以和用户进行相互的，我们平时看到和接触最多的也这个状态下的活动。"><span class="post-toc-text">前台生存期：活动在onResume()方法和onPause()方法之间所经历的，就是前台生存期。在前台生存期内，活动总是处于运行状态的，此时的活动是可以和用户进行相互的，我们平时看到和接触最多的也这个状态下的活动。</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#碎片（Fragment）"><span class="post-toc-text">碎片（Fragment）:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Android自从3-0开始引入Fragment-碎片-它可以让界面在平板上更好的显示。Fragment是一种可以镶嵌在Activity当中的UI片段。它可以让程序更加合理充分的利用大屏幕的空间。因此在平板上应用非常的普遍。"><span class="post-toc-text">Android自从3.0开始引入Fragment(碎片),它可以让界面在平板上更好的显示。Fragment是一种可以镶嵌在Activity当中的UI片段。它可以让程序更加合理充分的利用大屏幕的空间。因此在平板上应用非常的普遍。</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#碎片的生命周期："><span class="post-toc-text">碎片的生命周期：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#和活动一样，碎片也有自己的生命周期，并且它和活动的生命周期实在是太像了，我相信你很快救恩学会。"><span class="post-toc-text">和活动一样，碎片也有自己的生命周期，并且它和活动的生命周期实在是太像了，我相信你很快救恩学会。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#当一个碎片是可见的，并且它所关联的活动正处于运行状态时，该碎片也处于运行状态。"><span class="post-toc-text">当一个碎片是可见的，并且它所关联的活动正处于运行状态时，该碎片也处于运行状态。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#当一个活动进入暂停状态时（由于另一个未占满屏幕的活动被添加到了栈顶），与它相关联的可见碎片就会进入到暂停状态。"><span class="post-toc-text">当一个活动进入暂停状态时（由于另一个未占满屏幕的活动被添加到了栈顶），与它相关联的可见碎片就会进入到暂停状态。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#当一个活动进入停止状态时，与它相关联的碎片就会进入到停止状态。或者通过调用FragmentTransaction-的remove-、replace-方法将碎片从活动中移除，但有在事务提交之前调用addToBackStack-方法，这时的碎片也会进入到停止状态。总的来说，进入停止状态的碎片对用户来说是完全不可见的，有可能会被系统回收。"><span class="post-toc-text">当一个活动进入停止状态时，与它相关联的碎片就会进入到停止状态。或者通过调用FragmentTransaction 的remove()、replace()方法将碎片从活动中移除，但有在事务提交之前调用addToBackStack()方法，这时的碎片也会进入到停止状态。总的来说，进入停止状态的碎片对用户来说是完全不可见的，有可能会被系统回收。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#碎片总是依附于活动而存在的，因此当活动被销毁时，与它相关联的碎片就会进入到销毁状态。或者通过调用FragmentTransaction-的remove-、replace-方法将碎片从活动中移除，但在事务提交之前并没有调用addToBackStack-方法，这时的碎片也会进入到销毁状态。"><span class="post-toc-text">碎片总是依附于活动而存在的，因此当活动被销毁时，与它相关联的碎片就会进入到销毁状态。或者通过调用FragmentTransaction 的remove()、replace()方法将碎片从活动中移除，但在事务提交之前并没有调用addToBackStack()方法，这时的碎片也会进入到销毁状态。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#当碎片和活动建立关联的时候调用。"><span class="post-toc-text">当碎片和活动建立关联的时候调用。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#为碎片创建视图（加载布局）时调用。"><span class="post-toc-text">为碎片创建视图（加载布局）时调用。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#确保与碎片相关联的活动一定已经创建完毕的时候调用。"><span class="post-toc-text">确保与碎片相关联的活动一定已经创建完毕的时候调用。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#当与碎片关联的视图被移除的时候调用。"><span class="post-toc-text">当与碎片关联的视图被移除的时候调用。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#当碎片和活动解除关联的时候调用。"><span class="post-toc-text">当碎片和活动解除关联的时候调用。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#总结均来自于《第一行代码》！"><span class="post-toc-text">总结均来自于《第一行代码》！</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/25/layout-weight-属性的工作原理/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">layout_weight 属性的工作原理</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 王氏小仙女<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
