@@ -3,22 +3,22 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>总结：Activity的四种跳转方式 | Hexo</title>
+  <title>静态注册实现开机启启动_（广播） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="王氏小仙女">
   
-  <meta name="description" content="Activity的跳转：分为显示跳转和隐式跳转：显示跳转：1.12Intent intent = new Intent(当前文件名.this,目标文件名.class);startActivity(intent);//intent只是一个对象名  2.12Intent intent = new Intent();intent.setClass(本文件名.this,目标文件名.class);//int">
+  <meta name="description" content="静态注册实现开机启启动1、创建一个广播接收器，命名为MyReceiver1234567public class MyReceiver extends BroadcastReceiver &amp;#123;    @Override    public void onReceive(Context context, Intent intent) &amp;#123;        Toast.makeText(c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="总结：Activity的四种跳转方式">
-<meta property="og:url" content="http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/index.html">
+<meta property="og:title" content="静态注册实现开机启启动_（广播）">
+<meta property="og:url" content="http://yoursite.com/2020/04/12/静态注册实现开机启启动-（广播）/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Activity的跳转：分为显示跳转和隐式跳转：显示跳转：1.12Intent intent = new Intent(当前文件名.this,目标文件名.class);startActivity(intent);//intent只是一个对象名  2.12Intent intent = new Intent();intent.setClass(本文件名.this,目标文件名.class);//int">
+<meta property="og:description" content="静态注册实现开机启启动1、创建一个广播接收器，命名为MyReceiver1234567public class MyReceiver extends BroadcastReceiver &amp;#123;    @Override    public void onReceive(Context context, Intent intent) &amp;#123;        Toast.makeText(c">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-16T08:51:22.587Z">
+<meta property="og:updated_time" content="2020-04-12T06:12:31.928Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="总结：Activity的四种跳转方式">
-<meta name="twitter:description" content="Activity的跳转：分为显示跳转和隐式跳转：显示跳转：1.12Intent intent = new Intent(当前文件名.this,目标文件名.class);startActivity(intent);//intent只是一个对象名  2.12Intent intent = new Intent();intent.setClass(本文件名.this,目标文件名.class);//int">
+<meta name="twitter:title" content="静态注册实现开机启启动_（广播）">
+<meta name="twitter:description" content="静态注册实现开机启启动1、创建一个广播接收器，命名为MyReceiver1234567public class MyReceiver extends BroadcastReceiver &amp;#123;    @Override    public void onReceive(Context context, Intent intent) &amp;#123;        Toast.makeText(c">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -109,20 +109,20 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-总结：Activity的四种跳转方式" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-静态注册实现开机启启动-（广播）" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      总结：Activity的四种跳转方式
+      静态注册实现开机启启动_（广播）
     </h1>
     <div class="post-title-bar">
       <ul>
           
         <li>
-          <i class="fa fa-calendar"></i>  2019-10-14
+          <i class="fa fa-calendar"></i>  2020-04-12
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -138,19 +138,17 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h1 id="Activity的跳转："><a href="#Activity的跳转：" class="headerlink" title="Activity的跳转："></a>Activity的跳转：</h1><h4 id="分为显示跳转和隐式跳转："><a href="#分为显示跳转和隐式跳转：" class="headerlink" title="分为显示跳转和隐式跳转："></a>分为显示跳转和隐式跳转：</h4><h6 id="显示跳转："><a href="#显示跳转：" class="headerlink" title="显示跳转："></a>显示跳转：</h6><h5 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = new Intent(当前文件名.this,目标文件名.class);</span><br><span class="line">startActivity(intent);//intent只是一个对象名</span><br></pre></td></tr></table></figure>
+            <h2 id="静态注册实现开机启启动"><a href="#静态注册实现开机启启动" class="headerlink" title="静态注册实现开机启启动"></a>静态注册实现开机启启动</h2><h4 id="1、创建一个广播接收器，命名为MyReceiver"><a href="#1、创建一个广播接收器，命名为MyReceiver" class="headerlink" title="1、创建一个广播接收器，命名为MyReceiver"></a>1、创建一个广播接收器，命名为MyReceiver</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class MyReceiver extends BroadcastReceiver &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onReceive(Context context, Intent intent) &#123;</span><br><span class="line">        Toast.makeText(context,&quot;静态注册实现开机启动&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h5 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = new Intent();</span><br><span class="line">intent.setClass(本文件名.this,目标文件名.class);//intent只是一个对象名</span><br></pre></td></tr></table></figure>
+<h4 id="在AndroidManifest-xml文件中注册声明"><a href="#在AndroidManifest-xml文件中注册声明" class="headerlink" title="在AndroidManifest.xml文件中注册声明"></a>在AndroidManifest.xml文件中注册声明</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 在AndroidManifest.xml中的application标签中添加如下内容：</span><br><span class="line">&lt;receiver</span><br><span class="line">            android:name=&quot;.MyReceiver&quot;</span><br><span class="line">            android:enabled=&quot;true&quot;</span><br><span class="line">            android:exported=&quot;true&quot;&gt;</span><br><span class="line">            &lt;intent-filter&gt;</span><br><span class="line">                &lt;action android:name=&quot;android.intent.action.BOOT_COMPLETED&quot; /&gt;</span><br><span class="line">            &lt;/intent-filter&gt;</span><br><span class="line">        &lt;/receiver&gt;</span><br></pre></td></tr></table></figure>
 
-<h5 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = new Intent();</span><br><span class="line">Intent.setClassName(本文件名.this,&quot;目标文件完整路径&quot;);</span><br><span class="line">startActivity(intent);</span><br></pre></td></tr></table></figure>
+<h4 id="另外，监听系统开机广播也是需要权限的，我们需要在AndroidManifest-xml的manifest下添加"><a href="#另外，监听系统开机广播也是需要权限的，我们需要在AndroidManifest-xml的manifest下添加" class="headerlink" title="另外，监听系统开机广播也是需要权限的，我们需要在AndroidManifest.xml的manifest下添加"></a>另外，监听系统开机广播也是需要权限的，我们需要在AndroidManifest.xml的manifest下添加</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:name=&quot;android.permission.RECEIVE_BOOT_COMPLETED&quot; /&gt;</span><br></pre></td></tr></table></figure>
 
-<h6 id="隐式跳转："><a href="#隐式跳转：" class="headerlink" title="隐式跳转："></a>隐式跳转：</h6><h5 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = new Intent();</span><br><span class="line">intent.setActivity(&quot;字符串&quot;);</span><br><span class="line">//此处的字符串为Manifast中的&lt;intent-filer&gt;中的action中name自定义字符串</span><br><span class="line">startActivity(intent);</span><br><span class="line">//如果想要实现隐式跳转，Manifast中的&lt;intent-filer&gt;中的categor必须为DEFAULT</span><br></pre></td></tr></table></figure>
 
-<h6 id="隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。"><a href="#隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。" class="headerlink" title="隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。"></a>隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。</h6><h6 id="显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。"><a href="#显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。" class="headerlink" title="显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。"></a>显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。</h6><h6 id="一般情况下，第一种方法时最常用。"><a href="#一般情况下，第一种方法时最常用。" class="headerlink" title="一般情况下，第一种方法时最常用。"></a>一般情况下，第一种方法时最常用。</h6>
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年10月16日 16:51</p>
-        <p>原始链接： <a class="post-url" href="/2019/10/14/总结：Activity的四种跳转方式/" title="总结：Activity的四种跳转方式">http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/</a></p>
+        <p>最后更新： 2020年04月12日 14:12</p>
+        <p>原始链接： <a class="post-url" href="/2020/04/12/静态注册实现开机启启动-（广播）/" title="静态注册实现开机启启动_（广播）">http://yoursite.com/2020/04/12/静态注册实现开机启启动-（广播）/</a></p>
         <footer>
             <a href="http://yoursite.com">
                 <img src="/images/logo.png" alt="王氏小仙女">
@@ -207,7 +205,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/&title=《总结：Activity的四种跳转方式》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/04/12/静态注册实现开机启启动-（广播）/&title=《静态注册实现开机启启动_（广播）》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -217,22 +215,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/&title=《总结：Activity的四种跳转方式》 — Hexo&source=" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/04/12/静态注册实现开机启启动-（广播）/&title=《静态注册实现开机启启动_（广播）》 — Hexo&source=" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/04/12/静态注册实现开机启启动-（广播）/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《总结：Activity的四种跳转方式》 — Hexo&url=http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/&via=http://yoursite.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《静态注册实现开机启启动_（广播）》 — Hexo&url=http://yoursite.com/2020/04/12/静态注册实现开机启启动-（广播）/&via=http://yoursite.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/04/12/静态注册实现开机启启动-（广播）/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -242,7 +240,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/10/14/总结：Activity的四种跳转方式/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/04/12/静态注册实现开机启启动-（广播）/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -260,26 +258,16 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Activity的跳转："><span class="post-toc-text">Activity的跳转：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#分为显示跳转和隐式跳转："><span class="post-toc-text">分为显示跳转和隐式跳转：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#显示跳转："><span class="post-toc-text">显示跳转：</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1"><span class="post-toc-text">1.</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2"><span class="post-toc-text">2.</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3"><span class="post-toc-text">3.</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#隐式跳转："><span class="post-toc-text">隐式跳转：</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4"><span class="post-toc-text">4.</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。"><span class="post-toc-text">隐式跳转就是访客输入的访问地址是A，在访客不知不觉的情况下给他展示的是B。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。"><span class="post-toc-text">显示跳转就是访客输入的访问地址是A，告诉访客A展示的移到B了。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#一般情况下，第一种方法时最常用。"><span class="post-toc-text">一般情况下，第一种方法时最常用。</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#静态注册实现开机启启动"><span class="post-toc-text">静态注册实现开机启启动</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、创建一个广播接收器，命名为MyReceiver"><span class="post-toc-text">1、创建一个广播接收器，命名为MyReceiver</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#在AndroidManifest-xml文件中注册声明"><span class="post-toc-text">在AndroidManifest.xml文件中注册声明</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#另外，监听系统开机广播也是需要权限的，我们需要在AndroidManifest-xml的manifest下添加"><span class="post-toc-text">另外，监听系统开机广播也是需要权限的，我们需要在AndroidManifest.xml的manifest下添加</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2019/10/14/备忘录：Android-studio-布局运行不显示的问题/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          备忘录：Android studio 布局运行不显示的问题
-        
-      </span>
-    </a>
   
-  
-    <a href="/2019/10/11/Java面向对象/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">Java面向对象</span>
+    <a href="/2020/04/09/广播机制/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">广播机制</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
