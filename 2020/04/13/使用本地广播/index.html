@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>使用本地广播 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="王氏小仙女">
+  
+  <meta name="description" content="使用本地广播前面我们发送贺接收的广播全部属于系统全局广播，即发出的广播可以被其他应用程序接受到，并且我们也可以接收到来自其他应用程序的广播。这样就很容易引起安全性的问题。比如说，我们发送的一些携带关键性数据的广播可能被其他应用程序截获，或者其他的程序不停向我们的广播接收器里发送各种垃圾广播。为了解决安全性问题，Android引入了一套本地广播机制，使用这个机制发出的广播只能够在应用程序的内部传递，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用本地广播">
+<meta property="og:url" content="http://yoursite.com/2020/04/13/使用本地广播/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="使用本地广播前面我们发送贺接收的广播全部属于系统全局广播，即发出的广播可以被其他应用程序接受到，并且我们也可以接收到来自其他应用程序的广播。这样就很容易引起安全性的问题。比如说，我们发送的一些携带关键性数据的广播可能被其他应用程序截获，或者其他的程序不停向我们的广播接收器里发送各种垃圾广播。为了解决安全性问题，Android引入了一套本地广播机制，使用这个机制发出的广播只能够在应用程序的内部传递，">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-04-13T07:38:58.694Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用本地广播">
+<meta name="twitter:description" content="使用本地广播前面我们发送贺接收的广播全部属于系统全局广播，即发出的广播可以被其他应用程序接受到，并且我们也可以接收到来自其他应用程序的广播。这样就很容易引起安全性的问题。比如说，我们发送的一些携带关键性数据的广播可能被其他应用程序截获，或者其他的程序不停向我们的广播接收器里发送各种垃圾广播。为了解决安全性问题，Android引入了一套本地广播机制，使用这个机制发出的广播只能够在应用程序的内部传递，">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">王氏小仙女</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        王氏小仙女
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 Android 开发的小仙女
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-使用本地广播" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      使用本地广播
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-04-13
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="使用本地广播"><a href="#使用本地广播" class="headerlink" title="使用本地广播"></a>使用本地广播</h2><h4 id="前面我们发送贺接收的广播全部属于系统全局广播，即发出的广播可以被其他应用程序接受到，并且我们也可以接收到来自其他应用程序的广播。这样就很容易引起安全性的问题。比如说，我们发送的一些携带关键性数据的广播可能被其他应用程序截获，或者其他的程序不停向我们的广播接收器里发送各种垃圾广播。"><a href="#前面我们发送贺接收的广播全部属于系统全局广播，即发出的广播可以被其他应用程序接受到，并且我们也可以接收到来自其他应用程序的广播。这样就很容易引起安全性的问题。比如说，我们发送的一些携带关键性数据的广播可能被其他应用程序截获，或者其他的程序不停向我们的广播接收器里发送各种垃圾广播。" class="headerlink" title="前面我们发送贺接收的广播全部属于系统全局广播，即发出的广播可以被其他应用程序接受到，并且我们也可以接收到来自其他应用程序的广播。这样就很容易引起安全性的问题。比如说，我们发送的一些携带关键性数据的广播可能被其他应用程序截获，或者其他的程序不停向我们的广播接收器里发送各种垃圾广播。"></a>前面我们发送贺接收的广播全部属于系统全局广播，即发出的广播可以被其他应用程序接受到，并且我们也可以接收到来自其他应用程序的广播。这样就很容易引起安全性的问题。比如说，我们发送的一些携带关键性数据的广播可能被其他应用程序截获，或者其他的程序不停向我们的广播接收器里发送各种垃圾广播。</h4><h4 id="为了解决安全性问题，Android引入了一套本地广播机制，使用这个机制发出的广播只能够在应用程序的内部传递，并且广播也只能接收来自应用程序发出的广播，这样所有的安全性问题就都不存在了。"><a href="#为了解决安全性问题，Android引入了一套本地广播机制，使用这个机制发出的广播只能够在应用程序的内部传递，并且广播也只能接收来自应用程序发出的广播，这样所有的安全性问题就都不存在了。" class="headerlink" title="为了解决安全性问题，Android引入了一套本地广播机制，使用这个机制发出的广播只能够在应用程序的内部传递，并且广播也只能接收来自应用程序发出的广播，这样所有的安全性问题就都不存在了。"></a>为了解决安全性问题，Android引入了一套本地广播机制，使用这个机制发出的广播只能够在应用程序的内部传递，并且广播也只能接收来自应用程序发出的广播，这样所有的安全性问题就都不存在了。</h4><h4 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">public class MainActivity extends AppCompatActivity&#123;</span><br><span class="line">    private Button mButton; // 单击按钮</span><br><span class="line">    private IntentFilter mIntentFilter; //IntentFilter</span><br><span class="line">    private LocalReceive mLocalReceive; // 广播接收者</span><br><span class="line">    private LocalBroadcastManager mLocalBroadcastManager;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        mLocalBroadcastManager = LocalBroadcastManager.getInstance(this);</span><br><span class="line">        mButton=findViewById(R.id.button);</span><br><span class="line">        mButton.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onClick(View v) &#123;</span><br><span class="line">                Intent intent = new Intent(&quot;com.exanple.myapplication.text&quot;);</span><br><span class="line">                mLocalBroadcastManager.sendBroadcast(intent);//发送本地广播</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        mIntentFilter = new IntentFilter(); // 实例化</span><br><span class="line">        mIntentFilter.addAction(&quot;com.exanple.myapplication.text&quot;); // 添加Action</span><br><span class="line">        mLocalReceive = new LocalReceive(); // 实例化</span><br><span class="line">        mLocalBroadcastManager.registerReceiver(mLocalReceive,mIntentFilter);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onDestroy() &#123;</span><br><span class="line">        super.onDestroy();</span><br><span class="line">        mLocalBroadcastManager.unregisterReceiver(mLocalReceive); // 注销</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    class LocalReceive extends BroadcastReceiver&#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void onReceive(Context context, Intent intent) &#123;</span><br><span class="line">            Toast.makeText(context,&quot;我接受到了本地广播&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="还有一点需要说明，本地广播是无法通过静态注册的方法来接收的。"><a href="#还有一点需要说明，本地广播是无法通过静态注册的方法来接收的。" class="headerlink" title="还有一点需要说明，本地广播是无法通过静态注册的方法来接收的。"></a>还有一点需要说明，本地广播是无法通过静态注册的方法来接收的。</h4><h6 id="本地广播的几点优势："><a href="#本地广播的几点优势：" class="headerlink" title="本地广播的几点优势："></a>本地广播的几点优势：</h6><ul>
+<li>可以明确地知道正在发送的广播不会离开我们的程序，因此不必担心机密数据泄露。</li>
+<li>其他的程序无法将广播发送到我们的程序内部，因此不用担心会有安全漏洞的隐患。</li>
+<li>发送本地广播比发送全局广播将会更加高效。</li>
+</ul>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年04月13日 15:38</p>
+        <p>原始链接： <a class="post-url" href="/2020/04/13/使用本地广播/" title="使用本地广播">http://yoursite.com/2020/04/13/使用本地广播/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="王氏小仙女">
+                王氏小仙女
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/04/13/使用本地广播/&title=《使用本地广播》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/04/13/使用本地广播/&title=《使用本地广播》 — Hexo&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/04/13/使用本地广播/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用本地广播》 — Hexo&url=http://yoursite.com/2020/04/13/使用本地广播/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/04/13/使用本地广播/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/04/13/使用本地广播/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用本地广播"><span class="post-toc-text">使用本地广播</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#前面我们发送贺接收的广播全部属于系统全局广播，即发出的广播可以被其他应用程序接受到，并且我们也可以接收到来自其他应用程序的广播。这样就很容易引起安全性的问题。比如说，我们发送的一些携带关键性数据的广播可能被其他应用程序截获，或者其他的程序不停向我们的广播接收器里发送各种垃圾广播。"><span class="post-toc-text">前面我们发送贺接收的广播全部属于系统全局广播，即发出的广播可以被其他应用程序接受到，并且我们也可以接收到来自其他应用程序的广播。这样就很容易引起安全性的问题。比如说，我们发送的一些携带关键性数据的广播可能被其他应用程序截获，或者其他的程序不停向我们的广播接收器里发送各种垃圾广播。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为了解决安全性问题，Android引入了一套本地广播机制，使用这个机制发出的广播只能够在应用程序的内部传递，并且广播也只能接收来自应用程序发出的广播，这样所有的安全性问题就都不存在了。"><span class="post-toc-text">为了解决安全性问题，Android引入了一套本地广播机制，使用这个机制发出的广播只能够在应用程序的内部传递，并且广播也只能接收来自应用程序发出的广播，这样所有的安全性问题就都不存在了。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#代码如下："><span class="post-toc-text">代码如下：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#还有一点需要说明，本地广播是无法通过静态注册的方法来接收的。"><span class="post-toc-text">还有一点需要说明，本地广播是无法通过静态注册的方法来接收的。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#本地广播的几点优势："><span class="post-toc-text">本地广播的几点优势：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/12/静态注册实现开机启启动-（广播）/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">静态注册实现开机启启动_（广播）</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 王氏小仙女<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
