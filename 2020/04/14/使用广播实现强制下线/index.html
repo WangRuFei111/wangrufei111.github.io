@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>使用广播实现强制下线 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="王氏小仙女">
+  
+  <meta name="description" content="使用广播实现强制下线1、创建一个ActivityCollector类用来管理所有的活动1234567891011121314151617181920public class ActivityCollector &amp;#123;    public static List&amp;lt;Activity&amp;gt; activitys = new ArrayList&amp;lt;&amp;gt;();    public sta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用广播实现强制下线">
+<meta property="og:url" content="http://yoursite.com/2020/04/14/使用广播实现强制下线/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="使用广播实现强制下线1、创建一个ActivityCollector类用来管理所有的活动1234567891011121314151617181920public class ActivityCollector &amp;#123;    public static List&amp;lt;Activity&amp;gt; activitys = new ArrayList&amp;lt;&amp;gt;();    public sta">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-04-14T07:29:23.483Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用广播实现强制下线">
+<meta name="twitter:description" content="使用广播实现强制下线1、创建一个ActivityCollector类用来管理所有的活动1234567891011121314151617181920public class ActivityCollector &amp;#123;    public static List&amp;lt;Activity&amp;gt; activitys = new ArrayList&amp;lt;&amp;gt;();    public sta">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">王氏小仙女</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        王氏小仙女
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 Android 开发的小仙女
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-使用广播实现强制下线" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      使用广播实现强制下线
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-04-14
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="使用广播实现强制下线"><a href="#使用广播实现强制下线" class="headerlink" title="使用广播实现强制下线"></a>使用广播实现强制下线</h2><h4 id="1、创建一个ActivityCollector类用来管理所有的活动"><a href="#1、创建一个ActivityCollector类用来管理所有的活动" class="headerlink" title="1、创建一个ActivityCollector类用来管理所有的活动"></a>1、创建一个ActivityCollector类用来管理所有的活动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class ActivityCollector &#123;</span><br><span class="line">    public static List&lt;Activity&gt; activitys = new ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    public static void addActivity(Activity activity)&#123;</span><br><span class="line">        activitys.add(activity);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void removerActivity(Activity activity)&#123;</span><br><span class="line">        activitys.remove(activity);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void finishAll()&#123;</span><br><span class="line">        for (Activity activity:activitys)&#123;</span><br><span class="line">            if(!activity.isFinishing())&#123;</span><br><span class="line">                activity.finish();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        activitys.clear();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、创建一个登陆界面-LoginActivity"><a href="#2、创建一个登陆界面-LoginActivity" class="headerlink" title="2、创建一个登陆界面 LoginActivity"></a>2、创建一个登陆界面 LoginActivity</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public class LoginActivity extends BaseActivity &#123;</span><br><span class="line"></span><br><span class="line">    private EditText accountEdit,passwordEdit;</span><br><span class="line">    private Button login;</span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_login);</span><br><span class="line">        accountEdit = findViewById(R.id.account);</span><br><span class="line">        passwordEdit = findViewById(R.id.password);</span><br><span class="line">        login = findViewById(R.id.login);</span><br><span class="line">        login.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onClick(View v) &#123;</span><br><span class="line">                String account = accountEdit.getText().toString();</span><br><span class="line">                String password = passwordEdit.getText().toString();</span><br><span class="line">                if (account.equals(&quot;wrf&quot;) &amp;&amp; password.equals(&quot;111&quot;))&#123;</span><br><span class="line">                    Intent intent = new Intent(LoginActivity.this,MainActivity.class);</span><br><span class="line">                    startActivity(intent);</span><br><span class="line">                    finish();</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                    Toast.makeText(LoginActivity.this,&quot;您的账号或者密码输入错误！！！&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="这里直接判断输入的账号密码是否等于我的账号密码"><a href="#这里直接判断输入的账号密码是否等于我的账号密码" class="headerlink" title="这里直接判断输入的账号密码是否等于我的账号密码"></a>这里直接判断输入的账号密码是否等于我的账号密码</h6><h4 id="3、LoginActivity的activity-login-xml"><a href="#3、LoginActivity的activity-login-xml" class="headerlink" title="3、LoginActivity的activity_login.xml"></a>3、LoginActivity的activity_login.xml</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;LinearLayout</span><br><span class="line">    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:orientation=&quot;vertical&quot;&gt;</span><br><span class="line">    &lt;LinearLayout</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;60dp&quot;</span><br><span class="line">        android:orientation=&quot;horizontal&quot;&gt;</span><br><span class="line">        &lt;TextView</span><br><span class="line">            android:layout_width=&quot;90dp&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_gravity=&quot;center_vertical&quot;</span><br><span class="line">            android:textSize=&quot;18sp&quot;</span><br><span class="line">            android:text=&quot;Account:&quot;</span><br><span class="line">            /&gt;</span><br><span class="line">        &lt;EditText</span><br><span class="line">            android:id=&quot;@+id/account&quot;</span><br><span class="line">            android:layout_width=&quot;0dp&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_weight=&quot;1&quot;</span><br><span class="line">            android:layout_gravity=&quot;center_vertical&quot;</span><br><span class="line">            /&gt;</span><br><span class="line">    &lt;/LinearLayout&gt;</span><br><span class="line">    &lt;LinearLayout</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;60dp&quot;</span><br><span class="line">        android:orientation=&quot;horizontal&quot;&gt;</span><br><span class="line">        &lt;TextView</span><br><span class="line">            android:layout_width=&quot;90dp&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_gravity=&quot;center_vertical&quot;</span><br><span class="line">            android:textSize=&quot;18sp&quot;</span><br><span class="line">            android:text=&quot;password:&quot;</span><br><span class="line">            /&gt;</span><br><span class="line">        &lt;EditText</span><br><span class="line">            android:id=&quot;@+id/password&quot;</span><br><span class="line">            android:layout_width=&quot;0dp&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_weight=&quot;1&quot;</span><br><span class="line">            android:layout_gravity=&quot;center_vertical&quot;</span><br><span class="line">            android:inputType=&quot;textPassword&quot;</span><br><span class="line">            /&gt;</span><br><span class="line">    &lt;/LinearLayout&gt;</span><br><span class="line">    &lt;Button</span><br><span class="line">        android:id=&quot;@+id/login&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;60dp&quot;</span><br><span class="line">        android:text=&quot;Login&quot;</span><br><span class="line">        android:textAllCaps=&quot;false&quot;</span><br><span class="line">        /&gt;</span><br><span class="line"></span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4、在MainActivity中发送一条广播"><a href="#4、在MainActivity中发送一条广播" class="headerlink" title="4、在MainActivity中发送一条广播"></a>4、在MainActivity中发送一条广播</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public class MainActivity extends BaseActivity&#123;</span><br><span class="line">    private Button mButton;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        mButton=findViewById(R.id.button);</span><br><span class="line">        mButton.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onClick(View v) &#123;</span><br><span class="line">                Intent intent = new Intent(&quot;hoey.text&quot;);</span><br><span class="line">                sendBroadcast(intent);//发送广播</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="activity-main-xml文件里只有一个点击按钮，这里就不贴了"><a href="#activity-main-xml文件里只有一个点击按钮，这里就不贴了" class="headerlink" title="activity_main.xml文件里只有一个点击按钮，这里就不贴了"></a>activity_main.xml文件里只有一个点击按钮，这里就不贴了</h6><h4 id="5、在BaseActivity中动态注册一个广播接收器"><a href="#5、在BaseActivity中动态注册一个广播接收器" class="headerlink" title="5、在BaseActivity中动态注册一个广播接收器"></a>5、在BaseActivity中动态注册一个广播接收器</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">public class BaseActivity extends AppCompatActivity &#123;</span><br><span class="line">    private ForceOfflineReceiver reciver;</span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(@Nullable Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        ActivityCollector.addActivity(this);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onResume() &#123;</span><br><span class="line">        super.onResume();</span><br><span class="line">        IntentFilter intentFilter = new IntentFilter();</span><br><span class="line">        intentFilter.addAction(&quot;hoey.text&quot;);</span><br><span class="line">        reciver = new ForceOfflineReceiver();</span><br><span class="line">        registerReceiver(reciver,intentFilter);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onPause() &#123;</span><br><span class="line">        super.onPause();</span><br><span class="line">        if (reciver != null) &#123;</span><br><span class="line">            unregisterReceiver(reciver);</span><br><span class="line">            reciver=null;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onDestroy() &#123;</span><br><span class="line">        super.onDestroy();</span><br><span class="line">        ActivityCollector.removerActivity(this);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   class ForceOfflineReceiver extends BroadcastReceiver&#123;</span><br><span class="line">       @Override</span><br><span class="line">       public void onReceive(final Context context, Intent intent) &#123;</span><br><span class="line">           AlertDialog.Builder builder = new AlertDialog.Builder(context);</span><br><span class="line">           builder.setTitle(&quot;通知：&quot;);</span><br><span class="line">           builder.setMessage(&quot;您的账号已在另一个地方登陆，先强制您下线，请您尽快确定您的账户安全！&quot;);</span><br><span class="line">           builder.setCancelable(false);</span><br><span class="line">           builder.setPositiveButton(&quot;确定&quot;, new DialogInterface.OnClickListener() &#123;</span><br><span class="line">               @Override</span><br><span class="line">               public void onClick(DialogInterface dialog, int which) &#123;</span><br><span class="line">                   ActivityCollector.finishAll();</span><br><span class="line">                   Intent i = new Intent(context,LoginActivity.class);</span><br><span class="line">                   context.startActivity(i);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;);</span><br><span class="line">           builder.show();</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="注意：所有的活动都继承BaseActivity。"><a href="#注意：所有的活动都继承BaseActivity。" class="headerlink" title="注意：所有的活动都继承BaseActivity。"></a>注意：所有的活动都继承BaseActivity。</h6>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年04月14日 15:29</p>
+        <p>原始链接： <a class="post-url" href="/2020/04/14/使用广播实现强制下线/" title="使用广播实现强制下线">http://yoursite.com/2020/04/14/使用广播实现强制下线/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="王氏小仙女">
+                王氏小仙女
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/04/14/使用广播实现强制下线/&title=《使用广播实现强制下线》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/04/14/使用广播实现强制下线/&title=《使用广播实现强制下线》 — Hexo&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/04/14/使用广播实现强制下线/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用广播实现强制下线》 — Hexo&url=http://yoursite.com/2020/04/14/使用广播实现强制下线/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/04/14/使用广播实现强制下线/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/04/14/使用广播实现强制下线/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用广播实现强制下线"><span class="post-toc-text">使用广播实现强制下线</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、创建一个ActivityCollector类用来管理所有的活动"><span class="post-toc-text">1、创建一个ActivityCollector类用来管理所有的活动</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2、创建一个登陆界面-LoginActivity"><span class="post-toc-text">2、创建一个登陆界面 LoginActivity</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#这里直接判断输入的账号密码是否等于我的账号密码"><span class="post-toc-text">这里直接判断输入的账号密码是否等于我的账号密码</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3、LoginActivity的activity-login-xml"><span class="post-toc-text">3、LoginActivity的activity_login.xml</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4、在MainActivity中发送一条广播"><span class="post-toc-text">4、在MainActivity中发送一条广播</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#activity-main-xml文件里只有一个点击按钮，这里就不贴了"><span class="post-toc-text">activity_main.xml文件里只有一个点击按钮，这里就不贴了</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5、在BaseActivity中动态注册一个广播接收器"><span class="post-toc-text">5、在BaseActivity中动态注册一个广播接收器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#注意：所有的活动都继承BaseActivity。"><span class="post-toc-text">注意：所有的活动都继承BaseActivity。</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/13/使用本地广播/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">使用本地广播</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 王氏小仙女<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
