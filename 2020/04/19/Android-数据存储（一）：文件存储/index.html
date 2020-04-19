@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Android 数据存储（一）：文件存储 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="王氏小仙女">
+  
+  <meta name="description" content="Android 数据存储（一）：文件存储瞬时数据和持久化技术：什么是瞬时数据？ 就是指那些存储在内存当中，有可能会因为程序关闭会其他原因导致内存被回收而丢失的数据。      持久化技术： 数据持久化就是指将那些内存中的瞬时数据保存到存储设备中，保证即使在手机或电脑关闭的情况下，这些数据仍然不会消失。  持久化技术提供了一种机制可以让数据在瞬时状态和持久状态之间进行转换。Android主要提供三种">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 数据存储（一）：文件存储">
+<meta property="og:url" content="http://yoursite.com/2020/04/19/Android-数据存储（一）：文件存储/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Android 数据存储（一）：文件存储瞬时数据和持久化技术：什么是瞬时数据？ 就是指那些存储在内存当中，有可能会因为程序关闭会其他原因导致内存被回收而丢失的数据。      持久化技术： 数据持久化就是指将那些内存中的瞬时数据保存到存储设备中，保证即使在手机或电脑关闭的情况下，这些数据仍然不会消失。  持久化技术提供了一种机制可以让数据在瞬时状态和持久状态之间进行转换。Android主要提供三种">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-04-19T13:03:40.994Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 数据存储（一）：文件存储">
+<meta name="twitter:description" content="Android 数据存储（一）：文件存储瞬时数据和持久化技术：什么是瞬时数据？ 就是指那些存储在内存当中，有可能会因为程序关闭会其他原因导致内存被回收而丢失的数据。      持久化技术： 数据持久化就是指将那些内存中的瞬时数据保存到存储设备中，保证即使在手机或电脑关闭的情况下，这些数据仍然不会消失。  持久化技术提供了一种机制可以让数据在瞬时状态和持久状态之间进行转换。Android主要提供三种">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">王氏小仙女</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        王氏小仙女
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 Android 开发的小仙女
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-Android-数据存储（一）：文件存储" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Android 数据存储（一）：文件存储
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-04-19
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="Android-数据存储（一）：文件存储"><a href="#Android-数据存储（一）：文件存储" class="headerlink" title="Android 数据存储（一）：文件存储"></a>Android 数据存储（一）：文件存储</h2><h4 id="瞬时数据和持久化技术："><a href="#瞬时数据和持久化技术：" class="headerlink" title="瞬时数据和持久化技术："></a>瞬时数据和持久化技术：</h4><h6 id="什么是瞬时数据？"><a href="#什么是瞬时数据？" class="headerlink" title="什么是瞬时数据？"></a>什么是瞬时数据？</h6><ul>
+<li>就是指那些存储在内存当中，有可能会因为程序关闭会其他原因导致内存被回收而丢失的数据。    </li>
+</ul>
+<h6 id="持久化技术："><a href="#持久化技术：" class="headerlink" title="持久化技术："></a>持久化技术：</h6><ul>
+<li>数据持久化就是指将那些内存中的瞬时数据保存到存储设备中，保证即使在手机或电脑关闭的情况下，这些数据仍然不会消失。</li>
+</ul>
+<h6 id="持久化技术提供了一种机制可以让数据在瞬时状态和持久状态之间进行转换。"><a href="#持久化技术提供了一种机制可以让数据在瞬时状态和持久状态之间进行转换。" class="headerlink" title="持久化技术提供了一种机制可以让数据在瞬时状态和持久状态之间进行转换。"></a>持久化技术提供了一种机制可以让数据在瞬时状态和持久状态之间进行转换。</h6><h5 id="Android主要提供三种方式用于简单的实现数据持久化功能："><a href="#Android主要提供三种方式用于简单的实现数据持久化功能：" class="headerlink" title="Android主要提供三种方式用于简单的实现数据持久化功能："></a>Android主要提供三种方式用于简单的实现数据持久化功能：</h5><ol>
+<li>文件存储</li>
+<li>SharedPreferences存储</li>
+<li>数据库存储</li>
+</ol>
+<h2 id="文件存储："><a href="#文件存储：" class="headerlink" title="文件存储："></a>文件存储：</h2><p>文件存储是Android最基本的一种数据存储方式，它不对存储的内容进行任何的格式化处理，所有的数据都是原封不动地保存到文件中地，因而它比较适合用于存储一些简单地文本数据和二进制数据。</p>
+<ul>
+<li><h6 id="将数据存到文件中"><a href="#将数据存到文件中" class="headerlink" title="将数据存到文件中"></a>将数据存到文件中</h6></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">String content = mEditText.getText().toString();</span><br><span class="line">            FileOutputStream fos = null;</span><br><span class="line">            BufferedWriter writer = null;</span><br><span class="line">            try &#123;</span><br><span class="line">                fos =  openFileOutput(&quot;text.txt&quot;,MODE_PRIVATE);</span><br><span class="line">                writer = new BufferedWriter(new OutputStreamWriter(fos));</span><br><span class="line">                writer.write(content);</span><br><span class="line">                writer.flush();</span><br><span class="line">                Toast.makeText(MainActivity.this,&quot;写入成功&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">            &#125; catch (FileNotFoundException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;finally &#123;</span><br><span class="line">                if (writer != null)&#123;</span><br><span class="line">                    try &#123;</span><br><span class="line">                        writer.close();</span><br><span class="line">                    &#125; catch (IOException e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                if (fos!=null)&#123;</span><br><span class="line">                    try &#123;</span><br><span class="line">                        fos.close();</span><br><span class="line">                    &#125; catch (IOException e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>Context类中提供了一个openFileOutput()方法，可以用于将数据存储到指定的文件中。该方法接收两个参数，第一个参数为文件名，文件创建的时候使用的就是这个名称。（注：文件名不能包含路径，因为所有文件都默认存储到/data/data/<package name>/files/目录下的）。第二个参数是文件的操作模式，主要有两种模式可选，MODE_PRIVATE和MODE_APPEND。其中MODE_PRIVATE为默认的操作模式，表示当指定同样文件名的时候，所写入的内容将会覆盖源文件中的内容；而MODE_APPEND则表示如果该文件已存在就往文件里面追加内容，不存在则创建新文件。</package></p>
+<ul>
+<li><h6 id="从文件中读取数据"><a href="#从文件中读取数据" class="headerlink" title="从文件中读取数据"></a>从文件中读取数据</h6></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">BufferedReader br = null;</span><br><span class="line">            StringBuilder sb = new StringBuilder();</span><br><span class="line">            try &#123;</span><br><span class="line">                br  = new BufferedReader(new InputStreamReader(openFileInput(&quot;text.txt&quot;)));</span><br><span class="line">                String content = br.readLine();</span><br><span class="line">                while (content !=null)&#123;</span><br><span class="line">                    sb.append(content);</span><br><span class="line">                    content = br.readLine();</span><br><span class="line">                &#125;</span><br><span class="line">                mEditText.setText(sb.toString());</span><br><span class="line">                mEditText.setSelection(sb.length());</span><br><span class="line">                Toast.makeText(MainActivity.this,&quot;读出成功&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">            &#125; catch (FileNotFoundException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;finally &#123;</span><br><span class="line">                if (br!= null)&#123;</span><br><span class="line">                    try &#123;</span><br><span class="line">                        br.close();</span><br><span class="line">                    &#125; catch (IOException e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
+
+<p>和数据存储到文件中十分类似，Context还提供了一个openFileInput()方法，用于从文件中读取数据。这个方法比openFileOutput()还要简单些，它只接收一个参数，既要读取的文件名，然后系统会自动到/data/data/<package name>/files/目录下去加载这个文件，并返回一个FileInputStream对象，再通过Java IO流的方式就可以将数据读取出来了。</package></p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年04月19日 21:03</p>
+        <p>原始链接： <a class="post-url" href="/2020/04/19/Android-数据存储（一）：文件存储/" title="Android 数据存储（一）：文件存储">http://yoursite.com/2020/04/19/Android-数据存储（一）：文件存储/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="王氏小仙女">
+                王氏小仙女
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/04/19/Android-数据存储（一）：文件存储/&title=《Android 数据存储（一）：文件存储》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/04/19/Android-数据存储（一）：文件存储/&title=《Android 数据存储（一）：文件存储》 — Hexo&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/04/19/Android-数据存储（一）：文件存储/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android 数据存储（一）：文件存储》 — Hexo&url=http://yoursite.com/2020/04/19/Android-数据存储（一）：文件存储/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/04/19/Android-数据存储（一）：文件存储/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/04/19/Android-数据存储（一）：文件存储/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Android-数据存储（一）：文件存储"><span class="post-toc-text">Android 数据存储（一）：文件存储</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#瞬时数据和持久化技术："><span class="post-toc-text">瞬时数据和持久化技术：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#什么是瞬时数据？"><span class="post-toc-text">什么是瞬时数据？</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#持久化技术："><span class="post-toc-text">持久化技术：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#持久化技术提供了一种机制可以让数据在瞬时状态和持久状态之间进行转换。"><span class="post-toc-text">持久化技术提供了一种机制可以让数据在瞬时状态和持久状态之间进行转换。</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Android主要提供三种方式用于简单的实现数据持久化功能："><span class="post-toc-text">Android主要提供三种方式用于简单的实现数据持久化功能：</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件存储："><span class="post-toc-text">文件存储：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#将数据存到文件中"><span class="post-toc-text">将数据存到文件中</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#从文件中读取数据"><span class="post-toc-text">从文件中读取数据</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/14/使用广播实现强制下线/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">使用广播实现强制下线</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 王氏小仙女<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
