@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Android 数据存储（一）：文件存储瞬时数据和持久化技术：什么是瞬时数据？ 就是指那些存储在内存当中，有可能会因为程序关闭会其他原因导致内存被回收而丢失的数据。      持久化技术： 数据持久化就是指将那些内存中的瞬时数据保存到存储设备中，保证即使在手机或电脑关闭的情况下，这些数据仍然不会消失。  持久化技术提供了一种机制可以让数据在瞬时状态和持久状态之间进行转换。Android主要提供三种">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-19T13:03:40.994Z">
+<meta property="og:updated_time" content="2020-04-19T13:05:22.456Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 数据存储（一）：文件存储">
 <meta name="twitter:description" content="Android 数据存储（一）：文件存储瞬时数据和持久化技术：什么是瞬时数据？ 就是指那些存储在内存当中，有可能会因为程序关闭会其他原因导致内存被回收而丢失的数据。      持久化技术： 数据持久化就是指将那些内存中的瞬时数据保存到存储设备中，保证即使在手机或电脑关闭的情况下，这些数据仍然不会消失。  持久化技术提供了一种机制可以让数据在瞬时状态和持久状态之间进行转换。Android主要提供三种">
@@ -149,7 +149,7 @@
 <li>SharedPreferences存储</li>
 <li>数据库存储</li>
 </ol>
-<h2 id="文件存储："><a href="#文件存储：" class="headerlink" title="文件存储："></a>文件存储：</h2><p>文件存储是Android最基本的一种数据存储方式，它不对存储的内容进行任何的格式化处理，所有的数据都是原封不动地保存到文件中地，因而它比较适合用于存储一些简单地文本数据和二进制数据。</p>
+<h4 id="文件存储："><a href="#文件存储：" class="headerlink" title="文件存储："></a>文件存储：</h4><p>文件存储是Android最基本的一种数据存储方式，它不对存储的内容进行任何的格式化处理，所有的数据都是原封不动地保存到文件中地，因而它比较适合用于存储一些简单地文本数据和二进制数据。</p>
 <ul>
 <li><h6 id="将数据存到文件中"><a href="#将数据存到文件中" class="headerlink" title="将数据存到文件中"></a>将数据存到文件中</h6></li>
 </ul>
@@ -165,7 +165,7 @@
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2020年04月19日 21:03</p>
+        <p>最后更新： 2020年04月19日 21:05</p>
         <p>原始链接： <a class="post-url" href="/2020/04/19/Android-数据存储（一）：文件存储/" title="Android 数据存储（一）：文件存储">http://yoursite.com/2020/04/19/Android-数据存储（一）：文件存储/</a></p>
         <footer>
             <a href="http://yoursite.com">
@@ -276,12 +276,22 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Android-数据存储（一）：文件存储"><span class="post-toc-text">Android 数据存储（一）：文件存储</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#瞬时数据和持久化技术："><span class="post-toc-text">瞬时数据和持久化技术：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#什么是瞬时数据？"><span class="post-toc-text">什么是瞬时数据？</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#持久化技术："><span class="post-toc-text">持久化技术：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#持久化技术提供了一种机制可以让数据在瞬时状态和持久状态之间进行转换。"><span class="post-toc-text">持久化技术提供了一种机制可以让数据在瞬时状态和持久状态之间进行转换。</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Android主要提供三种方式用于简单的实现数据持久化功能："><span class="post-toc-text">Android主要提供三种方式用于简单的实现数据持久化功能：</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件存储："><span class="post-toc-text">文件存储：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#将数据存到文件中"><span class="post-toc-text">将数据存到文件中</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#从文件中读取数据"><span class="post-toc-text">从文件中读取数据</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Android-数据存储（一）：文件存储"><span class="post-toc-text">Android 数据存储（一）：文件存储</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#瞬时数据和持久化技术："><span class="post-toc-text">瞬时数据和持久化技术：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#什么是瞬时数据？"><span class="post-toc-text">什么是瞬时数据？</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#持久化技术："><span class="post-toc-text">持久化技术：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#持久化技术提供了一种机制可以让数据在瞬时状态和持久状态之间进行转换。"><span class="post-toc-text">持久化技术提供了一种机制可以让数据在瞬时状态和持久状态之间进行转换。</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Android主要提供三种方式用于简单的实现数据持久化功能："><span class="post-toc-text">Android主要提供三种方式用于简单的实现数据持久化功能：</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件存储："><span class="post-toc-text">文件存储：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#将数据存到文件中"><span class="post-toc-text">将数据存到文件中</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#从文件中读取数据"><span class="post-toc-text">从文件中读取数据</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
+  
+    <a href="/2020/04/20/Android-数据存储（二）：SharedPreferences/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          Android 数据存储（二）：SharedPreferences
+        
+      </span>
+    </a>
   
   
     <a href="/2020/04/14/使用广播实现强制下线/" id="article-nav-older" class="article-nav-link-wrap">
