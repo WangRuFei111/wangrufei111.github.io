@@ -8,14 +8,17 @@
   
     <meta name="keywords" content="王氏小仙女">
   
-  <meta property="og:type" content="article">
+  <meta name="description" content="Android 数据存储（二）：SharedPreferences不同于文件的存储方式，SharedPreferences是使用键值对来存储数据的，也就是说，当保存一条数据的时候，需要给这条数据提供一条对应的键，这样在读取数据的时候就可以通过这个键吧相应的值取出来，而且SharedPreferences还支持多种不同的数据类型存储。将数据存储到SharedPreferences中：Android">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Android 数据存储（二）：SharedPreferences">
 <meta property="og:url" content="http://yoursite.com/2020/04/20/Android-数据存储（二）：SharedPreferences/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Android 数据存储（二）：SharedPreferences不同于文件的存储方式，SharedPreferences是使用键值对来存储数据的，也就是说，当保存一条数据的时候，需要给这条数据提供一条对应的键，这样在读取数据的时候就可以通过这个键吧相应的值取出来，而且SharedPreferences还支持多种不同的数据类型存储。将数据存储到SharedPreferences中：Android">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-20T06:34:09.546Z">
+<meta property="og:updated_time" content="2020-04-20T07:10:31.960Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 数据存储（二）：SharedPreferences">
+<meta name="twitter:description" content="Android 数据存储（二）：SharedPreferences不同于文件的存储方式，SharedPreferences是使用键值对来存储数据的，也就是说，当保存一条数据的时候，需要给这条数据提供一条对应的键，这样在读取数据的时候就可以通过这个键吧相应的值取出来，而且SharedPreferences还支持多种不同的数据类型存储。将数据存储到SharedPreferences中：Android">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -135,10 +138,46 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            
+            <h2 id="Android-数据存储（二）：SharedPreferences"><a href="#Android-数据存储（二）：SharedPreferences" class="headerlink" title="Android 数据存储（二）：SharedPreferences"></a>Android 数据存储（二）：SharedPreferences</h2><h4 id="不同于文件的存储方式，SharedPreferences是使用键值对来存储数据的，也就是说，当保存一条数据的时候，需要给这条数据提供一条对应的键，这样在读取数据的时候就可以通过这个键吧相应的值取出来，而且SharedPreferences还支持多种不同的数据类型存储。"><a href="#不同于文件的存储方式，SharedPreferences是使用键值对来存储数据的，也就是说，当保存一条数据的时候，需要给这条数据提供一条对应的键，这样在读取数据的时候就可以通过这个键吧相应的值取出来，而且SharedPreferences还支持多种不同的数据类型存储。" class="headerlink" title="不同于文件的存储方式，SharedPreferences是使用键值对来存储数据的，也就是说，当保存一条数据的时候，需要给这条数据提供一条对应的键，这样在读取数据的时候就可以通过这个键吧相应的值取出来，而且SharedPreferences还支持多种不同的数据类型存储。"></a>不同于文件的存储方式，SharedPreferences是使用键值对来存储数据的，也就是说，当保存一条数据的时候，需要给这条数据提供一条对应的键，这样在读取数据的时候就可以通过这个键吧相应的值取出来，而且SharedPreferences还支持多种不同的数据类型存储。</h4><h4 id="将数据存储到SharedPreferences中："><a href="#将数据存储到SharedPreferences中：" class="headerlink" title="将数据存储到SharedPreferences中："></a>将数据存储到SharedPreferences中：</h4><h6 id="Android-提供了三种方式用于得到SharedPreferences对象："><a href="#Android-提供了三种方式用于得到SharedPreferences对象：" class="headerlink" title="Android 提供了三种方式用于得到SharedPreferences对象："></a>Android 提供了三种方式用于得到SharedPreferences对象：</h6><ul>
+<li><p><strong>Context 类中的 getSharedPreferences()方法：</strong></p>
+<ul>
+<li>此方法接收两个参数，第一个参数用于指定 SharedPreferences 文件的名称，如果指定的文件不存在则会创建一个，第二个参数用于指定操作模式，主要有以下几种模式可以选择。MODE_PRIVATE 是默认的操作模式，和直接传入 0 效果是相同的。MODE_WORLD_READABLE 和 MODE_WORLD_WRITEABLE 这两种模式已在 Android 4.2 版本中被废弃。</li>
+</ul>
+</li>
+<li><p><strong>Activity 类中的 getPreferences()方法：</strong></p>
+<ul>
+<li>这个方法和 Context 中的 getSharedPreferences()方法很相似，不过它只接收一个操作模式参数，因为使用这个方法时会自动将当前活动的类名作为 SharedPreferences 的文件名。</li>
+</ul>
+</li>
+<li><p><strong>PreferenceManager 类中的 getDefaultSharedPreferences()方法：</strong></p>
+<ul>
+<li>这是一个静态方法，它接收一个 Context 参数，并自动使用当前应用程序的包名作为前缀来命名 SharedPreferences 文件。</li>
+</ul>
+</li>
+</ul>
+<h6 id="向SharedPreferences中存储数据主要分为三步实现："><a href="#向SharedPreferences中存储数据主要分为三步实现：" class="headerlink" title="向SharedPreferences中存储数据主要分为三步实现："></a>向SharedPreferences中存储数据主要分为三步实现：</h6><ol>
+<li>调用SharedPreferences对象的edit()方法来获取一个SharedPreferences.Editor对象。</li>
+<li>向SharedPreferences.Editor对象中添加数据，不如添加一个布尔型数据就可以使用putBoolean()方法，添加一个字符串则使用putString()方法，以此类推。</li>
+<li>调用apply()方法将添加的数据提交，从而完成数据存储操作。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//1、获得getSharedPreferences 第一个参数是文件名，第二个参数是写入方式</span><br><span class="line">      mPreferences = getSharedPreferences(&quot;test&quot;,MODE_PRIVATE);</span><br><span class="line">      SharedPreferences.Editor editor = mPreferences.edit();</span><br><span class="line">              editor.putString(&quot;name&quot;,mEditText.getText().toString());</span><br><span class="line">              editor.commit();</span><br></pre></td></tr></table></figure>
+
+<h6 id="将数据读出："><a href="#将数据读出：" class="headerlink" title="将数据读出："></a>将数据读出：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String name = mPreferences.getString(&quot;name&quot;,&quot;&quot;);</span><br><span class="line">            mEditText.setText(name);</span><br></pre></td></tr></table></figure>
+
+<h6 id="使用的建议："><a href="#使用的建议：" class="headerlink" title="使用的建议："></a>使用的建议：</h6><ol>
+<li>不要存放大的 key 和 value 在 SharedPreferences 中，否则会一直存储在内存中得不到释放，内存使用过高会频发引发GC，导致界面丢帧甚至ANR。</li>
+<li>不相关的配置选项最好不要放在一起，单个文件越大读取速度则越慢。</li>
+<li>读取频繁的 key 和不频繁的 key 尽量不要放在一起（如果整个文件本身就较小则忽略，为了这点性能添加维护得不偿失）。</li>
+<li>不要每次都edit，因为每次都会创建一个新的EditorImpl对象，最好是批量处理统一提交。否则 edit().commit 每次创建一个新的 EditorImpl 对象并且进行一次 I/O 操作，严重影响性能。</li>
+<li>commit 发生在 UI 线程中，apply 发生在工作线程中，对于数据的提交最好是批量操作统一提交。虽然apply 发生在工作线程（不会因为IO阻塞UI线程）但是如果添加任务较多也有可能带来其他严重后果（参照ActivityThread源码中handleStopActivity方法实现）。</li>
+<li>尽量不要存放 JSON 和 HTML，这种可以直接文件缓存。</li>
+<li>不要指望这货能够跨进程通信 Context.PROCESS 。</li>
+<li>最好提前初始化 SharedPreferences，避免 SharedPreferences 第一次创建时读取文件线程未结束而出现等待情况。</li>
+</ol>
+
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2020年04月20日 14:34</p>
+        <p>最后更新： 2020年04月20日 15:10</p>
         <p>原始链接： <a class="post-url" href="/2020/04/20/Android-数据存储（二）：SharedPreferences/" title="Android 数据存储（二）：SharedPreferences">http://yoursite.com/2020/04/20/Android-数据存储（二）：SharedPreferences/</a></p>
         <footer>
             <a href="http://yoursite.com">
@@ -247,6 +286,12 @@
 </article>
 
 
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Android-数据存储（二）：SharedPreferences"><span class="post-toc-text">Android 数据存储（二）：SharedPreferences</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#不同于文件的存储方式，SharedPreferences是使用键值对来存储数据的，也就是说，当保存一条数据的时候，需要给这条数据提供一条对应的键，这样在读取数据的时候就可以通过这个键吧相应的值取出来，而且SharedPreferences还支持多种不同的数据类型存储。"><span class="post-toc-text">不同于文件的存储方式，SharedPreferences是使用键值对来存储数据的，也就是说，当保存一条数据的时候，需要给这条数据提供一条对应的键，这样在读取数据的时候就可以通过这个键吧相应的值取出来，而且SharedPreferences还支持多种不同的数据类型存储。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#将数据存储到SharedPreferences中："><span class="post-toc-text">将数据存储到SharedPreferences中：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Android-提供了三种方式用于得到SharedPreferences对象："><span class="post-toc-text">Android 提供了三种方式用于得到SharedPreferences对象：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#向SharedPreferences中存储数据主要分为三步实现："><span class="post-toc-text">向SharedPreferences中存储数据主要分为三步实现：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#将数据读出："><span class="post-toc-text">将数据读出：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#使用的建议："><span class="post-toc-text">使用的建议：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
 
 <nav id="article-nav">
   
