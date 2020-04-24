@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>SQLite 增删改查 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="王氏小仙女">
+  
+  <meta name="description" content="SQLite 增删改查：1、 MyOpenHelp123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263public class MyOpenHelp extends SQLiteOpenHelper &amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQLite 增删改查">
+<meta property="og:url" content="http://yoursite.com/2020/04/22/SQLite-增删改查/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="SQLite 增删改查：1、 MyOpenHelp123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263public class MyOpenHelp extends SQLiteOpenHelper &amp;#123;">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-04-23T08:59:42.328Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SQLite 增删改查">
+<meta name="twitter:description" content="SQLite 增删改查：1、 MyOpenHelp123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263public class MyOpenHelp extends SQLiteOpenHelper &amp;#123;">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">王氏小仙女</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        王氏小仙女
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 Android 开发的小仙女
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-SQLite-增删改查" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      SQLite 增删改查
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-04-22
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="SQLite-增删改查："><a href="#SQLite-增删改查：" class="headerlink" title="SQLite 增删改查："></a>SQLite 增删改查：</h3><h4 id="1、-MyOpenHelp"><a href="#1、-MyOpenHelp" class="headerlink" title="1、 MyOpenHelp"></a>1、 MyOpenHelp</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">public class MyOpenHelp extends SQLiteOpenHelper &#123;</span><br><span class="line"></span><br><span class="line">    public static final  int VERSION = 1;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     *</span><br><span class="line">     * @param context 所使用得上下文 数据库文件存在</span><br><span class="line">     * @param name 数据库得文件名</span><br><span class="line">     * @param factory 如果为null使用默认方式游标</span><br><span class="line">     * @param version 版本号</span><br><span class="line">     */</span><br><span class="line">    public MyOpenHelp(@Nullable Context context, @Nullable String name,</span><br><span class="line">                      @Nullable SQLiteDatabase.CursorFactory factory, int version) &#123;</span><br><span class="line">        super(context, name, factory, version);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public MyOpenHelp(@Nullable Context context) &#123;</span><br><span class="line">        super(context, &quot;Student.db&quot;, null,VERSION);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * onCreate 当数据库文件不存在，创建数据库文件，并且第一次使用时,创建数据库得时候并不调用，第一次使用得社会化调用</span><br><span class="line">     *         创建数据库两种方式：onCreate 当数据库文件不存在，创建数据库文件</span><br><span class="line">     *</span><br><span class="line">     * @param db</span><br><span class="line">     */</span><br><span class="line">    @Override</span><br><span class="line">    public void onCreate(SQLiteDatabase db) &#123;</span><br><span class="line">        //创建表只需要一次,如果数据库文件已经存在，那么可以更新版本号</span><br><span class="line">        String aql = &quot;create table student(_id integer primary key autoincrement,&quot; +</span><br><span class="line">                &quot;name,&quot; +</span><br><span class="line">                &quot;age,&quot; +</span><br><span class="line">                &quot;score)&quot;;</span><br><span class="line">        db.execSQL(aql);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     *  版本更新时执行的操作都可以在这里</span><br><span class="line">     * 版本号得更新</span><br><span class="line">     * @param db</span><br><span class="line">     * @param oldVersion</span><br><span class="line">     * @param newVersion</span><br><span class="line">     */</span><br><span class="line">    @Override</span><br><span class="line">    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) &#123;</span><br><span class="line">//        //当你的版本更新时，需要更新数据库对象（创建表）</span><br><span class="line">//        if (newVersion ==3  &amp;&amp; oldVersion ==2)&#123;</span><br><span class="line">//            //更改数据库中的表</span><br><span class="line">//            // 1、删除表</span><br><span class="line">//            String swl = &quot;drop table if exists student&quot;;</span><br><span class="line">//            // 2、创建表</span><br><span class="line">//            String aql = &quot;create table student(_id integer primary key autoincrement,&quot; +</span><br><span class="line">//                    &quot;name,&quot; +</span><br><span class="line">//                    &quot;age,&quot; +</span><br><span class="line">//                    &quot;score)&quot;;</span><br><span class="line">//            db.execSQL(aql);</span><br><span class="line">//</span><br><span class="line">//        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、主页面-MainActivity"><a href="#2、主页面-MainActivity" class="headerlink" title="2、主页面 MainActivity"></a>2、主页面 MainActivity</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br></pre></td><td class="code"><pre><span class="line">public class MainActivity extends AppCompatActivity &#123;</span><br><span class="line"></span><br><span class="line">    private EditText ed_name,ed_age,ed_score;</span><br><span class="line">    private ListView listView;</span><br><span class="line">    private Button add,show,first,up,dow,finallys,alter,deltet;</span><br><span class="line">    private MyOpenHelp helper;</span><br><span class="line">    private Cursor cursor;</span><br><span class="line">    private  Dialog dlg;</span><br><span class="line">    private String id = &quot;0&quot;;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        helper = new MyOpenHelp(this);</span><br><span class="line">        cursor = helper.getReadableDatabase().query(&quot;student&quot;,null,null,null,null,null,null);</span><br><span class="line">        init();</span><br><span class="line">        setListener();</span><br><span class="line">        createDialog();</span><br><span class="line">        displayAllstudent();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //初始化数据</span><br><span class="line">    private void init() &#123;</span><br><span class="line">        ed_name = findViewById(R.id.ed_name);</span><br><span class="line">        ed_age = findViewById(R.id.ed_age);</span><br><span class="line">        ed_score = findViewById(R.id.ed_score);</span><br><span class="line">        listView = findViewById(R.id.listView);</span><br><span class="line">        add = findViewById(R.id.btu_add);</span><br><span class="line">        show = findViewById(R.id.btu_show);</span><br><span class="line">        first = findViewById(R.id.btu_first);</span><br><span class="line">        up = findViewById(R.id.btu_up);</span><br><span class="line">        dow = findViewById(R.id.btu_dow);</span><br><span class="line">        finallys = findViewById(R.id.btu_finallys);</span><br><span class="line">        alter = findViewById(R.id.btu_alter);</span><br><span class="line">        deltet =findViewById(R.id.btu_delete);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //查找第一条数据</span><br><span class="line">    private void stuFirst()&#123;</span><br><span class="line">         if (cursor.moveToFirst())&#123; //游标移动到第一条，是否存在</span><br><span class="line">             //显示</span><br><span class="line">             display();</span><br><span class="line">         &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //显示</span><br><span class="line">    private void display() &#123;</span><br><span class="line">        String name = cursor.getString(cursor.getColumnIndex(&quot;name&quot;));</span><br><span class="line">        String age = cursor.getString(cursor.getColumnIndex(&quot;age&quot;));</span><br><span class="line">        String score = cursor.getString(cursor.getColumnIndex(&quot;score&quot;));</span><br><span class="line">        ed_age.setText(age);</span><br><span class="line">        ed_name.setText(name);</span><br><span class="line">        ed_score.setText(score);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //查找上一条数据</span><br><span class="line">    private void stuUp()&#123;</span><br><span class="line">        if (cursor.moveToPrevious())&#123;</span><br><span class="line">            //显示</span><br><span class="line">            display();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //查找下一条数据</span><br><span class="line">    private void stuDow()&#123;</span><br><span class="line">        if (cursor.moveToNext())&#123;</span><br><span class="line">            //显示</span><br><span class="line">            display();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //查找第最后一条数据</span><br><span class="line">    private void stuFinallys()&#123;</span><br><span class="line">        if (cursor.moveToLast())&#123;</span><br><span class="line">            //显示</span><br><span class="line">            display();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 弹出对话框输入学生id</span><br><span class="line">    private void createDialog()&#123;</span><br><span class="line">        //解析</span><br><span class="line">        View view =LayoutInflater.from(this).inflate(R.layout.show_id,null);</span><br><span class="line">        final EditText editId = view.findViewById(R.id.ed_studentId);</span><br><span class="line">       dlg = new AlertDialog.Builder(this)</span><br><span class="line">               .setView(view)</span><br><span class="line">               .setPositiveButton(&quot;确定&quot;, new DialogInterface.OnClickListener() &#123;</span><br><span class="line">                   @Override</span><br><span class="line">                   public void onClick(DialogInterface dialog, int which) &#123;</span><br><span class="line">                       //得到输入的id</span><br><span class="line">                        id = editId.getText().toString().trim();</span><br><span class="line">                       //查找</span><br><span class="line">                       findStudentId(id);</span><br><span class="line">                   &#125;</span><br><span class="line">               &#125;)</span><br><span class="line">               .setNegativeButton(&quot;取消&quot;, new DialogInterface.OnClickListener() &#123;</span><br><span class="line">                   @Override</span><br><span class="line">                   public void onClick(DialogInterface dialog, int which) &#123;</span><br><span class="line">                       id = &quot;-1&quot;;</span><br><span class="line">                   &#125;</span><br><span class="line">               &#125;)</span><br><span class="line"></span><br><span class="line">               .create();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //查找学生的ID</span><br><span class="line">    private void findStudentId(String id1) &#123;</span><br><span class="line">        Cursor cursor = helper.getReadableDatabase().query(</span><br><span class="line">                &quot;student&quot;,</span><br><span class="line">                null,</span><br><span class="line">                &quot;_id = ?&quot;,</span><br><span class="line">                new String[]&#123;id1&#125;,</span><br><span class="line">                null,</span><br><span class="line">                null,</span><br><span class="line">                null);</span><br><span class="line">        if (cursor.moveToFirst())&#123;</span><br><span class="line">            //找到</span><br><span class="line">            //显示在EditText</span><br><span class="line">            String name = cursor.getString(cursor.getColumnIndex(&quot;name&quot;));</span><br><span class="line">            String age = cursor.getString(cursor.getColumnIndex(&quot;age&quot;));</span><br><span class="line">            String score = cursor.getString(cursor.getColumnIndex(&quot;score&quot;));</span><br><span class="line"></span><br><span class="line">            ed_name.setText(name);</span><br><span class="line">            ed_age.setText(age);</span><br><span class="line">            ed_score.setText(score);</span><br><span class="line"></span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            Toast.makeText(MainActivity.this,&quot;您输入的id有错误或者没有您想找的学生&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    //从数据库中查询学生的信息</span><br><span class="line">    private void queryStudent()&#123;</span><br><span class="line">        //对话框输入学生的id</span><br><span class="line">        dlg.show();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //显示所有的学生</span><br><span class="line">    private void displayAllstudent()&#123;</span><br><span class="line">        cursor = helper.getReadableDatabase().query(&quot;student&quot;,</span><br><span class="line">                null,</span><br><span class="line">                null,</span><br><span class="line">                null,</span><br><span class="line">                null,</span><br><span class="line">                null,</span><br><span class="line">                null);</span><br><span class="line">        SimpleCursorAdapter simpleCursorAdapter = new SimpleCursorAdapter(</span><br><span class="line">                this</span><br><span class="line">                ,R.layout.listview_item,</span><br><span class="line">                cursor,</span><br><span class="line">                new String[]&#123;&quot;name&quot;,&quot;age&quot;,&quot;score&quot;&#125;,</span><br><span class="line">                new int[]&#123;R.id.tv_name,R.id.tv_age,R.id.tv_score&#125;);</span><br><span class="line">        listView.setAdapter(simpleCursorAdapter);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 添加数据到数据库的方法</span><br><span class="line">    private void inserStudent() &#123;</span><br><span class="line">        String name = ed_name.getText().toString().trim();</span><br><span class="line">        String age = ed_age.getText().toString().trim();</span><br><span class="line">        String score = ed_score.getText().toString().trim();</span><br><span class="line">        SQLiteDatabase db = helper.getWritableDatabase();</span><br><span class="line">        // 插入数据 第一个参数 表名，第二个参数 希望插入null的列名，第三个参数 ContentValues对象--Map</span><br><span class="line">        ContentValues cv = new ContentValues();</span><br><span class="line">        cv.put(&quot;name&quot;,name);</span><br><span class="line">        cv.put(&quot;score&quot;,score);</span><br><span class="line">        cv.put(&quot;age&quot;,age);</span><br><span class="line">        long roeId = db.insert(&quot;student&quot;,null,cv);</span><br><span class="line">        if (roeId != -1)&#123;</span><br><span class="line">            Toast.makeText(MainActivity.this,&quot;数据插入成功&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">        &#125;</span><br><span class="line">        db.close();</span><br><span class="line">        displayAllstudent();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //删除学生中的数据</span><br><span class="line">    private void deltetStudent() &#123;</span><br><span class="line">        //游标所指向的数据</span><br><span class="line">        String id = cursor.getString(cursor.getColumnIndex(&quot;_id&quot;));</span><br><span class="line">        SQLiteDatabase db = helper.getWritableDatabase();</span><br><span class="line">        int line = db.delete(&quot;student&quot;,&quot;_id = ?&quot;,new String[]&#123;id&#125;);//返回影响的行数，也就是你删除了几行</span><br><span class="line">        if (line &gt; 0)&#123;</span><br><span class="line">            Toast.makeText(MainActivity.this,&quot;数据删除成功&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">        &#125;</span><br><span class="line">        db.close();</span><br><span class="line">        displayAllstudent();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //修改学生中的数据</span><br><span class="line">    private void updateStudent() &#123;</span><br><span class="line">        //游标所指向的数据</span><br><span class="line">        String id = cursor.getString(cursor.getColumnIndex(&quot;_id&quot;));</span><br><span class="line">        SQLiteDatabase db = helper.getWritableDatabase();</span><br><span class="line">        //修改的列以及新的值</span><br><span class="line">        ContentValues cv = new ContentValues();</span><br><span class="line">        cv.put(&quot;name&quot;,ed_name.getText().toString().trim());</span><br><span class="line">        cv.put(&quot;age&quot;,ed_age.getText().toString().trim());</span><br><span class="line">        cv.put(&quot;score&quot;,ed_score.getText().toString().trim());</span><br><span class="line">        int line = db.update(&quot;student&quot;,cv,&quot;_id = ?&quot;,new String[]&#123;id&#125;);</span><br><span class="line">        if (line &gt; 0)&#123;</span><br><span class="line">            Toast.makeText(MainActivity.this,&quot;数据删除成功&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">        &#125;</span><br><span class="line">        db.close();</span><br><span class="line">        displayAllstudent();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    //单击事件</span><br><span class="line">    private void setListener()&#123;</span><br><span class="line">        MainActivity.Onclick onclick = new MainActivity.Onclick();</span><br><span class="line">        add.setOnClickListener(onclick);</span><br><span class="line">        show.setOnClickListener(onclick);</span><br><span class="line">        first.setOnClickListener(onclick);</span><br><span class="line">        up.setOnClickListener(onclick);</span><br><span class="line">        dow.setOnClickListener(onclick);</span><br><span class="line">        finallys.setOnClickListener(onclick);</span><br><span class="line">        alter.setOnClickListener(onclick);</span><br><span class="line">        deltet.setOnClickListener(onclick);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    class Onclick implements View.OnClickListener&#123;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public void onClick(View v) &#123;</span><br><span class="line">            switch (v.getId())&#123;</span><br><span class="line">                //添加学生</span><br><span class="line">                case R.id.btu_add:</span><br><span class="line">                    inserStudent();</span><br><span class="line">                    break;</span><br><span class="line">                //查找指定Id的学生</span><br><span class="line">                case R.id.btu_show:</span><br><span class="line">                    queryStudent();</span><br><span class="line">                    break;</span><br><span class="line">                //显示第一个学生</span><br><span class="line">                case R.id.btu_first:</span><br><span class="line">                    stuFirst();</span><br><span class="line">                    break;</span><br><span class="line">                //上一条</span><br><span class="line">                case R.id.btu_up:</span><br><span class="line">                    stuUp();</span><br><span class="line">                    break;</span><br><span class="line">                 //下一条</span><br><span class="line">                case R.id.btu_dow:</span><br><span class="line">                    stuDow();</span><br><span class="line">                    break;</span><br><span class="line">                 //最后一条</span><br><span class="line">                case R.id.btu_finallys:</span><br><span class="line">                    stuFinallys();</span><br><span class="line">                    break;</span><br><span class="line">                //修改</span><br><span class="line">                case R.id.btu_alter:</span><br><span class="line">                    updateStudent();</span><br><span class="line">                    break;</span><br><span class="line">                //删除</span><br><span class="line">                case R.id.btu_delete:</span><br><span class="line">                    deltetStudent();</span><br><span class="line">                    break;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、主页面布局"><a href="#3、主页面布局" class="headerlink" title="3、主页面布局"></a>3、主页面布局</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:orientation=&quot;vertical&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;LinearLayout</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;40dp&quot;</span><br><span class="line">        android:orientation=&quot;horizontal&quot;</span><br><span class="line">        &gt;</span><br><span class="line">        &lt;TextView</span><br><span class="line">            android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            android:text=&quot;学生姓名：&quot;</span><br><span class="line">            android:layout_gravity=&quot;center_vertical&quot;</span><br><span class="line">            android:textSize=&quot;14sp&quot;</span><br><span class="line">            android:textStyle=&quot;bold&quot;</span><br><span class="line">            /&gt;</span><br><span class="line">        &lt;EditText</span><br><span class="line">            android:id=&quot;@+id/ed_name&quot;</span><br><span class="line">            android:layout_width=&quot;match_parent&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/LinearLayout&gt;</span><br><span class="line">    &lt;LinearLayout</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;40dp&quot;</span><br><span class="line">        android:orientation=&quot;horizontal&quot;</span><br><span class="line">        &gt;</span><br><span class="line">        &lt;TextView</span><br><span class="line">            android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            android:text=&quot;学生年龄：&quot;</span><br><span class="line">            android:layout_gravity=&quot;center_vertical&quot;</span><br><span class="line">            android:textSize=&quot;14sp&quot;</span><br><span class="line">            android:textStyle=&quot;bold&quot;</span><br><span class="line">            /&gt;</span><br><span class="line">        &lt;EditText</span><br><span class="line">            android:id=&quot;@+id/ed_age&quot;</span><br><span class="line">            android:layout_width=&quot;match_parent&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/LinearLayout&gt;</span><br><span class="line">    &lt;LinearLayout</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;40dp&quot;</span><br><span class="line">        android:orientation=&quot;horizontal&quot;</span><br><span class="line">        &gt;</span><br><span class="line">        &lt;TextView</span><br><span class="line">            android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            android:text=&quot;学生成绩：&quot;</span><br><span class="line">            android:layout_gravity=&quot;center_vertical&quot;</span><br><span class="line">            android:textSize=&quot;14sp&quot;</span><br><span class="line">            android:textStyle=&quot;bold&quot;</span><br><span class="line">            /&gt;</span><br><span class="line">        &lt;EditText</span><br><span class="line">            android:id=&quot;@+id/ed_score&quot;</span><br><span class="line">            android:layout_width=&quot;match_parent&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/LinearLayout&gt;</span><br><span class="line">    &lt;LinearLayout</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;40dp&quot;</span><br><span class="line">        android:orientation=&quot;horizontal&quot;</span><br><span class="line">        &gt;</span><br><span class="line">        &lt;Button</span><br><span class="line">            android:id=&quot;@+id/btu_add&quot;</span><br><span class="line">            android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            android:text=&quot;添加学生&quot;</span><br><span class="line">            android:layout_gravity=&quot;center_vertical&quot;</span><br><span class="line">            android:textSize=&quot;14sp&quot;</span><br><span class="line">            android:textStyle=&quot;bold&quot;</span><br><span class="line">            /&gt;</span><br><span class="line">        &lt;Button</span><br><span class="line">            android:id=&quot;@+id/btu_show&quot;</span><br><span class="line">            android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            android:text=&quot;查询&quot;</span><br><span class="line">            android:layout_gravity=&quot;center_vertical&quot;</span><br><span class="line">            android:textSize=&quot;14sp&quot;</span><br><span class="line">            android:textStyle=&quot;bold&quot;</span><br><span class="line">            /&gt;</span><br><span class="line">        &lt;Button</span><br><span class="line">            android:id=&quot;@+id/btu_alter&quot;</span><br><span class="line">            android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            android:text=&quot;修改&quot;</span><br><span class="line">            android:layout_gravity=&quot;center_vertical&quot;</span><br><span class="line">            android:textSize=&quot;14sp&quot;</span><br><span class="line">            android:textStyle=&quot;bold&quot;</span><br><span class="line">            /&gt;</span><br><span class="line">        &lt;Button</span><br><span class="line">            android:id=&quot;@+id/btu_delete&quot;</span><br><span class="line">            android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            android:text=&quot;删除&quot;</span><br><span class="line">            android:layout_gravity=&quot;center_vertical&quot;</span><br><span class="line">            android:textSize=&quot;14sp&quot;</span><br><span class="line">            android:textStyle=&quot;bold&quot;</span><br><span class="line">            /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/LinearLayout&gt;</span><br><span class="line">    &lt;LinearLayout</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;40dp&quot;</span><br><span class="line">        android:orientation=&quot;horizontal&quot;</span><br><span class="line">        &gt;</span><br><span class="line">        &lt;Button</span><br><span class="line">            android:id=&quot;@+id/btu_first&quot;</span><br><span class="line">            android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            android:text=&quot;第一条&quot;</span><br><span class="line">            android:layout_gravity=&quot;center_vertical&quot;</span><br><span class="line">            android:textSize=&quot;14sp&quot;</span><br><span class="line">            android:textStyle=&quot;bold&quot;</span><br><span class="line">            /&gt;</span><br><span class="line">        &lt;Button</span><br><span class="line">            android:id=&quot;@+id/btu_up&quot;</span><br><span class="line">            android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            android:text=&quot;上一条&quot;</span><br><span class="line">            android:layout_gravity=&quot;center_vertical&quot;</span><br><span class="line">            android:textSize=&quot;14sp&quot;</span><br><span class="line">            android:textStyle=&quot;bold&quot;</span><br><span class="line">            /&gt;</span><br><span class="line">        &lt;Button</span><br><span class="line">            android:id=&quot;@+id/btu_dow&quot;</span><br><span class="line">            android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            android:text=&quot;下一条&quot;</span><br><span class="line">            android:layout_gravity=&quot;center_vertical&quot;</span><br><span class="line">            android:textSize=&quot;14sp&quot;</span><br><span class="line">            android:textStyle=&quot;bold&quot;</span><br><span class="line">            /&gt;</span><br><span class="line">        &lt;Button</span><br><span class="line">            android:id=&quot;@+id/btu_finallys&quot;</span><br><span class="line">            android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">            android:text=&quot;最后一条&quot;</span><br><span class="line">            android:layout_gravity=&quot;center_vertical&quot;</span><br><span class="line">            android:textSize=&quot;14sp&quot;</span><br><span class="line">            android:textStyle=&quot;bold&quot;</span><br><span class="line">            /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/LinearLayout&gt;</span><br><span class="line">    &lt;ListView</span><br><span class="line">        android:id=&quot;@+id/listView&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;/&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4、ListView的item布局"><a href="#4、ListView的item布局" class="headerlink" title="4、ListView的item布局"></a>4、ListView的item布局</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:orientation=&quot;horizontal&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:id=&quot;@+id/tv_name&quot;</span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_weight=&quot;1&quot;</span><br><span class="line">        android:gravity=&quot;center&quot;</span><br><span class="line">        android:layout_margin=&quot;10dp&quot;</span><br><span class="line">        android:text=&quot;name&quot; /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:id=&quot;@+id/tv_age&quot;</span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_weight=&quot;1&quot;</span><br><span class="line">        android:gravity=&quot;center&quot;</span><br><span class="line">        android:layout_margin=&quot;10dp&quot;</span><br><span class="line">        android:text=&quot;age&quot; /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:id=&quot;@+id/tv_score&quot;</span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_weight=&quot;1&quot;</span><br><span class="line">        android:gravity=&quot;center&quot;</span><br><span class="line">        android:layout_margin=&quot;10dp&quot;</span><br><span class="line">        android:text=&quot;score&quot; /&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5、查询页面的Dialog的XML"><a href="#5、查询页面的Dialog的XML" class="headerlink" title="5、查询页面的Dialog的XML"></a>5、查询页面的Dialog的XML</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">android:orientation=&quot;vertical&quot;</span><br><span class="line">android:layout_width=&quot;match_parent&quot;</span><br><span class="line">android:layout_height=&quot;match_parent&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;TextView</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;30dp&quot;</span><br><span class="line">    android:gravity=&quot;center_vertical&quot;</span><br><span class="line">    android:text=&quot;请输入你要查找的学生的id:&quot; /&gt;</span><br><span class="line">&lt;EditText</span><br><span class="line">    android:id=&quot;@+id/ed_studentId&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    /&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年04月23日 16:59</p>
+        <p>原始链接： <a class="post-url" href="/2020/04/22/SQLite-增删改查/" title="SQLite 增删改查">http://yoursite.com/2020/04/22/SQLite-增删改查/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="王氏小仙女">
+                王氏小仙女
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/04/22/SQLite-增删改查/&title=《SQLite 增删改查》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/04/22/SQLite-增删改查/&title=《SQLite 增删改查》 — Hexo&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/04/22/SQLite-增删改查/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《SQLite 增删改查》 — Hexo&url=http://yoursite.com/2020/04/22/SQLite-增删改查/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/04/22/SQLite-增删改查/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/04/22/SQLite-增删改查/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SQLite-增删改查："><span class="post-toc-text">SQLite 增删改查：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、-MyOpenHelp"><span class="post-toc-text">1、 MyOpenHelp</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2、主页面-MainActivity"><span class="post-toc-text">2、主页面 MainActivity</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3、主页面布局"><span class="post-toc-text">3、主页面布局</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4、ListView的item布局"><span class="post-toc-text">4、ListView的item布局</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5、查询页面的Dialog的XML"><span class="post-toc-text">5、查询页面的Dialog的XML</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2020/04/24/SQLite-登陆注册忘记密码/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          SQLite 登陆注册忘记密码
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2020/04/20/SharedPreferences-记住密码/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">SharedPreferences 记住密码</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 王氏小仙女<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
