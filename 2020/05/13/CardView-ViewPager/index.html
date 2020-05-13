@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>CardView+ViewPager | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="王氏小仙女">
+  
+  <meta name="description" content="CardView+ViewPager实现ViewPager翻页动画（卡片式）Viewpager通俗一点讲就是一个允许左右翻转带数据的页面的布局管理器，经常用来连接Fragment，它很方便管理每个页面的生命周期，使用ViewPager管理Fragment是标准的适配器实现。主要部分代码1、CardFragmentPagerAdapter1234567891011121314151617181920">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CardView+ViewPager">
+<meta property="og:url" content="http://yoursite.com/2020/05/13/CardView-ViewPager/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="CardView+ViewPager实现ViewPager翻页动画（卡片式）Viewpager通俗一点讲就是一个允许左右翻转带数据的页面的布局管理器，经常用来连接Fragment，它很方便管理每个页面的生命周期，使用ViewPager管理Fragment是标准的适配器实现。主要部分代码1、CardFragmentPagerAdapter1234567891011121314151617181920">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-05-13T14:19:10.207Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CardView+ViewPager">
+<meta name="twitter:description" content="CardView+ViewPager实现ViewPager翻页动画（卡片式）Viewpager通俗一点讲就是一个允许左右翻转带数据的页面的布局管理器，经常用来连接Fragment，它很方便管理每个页面的生命周期，使用ViewPager管理Fragment是标准的适配器实现。主要部分代码1、CardFragmentPagerAdapter1234567891011121314151617181920">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">王氏小仙女</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        王氏小仙女
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 Android 开发的小仙女
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-CardView-ViewPager" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      CardView+ViewPager
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-05-13
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="CardView-ViewPager实现ViewPager翻页动画（卡片式）"><a href="#CardView-ViewPager实现ViewPager翻页动画（卡片式）" class="headerlink" title="CardView+ViewPager实现ViewPager翻页动画（卡片式）"></a>CardView+ViewPager实现ViewPager翻页动画（卡片式）</h3><h4 id="Viewpager通俗一点讲就是一个允许左右翻转带数据的页面的布局管理器，经常用来连接Fragment，它很方便管理每个页面的生命周期，使用ViewPager管理Fragment是标准的适配器实现。"><a href="#Viewpager通俗一点讲就是一个允许左右翻转带数据的页面的布局管理器，经常用来连接Fragment，它很方便管理每个页面的生命周期，使用ViewPager管理Fragment是标准的适配器实现。" class="headerlink" title="Viewpager通俗一点讲就是一个允许左右翻转带数据的页面的布局管理器，经常用来连接Fragment，它很方便管理每个页面的生命周期，使用ViewPager管理Fragment是标准的适配器实现。"></a>Viewpager通俗一点讲就是一个允许左右翻转带数据的页面的布局管理器，经常用来连接Fragment，它很方便管理每个页面的生命周期，使用ViewPager管理Fragment是标准的适配器实现。</h4><h5 id="主要部分代码"><a href="#主要部分代码" class="headerlink" title="主要部分代码"></a>主要部分代码</h5><h6 id="1、CardFragmentPagerAdapter"><a href="#1、CardFragmentPagerAdapter" class="headerlink" title="1、CardFragmentPagerAdapter"></a>1、CardFragmentPagerAdapter</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">public class CardFragmentPagerAdapter extends FragmentStatePagerAdapter implements CardAdapter &#123;</span><br><span class="line"></span><br><span class="line">    private List&lt;CardFragment&gt; mFragments;</span><br><span class="line">    private float mBaseElevation;</span><br><span class="line"></span><br><span class="line">    public CardFragmentPagerAdapter(FragmentManager fm, float baseElevation) &#123;</span><br><span class="line">        super(fm);</span><br><span class="line">        mFragments = new ArrayList&lt;&gt;();</span><br><span class="line">        mBaseElevation = baseElevation;</span><br><span class="line"></span><br><span class="line">        //此处为方便，使用for循环添加5个一样的CardFragment；</span><br><span class="line">        for(int i = 0; i&lt; 5; i++)&#123;</span><br><span class="line">            addCardFragment(new CardFragment());</span><br><span class="line">        &#125;</span><br><span class="line">        // 如果要切换Fragment 在此处addCardFragment(new 新Fragment) 新Fragment要继承CardFragment，其他的代码和CardFragment一样</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public float getBaseElevation() &#123;</span><br><span class="line">        return mBaseElevation;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public CardView getCardViewAt(int position) &#123;</span><br><span class="line">        return mFragments.get(position).getCardView();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public int getCount() &#123;</span><br><span class="line">        return mFragments.size();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public Fragment getItem(int position) &#123;</span><br><span class="line">        return mFragments.get(position);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public Object instantiateItem(ViewGroup container, int position) &#123;</span><br><span class="line">        Object fragment = super.instantiateItem(container, position);</span><br><span class="line">        mFragments.set(position, (CardFragment) fragment);</span><br><span class="line">        return fragment;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void addCardFragment(CardFragment fragment) &#123;</span><br><span class="line">        mFragments.add(fragment);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="2、CardFragment"><a href="#2、CardFragment" class="headerlink" title="2、CardFragment"></a>2、CardFragment</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class CardFragment extends Fragment &#123;</span><br><span class="line"></span><br><span class="line">    private CardView mCardView;</span><br><span class="line"></span><br><span class="line">    @Nullable</span><br><span class="line">    @Override</span><br><span class="line">    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,</span><br><span class="line">                             @Nullable Bundle savedInstanceState) &#123;</span><br><span class="line">        View view = inflater.inflate(R.layout.fragment_adapter, container, false);</span><br><span class="line">        mCardView = (CardView) view.findViewById(R.id.cardView);</span><br><span class="line">        mCardView.setMaxCardElevation(mCardView.getCardElevation()</span><br><span class="line">                * CardAdapter.MAX_ELEVATION_FACTOR);</span><br><span class="line">        return view;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public CardView getCardView() &#123;</span><br><span class="line">        return mCardView;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="3、ShadowTransformer"><a href="#3、ShadowTransformer" class="headerlink" title="3、ShadowTransformer"></a>3、ShadowTransformer</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line">public class ShadowTransformer implements ViewPager.OnPageChangeListener, ViewPager.PageTransformer &#123;</span><br><span class="line"></span><br><span class="line">    private ViewPager mViewPager;</span><br><span class="line">    private CardAdapter mAdapter;</span><br><span class="line">    private float mLastOffset;</span><br><span class="line">    private boolean mScalingEnabled;</span><br><span class="line"></span><br><span class="line">    public ShadowTransformer(ViewPager viewPager, CardAdapter adapter) &#123;</span><br><span class="line">        mViewPager = viewPager;</span><br><span class="line">        viewPager.addOnPageChangeListener(this);</span><br><span class="line">        mAdapter = adapter;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void enableScaling(boolean enable) &#123;</span><br><span class="line">        if (mScalingEnabled &amp;&amp; !enable) &#123;</span><br><span class="line">            // shrink main card</span><br><span class="line">            CardView currentCard = mAdapter.getCardViewAt(mViewPager.getCurrentItem());</span><br><span class="line">            if (currentCard != null) &#123;</span><br><span class="line">                currentCard.animate().scaleY(1);</span><br><span class="line">                currentCard.animate().scaleX(1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;else if(!mScalingEnabled &amp;&amp; enable)&#123;</span><br><span class="line">            // grow main card</span><br><span class="line">            CardView currentCard = mAdapter.getCardViewAt(mViewPager.getCurrentItem());</span><br><span class="line">            if (currentCard != null) &#123;</span><br><span class="line">                currentCard.animate().scaleY(1.1f);</span><br><span class="line">                currentCard.animate().scaleX(1.1f);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        mScalingEnabled = enable;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void transformPage(View page, float position) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) &#123;</span><br><span class="line">        int realCurrentPosition;</span><br><span class="line">        int nextPosition;</span><br><span class="line">        float baseElevation = mAdapter.getBaseElevation();</span><br><span class="line">        float realOffset;</span><br><span class="line">        boolean goingLeft = mLastOffset &gt; positionOffset;</span><br><span class="line"></span><br><span class="line">        // If we&apos;re going backwards, onPageScrolled receives the last position</span><br><span class="line">        // instead of the current one</span><br><span class="line">        if (goingLeft) &#123;</span><br><span class="line">            realCurrentPosition = position + 1;</span><br><span class="line">            nextPosition = position;</span><br><span class="line">            realOffset = 1 - positionOffset;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            nextPosition = position + 1;</span><br><span class="line">            realCurrentPosition = position;</span><br><span class="line">            realOffset = positionOffset;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // Avoid crash on overscroll</span><br><span class="line">        if (nextPosition &gt; mAdapter.getCount() - 1</span><br><span class="line">                || realCurrentPosition &gt; mAdapter.getCount() - 1) &#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        CardView currentCard = mAdapter.getCardViewAt(realCurrentPosition);</span><br><span class="line"></span><br><span class="line">        // This might be null if a fragment is being used</span><br><span class="line">        // and the views weren&apos;t created yet</span><br><span class="line">        if (currentCard != null) &#123;</span><br><span class="line">            if (mScalingEnabled) &#123;</span><br><span class="line">                currentCard.setScaleX((float) (1 + 0.1 * (1 - realOffset)));</span><br><span class="line">                currentCard.setScaleY((float) (1 + 0.1 * (1 - realOffset)));</span><br><span class="line">            &#125;</span><br><span class="line">            currentCard.setCardElevation((baseElevation + baseElevation</span><br><span class="line">                    * (CardAdapter.MAX_ELEVATION_FACTOR - 1) * (1 - realOffset)));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        CardView nextCard = mAdapter.getCardViewAt(nextPosition);</span><br><span class="line"></span><br><span class="line">        // We might be scrolling fast enough so that the next (or previous) card</span><br><span class="line">        // was already destroyed or a fragment might not have been created yet</span><br><span class="line">        if (nextCard != null) &#123;</span><br><span class="line">            if (mScalingEnabled) &#123;</span><br><span class="line">                nextCard.setScaleX((float) (1 + 0.1 * (realOffset)));</span><br><span class="line">                nextCard.setScaleY((float) (1 + 0.1 * (realOffset)));</span><br><span class="line">            &#125;</span><br><span class="line">            nextCard.setCardElevation((baseElevation + baseElevation</span><br><span class="line">                    * (CardAdapter.MAX_ELEVATION_FACTOR - 1) * (realOffset)));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        mLastOffset = positionOffset;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onPageSelected(int position) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onPageScrollStateChanged(int state) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="4、MainActivity"><a href="#4、MainActivity" class="headerlink" title="4、MainActivity"></a>4、MainActivity</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public class MainActivity extends AppCompatActivity&#123;</span><br><span class="line"></span><br><span class="line">    private ViewPager mViewPager;</span><br><span class="line"></span><br><span class="line">    private CardFragmentPagerAdapter mFragmentCardAdapter;</span><br><span class="line">    private ShadowTransformer mFragmentCardShadowTransformer;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        mViewPager = (ViewPager) findViewById(R.id.viewPager);</span><br><span class="line">        mFragmentCardAdapter = new CardFragmentPagerAdapter(getSupportFragmentManager(),</span><br><span class="line">                dpToPixels(2, this));</span><br><span class="line">        mFragmentCardShadowTransformer = new ShadowTransformer(mViewPager, mFragmentCardAdapter);</span><br><span class="line">        mViewPager.setOffscreenPageLimit(3);</span><br><span class="line">        mFragmentCardShadowTransformer.enableScaling(true);</span><br><span class="line">        mViewPager.setAdapter(mFragmentCardAdapter);</span><br><span class="line">        mViewPager.setPageTransformer(false, mFragmentCardShadowTransformer);</span><br><span class="line">    &#125;</span><br><span class="line">    public static float dpToPixels(int dp, Context context) &#123;</span><br><span class="line">        return dp * (context.getResources().getDisplayMetrics().density);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="5、main-activity中只有ViewPager"><a href="#5、main-activity中只有ViewPager" class="headerlink" title="5、main_activity中只有ViewPager"></a>5、main_activity中只有ViewPager</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">androidx.viewpager.widget.ViewPager</span><br><span class="line">        android:id=&quot;@+id/viewPager&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;330dp&quot;</span><br><span class="line">        android:clipToPadding=&quot;false&quot;</span><br><span class="line">        android:overScrollMode=&quot;never&quot;</span><br><span class="line">        android:paddingBottom=&quot;30dp&quot;</span><br><span class="line">        android:paddingEnd=&quot;@dimen/card_padding&quot;</span><br><span class="line">        android:paddingLeft=&quot;@dimen/card_padding&quot;</span><br><span class="line">        android:paddingRight=&quot;@dimen/card_padding&quot;</span><br><span class="line">        android:paddingStart=&quot;@dimen/card_padding&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<h6 id="6、fragment-adapter中CardView作为父布局，里面是你要实现的布局，绑定到CardFragment"><a href="#6、fragment-adapter中CardView作为父布局，里面是你要实现的布局，绑定到CardFragment" class="headerlink" title="6、fragment_adapter中CardView作为父布局，里面是你要实现的布局，绑定到CardFragment"></a>6、fragment_adapter中CardView作为父布局，里面是你要实现的布局，绑定到CardFragment</h6><h4 id="github-项目"><a href="#github-项目" class="headerlink" title="github 项目"></a>github <a href="https://github.com/WangRuFei111/CardView-ViewPager.github.io.git" target="_blank" rel="noopener">项目</a></h4>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年05月13日 22:19</p>
+        <p>原始链接： <a class="post-url" href="/2020/05/13/CardView-ViewPager/" title="CardView+ViewPager">http://yoursite.com/2020/05/13/CardView-ViewPager/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="王氏小仙女">
+                王氏小仙女
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/05/13/CardView-ViewPager/&title=《CardView+ViewPager》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/05/13/CardView-ViewPager/&title=《CardView+ViewPager》 — Hexo&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/05/13/CardView-ViewPager/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CardView+ViewPager》 — Hexo&url=http://yoursite.com/2020/05/13/CardView-ViewPager/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/05/13/CardView-ViewPager/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/05/13/CardView-ViewPager/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CardView-ViewPager实现ViewPager翻页动画（卡片式）"><span class="post-toc-text">CardView+ViewPager实现ViewPager翻页动画（卡片式）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Viewpager通俗一点讲就是一个允许左右翻转带数据的页面的布局管理器，经常用来连接Fragment，它很方便管理每个页面的生命周期，使用ViewPager管理Fragment是标准的适配器实现。"><span class="post-toc-text">Viewpager通俗一点讲就是一个允许左右翻转带数据的页面的布局管理器，经常用来连接Fragment，它很方便管理每个页面的生命周期，使用ViewPager管理Fragment是标准的适配器实现。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#主要部分代码"><span class="post-toc-text">主要部分代码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#1、CardFragmentPagerAdapter"><span class="post-toc-text">1、CardFragmentPagerAdapter</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#2、CardFragment"><span class="post-toc-text">2、CardFragment</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#3、ShadowTransformer"><span class="post-toc-text">3、ShadowTransformer</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#4、MainActivity"><span class="post-toc-text">4、MainActivity</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#5、main-activity中只有ViewPager"><span class="post-toc-text">5、main_activity中只有ViewPager</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#6、fragment-adapter中CardView作为父布局，里面是你要实现的布局，绑定到CardFragment"><span class="post-toc-text">6、fragment_adapter中CardView作为父布局，里面是你要实现的布局，绑定到CardFragment</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#github-项目"><span class="post-toc-text">github 项目</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/28/自定义ContentProvider/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">自定义ContentProvider</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 王氏小仙女<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
