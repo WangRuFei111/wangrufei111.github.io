@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>WebView的用法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="王氏小仙女">
+  
+  <meta name="description" content="WebView的用法简介：WebView是Android中一个非常重要的控件，它的作用是用来展示一个web页面。它使用的内核是webkit 引擎，4.4版本之后，直接使用chrome作为内置网页浏览器。作用： 显示和渲染页面 可与页面JavaScript交互，实现混合开发  使用：1、加入权限1&amp;lt;uses-permission android:name=&amp;quot;android.permi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WebView的用法">
+<meta property="og:url" content="http://yoursite.com/2020/05/14/WebView的用法/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="WebView的用法简介：WebView是Android中一个非常重要的控件，它的作用是用来展示一个web页面。它使用的内核是webkit 引擎，4.4版本之后，直接使用chrome作为内置网页浏览器。作用： 显示和渲染页面 可与页面JavaScript交互，实现混合开发  使用：1、加入权限1&amp;lt;uses-permission android:name=&amp;quot;android.permi">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-05-14T14:11:39.618Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WebView的用法">
+<meta name="twitter:description" content="WebView的用法简介：WebView是Android中一个非常重要的控件，它的作用是用来展示一个web页面。它使用的内核是webkit 引擎，4.4版本之后，直接使用chrome作为内置网页浏览器。作用： 显示和渲染页面 可与页面JavaScript交互，实现混合开发  使用：1、加入权限1&amp;lt;uses-permission android:name=&amp;quot;android.permi">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">王氏小仙女</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        王氏小仙女
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 Android 开发的小仙女
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-WebView的用法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      WebView的用法
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-05-14
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="WebView的用法"><a href="#WebView的用法" class="headerlink" title="WebView的用法"></a>WebView的用法</h3><h4 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h4><h6 id="WebView是Android中一个非常重要的控件，它的作用是用来展示一个web页面。它使用的内核是webkit-引擎，4-4版本之后，直接使用chrome作为内置网页浏览器。"><a href="#WebView是Android中一个非常重要的控件，它的作用是用来展示一个web页面。它使用的内核是webkit-引擎，4-4版本之后，直接使用chrome作为内置网页浏览器。" class="headerlink" title="WebView是Android中一个非常重要的控件，它的作用是用来展示一个web页面。它使用的内核是webkit 引擎，4.4版本之后，直接使用chrome作为内置网页浏览器。"></a>WebView是Android中一个非常重要的控件，它的作用是用来展示一个web页面。它使用的内核是<code>webkit</code> 引擎，4.4版本之后，直接使用chrome作为内置网页浏览器。</h6><h4 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h4><ol>
+<li>显示和渲染页面</li>
+<li>可与页面JavaScript交互，实现混合开发</li>
+</ol>
+<h4 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h4><h6 id="1、加入权限"><a href="#1、加入权限" class="headerlink" title="1、加入权限"></a>1、加入权限</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;</span><br></pre></td></tr></table></figure>
+
+<h6 id="2、WebView控件"><a href="#2、WebView控件" class="headerlink" title="2、WebView控件"></a>2、WebView控件</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;WebView</span><br><span class="line">       android:id=&quot;@+id/main_webView&quot;</span><br><span class="line">       android:layout_width=&quot;match_parent&quot;</span><br><span class="line">       android:layout_height=&quot;match_parent&quot;/&gt;</span><br></pre></td></tr></table></figure>
+
+<h6 id="3、Java代码"><a href="#3、Java代码" class="headerlink" title="3、Java代码"></a>3、Java代码</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mWebView = findViewById(R.id.main_webView);</span><br><span class="line">     mWebView.getSettings().setJavaScriptEnabled(true);</span><br><span class="line">     mWebView.setWebViewClient(new WebViewClient());</span><br><span class="line">     mWebView.loadUrl(&quot;https://wangrufei111.github.io&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>注：首先使用findViewById()方法获取WebView的实例，然后调用WebView的getSettings()方法可以去设置一些浏览器的属性，这里只是调用setJavaScriptEnabled()方法来让WebView支持JavaScript脚本。</p>
+<p>​    然后，调用了WebView的setWebViewClient()方法，并传入了一个setWebViewClient的实例。作用是：当需要从一个网页跳转到另一个网页时，我们希望目标仍然在当前的WebView中显示，而不是打开系统浏览器。</p>
+<p>​    最后，调用WebView的loadUrl()方法，并将网址传入，即可展示相应网页的内容。</p>
+<h4 id="使用HTTP协议访问网络"><a href="#使用HTTP协议访问网络" class="headerlink" title="使用HTTP协议访问网络"></a>使用HTTP协议访问网络</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">public class MainActivity extends AppCompatActivity implements View.OnClickListener &#123;</span><br><span class="line"></span><br><span class="line">    private Button send;</span><br><span class="line">    private TextView tv;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        tv = findViewById(R.id.main_text);</span><br><span class="line">        send = findViewById(R.id.main_send);</span><br><span class="line">        send.setOnClickListener(this);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onClick(View v) &#123;</span><br><span class="line">        if (v.getId() == R.id.main_send)&#123;</span><br><span class="line">             SendRequestWithHttpUrlConection();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 首先获取到HttpURLConnection的实例，一般只需要设置一下HTTP请求所使用的方法，常用的方法主要有两个：GRT和POST</span><br><span class="line">     *      GET表示希望从服务器哪里获取数据</span><br><span class="line">     *      POST表示希望提交数据给服务器</span><br><span class="line">     */</span><br><span class="line">    private void SendRequestWithHttpUrlConection() &#123;</span><br><span class="line">        new Thread(new Runnable() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                HttpURLConnection connection = null;</span><br><span class="line">                BufferedReader reader = null;</span><br><span class="line">                try &#123;</span><br><span class="line">                    URL url = new URL(&quot;https://wangrufei111.github.io&quot;);</span><br><span class="line">                    connection = (HttpURLConnection) url.openConnection();</span><br><span class="line">//                    connection.setRequestMethod(&quot;POST&quot;); // POST表示希望提交数据给服务器</span><br><span class="line">//                    DataOutputStream out = new DataOutputStream(connection.getOutputStream());</span><br><span class="line">//                    out.writeBytes(&quot;userName = admin &amp; password = 123456&quot;);</span><br><span class="line">                    connection.setRequestMethod(&quot;GET&quot;);// GET表示希望从服务器哪里获取数据</span><br><span class="line">                    connection.setReadTimeout(8000); //读取超时的毫秒数</span><br><span class="line">                    connection.setConnectTimeout(8000);// 链接超时的时间</span><br><span class="line">                    InputStream in = connection.getInputStream(); // 获取到服务器返回的输入流</span><br><span class="line">                    // 下面对获取到的输入流进行读取</span><br><span class="line">                    reader = new BufferedReader(new InputStreamReader(in));</span><br><span class="line">                    StringBuilder sb = new StringBuilder();</span><br><span class="line">                    String line;</span><br><span class="line">                    while ((line = reader.readLine()) != null)&#123;</span><br><span class="line">                        sb.append(line);</span><br><span class="line">                    &#125;</span><br><span class="line">                    showResponse(sb.toString());</span><br><span class="line">                &#125; catch (MalformedURLException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125; catch (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;finally &#123;</span><br><span class="line">                    if (reader != null)&#123;</span><br><span class="line">                        try &#123;</span><br><span class="line">                            reader.close();</span><br><span class="line">                        &#125; catch (IOException e) &#123;</span><br><span class="line">                            e.printStackTrace();</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void showResponse(final String sb)&#123;</span><br><span class="line">        runOnUiThread(new Runnable() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                //在这里进行UI操作，将结果显示到界面上</span><br><span class="line">                tv.setText(sb);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;Button</span><br><span class="line">       android:id=&quot;@+id/main_send&quot;</span><br><span class="line">       android:layout_width=&quot;match_parent&quot;</span><br><span class="line">       android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">       android:text=&quot;Send Request&quot;</span><br><span class="line">       android:textAllCaps=&quot;false&quot;</span><br><span class="line">       /&gt;</span><br><span class="line">   &lt;ScrollView</span><br><span class="line">       android:layout_width=&quot;match_parent&quot;</span><br><span class="line">       android:layout_height=&quot;match_parent&quot;&gt;</span><br><span class="line">      &lt;TextView</span><br><span class="line">          android:id=&quot;@+id/main_text&quot;</span><br><span class="line">          android:layout_width=&quot;match_parent&quot;</span><br><span class="line">          android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">          /&gt;</span><br><span class="line">   &lt;/ScrollView&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​    可以看到，我们在Send Request按钮的点击事件里调用了SendRequestWithHttpUrlConection()方法，在这个方法中先是开启了一个子线程，然后在子线程里使用HttpURLConnection发出一条HTTP请求，请求的目标地址就是我们放的链接。</p>
+<p>​    接着利用BufferedReader对服务器返回的流进行读取，并将结果传入到showResponse()方法中，而在showResponse()方法里则是调用一个runOnUiThread()方法，然后在这个方法的匿名类参数中进行操作，将返回的数据显示到页面上。</p>
+<p>​    用runOnUiThread()方法是因为Android是不允许在子线程中进行UI操作的，我们需要通过这个方法将线程切换到主线程，然后在更新UI元素。</p>
+<h4 id="使用OkHttp"><a href="#使用OkHttp" class="headerlink" title="使用OkHttp"></a>使用OkHttp</h4><h6 id="在你的build-gradle中添加依赖"><a href="#在你的build-gradle中添加依赖" class="headerlink" title="在你的build.gradle中添加依赖"></a>在你的build.gradle中添加依赖</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">implementation(&quot;com.squareup.okhttp3:okhttp:4.6.0&quot;)</span><br></pre></td></tr></table></figure>
+
+<h6 id="复用上面HTTP中的布局"><a href="#复用上面HTTP中的布局" class="headerlink" title="复用上面HTTP中的布局"></a>复用上面HTTP中的布局</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">public class MainActivity extends AppCompatActivity implements View.OnClickListener &#123;</span><br><span class="line"></span><br><span class="line">    private Button send;</span><br><span class="line">    private TextView tv;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        tv = findViewById(R.id.main_text);</span><br><span class="line">        send = findViewById(R.id.main_send);</span><br><span class="line">        send.setOnClickListener(this);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onClick(View v) &#123;</span><br><span class="line">        if (v.getId() == R.id.main_send)&#123;</span><br><span class="line">             SendRequestWithHttp();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void SendRequestWithHttp() &#123;</span><br><span class="line">        new Thread(new Runnable() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                // 1、创建OkHttpClient实例</span><br><span class="line">                OkHttpClient client = new OkHttpClient();</span><br><span class="line">                // 2、创建Request对象的Url方法来设置目标的网络地址  发送Http请求</span><br><span class="line">                Request request = new Request.Builder()</span><br><span class="line">                        .url(&quot;https://wangrufei111.github.io&quot;)</span><br><span class="line">                        .build();</span><br><span class="line">                try &#123;</span><br><span class="line">                    // 调用OkHttpClient的newCall()方法来创建一个call对象，并调用它的execute()方法来发送请求并获取服务器返回的数据</span><br><span class="line">                    Response requeste = client.newCall(request).execute();</span><br><span class="line">                    // responseData就是服务器返回的数据</span><br><span class="line">                    String responseData = requeste.body().string();</span><br><span class="line"></span><br><span class="line">                    /**</span><br><span class="line">                     *      如果发送的是POST请求会比GET请求稍微复杂一点，我们需要先构建一个ResponseBody对象来存放待提交的参数</span><br><span class="line">                     *      RequestBody requestBody = new FormBody.Builder()</span><br><span class="line">                     *                             .add(&quot;userName&quot;,&quot;admain&quot;)</span><br><span class="line">                     *                             .add(&quot;password&quot;,&quot;123456&quot;)</span><br><span class="line">                     *                             .build();</span><br><span class="line">                     *      然后在Response.Builder中调用一下POST方法，并将RequestBody对象传入</span><br><span class="line">                     *      Request request = new Request.Builder()</span><br><span class="line">                     *                             .url(&quot;https://wangrufei111.github.io&quot;)</span><br><span class="line">                     *                             .post(requestBody)</span><br><span class="line">                     *                             .build();</span><br><span class="line">                     *</span><br><span class="line">                     */</span><br><span class="line"></span><br><span class="line">                    showResponse(responseData);</span><br><span class="line">                &#125; catch (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void showResponse(final String response)&#123;</span><br><span class="line">        runOnUiThread(new Runnable() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                // 在这里进行UI操作，将结果显示到页面上</span><br><span class="line">                tv.setText(response);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">     &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年05月14日 22:11</p>
+        <p>原始链接： <a class="post-url" href="/2020/05/14/WebView的用法/" title="WebView的用法">http://yoursite.com/2020/05/14/WebView的用法/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="王氏小仙女">
+                王氏小仙女
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/05/14/WebView的用法/&title=《WebView的用法》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/05/14/WebView的用法/&title=《WebView的用法》 — Hexo&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/05/14/WebView的用法/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《WebView的用法》 — Hexo&url=http://yoursite.com/2020/05/14/WebView的用法/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/05/14/WebView的用法/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/05/14/WebView的用法/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#WebView的用法"><span class="post-toc-text">WebView的用法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#简介："><span class="post-toc-text">简介：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#WebView是Android中一个非常重要的控件，它的作用是用来展示一个web页面。它使用的内核是webkit-引擎，4-4版本之后，直接使用chrome作为内置网页浏览器。"><span class="post-toc-text">WebView是Android中一个非常重要的控件，它的作用是用来展示一个web页面。它使用的内核是webkit 引擎，4.4版本之后，直接使用chrome作为内置网页浏览器。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#作用："><span class="post-toc-text">作用：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用："><span class="post-toc-text">使用：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#1、加入权限"><span class="post-toc-text">1、加入权限</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#2、WebView控件"><span class="post-toc-text">2、WebView控件</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#3、Java代码"><span class="post-toc-text">3、Java代码</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用HTTP协议访问网络"><span class="post-toc-text">使用HTTP协议访问网络</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用OkHttp"><span class="post-toc-text">使用OkHttp</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#在你的build-gradle中添加依赖"><span class="post-toc-text">在你的build.gradle中添加依赖</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#复用上面HTTP中的布局"><span class="post-toc-text">复用上面HTTP中的布局</span></a></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/13/git一步步上传自己的项目至github，及仓库更新/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">git一步步上传自己的项目至github，及仓库更新</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 王氏小仙女<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
