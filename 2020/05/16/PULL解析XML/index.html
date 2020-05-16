@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>PULL解析XML | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="王氏小仙女">
+  
+  <meta name="description" content="PULL解析XML：Pull解析器：Pull解析是一个while循环，随时可以跳出。Pull解析器的工作方式为允许你的应用程序代码主动从解析器中获取事件，因此可以在满足了需要的条件后不再获取事件，结束解析工作。 1、首先新建一个xml文件，放在res/raw目录下，没有raw目录则新建一个。要解析的words.xml内容如下： 123456789&amp;lt;words&amp;gt;    &amp;lt;word">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PULL解析XML">
+<meta property="og:url" content="http://yoursite.com/2020/05/16/PULL解析XML/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="PULL解析XML：Pull解析器：Pull解析是一个while循环，随时可以跳出。Pull解析器的工作方式为允许你的应用程序代码主动从解析器中获取事件，因此可以在满足了需要的条件后不再获取事件，结束解析工作。 1、首先新建一个xml文件，放在res/raw目录下，没有raw目录则新建一个。要解析的words.xml内容如下： 123456789&amp;lt;words&amp;gt;    &amp;lt;word">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-05-16T13:26:16.860Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PULL解析XML">
+<meta name="twitter:description" content="PULL解析XML：Pull解析器：Pull解析是一个while循环，随时可以跳出。Pull解析器的工作方式为允许你的应用程序代码主动从解析器中获取事件，因此可以在满足了需要的条件后不再获取事件，结束解析工作。 1、首先新建一个xml文件，放在res/raw目录下，没有raw目录则新建一个。要解析的words.xml内容如下： 123456789&amp;lt;words&amp;gt;    &amp;lt;word">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">王氏小仙女</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        王氏小仙女
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 Android 开发的小仙女
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-PULL解析XML" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      PULL解析XML
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-05-16
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="PULL解析XML："><a href="#PULL解析XML：" class="headerlink" title="PULL解析XML："></a>PULL解析XML：</h3><h4 id="Pull解析器："><a href="#Pull解析器：" class="headerlink" title="Pull解析器："></a>Pull解析器：</h4><p>Pull解析是一个while循环，随时可以跳出。Pull解析器的工作方式为允许你的应用程序代码主动从解析器中获取事件，因此可以在满足了需要的条件后不再获取事件，结束解析工作。</p>
+<h5 id="1、首先新建一个xml文件，放在res-raw目录下，没有raw目录则新建一个。"><a href="#1、首先新建一个xml文件，放在res-raw目录下，没有raw目录则新建一个。" class="headerlink" title="1、首先新建一个xml文件，放在res/raw目录下，没有raw目录则新建一个。"></a>1、首先新建一个xml文件，放在res/raw目录下，没有raw目录则新建一个。</h5><p>要解析的words.xml内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;words&gt;</span><br><span class="line">    &lt;word value= &quot;one&quot; /&gt;</span><br><span class="line">    &lt;word value= &quot;two&quot; /&gt;</span><br><span class="line">    &lt;word value= &quot;three&quot; /&gt;</span><br><span class="line">    &lt;word value= &quot;four&quot; /&gt;</span><br><span class="line">    &lt;word value= &quot;five&quot; /&gt;</span><br><span class="line">    &lt;word value= &quot;six&quot; /&gt;</span><br><span class="line">    &lt;word value= &quot;seven&quot; /&gt;</span><br><span class="line">&lt;/words&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="2、XMLActivity-java文件"><a href="#2、XMLActivity-java文件" class="headerlink" title="2、XMLActivity.java文件"></a>2、XMLActivity.java文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">public class XMLActivity extends AppCompatActivity &#123;</span><br><span class="line">    private TextView mTextView;</span><br><span class="line">    private Button mButton;</span><br><span class="line">    private static final int MSG_FINISH = 0x0001;</span><br><span class="line">    private Handler handel = new Handler()&#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void handleMessage(@NonNull Message msg) &#123;</span><br><span class="line">            switch (msg.what)&#123;</span><br><span class="line">                case MSG_FINISH:</span><br><span class="line">                    List&lt;String&gt; content = (List&lt;String&gt;) msg.obj;</span><br><span class="line">                    //在主线程中显示</span><br><span class="line">                    for (String contents : content)&#123;</span><br><span class="line">                        mTextView.append(contents+&quot;\n&quot;);</span><br><span class="line">                    &#125;</span><br><span class="line">                    break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(@Nullable Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_xml_pull);</span><br><span class="line">        mButton = findViewById(R.id.button);</span><br><span class="line">        mTextView = findViewById(R.id.cml_textView);</span><br><span class="line">        mButton.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onClick(View v) &#123;</span><br><span class="line">                new Thread()&#123;</span><br><span class="line">                    @Override</span><br><span class="line">                    public void run() &#123;</span><br><span class="line">                        try &#123;</span><br><span class="line">                            List&lt;String&gt; contents = getPullContent(getResources(),R.xml.words);</span><br><span class="line">                            //完成工作，通知主线程</span><br><span class="line">                            Message msg = handel.obtainMessage();</span><br><span class="line">                            msg.what = MSG_FINISH;</span><br><span class="line">                            msg.obj = contents;</span><br><span class="line">                            handel.sendMessage(msg);</span><br><span class="line">                        &#125; catch (XmlPullParserException e) &#123;</span><br><span class="line">                            e.printStackTrace();</span><br><span class="line">                        &#125; catch (IOException e) &#123;</span><br><span class="line">                            e.printStackTrace();</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;.start();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private List&lt;String&gt; getPullContent(Resources res,int id) throws XmlPullParserException,</span><br><span class="line">            IOException &#123;</span><br><span class="line">        List&lt;String&gt; contens = null;</span><br><span class="line">        // XMLPULLParser 得到所需要的解析器</span><br><span class="line">        XmlPullParser parser = res.getXml(id);</span><br><span class="line">        // Pull解析本质时SAX解析</span><br><span class="line">        String tagName;</span><br><span class="line">        String value;</span><br><span class="line">        int eventType = parser.getEventType();</span><br><span class="line">        while (eventType != XmlPullParser.END_DOCUMENT) &#123;</span><br><span class="line">            switch (eventType) &#123;</span><br><span class="line">                //文档开始</span><br><span class="line">                case XmlPullParser.START_DOCUMENT:</span><br><span class="line">                    contens = new ArrayList&lt;&gt;();</span><br><span class="line">                    break;</span><br><span class="line">                //文档结束</span><br><span class="line">                case XmlPullParser.END_DOCUMENT:</span><br><span class="line">                    break;</span><br><span class="line">                //标记（标签、元素、节点、ELEMENT）的开始</span><br><span class="line">                case XmlPullParser.START_TAG:</span><br><span class="line">                    //得到标记的名字</span><br><span class="line">                    tagName = parser.getName();</span><br><span class="line">                    if (tagName.equals(&quot;word&quot;)) &#123;</span><br><span class="line">                        value = parser.getAttributeValue(0);</span><br><span class="line">                        contens.add(value);</span><br><span class="line">                    &#125;</span><br><span class="line">                    break;</span><br><span class="line">                //标记（标签、元素、节点、ELEMENT）的结束</span><br><span class="line">                case XmlPullParser.END_TAG:</span><br><span class="line">                    tagName = parser.getName();</span><br><span class="line">                    break;</span><br><span class="line">            &#125;</span><br><span class="line">            eventType = parser.next();</span><br><span class="line">        &#125;</span><br><span class="line">        return contens;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3、布局文件"><a href="#3、布局文件" class="headerlink" title="3、布局文件"></a>3、布局文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;LinearLayout</span><br><span class="line">    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:orientation=&quot;vertical&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;Button</span><br><span class="line">        android:id=&quot;@+id/button&quot;</span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:text=&quot;点击解析xml文件&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:id=&quot;@+id/cml_textView&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;match_parent&quot;</span><br><span class="line">        android:text=&quot;&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">&lt;/LinearLayout</span><br></pre></td></tr></table></figure>
+
+<h4 id="新建一个类存放解析的内容："><a href="#新建一个类存放解析的内容：" class="headerlink" title="新建一个类存放解析的内容："></a>新建一个类存放解析的内容：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public class Person &#123;</span><br><span class="line">        private int id;</span><br><span class="line">       private String name;</span><br><span class="line">        private int age;</span><br><span class="line">    </span><br><span class="line">        public int getId() &#123;</span><br><span class="line">            return id;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">       public void setId(int id) &#123;</span><br><span class="line">           this.id = id;</span><br><span class="line">       &#125;</span><br><span class="line">   </span><br><span class="line">       public String getName() &#123;</span><br><span class="line">           return name;</span><br><span class="line">       &#125;</span><br><span class="line">   </span><br><span class="line">       public void setName(String name) &#123;</span><br><span class="line">           this.name = name;</span><br><span class="line">       &#125;</span><br><span class="line">   </span><br><span class="line">       public int getAge() &#123;</span><br><span class="line">           return age;</span><br><span class="line">       &#125;</span><br><span class="line">   </span><br><span class="line">       public void setAge(int age) &#123;</span><br><span class="line">           this.age = age;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用Pull解析器生成XML文件："><a href="#使用Pull解析器生成XML文件：" class="headerlink" title="使用Pull解析器生成XML文件："></a><strong>使用Pull解析器生成XML文件：</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">/**【使用Pull解析器生成XML文件内容】**/</span><br><span class="line">        public static String WriteXML(List&lt;Person&gt; persons,Writer writer )&#123;</span><br><span class="line">            XmlSerializer serializer = Xml.newSerializer();</span><br><span class="line">            try &#123;</span><br><span class="line">                serializer.setOutput(writer);</span><br><span class="line">                serializer.startDocument(&quot;UTF-8&quot;,true);</span><br><span class="line">    </span><br><span class="line">                /**【第一个参数为命名空间，不使用命名空间可以设置为null】**/</span><br><span class="line">                serializer.startTag(&quot;&quot;,&quot;persons&quot;);</span><br><span class="line">                /**【XML文件中要生成的内容】**/</span><br><span class="line">                for(Person person : persons)&#123;</span><br><span class="line">                    serializer.startTag(&quot;&quot;,&quot;person&quot;);</span><br><span class="line">                    serializer.attribute(&quot;&quot;, &quot;id&quot;, String.valueOf(person.getId()) );</span><br><span class="line">    </span><br><span class="line">                    serializer.startTag(&quot;&quot;,&quot;name&quot;);</span><br><span class="line">                    serializer.text(person.getName());</span><br><span class="line">                    serializer.endTag(&quot;&quot;,&quot;name&quot;);</span><br><span class="line">    </span><br><span class="line">                    serializer.startTag(&quot;&quot;,&quot;age&quot;);</span><br><span class="line">                    serializer.text(String.valueOf(person.getAge()));</span><br><span class="line">                    serializer.endTag(&quot;&quot;,&quot;age&quot;);</span><br><span class="line">    </span><br><span class="line">                    serializer.endTag(&quot;&quot;,&quot;person&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">                serializer.endTag(&quot;&quot;,&quot;persons&quot;);</span><br><span class="line">                serializer.endDocument();</span><br><span class="line">                return writer.toString();</span><br><span class="line">            &#125; catch (Exception e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        /**【生成XML文件代码】**/</span><br><span class="line">        public static void createXmlFile(List&lt;Person&gt; persons)&#123;</span><br><span class="line">            if(Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED))&#123;</span><br><span class="line">                try &#123;</span><br><span class="line">                    File sdCard = Environment.getExternalStorageDirectory();</span><br><span class="line">                    File xmlFile = new File(sdCard + File.separator + &quot;testFolder/&quot; + &quot;myitcast.xml&quot;);</span><br><span class="line">                    FileOutputStream outStream =  new FileOutputStream(xmlFile);</span><br><span class="line">                    OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outStream , &quot;UTF-8&quot;);</span><br><span class="line">                    BufferedWriter writerFile = new BufferedWriter(outputStreamWriter);</span><br><span class="line">    </span><br><span class="line">                    WriteXML(persons,writerFile);</span><br><span class="line">                    writerFile.flush();</span><br><span class="line">                    writerFile.close();</span><br><span class="line">            &#125; catch (Exception e) &#123;</span><br><span class="line">                 e.printStackTrace();</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="注：新建文件需要在AndroidManifest中添加SD卡读写的权限"><a href="#注：新建文件需要在AndroidManifest中添加SD卡读写的权限" class="headerlink" title="注：新建文件需要在AndroidManifest中添加SD卡读写的权限"></a>注：新建文件需要在AndroidManifest中添加SD卡读写的权限</h6><uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE">
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission></uses-permission>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年05月16日 21:26</p>
+        <p>原始链接： <a class="post-url" href="/2020/05/16/PULL解析XML/" title="PULL解析XML">http://yoursite.com/2020/05/16/PULL解析XML/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="王氏小仙女">
+                王氏小仙女
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/05/16/PULL解析XML/&title=《PULL解析XML》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/05/16/PULL解析XML/&title=《PULL解析XML》 — Hexo&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/05/16/PULL解析XML/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PULL解析XML》 — Hexo&url=http://yoursite.com/2020/05/16/PULL解析XML/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/05/16/PULL解析XML/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/05/16/PULL解析XML/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#PULL解析XML："><span class="post-toc-text">PULL解析XML：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Pull解析器："><span class="post-toc-text">Pull解析器：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1、首先新建一个xml文件，放在res-raw目录下，没有raw目录则新建一个。"><span class="post-toc-text">1、首先新建一个xml文件，放在res/raw目录下，没有raw目录则新建一个。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2、XMLActivity-java文件"><span class="post-toc-text">2、XMLActivity.java文件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3、布局文件"><span class="post-toc-text">3、布局文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新建一个类存放解析的内容："><span class="post-toc-text">新建一个类存放解析的内容：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用Pull解析器生成XML文件："><span class="post-toc-text">使用Pull解析器生成XML文件：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#注：新建文件需要在AndroidManifest中添加SD卡读写的权限"><span class="post-toc-text">注：新建文件需要在AndroidManifest中添加SD卡读写的权限</span></a></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/14/WebView的用法/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">WebView的用法</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 王氏小仙女<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
