@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>异步消息处理机制 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="王氏小仙女">
+  
+  <meta name="description" content="异步消息处理机制：Android中的异步消息处理机制主要由4个部分组成：Message、Handler、MessageQueue和Looper。 Message：​    Message是在线程之间传递的消息，它可以在内部携带少量的信息，用于在不同线程之间交换数据。    Handler：​    Handler是处理者的意思，它主要是用于发送和处理消息，发送消息一般是使用Handler的send">
+<meta property="og:type" content="article">
+<meta property="og:title" content="异步消息处理机制">
+<meta property="og:url" content="http://yoursite.com/2020/06/01/异步消息处理机制/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="异步消息处理机制：Android中的异步消息处理机制主要由4个部分组成：Message、Handler、MessageQueue和Looper。 Message：​    Message是在线程之间传递的消息，它可以在内部携带少量的信息，用于在不同线程之间交换数据。    Handler：​    Handler是处理者的意思，它主要是用于发送和处理消息，发送消息一般是使用Handler的send">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-06-02T14:19:40.443Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="异步消息处理机制">
+<meta name="twitter:description" content="异步消息处理机制：Android中的异步消息处理机制主要由4个部分组成：Message、Handler、MessageQueue和Looper。 Message：​    Message是在线程之间传递的消息，它可以在内部携带少量的信息，用于在不同线程之间交换数据。    Handler：​    Handler是处理者的意思，它主要是用于发送和处理消息，发送消息一般是使用Handler的send">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">王氏小仙女</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        王氏小仙女
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 Android 开发的小仙女
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-异步消息处理机制" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      异步消息处理机制
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-06-01
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="异步消息处理机制："><a href="#异步消息处理机制：" class="headerlink" title="异步消息处理机制："></a>异步消息处理机制：</h3><h5 id="Android中的异步消息处理机制主要由4个部分组成：Message、Handler、MessageQueue和Looper。"><a href="#Android中的异步消息处理机制主要由4个部分组成：Message、Handler、MessageQueue和Looper。" class="headerlink" title="Android中的异步消息处理机制主要由4个部分组成：Message、Handler、MessageQueue和Looper。"></a>Android中的异步消息处理机制主要由4个部分组成：Message、Handler、MessageQueue和Looper。</h5><ol>
+<li><h6 id="Message："><a href="#Message：" class="headerlink" title="Message："></a>Message：</h6><p>​    Message是在线程之间传递的消息，它可以在内部携带少量的信息，用于在不同线程之间交换数据。</p>
+</li>
+</ol>
+<ol start="2">
+<li><h6 id="Handler："><a href="#Handler：" class="headerlink" title="Handler："></a>Handler：</h6><p>​    Handler是处理者的意思，它主要是用于发送和处理消息，发送消息一般是使用Handler的sendMessage()方法。而发出的消息一般经过一系列的辗转出来后，最终会传递到Handler的handlerMessage()方法中。</p>
+</li>
+</ol>
+<ol start="3">
+<li><h6 id="MessageQueue："><a href="#MessageQueue：" class="headerlink" title="MessageQueue："></a>MessageQueue：</h6><p>​    MessageQueue是消息队列的意思，它主要用于存放所有通过Handler发送的消息。这部分消息会一直存放在消息队列中，等待被处理。每个线程中只会有一个MessageQueue对象。</p>
+</li>
+</ol>
+<ol start="4">
+<li><h6 id="Looper："><a href="#Looper：" class="headerlink" title="Looper："></a>Looper：</h6><p>​    Looper是每个线程中的MessageQueue的管家，使用Looper调用Looper的loop()方法后，就会进入到一个无限循环中，然后每当发现MessageQueue中存在一条消息，就会将它取出，并传递到Handler的handlerMessage()方法中。每个线程中也会有一个Looper对象。</p>
+</li>
+</ol>
+<h6 id="梳理流程："><a href="#梳理流程：" class="headerlink" title="梳理流程："></a>梳理流程：</h6><ol>
+<li><h6 id="首先需要在主线程当中创建一个Handler对象，并重写sendMessage-方法。"><a href="#首先需要在主线程当中创建一个Handler对象，并重写sendMessage-方法。" class="headerlink" title="首先需要在主线程当中创建一个Handler对象，并重写sendMessage()方法。"></a>首先需要在主线程当中创建一个Handler对象，并重写sendMessage()方法。</h6></li>
+<li><h6 id="然后当子线程中需要进行UI操作时，就创建一个Message对象，并通过Handler将这条消息发送出去。"><a href="#然后当子线程中需要进行UI操作时，就创建一个Message对象，并通过Handler将这条消息发送出去。" class="headerlink" title="然后当子线程中需要进行UI操作时，就创建一个Message对象，并通过Handler将这条消息发送出去。"></a>然后当子线程中需要进行UI操作时，就创建一个Message对象，并通过Handler将这条消息发送出去。</h6></li>
+<li><h6 id="之后这条消息会被添加到MessageQueue的队列中等待被处理。"><a href="#之后这条消息会被添加到MessageQueue的队列中等待被处理。" class="headerlink" title="之后这条消息会被添加到MessageQueue的队列中等待被处理。"></a>之后这条消息会被添加到MessageQueue的队列中等待被处理。</h6></li>
+<li><h6 id="而Looper则会一只尝试从MessageQueue中取出等待消息，最后分发回Handler的handlerMessage-方法中。（由于Handler时在主线程中创建的，所以此时handlerMessage方法中的代码也会在主线程中进行）"><a href="#而Looper则会一只尝试从MessageQueue中取出等待消息，最后分发回Handler的handlerMessage-方法中。（由于Handler时在主线程中创建的，所以此时handlerMessage方法中的代码也会在主线程中进行）" class="headerlink" title="而Looper则会一只尝试从MessageQueue中取出等待消息，最后分发回Handler的handlerMessage()方法中。（由于Handler时在主线程中创建的，所以此时handlerMessage方法中的代码也会在主线程中进行）"></a>而Looper则会一只尝试从MessageQueue中取出等待消息，最后分发回Handler的handlerMessage()方法中。（由于Handler时在主线程中创建的，所以此时handlerMessage方法中的代码也会在主线程中进行）</h6></li>
+</ol>
+<h3 id="AsyncTask："><a href="#AsyncTask：" class="headerlink" title="AsyncTask："></a>AsyncTask：</h3><p>​      线程的创建和销毁都会有开销，如果在进程中频繁的创建和销毁线程，是不可取的。应该采用线程池，可以避免因为频繁创建和销毁线程所带来的系统开销。</p>
+<h5 id="AsyncTask是什么："><a href="#AsyncTask是什么：" class="headerlink" title="AsyncTask是什么："></a>AsyncTask是什么：</h5><p>​     AsyncTask是Android封装的一个轻量级的异步类，可以在线程池中执行异步任务，并可以将执行进度和结果传递给UI线程。</p>
+<p>​     AsyncTask的内部封装了两个线程池：(<code>SerialExecutor</code>、<code>THREAD_POOL_EXECUTOR</code>)和一个<code>Handler</code>。其中<code>SerialExecutor</code>线程池用于任务的排队，让需要执行的多个耗时任务，按顺序排列，<code>THREAD_POOL_EXECUTOR</code>线程池才真正地执行任务，<code>Handler</code>用于从工作线程切换到主线程。</p>
+<h5 id="AsyncTask的范型参数："><a href="#AsyncTask的范型参数：" class="headerlink" title="AsyncTask的范型参数："></a>AsyncTask的范型参数：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">    *      AsyncTask:</span><br><span class="line">    *          第一个泛型：Params 执行子线程所需要传入的参数 开始异步任务执行时传入的参数类型；</span><br><span class="line">    *          第二个泛型：Progress 进度指示时所需的类型 异步任务执行过程中，返回下载进度值的类型；</span><br><span class="line">    *          第三个泛型：Result 运行后的结果的类型 步任务执行完成后，返回的结果类型；</span><br><span class="line">    *          如果AsyncTask确定不需要传递具体参数，那么这三个泛型参数可以用Void来代替。</span><br><span class="line">    */</span><br></pre></td></tr></table></figure>
+
+<h5 id="AsyncTask的实例："><a href="#AsyncTask的实例：" class="headerlink" title="AsyncTask的实例："></a>AsyncTask的实例：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> *  AsyncTask:</span><br><span class="line"> *      Handler使用比较复杂</span><br><span class="line"> *      Handler和AsyncTask都是为了不堵塞主线程，且UI的更新只能在主线程中完成，异步处理是不可避免的。</span><br><span class="line"> *      AsyncTask的特点是由系统来创建和删除执行任务的线程，并有效的管理它们</span><br><span class="line"> *      开发者只要创建AsyncTask的子类，实现相应的方法，在创建AsyncTask子类的对象，并执行execute()方法就可以了</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class MainActivity extends AppCompatActivity implements View.OnClickListener &#123;</span><br><span class="line"></span><br><span class="line">    private TextView mTextView;</span><br><span class="line">    private Button mButton;</span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(@Nullable Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        init();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void init() &#123;</span><br><span class="line">        mButton = findViewById(R.id.main_btu);</span><br><span class="line">        mTextView = findViewById(R.id.main_text);</span><br><span class="line">        mButton.setOnClickListener(this);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onClick(View v) &#123;</span><br><span class="line">        switch (v.getId())&#123;</span><br><span class="line">            case R.id.main_btu:</span><br><span class="line">                new MyTask().execute(); // 自动调用doInBackground</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     *      AsyncTask:</span><br><span class="line">     *          第一个泛型：Params 执行子线程所需要传入的参数 开始异步任务执行时传入的参数类型；</span><br><span class="line">     *          第二个泛型：Progress 进度指示时所需的类型 异步任务执行过程中，返回下载进度值的类型；</span><br><span class="line">     *          第三个泛型：Result 运行后的结果的类型 步任务执行完成后，返回的结果类型；</span><br><span class="line">     *          如果AsyncTask确定不需要传递具体参数，那么这三个泛型参数可以用Void来代替。</span><br><span class="line">     */</span><br><span class="line">    class MyTask extends AsyncTask&lt;Void,Integer,Void&gt;&#123;</span><br><span class="line"></span><br><span class="line">        /**</span><br><span class="line">         * 运行在后台，相当于时Thread中的run方法</span><br><span class="line">         * 运行在子线程中的方法</span><br><span class="line">         * @param voids</span><br><span class="line">         * @return</span><br><span class="line">         */</span><br><span class="line">        @Override</span><br><span class="line">        protected Void doInBackground(Void... voids) &#123;</span><br><span class="line">            for (int i = 0;i&lt;= 100;i=i+5)&#123;</span><br><span class="line">                publishProgress(i);//将i的值传入onProgressUpdate中</span><br><span class="line">                try &#123;</span><br><span class="line">                    Thread.sleep(1000);</span><br><span class="line">                &#125; catch (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /**</span><br><span class="line">         *  进度更改指示的方法</span><br><span class="line">         *  运行在主线程中，在这个方法中可以直接更新控件的属性</span><br><span class="line">         *  利用参数中的数值就可以对界面元素进行相应的更新。</span><br><span class="line">         * @param values</span><br><span class="line">         */</span><br><span class="line">        @Override</span><br><span class="line">        protected void onProgressUpdate(Integer... values) &#123;</span><br><span class="line">            int num = values[0];</span><br><span class="line">            mTextView.setText(&quot;num:&quot;+num);</span><br><span class="line">            super.onProgressUpdate(values);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /**</span><br><span class="line">         *  运行在主线程中，当后台运行结束，自动调用方法</span><br><span class="line">         *  当doInBackground(Params…)执行完毕并通过return语句进行返回时，这个方法就很快会被调用。</span><br><span class="line">         * @param aVoid</span><br><span class="line">         */</span><br><span class="line">        @Override</span><br><span class="line">        protected void onPostExecute(Void aVoid) &#123;</span><br><span class="line">            Toast.makeText(MainActivity.this,&quot;子线程结束&quot;,Toast.LENGTH_SHORT).show();</span><br><span class="line">            super.onPostExecute(aVoid);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /**</span><br><span class="line">         *  在主线程中执行，当异步任务取消时，onCancelled()会被调用</span><br><span class="line">         *  这个时候onPostExecute()则不会被调用</span><br><span class="line">         *  AsyncTask中的cancel()方法并不是真正去取消任务，只是设置这个任务为取消状态，我们需要在doInBackground()</span><br><span class="line">         *  判断终止任务。就好比想要终止一个线程，调用interrupt()方法，只是进行标记为中断，需要在线程内部进行标记判断然后中断线程。</span><br><span class="line">         * @param result</span><br><span class="line">         */</span><br><span class="line">        @MainThread</span><br><span class="line">        protected void onCancelled(Result result) &#123;</span><br><span class="line">            onCancelled();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="上面几个方法的调用顺序："><a href="#上面几个方法的调用顺序：" class="headerlink" title="上面几个方法的调用顺序："></a>上面几个方法的调用顺序：</h6><p> onPreExecute() –&gt; doInBackground() –&gt; publishProgress() –&gt; onProgressUpdate() –&gt; onPostExecute()</p>
+<h6 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h6><p>AsyncTask中的cancel()方法并不是真正去取消任务，只是设置这个任务为取消状态，我们需要在doInBackground()判断终止任务。就好比想要终止一个线程，调用interrupt()方法，只是进行标记为中断，需要在线程内部进行标记判断然后中断线程。</p>
+<h5 id="AsyncTask的使用和注意事项："><a href="#AsyncTask的使用和注意事项：" class="headerlink" title="AsyncTask的使用和注意事项："></a>AsyncTask的使用和注意事项：</h5><p>​        <strong>new MyTask().execute()；</strong></p>
+<ol>
+<li><h6 id="异步任务的实例必须在UI线程中创建，即AsyncTask对象必须在UI线程中创建。execute-Params…-params-方法必须在UI线程中调用"><a href="#异步任务的实例必须在UI线程中创建，即AsyncTask对象必须在UI线程中创建。execute-Params…-params-方法必须在UI线程中调用" class="headerlink" title="异步任务的实例必须在UI线程中创建，即AsyncTask对象必须在UI线程中创建。execute(Params… params)方法必须在UI线程中调用"></a>异步任务的实例必须在UI线程中创建，即AsyncTask对象必须在UI线程中创建。execute(Params… params)方法必须在UI线程中调用</h6></li>
+<li><h6 id="不能在doInBackground-Params…-params-中更改UI组件的信息。"><a href="#不能在doInBackground-Params…-params-中更改UI组件的信息。" class="headerlink" title="不能在doInBackground(Params… params)中更改UI组件的信息。"></a>不能在doInBackground(Params… params)中更改UI组件的信息。</h6></li>
+<li><h6 id="一个任务实例只能执行一次，如果执行第二次将会抛出异常。"><a href="#一个任务实例只能执行一次，如果执行第二次将会抛出异常。" class="headerlink" title="一个任务实例只能执行一次，如果执行第二次将会抛出异常。"></a>一个任务实例只能执行一次，如果执行第二次将会抛出异常。</h6></li>
+<li><h6 id="内存泄漏，静态内部类持有外部类的引用。如果AsyncTask被声明为Activity的非静态的内部类，那么AsyncTask会保留一个对创建了AsyncTask的Activity的引用。如果Activity已经被销毁，AsyncTask的后台线程还在执行，它将继续在内存里保留这个引用，导致Activity无法被回收，引起内存泄露。"><a href="#内存泄漏，静态内部类持有外部类的引用。如果AsyncTask被声明为Activity的非静态的内部类，那么AsyncTask会保留一个对创建了AsyncTask的Activity的引用。如果Activity已经被销毁，AsyncTask的后台线程还在执行，它将继续在内存里保留这个引用，导致Activity无法被回收，引起内存泄露。" class="headerlink" title="内存泄漏，静态内部类持有外部类的引用。如果AsyncTask被声明为Activity的非静态的内部类，那么AsyncTask会保留一个对创建了AsyncTask的Activity的引用。如果Activity已经被销毁，AsyncTask的后台线程还在执行，它将继续在内存里保留这个引用，导致Activity无法被回收，引起内存泄露。"></a>内存泄漏，静态内部类持有外部类的引用。如果AsyncTask被声明为Activity的非静态的内部类，那么AsyncTask会保留一个对创建了AsyncTask的Activity的引用。如果Activity已经被销毁，AsyncTask的后台线程还在执行，它将继续在内存里保留这个引用，导致Activity无法被回收，引起内存泄露。</h6></li>
+<li><h6 id="生命周期：activity-distort-进行回收cancel（）"><a href="#生命周期：activity-distort-进行回收cancel（）" class="headerlink" title="生命周期：activity distort 进行回收cancel（）"></a>生命周期：activity distort 进行回收cancel（）</h6></li>
+</ol>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年06月02日 22:19</p>
+        <p>原始链接： <a class="post-url" href="/2020/06/01/异步消息处理机制/" title="异步消息处理机制">http://yoursite.com/2020/06/01/异步消息处理机制/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="王氏小仙女">
+                王氏小仙女
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/06/01/异步消息处理机制/&title=《异步消息处理机制》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/06/01/异步消息处理机制/&title=《异步消息处理机制》 — Hexo&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/06/01/异步消息处理机制/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《异步消息处理机制》 — Hexo&url=http://yoursite.com/2020/06/01/异步消息处理机制/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/06/01/异步消息处理机制/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/06/01/异步消息处理机制/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#异步消息处理机制："><span class="post-toc-text">异步消息处理机制：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Android中的异步消息处理机制主要由4个部分组成：Message、Handler、MessageQueue和Looper。"><span class="post-toc-text">Android中的异步消息处理机制主要由4个部分组成：Message、Handler、MessageQueue和Looper。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Message："><span class="post-toc-text">Message：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Handler："><span class="post-toc-text">Handler：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#MessageQueue："><span class="post-toc-text">MessageQueue：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Looper："><span class="post-toc-text">Looper：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#梳理流程："><span class="post-toc-text">梳理流程：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#首先需要在主线程当中创建一个Handler对象，并重写sendMessage-方法。"><span class="post-toc-text">首先需要在主线程当中创建一个Handler对象，并重写sendMessage()方法。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#然后当子线程中需要进行UI操作时，就创建一个Message对象，并通过Handler将这条消息发送出去。"><span class="post-toc-text">然后当子线程中需要进行UI操作时，就创建一个Message对象，并通过Handler将这条消息发送出去。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#之后这条消息会被添加到MessageQueue的队列中等待被处理。"><span class="post-toc-text">之后这条消息会被添加到MessageQueue的队列中等待被处理。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#而Looper则会一只尝试从MessageQueue中取出等待消息，最后分发回Handler的handlerMessage-方法中。（由于Handler时在主线程中创建的，所以此时handlerMessage方法中的代码也会在主线程中进行）"><span class="post-toc-text">而Looper则会一只尝试从MessageQueue中取出等待消息，最后分发回Handler的handlerMessage()方法中。（由于Handler时在主线程中创建的，所以此时handlerMessage方法中的代码也会在主线程中进行）</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#AsyncTask："><span class="post-toc-text">AsyncTask：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#AsyncTask是什么："><span class="post-toc-text">AsyncTask是什么：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#AsyncTask的范型参数："><span class="post-toc-text">AsyncTask的范型参数：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#AsyncTask的实例："><span class="post-toc-text">AsyncTask的实例：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#上面几个方法的调用顺序："><span class="post-toc-text">上面几个方法的调用顺序：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#注意："><span class="post-toc-text">注意：</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#AsyncTask的使用和注意事项："><span class="post-toc-text">AsyncTask的使用和注意事项：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#异步任务的实例必须在UI线程中创建，即AsyncTask对象必须在UI线程中创建。execute-Params…-params-方法必须在UI线程中调用"><span class="post-toc-text">异步任务的实例必须在UI线程中创建，即AsyncTask对象必须在UI线程中创建。execute(Params… params)方法必须在UI线程中调用</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#不能在doInBackground-Params…-params-中更改UI组件的信息。"><span class="post-toc-text">不能在doInBackground(Params… params)中更改UI组件的信息。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#一个任务实例只能执行一次，如果执行第二次将会抛出异常。"><span class="post-toc-text">一个任务实例只能执行一次，如果执行第二次将会抛出异常。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#内存泄漏，静态内部类持有外部类的引用。如果AsyncTask被声明为Activity的非静态的内部类，那么AsyncTask会保留一个对创建了AsyncTask的Activity的引用。如果Activity已经被销毁，AsyncTask的后台线程还在执行，它将继续在内存里保留这个引用，导致Activity无法被回收，引起内存泄露。"><span class="post-toc-text">内存泄漏，静态内部类持有外部类的引用。如果AsyncTask被声明为Activity的非静态的内部类，那么AsyncTask会保留一个对创建了AsyncTask的Activity的引用。如果Activity已经被销毁，AsyncTask的后台线程还在执行，它将继续在内存里保留这个引用，导致Activity无法被回收，引起内存泄露。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#生命周期：activity-distort-进行回收cancel（）"><span class="post-toc-text">生命周期：activity distort 进行回收cancel（）</span></a></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/17/JSON格式数据解析/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">JSON格式数据解析</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 王氏小仙女<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
