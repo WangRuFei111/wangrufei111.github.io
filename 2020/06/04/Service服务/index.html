@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Service服务 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="王氏小仙女">
+  
+  <meta name="description" content="Service服务：Service（服务）是一个长期运行在后台，没有用户界面的应用组件，即使切换到另一个应用程序或者后台，服务也可以正常运行。因此，服务适合执行一段时间不需要显示界面的后台耗时操作**（需要另启子线程），比如下载网络数据，播放音乐**等。Service可以看做是一个没有界面的Activity，因此启动，销毁服务跟开启，销毁Activity类似 Service： Service是一种">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Service服务">
+<meta property="og:url" content="http://yoursite.com/2020/06/04/Service服务/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Service服务：Service（服务）是一个长期运行在后台，没有用户界面的应用组件，即使切换到另一个应用程序或者后台，服务也可以正常运行。因此，服务适合执行一段时间不需要显示界面的后台耗时操作**（需要另启子线程），比如下载网络数据，播放音乐**等。Service可以看做是一个没有界面的Activity，因此启动，销毁服务跟开启，销毁Activity类似 Service： Service是一种">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-06-04T14:13:06.936Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Service服务">
+<meta name="twitter:description" content="Service服务：Service（服务）是一个长期运行在后台，没有用户界面的应用组件，即使切换到另一个应用程序或者后台，服务也可以正常运行。因此，服务适合执行一段时间不需要显示界面的后台耗时操作**（需要另启子线程），比如下载网络数据，播放音乐**等。Service可以看做是一个没有界面的Activity，因此启动，销毁服务跟开启，销毁Activity类似 Service： Service是一种">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">王氏小仙女</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        王氏小仙女
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 Android 开发的小仙女
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-Service服务" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Service服务
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-06-04
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="Service服务："><a href="#Service服务：" class="headerlink" title="Service服务："></a>Service服务：</h3><h5 id="Service（服务）是一个长期运行在后台，没有用户界面的应用组件，即使切换到另一个应用程序或者后台，服务也可以正常运行。因此，服务适合执行一段时间不需要显示界面的后台耗时操作-（需要另启子线程），比如下载网络数据，播放音乐-等。"><a href="#Service（服务）是一个长期运行在后台，没有用户界面的应用组件，即使切换到另一个应用程序或者后台，服务也可以正常运行。因此，服务适合执行一段时间不需要显示界面的后台耗时操作-（需要另启子线程），比如下载网络数据，播放音乐-等。" class="headerlink" title="Service（服务）是一个长期运行在后台，没有用户界面的应用组件，即使切换到另一个应用程序或者后台，服务也可以正常运行。因此，服务适合执行一段时间不需要显示界面的后台耗时操作**（需要另启子线程），比如下载网络数据，播放音乐**等。"></a>Service（服务）是一个长期<strong>运行在后台</strong>，<strong>没有用户界面</strong>的应用组件，即使切换到另一个应用程序或者后台，服务也可以正常运行。因此，服务适合执行一段时间不需要显示界面的后台<strong>耗时操作**</strong>（需要另启子线程）<strong>，比如</strong>下载网络数据<strong>，</strong>播放音乐**等。</h5><p>Service可以看做是一个没有界面的Activity，因此启动，销毁服务跟开启，销毁Activity类似</p>
+<h5 id="Service："><a href="#Service：" class="headerlink" title="Service："></a>Service：</h5><ul>
+<li><p>Service是一种Android的组件，可以在后台长时间运行</p>
+</li>
+<li><p>Service不提供界面交互：</p>
+<p>​    即便用户跳转至另一个应用后，Service仍旧可以在后台运行</p>
+<p>​    任意应用组件都可以绑定服务，甚至可以用来完成进程间通讯的任务          </p>
+<pre><code>例：    需要下载时                  播放音乐        文件I/O</code></pre></li>
+</ul>
+<h4 id="Service启动类型"><a href="#Service启动类型" class="headerlink" title="Service启动类型:"></a>Service启动类型:</h4><p>服务的启动方式有两种，分别是<strong>startService()（启动服务）</strong>和<strong>bindService()（绑定服务）</strong>方法。使用<strong>不同的方法启动服务，其生命周期也是不同的</strong>。服务的启动都是在Activity中进行的。</p>
+<h6 id="Service可以通过两种方式来调用："><a href="#Service可以通过两种方式来调用：" class="headerlink" title="Service可以通过两种方式来调用："></a>Service可以通过两种方式来调用：</h6><ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start：一旦某个组件start一个Service后，Service开始独立运行，不再与原来的组件产生任何关系</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind：某个组件bind一个Service后，Service为组件提供一个接口，近似于客户端，会进行互相的交互</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="Service的创建"><a href="#Service的创建" class="headerlink" title="Service的创建:"></a>Service的创建:</h4><h6 id="Service的创建和Activity类似，也是通过Intent来实现的。而且既然是安卓四大组件之一，那么它也需要在清单文件中进行注册的。"><a href="#Service的创建和Activity类似，也是通过Intent来实现的。而且既然是安卓四大组件之一，那么它也需要在清单文件中进行注册的。" class="headerlink" title="Service的创建和Activity类似，也是通过Intent来实现的。而且既然是安卓四大组件之一，那么它也需要在清单文件中进行注册的。"></a>Service的创建和Activity类似，也是通过Intent来实现的。而且既然是安卓四大组件之一，那么它也需要在清单文件中进行注册的。</h6><h6 id="1、创建一个类MyService继承自Service-然后重写它的onCreate，onStartCommand，onDestroy方法"><a href="#1、创建一个类MyService继承自Service-然后重写它的onCreate，onStartCommand，onDestroy方法" class="headerlink" title="1、创建一个类MyService继承自Service,然后重写它的onCreate，onStartCommand，onDestroy方法:"></a>1、创建一个类MyService继承自Service,然后重写它的onCreate，onStartCommand，onDestroy方法:</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">public class MyService extends Service &#123;</span><br><span class="line">    @Nullable</span><br><span class="line">    @Override</span><br><span class="line">    public IBinder onBind(Intent intent) &#123;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     *  自有生命周期的第一次才调用：服务创建的时候调用</span><br><span class="line">     */</span><br><span class="line">    @Override</span><br><span class="line">    public void onCreate() &#123;</span><br><span class="line">        Log.i(&quot;MyService:&quot;,&quot;onCreate&quot;);</span><br><span class="line">        super.onCreate();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     *  服务被注销的时候调用：回收不再使用的资源</span><br><span class="line">     */</span><br><span class="line">    @Override</span><br><span class="line">    public void onDestroy() &#123;</span><br><span class="line">        Log.i(&quot;MyService:&quot;,&quot;onDestroy&quot;);</span><br><span class="line">        super.onDestroy();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     *  每一次startService启动自动被调用：每次服务启动的时候</span><br><span class="line">     * @param intent</span><br><span class="line">     * @param flags</span><br><span class="line">     * @param startId</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @Override</span><br><span class="line">    public int onStartCommand(Intent intent, int flags, int startId) &#123;</span><br><span class="line">        Log.i(&quot;MyService:&quot;,&quot;onStartCommand&quot;);</span><br><span class="line">        return super.onStartCommand(intent, flags, startId);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="2、在清单文件中注册它，如果你是通过Android-Studio直接new了一个Service的话，Android-Studio会默认帮助你在清单文件中添加对该Service的注册"><a href="#2、在清单文件中注册它，如果你是通过Android-Studio直接new了一个Service的话，Android-Studio会默认帮助你在清单文件中添加对该Service的注册" class="headerlink" title="2、在清单文件中注册它，如果你是通过Android Studio直接new了一个Service的话，Android Studio会默认帮助你在清单文件中添加对该Service的注册:"></a>2、在清单文件中注册它，如果你是通过Android Studio直接new了一个Service的话，Android Studio会默认帮助你在清单文件中添加对该Service的注册:</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;service android:name=&quot;.MyService&quot;</span><br><span class="line">            android:enabled=&quot;true</span><br><span class="line">            android:exported=&quot;true&quot;/&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>enabled</code>：该服务是否能够被实例化。如果设置为true，则能够被实例化，否则不能被实例化，默认值是true。</li>
+<li><code>exported</code>：用于指示该服务是否能够被其他应用程序组件调用或跟它交互。如果设置为true，则能够被调用或交互(通常如果一个服务需要跨进程使用需要这么设置)，否则不能。设置为false时，只有同一个应用程序的组件或带有相同用户ID的应用程序才能启动或绑定该服务。</li>
+</ul>
+<h6 id="3、接下来创建一个MainActivity，用于在其中创建MyService对象"><a href="#3、接下来创建一个MainActivity，用于在其中创建MyService对象" class="headerlink" title="3、接下来创建一个MainActivity，用于在其中创建MyService对象:"></a>3、接下来创建一个MainActivity，用于在其中创建MyService对象:</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">public class MainActivity extends AppCompatActivity implements View.OnClickListener &#123;</span><br><span class="line"></span><br><span class="line">    private Button mButton,stop_btu;</span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(@Nullable Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        init();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void init() &#123;</span><br><span class="line">        mButton = findViewById(R.id.start_btu);</span><br><span class="line">        stop_btu = findViewById(R.id.stop_btu);</span><br><span class="line">        stop_btu.setOnClickListener(this);</span><br><span class="line">        mButton.setOnClickListener(this);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onClick(View v) &#123;</span><br><span class="line">        Intent intent = null;</span><br><span class="line">        switch (v.getId())&#123;</span><br><span class="line">            case R.id.start_btu:</span><br><span class="line">                intent = new Intent(this,MyService.class);</span><br><span class="line">                startService(intent);</span><br><span class="line">                break;</span><br><span class="line">            case R.id.stop_btu:</span><br><span class="line">                intent = new Intent(this,MyService.class);</span><br><span class="line">                stopService(intent);</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="4、MyActiviity的xml文件，添加两个按钮，分别用于启动Service和停止Service。可以看到，创建一个Service的方法非常简单，就是和创建Activity类似，创建一个Intent对象，然后通过startService方法开启一个服务。然后同样的，通过stopService方法来停止一个服务："><a href="#4、MyActiviity的xml文件，添加两个按钮，分别用于启动Service和停止Service。可以看到，创建一个Service的方法非常简单，就是和创建Activity类似，创建一个Intent对象，然后通过startService方法开启一个服务。然后同样的，通过stopService方法来停止一个服务：" class="headerlink" title="4、MyActiviity的xml文件，添加两个按钮，分别用于启动Service和停止Service。可以看到，创建一个Service的方法非常简单，就是和创建Activity类似，创建一个Intent对象，然后通过startService方法开启一个服务。然后同样的，通过stopService方法来停止一个服务："></a>4、MyActiviity的xml文件，添加两个按钮，分别用于启动Service和停止Service。可以看到，创建一个Service的方法非常简单，就是和创建Activity类似，创建一个Intent对象，然后通过startService方法开启一个服务。然后同样的，通过stopService方法来停止一个服务：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:orientation=&quot;vertical&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;&gt;</span><br><span class="line">   &lt;Button</span><br><span class="line">       android:id=&quot;@+id/start_btu&quot;</span><br><span class="line">       android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">       android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">       android:text=&quot;StartService&quot;</span><br><span class="line">       android:textAllCaps=&quot;false&quot;</span><br><span class="line">       android:layout_gravity=&quot;center&quot;</span><br><span class="line">       android:layout_marginTop=&quot;20dp&quot;</span><br><span class="line">       /&gt;</span><br><span class="line">   &lt;Button</span><br><span class="line">       android:id=&quot;@+id/stop_btu&quot;</span><br><span class="line">       android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">       android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">       android:text=&quot;StopService&quot;</span><br><span class="line">       android:textAllCaps=&quot;false&quot;</span><br><span class="line">       android:layout_gravity=&quot;center&quot;</span><br><span class="line">       android:layout_marginTop=&quot;20dp&quot;</span><br><span class="line">       /&gt;</span><br><span class="line"></span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年06月04日 22:13</p>
+        <p>原始链接： <a class="post-url" href="/2020/06/04/Service服务/" title="Service服务">http://yoursite.com/2020/06/04/Service服务/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="王氏小仙女">
+                王氏小仙女
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/06/04/Service服务/&title=《Service服务》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/06/04/Service服务/&title=《Service服务》 — Hexo&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/06/04/Service服务/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Service服务》 — Hexo&url=http://yoursite.com/2020/06/04/Service服务/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/06/04/Service服务/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/06/04/Service服务/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Service服务："><span class="post-toc-text">Service服务：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Service（服务）是一个长期运行在后台，没有用户界面的应用组件，即使切换到另一个应用程序或者后台，服务也可以正常运行。因此，服务适合执行一段时间不需要显示界面的后台耗时操作-（需要另启子线程），比如下载网络数据，播放音乐-等。"><span class="post-toc-text">Service（服务）是一个长期运行在后台，没有用户界面的应用组件，即使切换到另一个应用程序或者后台，服务也可以正常运行。因此，服务适合执行一段时间不需要显示界面的后台耗时操作**（需要另启子线程），比如下载网络数据，播放音乐**等。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Service："><span class="post-toc-text">Service：</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Service启动类型"><span class="post-toc-text">Service启动类型:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Service可以通过两种方式来调用："><span class="post-toc-text">Service可以通过两种方式来调用：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Service的创建"><span class="post-toc-text">Service的创建:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Service的创建和Activity类似，也是通过Intent来实现的。而且既然是安卓四大组件之一，那么它也需要在清单文件中进行注册的。"><span class="post-toc-text">Service的创建和Activity类似，也是通过Intent来实现的。而且既然是安卓四大组件之一，那么它也需要在清单文件中进行注册的。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#1、创建一个类MyService继承自Service-然后重写它的onCreate，onStartCommand，onDestroy方法"><span class="post-toc-text">1、创建一个类MyService继承自Service,然后重写它的onCreate，onStartCommand，onDestroy方法:</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#2、在清单文件中注册它，如果你是通过Android-Studio直接new了一个Service的话，Android-Studio会默认帮助你在清单文件中添加对该Service的注册"><span class="post-toc-text">2、在清单文件中注册它，如果你是通过Android Studio直接new了一个Service的话，Android Studio会默认帮助你在清单文件中添加对该Service的注册:</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#3、接下来创建一个MainActivity，用于在其中创建MyService对象"><span class="post-toc-text">3、接下来创建一个MainActivity，用于在其中创建MyService对象:</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#4、MyActiviity的xml文件，添加两个按钮，分别用于启动Service和停止Service。可以看到，创建一个Service的方法非常简单，就是和创建Activity类似，创建一个Intent对象，然后通过startService方法开启一个服务。然后同样的，通过stopService方法来停止一个服务："><span class="post-toc-text">4、MyActiviity的xml文件，添加两个按钮，分别用于启动Service和停止Service。可以看到，创建一个Service的方法非常简单，就是和创建Activity类似，创建一个Intent对象，然后通过startService方法开启一个服务。然后同样的，通过stopService方法来停止一个服务：</span></a></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2020/06/05/修改TabLayout中字体的大小/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          修改TabLayout中字体的大小
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2020/06/01/异步消息处理机制/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">异步消息处理机制</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 王氏小仙女<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
