@@ -3,22 +3,22 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>EditText自动获取焦点并弹出软键盘 | Hexo</title>
+  <title>Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="王氏小仙女">
   
-  <meta name="description" content="EditText自动获取焦点并弹出软键盘：首先要在EditText的父布局中,设置两个属性：12android:focusable=&amp;quot;true&amp;quot;android:focusableInTouchMode=&amp;quot;true&amp;quot;  在Java代码中设置：12345content_edit.setFocusable(true);content_edit.setFocusab">
+  <meta name="description" content="Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸Android设置背景渐变：123456&amp;lt;shape xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot;&amp;gt;&amp;lt;gradientandroid:startColor=&amp;quot;#FF9100&amp;quot;android:endColo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="EditText自动获取焦点并弹出软键盘">
-<meta property="og:url" content="http://yoursite.com/2020/06/05/EditText自动获取焦点并弹出软键盘/index.html">
+<meta property="og:title" content="Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸">
+<meta property="og:url" content="http://yoursite.com/2020/06/06/Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="EditText自动获取焦点并弹出软键盘：首先要在EditText的父布局中,设置两个属性：12android:focusable=&amp;quot;true&amp;quot;android:focusableInTouchMode=&amp;quot;true&amp;quot;  在Java代码中设置：12345content_edit.setFocusable(true);content_edit.setFocusab">
+<meta property="og:description" content="Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸Android设置背景渐变：123456&amp;lt;shape xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot;&amp;gt;&amp;lt;gradientandroid:startColor=&amp;quot;#FF9100&amp;quot;android:endColo">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-06-05T14:30:24.711Z">
+<meta property="og:updated_time" content="2020-06-06T09:03:53.711Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="EditText自动获取焦点并弹出软键盘">
-<meta name="twitter:description" content="EditText自动获取焦点并弹出软键盘：首先要在EditText的父布局中,设置两个属性：12android:focusable=&amp;quot;true&amp;quot;android:focusableInTouchMode=&amp;quot;true&amp;quot;  在Java代码中设置：12345content_edit.setFocusable(true);content_edit.setFocusab">
+<meta name="twitter:title" content="Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸">
+<meta name="twitter:description" content="Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸Android设置背景渐变：123456&amp;lt;shape xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot;&amp;gt;&amp;lt;gradientandroid:startColor=&amp;quot;#FF9100&amp;quot;android:endColo">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -109,20 +109,20 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-EditText自动获取焦点并弹出软键盘" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      EditText自动获取焦点并弹出软键盘
+      Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸
     </h1>
     <div class="post-title-bar">
       <ul>
           
         <li>
-          <i class="fa fa-calendar"></i>  2020-06-05
+          <i class="fa fa-calendar"></i>  2020-06-06
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -138,15 +138,53 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h3 id="EditText自动获取焦点并弹出软键盘："><a href="#EditText自动获取焦点并弹出软键盘：" class="headerlink" title="EditText自动获取焦点并弹出软键盘："></a>EditText自动获取焦点并弹出软键盘：</h3><h5 id="首先要在EditText的父布局中-设置两个属性："><a href="#首先要在EditText的父布局中-设置两个属性：" class="headerlink" title="首先要在EditText的父布局中,设置两个属性："></a>首先要在EditText的父布局中,设置两个属性：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">android:focusable=&quot;true&quot;</span><br><span class="line">android:focusableInTouchMode=&quot;true&quot;</span><br></pre></td></tr></table></figure>
+            <h3 id="Android-设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸"><a href="#Android-设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸" class="headerlink" title="Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸"></a>Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸</h3><h4 id="Android设置背景渐变："><a href="#Android设置背景渐变：" class="headerlink" title="Android设置背景渐变："></a>Android设置背景渐变：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</span><br><span class="line">&lt;gradient</span><br><span class="line">android:startColor=&quot;#FF9100&quot;</span><br><span class="line">android:endColor=&quot;#FF6600&quot;</span><br><span class="line">android:angle=&quot;0&quot;/&gt;</span><br><span class="line">&lt;/shape&gt;</span><br></pre></td></tr></table></figure>
 
-<h5 id="在Java代码中设置："><a href="#在Java代码中设置：" class="headerlink" title="在Java代码中设置："></a>在Java代码中设置：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">content_edit.setFocusable(true);</span><br><span class="line">content_edit.setFocusableInTouchMode(true);</span><br><span class="line">content_edit.requestFocus();</span><br><span class="line">InputMethodManager inputManager = (InputMethodManager) content_edit.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);</span><br><span class="line">inputManager.showSoftInput(content_edit, 0);</span><br></pre></td></tr></table></figure>
+<p>startColor:渐变开始的颜色</p>
+<p>centerColor：渐变中间点的颜色，在开始与结束点之间 </p>
+<p>endColor：渐变结束点的颜色</p>
+<h6 id="angle参数："><a href="#angle参数：" class="headerlink" title="angle参数："></a>angle参数：</h6><ul>
+<li>android:angle=”0”       从左到右，按照开始颜色到结束颜色来渲染的</li>
+<li>android:angle=”90”         从下到上，按照开始颜色到结束颜色来渲染的</li>
+<li>android:angle=”180”       从上到下，按照开始颜色到结束颜色来渲染的</li>
+<li>android:angle=”270”       从右到左，按照开始颜色到结束颜色来渲染的</li>
+</ul>
+<h4 id="实现首页顶部是一个向上凹进去的背景："><a href="#实现首页顶部是一个向上凹进去的背景：" class="headerlink" title="实现首页顶部是一个向上凹进去的背景："></a>实现首页顶部是一个向上凹进去的背景：</h4><h6 id="用layer-list来实现"><a href="#用layer-list来实现" class="headerlink" title="用layer-list来实现"></a>用layer-list来实现</h6><pre><code>&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+&lt;item android:top=&quot;0dp&quot;
+    android:right=&quot;-250dp&quot;
+    android:left=&quot;-250dp&quot;&gt;
+    &lt;shape android:shape=&quot;oval&quot;&gt;
+        &lt;solid android:color=&quot;#FFFFFF&quot;/&gt;
+    &lt;/shape&gt;
+&lt;/item&gt;
 
+&lt;item android:top=&quot;50dp&quot;&gt;
+    &lt;shape android:shape=&quot;rectangle&quot;&gt;
+        &lt;solid android:color=&quot;#FFFFFF&quot;/&gt;
+    &lt;/shape&gt;
+&lt;/item&gt;
+&lt;/layer-list&gt;</code></pre><h4 id="实现顶部向下凸的背景："><a href="#实现顶部向下凸的背景：" class="headerlink" title="实现顶部向下凸的背景："></a>实现顶部向下凸的背景：</h4><pre><code>&lt;layer-list xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
 
+&lt;item android:height=&quot;50dp&quot;
+    tools:ignore=&quot;UnusedAttribute&quot;&gt;
+    &lt;shape android:shape=&quot;rectangle&quot;&gt;
+        &lt;solid android:color=&quot;#e7873e&quot;/&gt;
+    &lt;/shape&gt;
+&lt;/item&gt;
+
+&lt;item android:top=&quot;0dp&quot;
+    android:right=&quot;-200dp&quot;
+    android:left=&quot;-200dp&quot;&gt;
+    &lt;shape android:shape=&quot;oval&quot;&gt;
+        &lt;solid android:color=&quot;#e7873e&quot;/&gt;
+    &lt;/shape&gt;
+&lt;/item&gt;
+&lt;/layer-list&gt;</code></pre>
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2020年06月05日 22:30</p>
-        <p>原始链接： <a class="post-url" href="/2020/06/05/EditText自动获取焦点并弹出软键盘/" title="EditText自动获取焦点并弹出软键盘">http://yoursite.com/2020/06/05/EditText自动获取焦点并弹出软键盘/</a></p>
+        <p>最后更新： 2020年06月06日 17:03</p>
+        <p>原始链接： <a class="post-url" href="/2020/06/06/Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸/" title="Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸">http://yoursite.com/2020/06/06/Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸/</a></p>
         <footer>
             <a href="http://yoursite.com">
                 <img src="/images/logo.png" alt="王氏小仙女">
@@ -203,7 +241,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/06/05/EditText自动获取焦点并弹出软键盘/&title=《EditText自动获取焦点并弹出软键盘》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/06/06/Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸/&title=《Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -213,22 +251,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/06/05/EditText自动获取焦点并弹出软键盘/&title=《EditText自动获取焦点并弹出软键盘》 — Hexo&source=" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/06/06/Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸/&title=《Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸》 — Hexo&source=" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/06/05/EditText自动获取焦点并弹出软键盘/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/06/06/Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《EditText自动获取焦点并弹出软键盘》 — Hexo&url=http://yoursite.com/2020/06/05/EditText自动获取焦点并弹出软键盘/&via=http://yoursite.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸》 — Hexo&url=http://yoursite.com/2020/06/06/Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸/&via=http://yoursite.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/06/05/EditText自动获取焦点并弹出软键盘/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/06/06/Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -238,7 +276,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/06/05/EditText自动获取焦点并弹出软键盘/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/06/06/Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -256,26 +294,16 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#EditText自动获取焦点并弹出软键盘："><span class="post-toc-text">EditText自动获取焦点并弹出软键盘：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#首先要在EditText的父布局中-设置两个属性："><span class="post-toc-text">首先要在EditText的父布局中,设置两个属性：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#在Java代码中设置："><span class="post-toc-text">在Java代码中设置：</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Android-设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸"><span class="post-toc-text">Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Android设置背景渐变："><span class="post-toc-text">Android设置背景渐变：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#angle参数："><span class="post-toc-text">angle参数：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实现首页顶部是一个向上凹进去的背景："><span class="post-toc-text">实现首页顶部是一个向上凹进去的背景：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#用layer-list来实现"><span class="post-toc-text">用layer-list来实现</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实现顶部向下凸的背景："><span class="post-toc-text">实现顶部向下凸的背景：</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2020/06/06/简单实现顶部弧形背景：向上凹和向下凸‘/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸
-        
-      </span>
-    </a>
   
-  
-    <a href="/2020/06/05/修改TabLayout中字体的大小/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">修改TabLayout中字体的大小</span>
+    <a href="/2020/06/06/简单实现顶部弧形背景：向上凹和向下凸‘/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Android 设置背景渐变、简单实现顶部弧形背景：向上凹和向下凸</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
