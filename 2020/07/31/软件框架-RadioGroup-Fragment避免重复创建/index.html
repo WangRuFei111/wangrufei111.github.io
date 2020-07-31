@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="王氏小仙女">
+  
+  <meta name="description" content="title: 软件框架-RadioGroup+Fragment避免重复创建date: 2020-07-31 11:22:01 在使用RadioGroup+Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法：1、 声明变量  12345private int currentIndex = 0;private static final St">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2020/07/31/软件框架-RadioGroup-Fragment避免重复创建/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="title: 软件框架-RadioGroup+Fragment避免重复创建date: 2020-07-31 11:22:01 在使用RadioGroup+Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法：1、 声明变量  12345private int currentIndex = 0;private static final St">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-07-31T03:31:23.821Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="title: 软件框架-RadioGroup+Fragment避免重复创建date: 2020-07-31 11:22:01 在使用RadioGroup+Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法：1、 声明变量  12345private int currentIndex = 0;private static final St">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">王氏小仙女</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        王氏小仙女
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 Android 开发的小仙女
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-软件框架-RadioGroup-Fragment避免重复创建" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>title: 软件框架-RadioGroup+Fragment避免重复创建<br>date: 2020-07-31 11:22:01</p>
+<h3 id="在使用RadioGroup-Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法："><a href="#在使用RadioGroup-Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法：" class="headerlink" title="在使用RadioGroup+Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法："></a>在使用RadioGroup+Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法：</h3><h4 id="1、"><a href="#1、" class="headerlink" title="1、"></a>1、</h4><ul>
+<li><h6 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h6></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">private int currentIndex = 0;</span><br><span class="line">private static final String CURRENT_FRAGMENT = &quot;STATE_FRAGMENT_SHOW&quot;;</span><br><span class="line">private FragmentManager fragmentManager;</span><br><span class="line">private Fragment currentFragment = new Fragment();</span><br><span class="line">private List&lt;Fragment&gt; fragments = new ArrayList&lt;&gt;();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h6 id="在onCreate方法中"><a href="#在onCreate方法中" class="headerlink" title="在onCreate方法中"></a>在onCreate方法中</h6></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">fragmentManager = getSupportFragmentManager();</span><br><span class="line">if (savedInstanceState != null) &#123; // “内存重启”时调用</span><br><span class="line"></span><br><span class="line">    //获取“内存重启”时保存的索引下标</span><br><span class="line">    currentIndex = savedInstanceState.getInt(CURRENT_FRAGMENT, 0);</span><br><span class="line"></span><br><span class="line">    //注意，添加顺序要跟下面添加的顺序一样！！！！</span><br><span class="line">    fragments.removeAll(fragments);</span><br><span class="line">    fragments.add(fragmentManager.findFragmentByTag(0 + &quot;&quot;));</span><br><span class="line">    fragments.add(fragmentManager.findFragmentByTag(1 + &quot;&quot;));</span><br><span class="line">    fragments.add(fragmentManager.findFragmentByTag(2 + &quot;&quot;));</span><br><span class="line">    fragments.add(fragmentManager.findFragmentByTag(3 + &quot;&quot;));</span><br><span class="line">    //恢复fragment页面</span><br><span class="line">    restoreFragment();</span><br><span class="line">&#125; else &#123;      //正常启动时调用</span><br><span class="line">    fragments.add(new CommonFragment());</span><br><span class="line">    fragments.add(new ThirdPartyFragment());</span><br><span class="line">    fragments.add(new CustomFragment());</span><br><span class="line">    fragments.add(new OtherFragment());</span><br><span class="line">    showFragment();</span><br><span class="line">&#125;</span><br><span class="line">//fragment页面进行替换的方法</span><br><span class="line">cutInitListener();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h6 id="RadioGroup选择监听事件"><a href="#RadioGroup选择监听事件" class="headerlink" title="RadioGroup选择监听事件"></a>RadioGroup选择监听事件</h6></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//初始化RadioGroup选择监听事件</span><br><span class="line">private void cutInitListener() &#123;</span><br><span class="line">    rgMain.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() &#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void onCheckedChanged(RadioGroup group, int checkedId) &#123;</span><br><span class="line">            switch (checkedId) &#123;</span><br><span class="line">                case R.id.rb_common_frame:</span><br><span class="line">                    currentIndex = 0;</span><br><span class="line">                    break;</span><br><span class="line">                case R.id.rb_thirdparty:</span><br><span class="line">                    currentIndex = 1;</span><br><span class="line">                    break;</span><br><span class="line">                case R.id.rb_custom:</span><br><span class="line">                    currentIndex = 2;</span><br><span class="line">                    break;</span><br><span class="line">                case R.id.rb_other:</span><br><span class="line">                    currentIndex = 3;</span><br><span class="line">                    break;</span><br><span class="line">            &#125;</span><br><span class="line">            //实现fragment切换</span><br><span class="line">            showFragment();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h6 id="恢复fragment"><a href="#恢复fragment" class="headerlink" title="恢复fragment"></a>恢复fragment</h6></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 恢复fragment</span><br><span class="line"> */</span><br><span class="line">private void restoreFragment() &#123;</span><br><span class="line"></span><br><span class="line">    FragmentTransaction BeginTreansactionBook = fragmentManager.beginTransaction();</span><br><span class="line">    for (int i = 0; i &lt; fragments.size(); i++) &#123;</span><br><span class="line">        if (i == currentIndex) &#123;</span><br><span class="line">            BeginTreansactionBook.show(fragments.get(i));</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            BeginTreansactionBook.hide(fragments.get(i));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    BeginTreansactionBook.commit();</span><br><span class="line">    //把当前显示的fragment记录下来</span><br><span class="line">    currentFragment = fragments.get(currentIndex);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h6 id="使用show-hide-切换页面"><a href="#使用show-hide-切换页面" class="headerlink" title="使用show() hide()切换页面"></a>使用show() hide()切换页面</h6></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 使用show() hide()切换页面</span><br><span class="line"> * 显示fragment</span><br><span class="line"> */</span><br><span class="line">private void showFragment() &#123;</span><br><span class="line"></span><br><span class="line">    FragmentTransaction transactionssBook = fragmentManager.beginTransaction();</span><br><span class="line"></span><br><span class="line">    //如果之前没有添加过</span><br><span class="line">    if (!fragments.get(currentIndex).isAdded()) &#123;</span><br><span class="line">        transactionssBook</span><br><span class="line">                .hide(currentFragment)</span><br><span class="line">                .add(R.id.fl_main_content, fragments.get(currentIndex),</span><br><span class="line">                        &quot;&quot; + currentIndex);  //第三个参数为添加当前的fragment时绑定一个tag</span><br><span class="line"></span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        transactionssBook</span><br><span class="line">                .hide(currentFragment)</span><br><span class="line">                .show(fragments.get(currentIndex));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    currentFragment = fragments.get(currentIndex);</span><br><span class="line"></span><br><span class="line">    transactionssBook.commit();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h6 id="“内存重启”时保存当前的fragment名字"><a href="#“内存重启”时保存当前的fragment名字" class="headerlink" title="“内存重启”时保存当前的fragment名字"></a>“内存重启”时保存当前的fragment名字</h6></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">protected void onSaveInstanceState(Bundle outState) &#123;</span><br><span class="line">    //“内存重启”时保存当前的fragment名字</span><br><span class="line">    outState.putInt(CURRENT_FRAGMENT,currentIndex);</span><br><span class="line">    super.onSaveInstanceState(outState);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、"><a href="#2、" class="headerlink" title="2、"></a>2、</h4><ul>
+<li><h6 id="声明变量-1"><a href="#声明变量-1" class="headerlink" title="声明变量"></a>声明变量</h6></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">private RadioGroup mainRg;</span><br><span class="line">private Fragment starFrag,parnterFrag,luckFrag,meFrag;</span><br><span class="line">private FragmentManager manager;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h6 id="创建碎片对象"><a href="#创建碎片对象" class="headerlink" title="创建碎片对象"></a>创建碎片对象</h6></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">starFrag = new StarFragment();</span><br><span class="line">starFrag.setArguments(bundle);</span><br><span class="line">parnterFrag = new ParnterFragment();</span><br><span class="line">parnterFrag.setArguments(bundle);</span><br><span class="line">luckFrag = new LuckFragment();</span><br><span class="line">luckFrag.setArguments(bundle);</span><br><span class="line">meFrag = new MeFragment();</span><br><span class="line">meFrag.setArguments(bundle);</span><br><span class="line">addFragmentPage();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h6 id="将主页当中的碎片一起加载进入布局，有用的显示，暂时无用的隐藏"><a href="#将主页当中的碎片一起加载进入布局，有用的显示，暂时无用的隐藏" class="headerlink" title="将主页当中的碎片一起加载进入布局，有用的显示，暂时无用的隐藏"></a>将主页当中的碎片一起加载进入布局，有用的显示，暂时无用的隐藏</h6></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> private void addFragmentPage() &#123;</span><br><span class="line">//        1、创建碎片管理者对象</span><br><span class="line">        manager = getSupportFragmentManager();</span><br><span class="line">//        2、创建碎片处理事物的对象</span><br><span class="line">        FragmentTransaction transaction = manager.beginTransaction();</span><br><span class="line">//        3、将四个Fragment同意添加到布局</span><br><span class="line">        transaction.add(R.id.main_layout_center,starFrag);</span><br><span class="line">        transaction.add(R.id.main_layout_center,parnterFrag);</span><br><span class="line">        transaction.add(R.id.main_layout_center,luckFrag);</span><br><span class="line">        transaction.add(R.id.main_layout_center,meFrag);</span><br><span class="line">//        4、只显示一个，隐藏后面的三个</span><br><span class="line">        transaction.hide(parnterFrag);</span><br><span class="line">        transaction.hide(luckFrag);</span><br><span class="line">        transaction.hide(meFrag);</span><br><span class="line">//        5、提交碎片改变后的事物</span><br><span class="line">        transaction.commit();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h6 id="该类继承RadioGroup-OnCheckedChangeListener，重写onCheckedChanged，实现点击切换"><a href="#该类继承RadioGroup-OnCheckedChangeListener，重写onCheckedChanged，实现点击切换" class="headerlink" title="该类继承RadioGroup.OnCheckedChangeListener，重写onCheckedChanged，实现点击切换"></a>该类继承RadioGroup.OnCheckedChangeListener，重写onCheckedChanged，实现点击切换</h6></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public void onCheckedChanged(RadioGroup group, int checkedId) &#123;</span><br><span class="line">    FragmentTransaction transaction = manager.beginTransaction();</span><br><span class="line">    switch (checkedId)&#123;</span><br><span class="line">        case R.id.main_rb_star:</span><br><span class="line">            transaction.hide(parnterFrag);</span><br><span class="line">            transaction.hide(luckFrag);</span><br><span class="line">            transaction.hide(meFrag);</span><br><span class="line">            transaction.show(starFrag);</span><br><span class="line">            break;</span><br><span class="line">        case R.id.main_rb_parnter:</span><br><span class="line">            transaction.hide(starFrag);</span><br><span class="line">            transaction.hide(luckFrag);</span><br><span class="line">            transaction.hide(meFrag);</span><br><span class="line">            transaction.show(parnterFrag);</span><br><span class="line">            break;</span><br><span class="line">        case R.id.main_rb_luck:</span><br><span class="line">            transaction.hide(parnterFrag);</span><br><span class="line">            transaction.hide(starFrag);</span><br><span class="line">            transaction.hide(meFrag);</span><br><span class="line">            transaction.show(luckFrag);</span><br><span class="line">            break;</span><br><span class="line">        case R.id.main_rb_me:</span><br><span class="line">            transaction.hide(parnterFrag);</span><br><span class="line">            transaction.hide(luckFrag);</span><br><span class="line">            transaction.hide(starFrag);</span><br><span class="line">            transaction.show(meFrag);</span><br><span class="line">            break;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    transaction.commit();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年07月31日 11:31</p>
+        <p>原始链接： <a class="post-url" href="/2020/07/31/软件框架-RadioGroup-Fragment避免重复创建/" title="">http://yoursite.com/2020/07/31/软件框架-RadioGroup-Fragment避免重复创建/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="王氏小仙女">
+                王氏小仙女
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/07/31/软件框架-RadioGroup-Fragment避免重复创建/&title=Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/07/31/软件框架-RadioGroup-Fragment避免重复创建/&title=Hexo&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/07/31/软件框架-RadioGroup-Fragment避免重复创建/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Hexo&url=http://yoursite.com/2020/07/31/软件框架-RadioGroup-Fragment避免重复创建/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/07/31/软件框架-RadioGroup-Fragment避免重复创建/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/07/31/软件框架-RadioGroup-Fragment避免重复创建/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在使用RadioGroup-Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法："><span class="post-toc-text">在使用RadioGroup+Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、"><span class="post-toc-text">1、</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#声明变量"><span class="post-toc-text">声明变量</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#在onCreate方法中"><span class="post-toc-text">在onCreate方法中</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#RadioGroup选择监听事件"><span class="post-toc-text">RadioGroup选择监听事件</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#恢复fragment"><span class="post-toc-text">恢复fragment</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#使用show-hide-切换页面"><span class="post-toc-text">使用show() hide()切换页面</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#“内存重启”时保存当前的fragment名字"><span class="post-toc-text">“内存重启”时保存当前的fragment名字</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2、"><span class="post-toc-text">2、</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#声明变量-1"><span class="post-toc-text">声明变量</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#创建碎片对象"><span class="post-toc-text">创建碎片对象</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#将主页当中的碎片一起加载进入布局，有用的显示，暂时无用的隐藏"><span class="post-toc-text">将主页当中的碎片一起加载进入布局，有用的显示，暂时无用的隐藏</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#该类继承RadioGroup-OnCheckedChangeListener，重写onCheckedChanged，实现点击切换"><span class="post-toc-text">该类继承RadioGroup.OnCheckedChangeListener，重写onCheckedChanged，实现点击切换</span></a></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/15/ScrollView的上下滑动监听：/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">ScrollView的上下滑动监听：</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 王氏小仙女<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
