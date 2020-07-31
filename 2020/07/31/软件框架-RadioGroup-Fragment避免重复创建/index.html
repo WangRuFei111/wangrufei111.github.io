@@ -3,22 +3,22 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>软件框架-RadioGroup+Fragment避免重复创建 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="王氏小仙女">
   
-  <meta name="description" content="title: 软件框架-RadioGroup+Fragment避免重复创建date: 2020-07-31 11:22:01 在使用RadioGroup+Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法：1、 声明变量  12345private int currentIndex = 0;private static final St">
+  <meta name="description" content="在使用RadioGroup+Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法：1、 声明变量  12345private int currentIndex = 0;private static final String CURRENT_FRAGMENT = &amp;quot;STATE_FRAGMENT_SHOW&amp;quot;;private">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="软件框架-RadioGroup+Fragment避免重复创建">
 <meta property="og:url" content="http://yoursite.com/2020/07/31/软件框架-RadioGroup-Fragment避免重复创建/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="title: 软件框架-RadioGroup+Fragment避免重复创建date: 2020-07-31 11:22:01 在使用RadioGroup+Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法：1、 声明变量  12345private int currentIndex = 0;private static final St">
+<meta property="og:description" content="在使用RadioGroup+Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法：1、 声明变量  12345private int currentIndex = 0;private static final String CURRENT_FRAGMENT = &amp;quot;STATE_FRAGMENT_SHOW&amp;quot;;private">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-07-31T03:31:23.821Z">
+<meta property="og:updated_time" content="2020-07-31T03:35:41.155Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="title: 软件框架-RadioGroup+Fragment避免重复创建date: 2020-07-31 11:22:01 在使用RadioGroup+Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法：1、 声明变量  12345private int currentIndex = 0;private static final St">
+<meta name="twitter:title" content="软件框架-RadioGroup+Fragment避免重复创建">
+<meta name="twitter:description" content="在使用RadioGroup+Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法：1、 声明变量  12345private int currentIndex = 0;private static final String CURRENT_FRAGMENT = &amp;quot;STATE_FRAGMENT_SHOW&amp;quot;;private">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -112,11 +112,33 @@
         <section id="main" class="body-wrap"><article id="post-软件框架-RadioGroup-Fragment避免重复创建" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      软件框架-RadioGroup+Fragment避免重复创建
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-07-31
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p>title: 软件框架-RadioGroup+Fragment避免重复创建<br>date: 2020-07-31 11:22:01</p>
-<h3 id="在使用RadioGroup-Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法："><a href="#在使用RadioGroup-Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法：" class="headerlink" title="在使用RadioGroup+Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法："></a>在使用RadioGroup+Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法：</h3><h4 id="1、"><a href="#1、" class="headerlink" title="1、"></a>1、</h4><ul>
+            <h3 id="在使用RadioGroup-Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法："><a href="#在使用RadioGroup-Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法：" class="headerlink" title="在使用RadioGroup+Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法："></a>在使用RadioGroup+Fragment创建底部布局的时候很容易造成重复创建Fragment的问题，在网上查询里一下，总结了两种解决方法：</h3><h4 id="1、"><a href="#1、" class="headerlink" title="1、"></a>1、</h4><ul>
 <li><h6 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h6></li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">private int currentIndex = 0;</span><br><span class="line">private static final String CURRENT_FRAGMENT = &quot;STATE_FRAGMENT_SHOW&quot;;</span><br><span class="line">private FragmentManager fragmentManager;</span><br><span class="line">private Fragment currentFragment = new Fragment();</span><br><span class="line">private List&lt;Fragment&gt; fragments = new ArrayList&lt;&gt;();</span><br></pre></td></tr></table></figure>
@@ -169,8 +191,8 @@
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2020年07月31日 11:31</p>
-        <p>原始链接： <a class="post-url" href="/2020/07/31/软件框架-RadioGroup-Fragment避免重复创建/" title="">http://yoursite.com/2020/07/31/软件框架-RadioGroup-Fragment避免重复创建/</a></p>
+        <p>最后更新： 2020年07月31日 11:35</p>
+        <p>原始链接： <a class="post-url" href="/2020/07/31/软件框架-RadioGroup-Fragment避免重复创建/" title="软件框架-RadioGroup+Fragment避免重复创建">http://yoursite.com/2020/07/31/软件框架-RadioGroup-Fragment避免重复创建/</a></p>
         <footer>
             <a href="http://yoursite.com">
                 <img src="/images/logo.png" alt="王氏小仙女">
@@ -227,7 +249,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/07/31/软件框架-RadioGroup-Fragment避免重复创建/&title=Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/07/31/软件框架-RadioGroup-Fragment避免重复创建/&title=《软件框架-RadioGroup+Fragment避免重复创建》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -237,7 +259,7 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/07/31/软件框架-RadioGroup-Fragment避免重复创建/&title=Hexo&source=" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/07/31/软件框架-RadioGroup-Fragment避免重复创建/&title=《软件框架-RadioGroup+Fragment避免重复创建》 — Hexo&source=" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
@@ -247,7 +269,7 @@
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Hexo&url=http://yoursite.com/2020/07/31/软件框架-RadioGroup-Fragment避免重复创建/&via=http://yoursite.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《软件框架-RadioGroup+Fragment避免重复创建》 — Hexo&url=http://yoursite.com/2020/07/31/软件框架-RadioGroup-Fragment避免重复创建/&via=http://yoursite.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
